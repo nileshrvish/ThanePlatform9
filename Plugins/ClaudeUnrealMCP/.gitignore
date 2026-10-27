@@ -1,0 +1,8 @@
+Binaries/
+Intermediate/
+MCPServer/node_modules/
+MCPServer/package-lock.json
+*.exe
+*.dll
+*.lib
+*.pdb
