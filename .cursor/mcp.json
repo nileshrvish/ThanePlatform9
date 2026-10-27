@@ -5,6 +5,12 @@
       "command": "node",
       "args": ["C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Plugins/ClaudeUnrealMCP/MCPServer/index.js"],
       "env": {}
+    },
+    "blender": {
+      "type": "stdio",
+      "command": "C:/Users/niles/.local/bin/uvx.exe",
+      "args": ["mcp-for-blender"],
+      "env": {}
     }
   }
 }
