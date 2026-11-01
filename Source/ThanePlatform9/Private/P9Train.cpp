@@ -575,6 +575,42 @@ void AP9Train::SetDestinationText(const FString& NewText)
 	SetupDestinationBoard();
 }
 
+bool AP9Train::ResetToStop(int32 StopIndex)
+{
+	if (!StopDistances.IsValidIndex(StopIndex) || RouteLength <= 0.0f)
+	{
+		return false;
+	}
+	const float FromDistance = Distance;
+	const EP9TrainState FromState = TrainState;
+	CurrentStopIndex = TargetStopIndex = StopIndex;
+	Distance = TargetDistance = StopDistance(StopIndex);
+	Speed = 0.0f;
+	bDeparturePending = false;
+	bArrivalOpenPending = false;
+	bChimePlayed = false;
+	LastBlockReason.Reset();
+	DoorAlpha = 0.0f;
+	ApplyDoorAlpha();
+	SetDoorState(EP9DoorState::Closed);
+	SetState(EP9TrainState::StoppedAtPlatform);
+	StateTime = 0.0f;
+	DoorPhaseTime = 0.0f;
+	PlaceTrain(Distance);
+	for (UAudioComponent* Audio : DoorAudio)
+	{
+		if (Audio) Audio->Stop();
+	}
+	for (UAudioComponent* Audio : {ChimeAudio.Get(), RunAudio.Get(), BrakeAudio.Get(), HornAudio.Get()})
+	{
+		if (Audio) Audio->Stop();
+	}
+	UpdatePlayerAndPrompts();
+	UE_LOG(LogP9, Log, TEXT("Train %s: reset to stop %d (from distance %.0f, state %s -> distance %.0f, at rest, doors closed)"),
+		*GetName(), StopIndex, FromDistance, TrainStateName(FromState), Distance);
+	return true;
+}
+
 void AP9Train::BeginDeparture()
 {
 	TargetStopIndex = NextStopIndex();

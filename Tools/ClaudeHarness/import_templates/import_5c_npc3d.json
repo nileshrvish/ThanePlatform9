@@ -1,0 +1,363 @@
+{
+ "ImportGroups": [
+  {
+   "GroupName": "NPC3DTex",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/dhanraj/v002/T_P9_NPC3D_dhanraj_BaseColor.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/dhanraj/v002/T_P9_NPC3D_dhanraj_Normal.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/dhanraj/v002/T_P9_NPC3D_dhanraj_Roughness.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Nilesh/v002/T_P9_NPC3D_Nilesh_BaseColor.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Nilesh/v002/T_P9_NPC3D_Nilesh_Normal.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Nilesh/v002/T_P9_NPC3D_Nilesh_Roughness.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/shivshankar/v002/T_P9_NPC3D_shivshankar_BaseColor.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/shivshankar/v002/T_P9_NPC3D_shivshankar_Normal.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/shivshankar/v002/T_P9_NPC3D_shivshankar_Roughness.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Rohit/v002/T_P9_NPC3D_Rohit_BaseColor.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Rohit/v002/T_P9_NPC3D_Rohit_Normal.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Rohit/v002/T_P9_NPC3D_Rohit_Roughness.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/rupesh/v002/T_P9_NPC3D_rupesh_BaseColor.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/rupesh/v002/T_P9_NPC3D_rupesh_Normal.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/rupesh/v002/T_P9_NPC3D_rupesh_Roughness.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Modi/v002/T_P9_NPC3D_Modi_BaseColor.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Modi/v002/T_P9_NPC3D_Modi_Normal.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Modi/v002/T_P9_NPC3D_Modi_Roughness.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/kanchana/v002/T_P9_NPC3D_kanchana_BaseColor.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/kanchana/v002/T_P9_NPC3D_kanchana_Normal.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/kanchana/v002/T_P9_NPC3D_kanchana_Roughness.png"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/Textures",
+   "FactoryName": "TextureFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true
+  },
+  {
+   "GroupName": "NPC3D_dhanraj",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/dhanraj/v002/Export/SK_P9_NPC3D_dhanraj.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/dhanraj",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": true,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore"
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "NPC3D_Nilesh",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Nilesh/v002/Export_v002/SK_P9_NPC3D_Nilesh.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/Nilesh",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": true,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore"
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "NPC3D_shivshankar",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/shivshankar/v002/Export/SK_P9_NPC3D_shivshankar.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/shivshankar",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": true,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore"
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "NPC3D_Rohit",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Rohit/v002/Export/SK_P9_NPC3D_Rohit.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/Rohit",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": true,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore"
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "NPC3D_rupesh",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/rupesh/v002/Export_v002/SK_P9_NPC3D_rupesh.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/rupesh",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": true,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore"
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "NPC3D_Modi",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Modi/v002/Export_v002/SK_P9_NPC3D_Modi.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/Modi",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": true,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore"
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "NPC3D_kanchana",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/kanchana/v002/Export/SK_P9_NPC3D_kanchana.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/kanchana",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": true,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore"
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "NPC3D_ModiStatic",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Modi/v002/Export_v002/Static/SM_P9_NPC3D_Modi.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/Static",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_StaticMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": false,
+    "bImportAnimations": false,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "StaticMeshImportData": {
+     "bCombineMeshes": true,
+     "bAutoGenerateCollision": false,
+     "bOneConvexHullPerUCX": true,
+     "bGenerateLightmapUVs": false,
+     "bBuildNanite": false,
+     "bRemoveDegenerates": true,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore",
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "ImportTranslation": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+     },
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": 0,
+      "Roll": 0
+     }
+    }
+   }
+  }
+ ]
+}

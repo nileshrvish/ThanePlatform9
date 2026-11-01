@@ -1,0 +1,12 @@
+# Test output of the Claude harness (captures, per-run command/sequence files and their output) - not source.
+*.png
+*.out
+/*.json
+!/c307.json
+!/c705.json
+!/c4a_lc.json
+!/mc.json
+# per-run tag folders written by mcp_call.mjs (keep the tooling folders)
+/*/
+!/ue_py/
+!/import_templates/

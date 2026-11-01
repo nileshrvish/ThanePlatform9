@@ -1,0 +1,1 @@
+[["__sleep",{"ms":16000}],["execute_console_command",{"command":"p9.Storm.State"}],["play_in_editor",{"operation":"stop"}],["__sleep",{"ms":2500}],["play_in_editor",{"operation":"status"}],["execute_console_command",{"command":"p9.Test.EditorThrottle restore"}],["execute_console_command",{"command":"p9.Test.EditorThrottle"}]]
