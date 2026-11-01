@@ -182,6 +182,11 @@ public:
 	/** Close (if open) and depart to the next stop once the doors are closed and clear. */
 	UFUNCTION(BlueprintCallable, Category = "Train") bool RequestDeparture();
 	UFUNCTION(BlueprintCallable, Category = "Train") void SetDestinationText(const FString& NewText);
+	/**
+	 * Stage 5B: put the train back at a stop, at rest, doors closed and locked, no departure or arrival pending, sounds
+	 * stopped. Teleports (no OnArrived/OnDeparted); callers do it out of the player's sight. False for an invalid stop.
+	 */
+	bool ResetToStop(int32 StopIndex);
 
 	UFUNCTION(BlueprintPure, Category = "Train") EP9TrainState GetTrainState() const { return TrainState; }
 	UFUNCTION(BlueprintPure, Category = "Train") EP9DoorState GetDoorState() const { return DoorState; }

@@ -1,0 +1,129 @@
+{
+ "ImportGroups": [
+  {
+   "GroupName": "Entities4D",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Entities/Export/SM_P9_Entity_Hero.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Entities/Export/SM_P9_Entity_Tall.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Entities/Export/SM_P9_Entity_Passenger.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Entities",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_StaticMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": false,
+    "bImportAnimations": false,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "StaticMeshImportData": {
+     "bCombineMeshes": true,
+     "bAutoGenerateCollision": false,
+     "bOneConvexHullPerUCX": true,
+     "bGenerateLightmapUVs": false,
+     "bBuildNanite": false,
+     "bRemoveDegenerates": true,
+     "NormalImportMethod": "FBXNIM_ImportNormals",
+     "VertexColorImportOption": "Ignore",
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "ImportTranslation": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+     },
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": 0,
+      "Roll": 0
+     }
+    }
+   }
+  },
+  {
+   "GroupName": "Props4D",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies/Export/SM_P9_AdStand.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies/Export/SM_P9_FloorShadow.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Anomalies",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_StaticMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": false,
+    "bImportAnimations": false,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "StaticMeshImportData": {
+     "bCombineMeshes": true,
+     "bAutoGenerateCollision": false,
+     "bOneConvexHullPerUCX": true,
+     "bGenerateLightmapUVs": false,
+     "bBuildNanite": false,
+     "bRemoveDegenerates": true,
+     "NormalImportMethod": "FBXNIM_ImportNormals",
+     "VertexColorImportOption": "Ignore",
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "ImportTranslation": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+     },
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": 0,
+      "Roll": 0
+     }
+    }
+   }
+  },
+  {
+   "GroupName": "Tex4D",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies/Textures/T_P9_AdPoster_Chai.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies/Textures/T_P9_Anom_AdPoster_Watching.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies/Textures/T_P9_Anom_AdPoster_Behind.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies/Textures/T_P9_FloorShadow.png"
+   ],
+   "DestinationPath": "/Game/P9/Anomalies/Textures",
+   "FactoryName": "TextureFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true
+  },
+  {
+   "GroupName": "EntityTex4D",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies/Textures/T_P9_Entity_Skin.png"
+   ],
+   "DestinationPath": "/Game/P9/Entities/Textures",
+   "FactoryName": "TextureFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true
+  },
+  {
+   "GroupName": "Audio4D",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies/Audio4D/SW_P9_Scare_StingClose.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies/Audio4D/SW_P9_Scare_StingCarriage.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies/Audio4D/SW_P9_Scare_StingFootbridge.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies/Audio4D/SW_P9_Scare_Drone.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies/Audio4D/SW_P9_Scare_ClothRush.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies/Audio4D/SW_P9_Scare_GhostTrain.wav"
+   ],
+   "DestinationPath": "/Game/P9/Anomalies/Audio4D",
+   "FactoryName": "SoundFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true
+  }
+ ]
+}

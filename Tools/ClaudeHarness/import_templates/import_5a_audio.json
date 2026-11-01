@@ -1,0 +1,44 @@
+{
+ "ImportGroups": [
+  {
+   "GroupName": "NPCAudio",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C1_01_F1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C1_02_F2.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C1_03_F3.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C1_04_F1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C2_01_F4.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C2_02_F5.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C2_03_F4.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C2_04_F5.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C3_01_F2.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C3_02_F4.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C3_03_F2.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C4_01_F3.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C4_02_F5.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C4_03_F1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C5_01_F1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C5_02_F4.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C5_03_F1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C6_01_F2.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C6_02_F3.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C6_03_F5.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_CW_Rally.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_Greet_F1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_Greet_F2.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_Greet_F3.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_Greet_F4.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_Greet_F5.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_SH_1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_SH_2.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_SH_3.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_SH_4.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_SH_5.wav"
+   ],
+   "DestinationPath": "/Game/P9/Audio/NPC",
+   "FactoryName": "SoundFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true
+  }
+ ]
+}

@@ -1,0 +1,442 @@
+{
+ "ImportGroups": [
+  {
+   "GroupName": "NPCTex",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs/Textures/T_P9_NPC_F1_Curly_Atlas.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs/Textures/T_P9_NPC_F2_Stripe_Atlas.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs/Textures/T_P9_NPC_F3_Specs_Atlas.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs/Textures/T_P9_NPC_F4_Selfie_Atlas.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs/Textures/T_P9_NPC_F5_Backpack_Atlas.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs/Textures/T_P9_NPC_Chaiwala_VG_Atlas.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs/Textures/T_P9_NPC_Silhouette_Atlas.png"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station/Textures",
+   "FactoryName": "TextureFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true
+  },
+  {
+   "GroupName": "NPC_F1_Curly",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs/Export/SK_P9_F1_Curly.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station/F1_Curly",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": true,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormals",
+     "VertexColorImportOption": "Ignore"
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "NPC_F2_Stripe",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs/Export/SK_P9_F2_Stripe.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station/F2_Stripe",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": true,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormals",
+     "VertexColorImportOption": "Ignore"
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "NPC_F3_Specs",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs/Export/SK_P9_F3_Specs.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station/F3_Specs",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": true,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormals",
+     "VertexColorImportOption": "Ignore"
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "NPC_F4_Selfie",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs/Export/SK_P9_F4_Selfie.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station/F4_Selfie",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": true,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormals",
+     "VertexColorImportOption": "Ignore"
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "NPC_F5_Backpack",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs/Export/SK_P9_F5_Backpack.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station/F5_Backpack",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": true,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormals",
+     "VertexColorImportOption": "Ignore"
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "NPC_Chaiwala_VG",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs/Export/SK_P9_Chaiwala_VG.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station/Chaiwala_VG",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": true,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormals",
+     "VertexColorImportOption": "Ignore"
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "NPC_Silhouette",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs/Export/SK_P9_Silhouette.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station/Silhouette",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": true,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormals",
+     "VertexColorImportOption": "Ignore"
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "ChaiwalaStatic",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs/Export/SM_P9_Chaiwala_VG.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station/Static",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_StaticMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": false,
+    "bImportAnimations": false,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "StaticMeshImportData": {
+     "bCombineMeshes": true,
+     "bAutoGenerateCollision": false,
+     "bOneConvexHullPerUCX": true,
+     "bGenerateLightmapUVs": false,
+     "bBuildNanite": false,
+     "bRemoveDegenerates": true,
+     "NormalImportMethod": "FBXNIM_ImportNormals",
+     "VertexColorImportOption": "Ignore",
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "ImportTranslation": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+     },
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": 0,
+      "Roll": 0
+     }
+    }
+   }
+  },
+  {
+   "GroupName": "ChaiStall",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/ChaiStall/Export/SM_P9_ChaiStall.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Environment/ChaiStall",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_StaticMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": false,
+    "bImportAnimations": false,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "StaticMeshImportData": {
+     "bCombineMeshes": true,
+     "bAutoGenerateCollision": false,
+     "bOneConvexHullPerUCX": true,
+     "bGenerateLightmapUVs": false,
+     "bBuildNanite": false,
+     "bRemoveDegenerates": true,
+     "NormalImportMethod": "FBXNIM_ImportNormals",
+     "VertexColorImportOption": "Ignore",
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "ImportTranslation": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+     },
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": 0,
+      "Roll": 0
+     }
+    }
+   }
+  },
+  {
+   "GroupName": "ChaiStallTex",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/ChaiStall/Textures/T_P9_ChaiStall_Atlas.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/ChaiStall/Textures/T_P9_ChaiStall_Sign_v2.png"
+   ],
+   "DestinationPath": "/Game/P9/Environment/ChaiStall/Textures",
+   "FactoryName": "TextureFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true
+  },
+  {
+   "GroupName": "NPCAudio",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C1_01_F1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C1_02_F2.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C1_03_F3.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C1_04_F1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C2_01_F4.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C2_02_F5.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C2_03_F4.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C2_04_F5.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C3_01_F2.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C3_02_F4.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C3_03_F2.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C4_01_F3.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C4_02_F5.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C4_03_F1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C5_01_F1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C5_02_F4.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C5_03_F1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C6_01_F2.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C6_02_F3.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_C6_03_F5.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_CW_Rally.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_Greet_F1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_Greet_F2.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_Greet_F3.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_Greet_F4.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_Greet_F5.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_SH_1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_SH_2.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_SH_3.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_SH_4.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_SH_5.wav"
+   ],
+   "DestinationPath": "/Game/P9/Audio/NPC",
+   "FactoryName": "SoundFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true
+  }
+ ]
+}
