@@ -48,12 +48,13 @@ namespace P9Friends
 	constexpr float AvailabilityPollSeconds = 0.5f;
 
 	static bool IsLoopClip(EP9NPCClip C) { return C != EP9NPCClip::SitDown && C != EP9NPCClip::StandUp; }
+	static bool IsWalkClip(EP9NPCClip C) { return C == EP9NPCClip::Walk || C == EP9NPCClip::DrunkWalk || C == EP9NPCClip::StairsUp; }
 	// Stage 5C crossfade times: sit transitions start/end in the neighbouring clip's pose, so they need only a short blend
 	static float BlendFor(EP9NPCClip From, EP9NPCClip To)
 	{
 		if (From == EP9NPCClip::None) return 0.0f;
 		if (From == EP9NPCClip::SitDown || From == EP9NPCClip::StandUp || To == EP9NPCClip::SitDown || To == EP9NPCClip::StandUp) return 0.15f;
-		if (From == EP9NPCClip::Walk || To == EP9NPCClip::Walk) return 0.3f;
+		if (IsWalkClip(From) || IsWalkClip(To)) return 0.3f;
 		return 0.35f;
 	}
 	// Stage 5C walking
@@ -374,12 +375,23 @@ UAnimSequence* AP9FriendNPC::ClipAnim(EP9NPCClip Clip) const
 	case EP9NPCClip::StandUp: return StandUpAnim;
 	case EP9NPCClip::Gesture: return GestureAnim ? GestureAnim.Get() : ChatAnim.Get();
 	case EP9NPCClip::Pour: return PourAnim ? PourAnim.Get() : IdleAnim.Get();
+	case EP9NPCClip::DrunkWalk: return DrunkWalkAnim ? DrunkWalkAnim.Get() : WalkAnim.Get();
+	case EP9NPCClip::StairsUp: return StairsUpAnim ? StairsUpAnim.Get() : WalkAnim.Get();
 	default: return IdleAnim;
 	}
 }
 
+EP9NPCClip AP9FriendNPC::MoveClip() const
+{
+	// Stage 5G: the walking clip for the moment - stair climb where the path rises, drunk on drunk legs, else the walk
+	if (bClimbing && StairsUpAnim) return EP9NPCClip::StairsUp;
+	if (bDrunkLeg && DrunkWalkAnim && Activity == EP9FriendActivity::Walk) return EP9NPCClip::DrunkWalk;
+	return EP9NPCClip::Walk;
+}
+
 void AP9FriendNPC::SetClip(EP9NPCClip Clip)
 {
+	if (Clip == EP9NPCClip::Walk) Clip = MoveClip();
 	PendingClip = Clip;
 }
 
@@ -562,7 +574,14 @@ bool AP9FriendNPC::StepAlongPath(float DeltaSeconds)
 	}
 	const float YawNow = GetActorRotation().Yaw;
 	const float YawDelta = FRotator::NormalizeAxis(Dir.Rotation().Yaw - YawNow);
-	float Target = WalkSpeed * PlayRate * SpeedScale * FMath::Lerp(1.0f, 0.55f, FMath::Clamp(FMath::Abs(YawDelta) / 90.0f, 0.0f, 1.0f));
+	{
+		// Stage 5G: stairs up = the next path point is clearly higher than the feet over a short horizontal run
+		const float Rise = Path[0].Z - (Loc.Z - P9Friends::CapsuleHalfHeight);
+		ClimbSlope = Dist > 1.0f ? Rise / Dist : 0.0f;
+		bClimbing = !bExplicitZ && Rise > 40.0f && ClimbSlope > 0.25f;
+	}
+	const float BaseSpeed = bClimbing && StairsUpAnim ? StairsUpSpeed : (bDrunkLeg && DrunkWalkAnim && Activity == EP9FriendActivity::Walk ? DrunkWalkSpeed : WalkSpeed);
+	float Target = BaseSpeed * PlayRate * SpeedScale * FMath::Lerp(1.0f, 0.55f, FMath::Clamp(FMath::Abs(YawDelta) / 90.0f, 0.0f, 1.0f));
 	if (Path.Num() == 1) Target = FMath::Min(Target, P9Friends::MinArriveSpeed + FMath::Sqrt(2.0f * P9Friends::WalkDecel * Dist));
 	CurSpeed = CurSpeed < Target ? FMath::Min(Target, CurSpeed + P9Friends::WalkAccel * DeltaSeconds) : FMath::Max(Target, CurSpeed - P9Friends::WalkDecel * 1.5f * DeltaSeconds);
 	const float Step = CurSpeed * DeltaSeconds;
@@ -679,6 +698,7 @@ void AP9FriendNPC::ChooseRoutineStop()
 	}
 	TargetIndex = Target;
 	DwellLeft = 0.0f;
+	bDrunkLeg = DrunkWalkAnim && DrunkChance > 0.0f && Rng.FRand() < DrunkChance;     // Stage 5G
 	WalkPath(RoutePathTo(Target));
 }
 
@@ -742,6 +762,7 @@ void AP9FriendNPC::BeginMeet(const FVector& Slot, const FVector& Center)
 	}
 	TArray<FVector> P = RoutePathTo(MeetRouteIndex);
 	P.Add(Slot); PathIdx.Add(INDEX_NONE);
+	bDrunkLeg = false;
 	Path = P; YieldTime = 0.0f;
 	if (Activity != EP9FriendActivity::Walk) CurSpeed = 0.0f;
 	Activity = EP9FriendActivity::Meet;
@@ -831,8 +852,17 @@ void AP9FriendNPC::Tick(float DeltaSeconds)
 	if (NPCRole == EP9NPCRole::Vendor && Activity != EP9FriendActivity::Scripted) TickVendor(DeltaSeconds);
 	// Stage 5C: the walk clip is authored for WalkSpeed; its rate follows the eased speed so the feet stay planted
 	const float ClipSpeed = (Activity == EP9FriendActivity::Scripted && ScriptPhase == 1) ? ProxySpeed : CurSpeed;
-	if (AnimInst) AnimInst->SetRate(CurrentClip == EP9NPCClip::Walk ? FMath::Clamp(ClipSpeed / FMath::Max(10.0f, WalkSpeed), 0.3f, 1.8f) : PlayRate);
-	if (CurrentClip != EP9NPCClip::Walk) CurSpeed = 0.0f;               // paused (yielding, turning, standing): set off again from rest
+	if (AnimInst)
+	{
+		// each moving clip plays at the rate that matches the actual speed (feet planted)
+		float Rate = PlayRate;
+		if (CurrentClip == EP9NPCClip::Walk) Rate = ClipSpeed / FMath::Max(10.0f, WalkClipSpeed > 0.0f ? WalkClipSpeed : WalkSpeed);
+		else if (CurrentClip == EP9NPCClip::DrunkWalk) Rate = ClipSpeed / FMath::Max(10.0f, DrunkWalkSpeed);
+		else if (CurrentClip == EP9NPCClip::StairsUp) Rate = ClipSpeed * FMath::Sqrt(1.0f + ClimbSlope * ClimbSlope) / FMath::Max(10.0f, StairsUpClipSpeed);
+		AnimInst->SetRate(P9Friends::IsWalkClip(CurrentClip) ? FMath::Clamp(Rate, 0.3f, 1.8f) : Rate);
+	}
+	TickDrunkLines();
+	if (!P9Friends::IsWalkClip(CurrentClip)) CurSpeed = 0.0f;               // paused (yielding, turning, standing): set off again from rest
 	if ((TrainCheck -= DeltaSeconds) <= 0.0f)
 	{
 		TrainCheck = 0.5f;
@@ -904,7 +934,7 @@ void AP9FriendNPC::Tick(float DeltaSeconds)
 		}
 		else YieldTime = 0.0f;
 		SetClip(EP9NPCClip::Walk);
-		if (CurrentClip == EP9NPCClip::Walk || !WalkAnim)
+		if (P9Friends::IsWalkClip(CurrentClip) || !WalkAnim)
 		{
 			if (StepAlongPath(DeltaSeconds))
 			{
@@ -1031,6 +1061,7 @@ void AP9FriendNPC::TryBoardEpilogueTrain()
 	Path = {Outside, Threshold, AisleDoor, AisleSeat, SitSpot};
 	PathIdx.Init(INDEX_NONE, Path.Num());
 	if (Activity != EP9FriendActivity::Walk) CurSpeed = 0.0f;
+	bDrunkLeg = false;
 	Activity = EP9FriendActivity::Train; TrainPhase = 1; TrainTime = 0.0f; bExplicitZ = true; bTrappedLogged = false; YieldTime = 0.0f;
 	SetClip(EP9NPCClip::Walk);
 	UE_LOG(LogP9, Log, TEXT("NPC %s: boards the Dadar local (door x %.0f, seat %s, %d riders)"), *FriendName, DoorLX, *Best->GetName(), Riders + 1);
@@ -1058,7 +1089,7 @@ void AP9FriendNPC::TickTrain(float DeltaSeconds)
 	case 1:   // walk in through the door to the seat
 		if (bPlayerGoing && Path.Num() >= 4) { FinishTrainRide(); return; }            // not inside yet: give up, back to the routine
 		SetClip(EP9NPCClip::Walk);
-		if ((CurrentClip == EP9NPCClip::Walk || !WalkAnim) && StepAlongPath(DeltaSeconds))
+		if ((P9Friends::IsWalkClip(CurrentClip) || !WalkAnim) && StepAlongPath(DeltaSeconds))
 		{
 			TrainPhase = 2;
 			SetClip(TurnAnim ? EP9NPCClip::Turn : EP9NPCClip::Idle);
@@ -1107,7 +1138,7 @@ void AP9FriendNPC::TickTrain(float DeltaSeconds)
 		return;
 	case 6:   // walk out onto the platform
 		SetClip(EP9NPCClip::Walk);
-		if ((CurrentClip == EP9NPCClip::Walk || !WalkAnim) && StepAlongPath(DeltaSeconds)) FinishTrainRide();
+		if ((P9Friends::IsWalkClip(CurrentClip) || !WalkAnim) && StepAlongPath(DeltaSeconds)) FinishTrainRide();
 		return;
 	default:
 		FinishTrainRide();
@@ -1150,8 +1181,12 @@ void AP9FriendNPC::BeginEpilogueWake(AActor* Proxy)
 	Voice->Stop();
 	if (Activity == EP9FriendActivity::Chat && GroupSpeaker() == this) Speakers.Remove(GroupId);
 	Path.Reset(); PathIdx.Reset();
+	bDrunkLeg = false;
 	WakeProxy = Proxy; ScriptPhase = 1; ProxySpeed = 0.0f;
-	LastProxyLoc = Proxy->GetActorLocation();
+	{
+		const USceneComponent* Car = Proxy->GetRootComponent() ? Proxy->GetRootComponent()->GetAttachParent() : nullptr;
+		LastProxyLoc = Car ? Car->GetComponentTransform().InverseTransformPosition(Proxy->GetActorLocation()) : Proxy->GetActorLocation();
+	}
 	Activity = EP9FriendActivity::Scripted;
 	SetActorLocation(LastProxyLoc + FVector(0.0f, 0.0f, P9Friends::CapsuleHalfHeight));
 	SetActorRotation(FRotator(0.0f, Proxy->GetActorRotation().Yaw, 0.0f));
@@ -1184,9 +1219,13 @@ void AP9FriendNPC::TickScripted(float DeltaSeconds)
 		AActor* P = WakeProxy.Get();
 		if (!P) { EndEpilogueWake(); return; }
 		const FVector L = P->GetActorLocation();
-		const float Moved = FVector::Dist2D(L, LastProxyLoc) / FMath::Max(DeltaSeconds, 1.0e-3f);
-		ProxySpeed = FMath::FInterpTo(ProxySpeed, Moved, DeltaSeconds, 10.0f);
-		LastProxyLoc = L;
+		// Stage 5F: walking speed measured in the CARRIAGE frame - the train is still pulling in during the wake-up and its
+		// motion used to count as walking (walk clip played up to 1.8x too fast)
+		const USceneComponent* Car = P->GetRootComponent() ? P->GetRootComponent()->GetAttachParent() : nullptr;
+		const FVector Local = Car ? Car->GetComponentTransform().InverseTransformPosition(L) : L;
+		const float Moved = FVector::Dist2D(Local, LastProxyLoc) / FMath::Max(DeltaSeconds, 1.0e-3f);
+		ProxySpeed = FMath::FInterpTo(ProxySpeed, FMath::Min(Moved, 200.0f), DeltaSeconds, 10.0f);
+		LastProxyLoc = Local;
 		FVector Loc = L + FVector(0.0f, 0.0f, P9Friends::CapsuleHalfHeight);
 		Loc.Z = FMath::FInterpTo(GetActorLocation().Z, Loc.Z, DeltaSeconds, 6.0f);         // no bob from the proxy's gait
 		SetActorLocation(Loc);
@@ -1198,7 +1237,7 @@ void AP9FriendNPC::TickScripted(float DeltaSeconds)
 	}
 	case 2:
 		SetClip(EP9NPCClip::Walk);
-		if ((CurrentClip == EP9NPCClip::Walk || !WalkAnim) && StepAlongPath(DeltaSeconds))
+		if ((P9Friends::IsWalkClip(CurrentClip) || !WalkAnim) && StepAlongPath(DeltaSeconds))
 		{
 			ScriptPhase = 3;
 			SetClip(TurnAnim ? EP9NPCClip::Turn : EP9NPCClip::Idle);
@@ -1217,4 +1256,27 @@ void AP9FriendNPC::TickScripted(float DeltaSeconds)
 		StartActivity(EP9FriendActivity::Idle, 2.0f);
 		return;
 	}
+}
+
+// ---------------------------------------------------------------------------------------------------------------- drunk lines (Stage 5G)
+void AP9FriendNPC::TickDrunkLines()
+{
+	// mumbles while walking drunk (and while lingering at the stop after a drunk leg); only near the camera
+	if (!bDrunkLeg || DrunkLines.IsEmpty() || WorldTime < NextDrunkLine || Voice->IsPlaying()) return;
+	if (Activity != EP9FriendActivity::Walk && Activity != EP9FriendActivity::Idle && Activity != EP9FriendActivity::LookAround) return;
+	if (!CameraNear(AudibleDistance))
+	{
+		NextDrunkLine = WorldTime + 1.0f;
+		return;
+	}
+	int32 Pick = Rng.RandRange(0, DrunkLines.Num() - 1);
+	if (DrunkLines.Num() > 1 && Pick == LastDrunkLine) Pick = (Pick + 1) % DrunkLines.Num();
+	USoundBase* Line = DrunkLines[Pick].LoadSynchronous();
+	if (!Line) { NextDrunkLine = WorldTime + 5.0f; return; }
+	LastDrunkLine = Pick;
+	Voice->SetSound(Line);
+	Voice->SetVolumeMultiplier(VoiceVolume);
+	Voice->Play();
+	NextDrunkLine = WorldTime + Line->GetDuration() + Rng.FRandRange(DrunkLineGap.X, DrunkLineGap.Y);
+	UE_LOG(LogP9, Log, TEXT("NPC %s: drunk line %d (%s)"), *FriendName, Pick + 1, *Line->GetName());
 }

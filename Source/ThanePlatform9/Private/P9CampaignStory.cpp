@@ -603,21 +603,34 @@ void AP9CampaignDirector::TickEpilogue(float DeltaSeconds)
 	{
 		const float InLen = FVector::Dist(ChaiwalaIn[0], ChaiwalaIn[1]);
 		const float WalkYaw = (ChaiwalaIn[1] - ChaiwalaIn[0]).Rotation().Yaw;
+		// Stage 5F: a steady normal walking pace (100 cm/s, 0.5 s to start and to stop) instead of a smoothstep that
+		// peaked at ~1.5x its average speed (he looked hurried)
+		auto WalkDist = [](float T, float Len, float Speed, float Ease) -> float
+		{
+			const float Dur = Len / Speed + Ease;
+			if (T <= 0.0f) return 0.0f;
+			if (T >= Dur) return Len;
+			if (T < Ease) return 0.5f * Speed * T * T / Ease;
+			if (T > Dur - Ease) { const float R = Dur - T; return Len - 0.5f * Speed * R * R / Ease; }
+			return Speed * (T - 0.5f * Ease);
+		};
+		constexpr float ChaiwalaPace = 100.0f, ChaiwalaEase = 0.5f;
+		const float InEnd = 0.2f + InLen / ChaiwalaPace + ChaiwalaEase;
 		if (StoryTime < 12.0f)
 		{
-			const float A = FMath::Clamp((StoryTime - 0.2f) / 2.8f, 0.0f, 1.0f);
-			const float Turn = FMath::Clamp((StoryTime - 3.0f) / 0.5f, 0.0f, 1.0f);
+			const float A = StoryTime >= InEnd ? 1.0f : 0.0f;
+			const float Turn = FMath::Clamp((StoryTime - InEnd) / 0.5f, 0.0f, 1.0f);
 			const float Yaw = FMath::Lerp(WalkYaw, WalkYaw + FRotator::NormalizeAxis(ChaiwalaFaceYaw - WalkYaw), FMath::SmoothStep(0.0f, 1.0f, Turn));
 			const float Lean = StoryTime > 3.4f && StoryTime < 5.2f ? -9.0f * FMath::Sin(PI * (StoryTime - 3.4f) / 1.8f) : 0.0f;
-			PlaceChaiwala(ChaiwalaIn, A < 1.0f ? FMath::SmoothStep(0.0f, 1.0f, A) * InLen : InLen, Yaw, Lean);
+			PlaceChaiwala(ChaiwalaIn, A < 1.0f ? WalkDist(StoryTime - 0.2f, InLen, ChaiwalaPace, ChaiwalaEase) : InLen, Yaw, Lean);
 		}
 		else if (ChaiwalaOut.Num() > 1)
 		{
 			float OutLen = 0.0f;
 			for (int32 i = 1; i < ChaiwalaOut.Num(); ++i) OutLen += FVector::Dist(ChaiwalaOut[i - 1], ChaiwalaOut[i]);
 			const float Turn = FMath::Clamp((StoryTime - 12.0f) / 0.6f, 0.0f, 1.0f);
-			const float A = FMath::Clamp((StoryTime - 12.5f) / (OutLen / 95.0f), 0.0f, 1.0f);
-			const float Dist = FMath::SmoothStep(0.0f, 1.0f, A) * OutLen;
+			const float Dist = WalkDist(StoryTime - 12.5f, OutLen, ChaiwalaPace, ChaiwalaEase);
+			const float A = StoryTime < 12.5f ? 0.0f : (Dist >= OutLen - 0.01f ? 1.0f : 0.5f);
 			// heading: along the path segment he is on (turning first towards the aisle)
 			float Left = Dist; FVector Dir = ChaiwalaOut[1] - ChaiwalaOut[0];
 			for (int32 i = 1; i < ChaiwalaOut.Num(); ++i)

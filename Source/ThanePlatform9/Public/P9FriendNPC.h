@@ -58,7 +58,8 @@ enum class EP9NPCRole : uint8
 UENUM()
 enum class EP9NPCClip : uint8
 {
-	None, Idle, Walk, Turn, Look, Chat, SitDown, SitIdle, StandUp, Gesture, Pour
+	None, Idle, Walk, Turn, Look, Chat, SitDown, SitIdle, StandUp, Gesture, Pour,
+	DrunkWalk, StairsUp   // Stage 5G (Mixamo clips)
 };
 
 USTRUCT(BlueprintType)
@@ -124,6 +125,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Friend|Assets") TObjectPtr<UAnimSequence> StandUpAnim;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Friend|Assets") TObjectPtr<UAnimSequence> GestureAnim;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Friend|Assets") TObjectPtr<UAnimSequence> PourAnim;
+	/** Stage 5G: optional drunk walk (used on drunk legs) and stair-climb clip (used where the path rises). */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Friend|Assets") TObjectPtr<UAnimSequence> DrunkWalkAnim;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Friend|Assets") TObjectPtr<UAnimSequence> StairsUpAnim;
 
 	// ---------------- routine
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Friend|Routine") TArray<FP9NPCRoutePoint> Route;
@@ -132,6 +136,17 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Friend|Routine", meta = (ClampMin = "10.0")) float WalkSpeed = 105.0f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Friend|Routine", meta = (ClampMin = "0.5", ClampMax = "1.5")) float PlayRate = 1.0f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Friend|Routine", meta = (ClampMin = "10.0")) float TurnDegreesPerSecond = 140.0f;
+	/** Stage 5G: speed (cm/s) the walk clip covers at rate 1 (0 = WalkSpeed); the clip rate is scaled so the feet stay planted. */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Friend|Routine", meta = (ClampMin = "0.0")) float WalkClipSpeed = 0.0f;
+	/** Stage 5G drunk legs: chance that a routine leg is walked drunk, its speed (= the drunk clip's own speed) and mumbled lines. */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Friend|Drunk", meta = (ClampMin = "0.0", ClampMax = "1.0")) float DrunkChance = 0.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Friend|Drunk", meta = (ClampMin = "10.0")) float DrunkWalkSpeed = 95.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Friend|Drunk") TArray<TSoftObjectPtr<USoundBase>> DrunkLines;
+	/** Seconds of quiet between drunk lines (random in range); lines only play when the camera is within AudibleDistance. */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Friend|Drunk") FVector2D DrunkLineGap = FVector2D(6.0f, 14.0f);
+	/** Stage 5G stairs: horizontal speed while climbing, and the stair clip's own speed along its slope (cm/s at rate 1). */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Friend|Routine", meta = (ClampMin = "10.0")) float StairsUpSpeed = 60.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Friend|Routine", meta = (ClampMin = "10.0")) float StairsUpClipSpeed = 45.0f;
 
 	// ---------------- standing behaviour (group/vendor and at stops)
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Friend|Behaviour", meta = (ClampMin = "0.0")) float IdleWeight = 0.40f;
@@ -265,6 +280,8 @@ private:
 	void FinishTrainRide();
 	float SitStandOffset() const;
 	void ApplyHeldProps();
+	EP9NPCClip MoveClip() const;
+	void TickDrunkLines();
 	void TickScripted(float DeltaSeconds);
 
 	FRandomStream Rng;
@@ -314,6 +331,11 @@ private:
 	float CurSpeed = 0.0f;       // eased walking speed (cm/s)
 	bool bExplicitZ = false;     // follow the path points' Z instead of tracing the floor (inside the train)
 	float SpeedScale = 1.0f;     // > 1 when hurrying (getting off the train)
+	bool bDrunkLeg = false;      // Stage 5G
+	bool bClimbing = false;      // Stage 5G: the current path segment rises (stairs up)
+	float ClimbSlope = 0.0f;
+	float NextDrunkLine = 0.0f;
+	int32 LastDrunkLine = INDEX_NONE;
 	// epilogue wake-up (Stage 5C)
 	TWeakObjectPtr<AActor> WakeProxy;
 	int32 ScriptPhase = 0;       // 1 mirroring the proxy, 2 walking back to the stall, 3 turning to the counter

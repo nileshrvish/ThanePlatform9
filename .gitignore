@@ -20,3 +20,13 @@ Build/
 # OS files
 .DS_Store
 Thumbs.db
+# === Claude Code Game Studios (installed 2026-11-01) ===
+.claude/settings.local.json
+CLAUDE.local.md
+project.local.yaml
+production/session-logs/
+production/session-state/
+.scratch/
+.claude/agent-memory/
+.claude/worktrees/
+docs/consistency-failures.md

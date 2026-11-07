@@ -73,6 +73,25 @@ It was last updated 2026-11-01, at the end of Stage 5D (scanned station NPCs, an
 - The chaiwala holds a ketli (right hand) and a cutting-chai glass (left hand): `/Game/P9/Props/ChaiProps/`.
 - Friends getting off: react within ~1 s of the player standing, hurry out; if the doors already shut they slip out only while unseen.
 
+**5E – Unreal retargeting, name boards, studio framework (uncommitted):**
+- Motion-captured idle + walk from Unreal's Mannequin, retargeted in-engine (IK Rig + IK Retargeter) onto all seven scans. Clips: `Station3D/<n>/MX/SK_P9_NPC3D_<n>_MX_<Idle|Walk>` (in use for idle/walk; sit, chat, gestures, pour, menace, turn stay A3).
+- The Mannequin faces +Y and the scans face +X; the retargeter needs both facing the same way, so the Mannequin was exported and re-imported rotated −90°: `/Game/P9/Characters/MannyX/` (`SKM_MannyX`, skeleton, `Anims/SKM_MannyX_Idle|Walk`). FBX in `P9_Assets/MannyX/Export/`.
+- Mannequin source copied (not modified) from the engine template into `/Game/Characters/Mannequins/` (meshes, materials, textures, rigs, unarmed idle + walk).
+- IK rigs and retargeters: `Station3D/Retarget/` (`IK_MannyX`, `IK_NPC3D_<n>`, `RTG_MannyX_to_<n>`). Scripts: `ue_py/rt_5e_retarget_mx.py` (all), `rt_5e_pilot_mx.py`, `npc3d_5e_apply_mx.py` (RESTORE=True → A3 idle/walk), `npc3d_5e_walkspeed.py`.
+- NPC `WalkSpeed` per instance = the clip's own speed (≈127 cm/s × hip height / 0.89 m): dhanraj 127, Nilesh 123.3, shivshankar 121.1, Rohit 124.9, rupesh 129.3, Modi 121.9; silhouette `WalkClipSpeed` 117.4.
+- Unused test assets (approval needed to delete): `Retarget/IK_Manny`, `RTG_Manny_to_dhanraj`, `RTG_Manny_to_dhanraj_tA/_tB`, `RTG_MannyX_to_Modi_MXa/_MXb`, `dhanraj/MC/*`, `Modi/MXa`, `Modi/MXb`. A retarget-pose arm splay had no measurable effect.
+- Thane name boards (`S4B_NameBoard_Thane_PF1/PF9_E/W`, a hanging sign stood 3.25 m up in mid-air): two 7 cm steel posts each (`S5E_NameBoardPost_*`, `MI_P9_SteelBlue`, BlockAll), script `ue_py/board_5e_posts.py`.
+- Map SHA after 5E starts `a90e48b6f374`. Backups `pre5E_*`, `pre5E2_*`.
+
+**5F – Mannequin skeleton per character, hanging boards (uncommitted, current):**
+- All seven scans re-rigged on **Unreal's Mannequin skeleton** (88 bones: spine_01-05, neck_01-02, twist bones, 5-finger hands, ik_* bones), fitted to each person's joints and height with the Mannequin's bone orientations kept, so Unreal animation applies without axis distortion. Blender: `StationNPCs3D/fit_manny_npc3d.py` (scan posed into the Mannequin rest pose, bones fitted, voxel-proxy heat weights) → `<n>/v002/P9_NPC3D_<n>_MQ2_v001.blend`, `Export_MQ2/`. Imported with yaw −90 (like MannyX) → `Station3D/<n>/MQ2/SK_P9_NPC3D_<n>_MQ2` (+ skeleton, physics asset), materials `MI_P9_NPC3D_<n>`, LODs.
+- Clips on MQ2 (all in use): `MQ2/…_MQ2_Idle|Walk` = Unreal mocap retargeted from MannyX; `MQ2/…_MQ2_Chat|LookAround|TurnInPlace|Gesture|Pour|Menace|TalkAngry` = moved from the old rig (A4/A3) by IK Retargeter; `MQ2S/…_MQ2S_SitDown|SitIdle|StandUp` = built on the MQ2 rig (`sit_mq.py`: hips onto the 46 cm seat with per-body calibration, feet planted, hands palm-down on the thighs, Mannequin rest fingers). Unreal ships no sit/talk/gesture mocap; the user chose to keep these clips.
+- Retarget assets: `Retarget/IK_NPC3D_MQ2_<n>`, `RTG_MannyX_to_MQ2_<n>`, `RTG_Old_to_MQ2_<n>`. Scripts: `ue_py/mq_5f_setup.py`, `mq_5f_apply.py`, `npc3d_5d_props_apply.py` (kettle/glass offsets re-measured for the MQ2 hands).
+- Epilogue chaiwala: the director walks him at a steady 100 cm/s with 0.5 s ease (was a smoothstep peaking ~140 cm/s), and his walk clip rate is measured in the carriage frame (the moving train used to count as walking). `P9CampaignStory.cpp` (protected; user request) and `P9FriendNPC.cpp`.
+- Thane boards hang from the canopy ceiling on two 3 cm rods each (`S5F_NameBoardHanger_*`, script `ue_py/board_5f_hang.py`); the 5E floor posts were removed (user request); PF1_W moved to x −1925 and PF9_E to x 1930 (they were in the canopy gaps above the stairs).
+- Superseded/unused (approval needed to delete): `Station3D/<n>/MQ/` (v1 import with a broken 0.0001-scale skeleton) and `Retarget/IK_NPC3D_MQ_dhanraj`, `RTG_MannyX_to_MQ_dhanraj`, `RTG_Old_to_MQ_dhanraj`; `Station3D/<n>/A4/` (source of the moved clips, keep while MQ2 clips are regenerated from it), `MX/`, `MXa/MXb`, `MC/`; Blender `Export_MQ/`, `*_MQ_v001.blend`, `_MQ2S_try1/`.
+- Map SHA after 5F starts `ce76c5e8ba4a`. Backups `pre5F_*`, `pre5F2_*`; save `SaveGames_pre5F_*`.
+
 ## 4. Station NPCs — key facts (5C/5D)
 
 **C++ (non-protected unless noted):**
@@ -189,6 +208,8 @@ It was last updated 2026-11-01, at the end of Stage 5D (scanned station NPCs, an
 - **Scan meshes:** `delete_loose` clears the edit selection (re-select before `smart_project`, or the unwrap silently does nothing). Heat weighting often fails on scans: weight a voxel-remeshed proxy and transfer weights.
 - **Scanned rigs:** the knees are not under the hips at rest — leg solvers must include the rest thigh/shin tilt. These scans have short arms: seated hand targets must stay within ~90 % of arm reach.
 - **Python and Blueprints:** set properties on placed instances (not just the CDO); static mesh slots via `sm.set_material(i, mi)`; skeletal slots via a rebuilt `unreal.SkeletalMaterial` list; bool `bFoo` is `foo` in Python; `PerPlatformFloat.default` is read-only (construct `unreal.PerPlatformFloat(default=x)`); `SkeletalMeshLODSettings` is created with `DataAssetFactory`.
+- **UE-exported FBX in Blender:** the armature sits under an empty scaled 0.01 — unparent and apply before editing/exporting, or the exported skeleton gets a 0.0001 scale (bones explode in UE). Leaf-bone tails from FBX import are arbitrary (don't measure with them). Never quit the editor right after a refused save (PIE running) — unsaved map edits are lost.
+- **IK Retargeter facing:** source and target skeletons must face the same way (Mannequin +Y vs scans +X gave walks that strode sideways). In PIE, `EditorAssetLibrary` is blocked: use `unreal.load_asset`; off-screen NPC poses do not refresh unless `visibility_based_anim_tick_option` is ALWAYS_TICK_POSE_AND_REFRESH_BONES.
 - **Editor-world bone transforms** read from Python are the reference (A-)pose, not the clip pose — measure attachment offsets in PIE.
 - **Comments:** a `//` comment inside a single-line `{ ... }` or a ternary breaks the code after it.
 - **Platform 1 is the "go back" decision zone** (y −1690..−900; −900 is inside). Teleporting there resolves the day. Shoot from y ≤ −760 or from Platform 2/3.
@@ -198,7 +219,26 @@ It was last updated 2026-11-01, at the end of Stage 5D (scanned station NPCs, an
 - **Map Check** after map edits must report 0 errors and 0 warnings (an empty `StaticMeshComponent` is a warning).
 - **Shell:** heredocs containing apostrophes can fail in the Bash tool — write scripts to files instead.
 
-## 8. Resume checklist for a new session
+## 8. Claude Code Game Studios framework (installed 2026-11-01)
+
+Installed from https://github.com/donchitos/claude-code-game-studios (release 1.2.0, MIT): `.claude/` (49 agents incl. `unreal-specialist`, 74 skills, 15 hooks, 14 rules, docs, scripts, `settings.json`, statusline), `project.yaml`, `docs/` (engine references, workflow guide), `design/`, `production/`.
+- **Precedence:** the project rules in §2 (protected systems, backups, no deletes, no commits without asking, honest reporting) always win over the studio's defaults.
+- Hooks load only when Claude Code is **started in this folder**. They need Bash (Git for Windows) and Python 3; `jq` is optional. `update-check.sh` asks the GitHub API for new releases (turn off: `/settings --local updates.check=false`).
+- First use: restart Claude Code here, then run `/setup-engine unreal 5.7` (the shipped reference is written for 5.8; the project is on **5.7.4**) and `/adopt` or `/start` (this is an existing project: Stages 1–5D).
+
+**Studio context (imported):**
+
+@.claude/docs/directory-structure.md
+
+@docs/engine-reference/unreal/VERSION.md
+
+@.claude/docs/coordination-rules.md
+
+@.claude/docs/coding-standards.md
+
+- Collaboration protocol: Question → Options → Decision → Draft → Approval; ask before writing files; show drafts first; no commits without instruction. `production/session-state/active.md` is the studio's session checkpoint.
+
+## 9. Resume checklist for a new session
 1. Read this file and `Tools/ClaudeHarness/` (scripts may need `chmod +x`).
 2. Check `git status` (should be clean apart from new work) and the map SHA against §4.
 3. Ask the user what to do next. Pending decisions: the deletions in §5, an APK, Android performance, the next stage.
