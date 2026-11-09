@@ -1,0 +1,53 @@
+{
+ "ImportGroups": [
+  {
+   "GroupName": "Clock6C",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/AnalogClock6C/Export/SM_P9_AnalogClock_Body.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/AnalogClock6C/Export/SM_P9_AnalogClock_Glass.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/AnalogClock6C/Export/SM_P9_AnalogClock_HourHand.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/AnalogClock6C/Export/SM_P9_AnalogClock_MinuteHand.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/AnalogClock6C/Export/SM_P9_AnalogClock_SecondHand.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Anomalies6C",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_StaticMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": false,
+    "bImportAnimations": false,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "StaticMeshImportData": {
+     "bCombineMeshes": true,
+     "bImportMeshLODs": true,
+     "bAutoGenerateCollision": false,
+     "bOneConvexHullPerUCX": true,
+     "bGenerateLightmapUVs": false,
+     "bBuildNanite": false,
+     "bRemoveDegenerates": true,
+     "NormalImportMethod": "FBXNIM_ImportNormals",
+     "VertexColorImportOption": "Ignore",
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "ImportTranslation": {"X": 0, "Y": 0, "Z": 0},
+     "ImportRotation": {"Pitch": 0, "Yaw": 0, "Roll": 0}
+    }
+   }
+  },
+  {
+   "GroupName": "Tex6C",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/AnalogClock6C/Textures/T_P9_AnalogClock_Dial.png"
+   ],
+   "DestinationPath": "/Game/P9/Anomalies6C/Textures",
+   "FactoryName": "TextureFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true
+  }
+ ]
+}

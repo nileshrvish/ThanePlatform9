@@ -1,0 +1,58 @@
+NPC Chaiwala: path point V(X=520.00, Y=3460.00, Z=600.00) leads off the floor - skipped
+Train: player exited
+Train doors: Warning (alpha 1.00)
+Train: DoorsOpen -> DoorsClosing (distance 6000, speed 0)
+Train doors: Closing (alpha 1.00)
+NPC Stripe    F2  Train clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.05 loc=V(X=-953.14, Y=-738.76, Z=125.00) yaw=170 route=0/12 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Train clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.07 loc=V(X=-802.02, Y=-744.30, Z=125.00) yaw=172 route=4/6 dwell=9.6 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Train clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-712.71, Y=-757.33, Z=125.00) yaw=124 route=1/5 dwell=2.2 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Script clip=SK_P9_NPC3D_Modi_MX7A_Walk pos=0.10 loc=V(X=406.98, Y=3405.48, Z=690.00) yaw=58 route=0/0 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+Train doors: Closed (alpha 0.00)
+Train: DoorsClosing -> StoppedAtPlatform (distance 6000, speed 0)
+NPC Specs: got off the Dadar local - back to the routine (route point 4)
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.36 loc=V(X=-282.99, Y=-1171.48, Z=90.00) yaw=-8 route=4/6 dwell=2.3 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Script clip=SK_P9_NPC3D_Modi_MX7A_Walk pos=0.32 loc=V(X=406.98, Y=3405.48, Z=690.00) yaw=58 route=0/0 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+NPC Specs     F3  Turn  clip=SK_P9_NPC3D_shivshankar_MX7A_TurnInPlace pos=0.00 loc=V(X=1024.20, Y=-1359.88, Z=90.00) yaw=-55 route=4/6 dwell=2.3 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Script clip=SK_P9_NPC3D_Modi_MX7A_Walk pos=0.51 loc=V(X=406.98, Y=3405.48, Z=690.00) yaw=58 route=0/0 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+NPC Specs     F3  Idle  clip=SK_P9_NPC3D_shivshankar_MX7B_Idle pos=0.00 loc=V(X=1249.76, Y=-1150.22, Z=90.00) yaw=43 route=5/6 dwell=6.3 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Script clip=SK_P9_NPC3D_Modi_MX7A_Walk pos=0.72 loc=V(X=406.98, Y=3405.48, Z=690.00) yaw=58 route=0/0 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1147.05, Y=-1246.09, Z=90.00) yaw=-137 route=5/6 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Script clip=SK_P9_NPC3D_Modi_MX7A_Walk pos=0.92 loc=V(X=406.98, Y=3405.48, Z=690.00) yaw=58 route=0/0 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1791.82, Y=-1246.69, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Script clip=SK_P9_NPC3D_Modi_MX7A_Walk pos=1.12 loc=V(X=406.98, Y=3405.48, Z=690.00) yaw=58 route=0/0 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1791.82, Y=-1246.69, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Script clip=SK_P9_NPC3D_Modi_MX7A_Walk pos=1.32 loc=V(X=406.98, Y=3405.48, Z=690.00) yaw=58 route=0/0 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1791.82, Y=-1246.69, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Script clip=SK_P9_NPC3D_Modi_MX7A_Walk pos=0.12 loc=V(X=406.98, Y=3405.48, Z=690.00) yaw=58 route=0/0 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1791.82, Y=-1246.69, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Script clip=SK_P9_NPC3D_Modi_MX7A_Walk pos=0.33 loc=V(X=406.98, Y=3405.48, Z=690.00) yaw=58 route=0/0 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1791.82, Y=-1246.69, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Script clip=SK_P9_NPC3D_Modi_MX7A_Walk pos=0.54 loc=V(X=406.98, Y=3405.48, Z=690.00) yaw=58 route=0/0 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1791.82, Y=-1246.69, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Script clip=SK_P9_NPC3D_Modi_MX7A_Walk pos=0.74 loc=V(X=406.98, Y=3405.48, Z=690.00) yaw=58 route=0/0 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+NPC Specs     F3  Meet  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1202.75, Y=-1288.66, Z=90.00) yaw=-158 route=3/6 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Script clip=SK_P9_NPC3D_Modi_MX7A_Walk pos=0.94 loc=V(X=406.98, Y=3405.48, Z=690.00) yaw=58 route=0/0 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+NPC Specs     F3  Meet  clip=SK_P9_NPC3D_shivshankar_MX7B_Idle pos=0.00 loc=V(X=1371.92, Y=-1178.56, Z=90.00) yaw=-150 route=5/6 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Script clip=SK_P9_NPC3D_Modi_MX7A_Walk pos=1.14 loc=V(X=406.98, Y=3405.48, Z=690.00) yaw=58 route=0/0 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+NPC Specs     F3  Meet  clip=SK_P9_NPC3D_shivshankar_MX7B_Idle pos=0.00 loc=V(X=1371.92, Y=-1178.56, Z=90.00) yaw=-150 route=5/6 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Script clip=SK_P9_NPC3D_Modi_MX7A_Walk pos=1.36 loc=V(X=406.98, Y=3405.48, Z=690.00) yaw=58 route=0/0 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+NPC Specs     F3  Meet  clip=SK_P9_NPC3D_shivshankar_MX7B_Idle pos=0.00 loc=V(X=1371.92, Y=-1178.56, Z=90.00) yaw=-150 route=5/6 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Script clip=SK_P9_NPC3D_Modi_MX7A_Walk pos=0.16 loc=V(X=406.98, Y=3405.48, Z=690.00) yaw=58 route=0/0 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+NPC Specs     F3  Meet  clip=SK_P9_NPC3D_shivshankar_MX7B_Idle pos=0.00 loc=V(X=1371.92, Y=-1178.56, Z=90.00) yaw=-150 route=5/6 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Script clip=SK_P9_NPC3D_Modi_MX7A_Walk pos=0.36 loc=V(X=406.98, Y=3405.48, Z=690.00) yaw=58 route=0/0 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+NPC Specs     F3  Meet  clip=SK_P9_NPC3D_shivshankar_MX7B_Idle pos=0.00 loc=V(X=1371.92, Y=-1178.56, Z=90.00) yaw=-150 route=5/6 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Script clip=SK_P9_NPC3D_Modi_MX7A_Walk pos=0.56 loc=V(X=406.98, Y=3405.48, Z=690.00) yaw=58 route=0/0 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+NPC Specs     F3  Meet  clip=SK_P9_NPC3D_shivshankar_MX7B_Idle pos=0.00 loc=V(X=1371.92, Y=-1178.56, Z=90.00) yaw=-150 route=5/6 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Script clip=SK_P9_NPC3D_Modi_MX7A_Walk pos=0.77 loc=V(X=406.98, Y=3405.48, Z=690.00) yaw=58 route=0/0 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+NPC Specs     F3  Meet  clip=SK_P9_NPC3D_shivshankar_MX7B_Idle pos=0.00 loc=V(X=1371.92, Y=-1178.56, Z=90.00) yaw=-150 route=5/6 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Script clip=SK_P9_NPC3D_Modi_MX7A_Walk pos=0.98 loc=V(X=406.98, Y=3405.48, Z=690.00) yaw=58 route=0/0 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+NPC Specs     F3  Meet  clip=SK_P9_NPC3D_shivshankar_MX7B_Idle pos=0.00 loc=V(X=1371.92, Y=-1178.56, Z=90.00) yaw=-150 route=5/6 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Script clip=SK_P9_NPC3D_Modi_MX7A_Walk pos=1.18 loc=V(X=406.98, Y=3405.48, Z=690.00) yaw=58 route=0/0 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+NPC Specs     F3  Speak clip=SK_P9_NPC3D_shivshankar_MX7A_Chat pos=0.00 loc=V(X=1371.92, Y=-1178.56, Z=90.00) yaw=-150 route=5/6 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Script clip=SK_P9_NPC3D_Modi_MX7A_Walk pos=1.38 loc=V(X=406.98, Y=3405.48, Z=690.00) yaw=58 route=0/0 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+NPC Specs     F3  Look  clip=SK_P9_NPC3D_shivshankar_MX7A_LookAround pos=2.01 loc=V(X=1249.21, Y=-1145.02, Z=90.00) yaw=157 route=5/6 dwell=0.4 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Script clip=SK_P9_NPC3D_Modi_MX7A_Walk pos=0.20 loc=V(X=406.98, Y=3405.48, Z=690.00) yaw=58 route=0/0 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.35 loc=V(X=1588.93, Y=-1179.41, Z=90.00) yaw=-10 route=2/6 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Script clip=SK_P9_NPC3D_Modi_MX7A_Walk pos=0.40 loc=V(X=406.98, Y=3405.48, Z=690.00) yaw=58 route=0/0 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.35 loc=V(X=1789.31, Y=-1245.76, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Script clip=SK_P9_NPC3D_Modi_MX7A_Walk pos=0.60 loc=V(X=406.98, Y=3405.48, Z=690.00) yaw=58 route=0/0 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0

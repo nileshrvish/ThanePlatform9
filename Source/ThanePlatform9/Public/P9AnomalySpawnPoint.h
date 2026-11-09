@@ -28,6 +28,13 @@ public:
 	UPROPERTY(EditInstanceOnly, BlueprintReadOnly, Category = "Anomaly") TArray<TObjectPtr<AActor>> ExtraActors;
 	/** Narrows the target to a part of TargetActor (e.g. one train car); also part of the one-controller-per-target key. */
 	UPROPERTY(EditInstanceOnly, BlueprintReadOnly, Category = "Anomaly") FName TargetComponent;
+	/**
+	 * Stage 6A loop anomalies (endless footbridge / stair): when the player's feet enter this world box while moving along
+	 * LoopDirection, the player is moved by LoopOffset (facing and speed kept), so the stretch ahead never ends.
+	 */
+	UPROPERTY(EditInstanceOnly, BlueprintReadOnly, Category = "Anomaly|Loop") FBox LoopTrigger = FBox(ForceInit);
+	UPROPERTY(EditInstanceOnly, BlueprintReadOnly, Category = "Anomaly|Loop") FVector LoopOffset = FVector::ZeroVector;
+	UPROPERTY(EditInstanceOnly, BlueprintReadOnly, Category = "Anomaly|Loop") FVector LoopDirection = FVector::ForwardVector;
 
 	/** Two points with the same key are never used on the same day. */
 	FString GetTargetKey() const;

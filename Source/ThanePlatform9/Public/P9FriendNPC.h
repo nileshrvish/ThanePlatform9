@@ -59,7 +59,8 @@ UENUM()
 enum class EP9NPCClip : uint8
 {
 	None, Idle, Walk, Turn, Look, Chat, SitDown, SitIdle, StandUp, Gesture, Pour,
-	DrunkWalk, StairsUp   // Stage 5G (Mixamo clips)
+	DrunkWalk, StairsUp,  // Stage 5G (Mixamo clips)
+	StairsDown            // Stage 7B
 };
 
 USTRUCT(BlueprintType)
@@ -128,6 +129,14 @@ public:
 	/** Stage 5G: optional drunk walk (used on drunk legs) and stair-climb clip (used where the path rises). */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Friend|Assets") TObjectPtr<UAnimSequence> DrunkWalkAnim;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Friend|Assets") TObjectPtr<UAnimSequence> StairsUpAnim;
+	/** Stage 7B: stair-descent clip (used where the floor falls along the walking direction). */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Friend|Assets") TObjectPtr<UAnimSequence> StairsDownAnim;
+	/**
+	 * Stage 7B: the stair clips are fitted to the station stairs (one cycle = two treads; phase 0 = root over a tread centre,
+	 * see stairs_npc3d_7b.py). The clip time then follows the NPC's height on the flight, so a foot lands on every tread at
+	 * any speed. Off: the Stage 5G behaviour (clip rate from StairsUpClipSpeed).
+	 */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Friend|Assets") bool bStairClipsFitted = false;
 
 	// ---------------- routine
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Friend|Routine") TArray<FP9NPCRoutePoint> Route;
@@ -147,6 +156,20 @@ public:
 	/** Stage 5G stairs: horizontal speed while climbing, and the stair clip's own speed along its slope (cm/s at rate 1). */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Friend|Routine", meta = (ClampMin = "10.0")) float StairsUpSpeed = 60.0f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Friend|Routine", meta = (ClampMin = "10.0")) float StairsUpClipSpeed = 45.0f;
+	/** Stage 9C bench sitting: the pelvis lands this far (cm) behind the seat's front edge (found by probing the seat behind the
+	 *  sit stop); the NPC stands at the point that puts it there and shuffles onto it while turning (p9.Friends.SitInset overrides). */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Friend|Sit", meta = (ClampMin = "0.0", ClampMax = "40.0")) float SitSeatInset = 20.0f;
+	/** How far (cm) the sit clips move the pelvis back from the stand point (0 = measured on the first sit; before that the
+	 *  22 cm x height / 1.75 m of the clip build). */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Friend|Sit", meta = (ClampMin = "0.0")) float SitHipShift = 0.0f;
+	/** Stage 9C: a breath of standing still before sitting down and after standing up (seconds). */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Friend|Sit", meta = (ClampMin = "0.0")) float SitSettleTime = 0.35f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Friend|Sit", meta = (ClampMin = "0.0")) float StandSettleTime = 0.5f;
+	/** Stage 7B: horizontal speed while descending stairs (with StairsDownAnim; without it the walk speed as before). */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Friend|Routine", meta = (ClampMin = "10.0")) float StairsDownSpeed = 66.7f;
+	/** Stage 7B: the station stair the fitted clips are authored for (cm). */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Friend|Routine", meta = (ClampMin = "5.0")) float StairRise = 16.6667f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Friend|Routine", meta = (ClampMin = "10.0")) float StairTread = 30.0f;
 
 	// ---------------- standing behaviour (group/vendor and at stops)
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Friend|Behaviour", meta = (ClampMin = "0.0")) float IdleWeight = 0.40f;
@@ -211,11 +234,32 @@ public:
 	// ---------------- collision / performance
 	/** Off (default): the NPC never blocks anything. On: the player bumps into it. */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Friend|Collision") bool bBlockPlayer = false;
+	/**
+	 * Stage 7B body: capsule radius / half height (cm, sized per person). The capsule is a query-only Pawn that only OVERLAPS
+	 * pawns (never blocks the player, trains, doors or traces; generates no overlap events). NPC-to-NPC separation uses these
+	 * sizes in code (P9NPCLoco bodies): walkers steer round or slow behind other bodies, standing NPCs ease apart, seated and
+	 * train-riding NPCs are never moved. A walker held up for long passes anyway (no permanent block).
+	 */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Friend|Collision", meta = (ClampMin = "10.0", ClampMax = "60.0")) float BodyRadius = 28.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Friend|Collision", meta = (ClampMin = "40.0", ClampMax = "100.0")) float BodyHalfHeight = 88.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Friend|Collision") bool bAvoidOthers = true;
+	/**
+	 * Stage 8A hybrid body: a box aligned with the body (rotates with the NPC) - BodyRadius x BoxDepthScale deep, x BoxWidthScale
+	 * wide, BodyHalfHeight tall. Like the capsule it is query-only and only overlaps pawns (never blocks the player, trains, doors,
+	 * stairs or traces, no overlap events). The hard no-overlap rule between NPCs uses these boxes (separating-axis test): a step
+	 * that would push one body into another is pushed out, or held, instead of passing through. Steering stays on the round body.
+	 */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Friend|Collision", meta = (ClampMin = "0.3", ClampMax = "1.0")) float BoxDepthScale = 0.6f;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Friend|Collision", meta = (ClampMin = "0.5", ClampMax = "1.2")) float BoxWidthScale = 0.95f;
+	/** A walker held by a body it cannot get round passes it only after this long (deadlock guard). */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Friend|Collision", meta = (ClampMin = "2.0")) float PassThroughAfter = 8.0f;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Friend|Performance", meta = (ClampMin = "100.0")) float FullRateDistance = 3000.0f;
 
 	UFUNCTION(BlueprintPure, Category = "Friend") EP9FriendActivity GetActivity() const { return Activity; }
 	UFUNCTION(BlueprintPure, Category = "Friend") FVector GetGroupCenter() const;
 	void LogStatus() const;
+	/** Stage 9C test helper: go and sit on the route's Sit stop now (or stand up if seated). */
+	void DebugSit();
 
 	// ---------------- AP9StationLife interface
 	bool IsAvailableForMeet() const;
@@ -241,6 +285,7 @@ public:
 
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Friend") TObjectPtr<UCapsuleComponent> Capsule;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Friend") TObjectPtr<class UBoxComponent> BodyBox;     // Stage 8A
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Friend") TObjectPtr<USkeletalMeshComponent> Body;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Friend") TObjectPtr<UAudioComponent> Voice;
 	UPROPERTY(Transient) TObjectPtr<UStaticMeshComponent> HeldRight;     // runtime only (Stage 5C)
@@ -283,6 +328,30 @@ private:
 	EP9NPCClip MoveClip() const;
 	void TickDrunkLines();
 	void TickScripted(float DeltaSeconds);
+	// Stage 7B
+	FVector AvoidanceSteer(const FVector& Dir, float& OutSpeedScale, float DeltaSeconds);
+	/** Point Look cm ahead along Loc -> Path[0] -> Path[1] ... (pure pursuit: smooth curves round path corners). */
+	FVector PursuitPoint(const FVector& Loc, float Look) const;
+	void SeparateStanding(float DeltaSeconds);
+	bool CanBeMovedBySeparation() const;
+	// Stage 9A
+	/** Route / return-path points that stand inside furniture (no floor under the body centre) are moved to the nearest clear floor. */
+	void ValidateRouteTargets();
+	bool FindClearFloorNear(const FVector& FeetPoint, float MaxRadius, FVector& Out) const;
+	bool HasFloorUnder(const FVector& FeetPoint) const;
+	// Stage 9C bench sitting
+	/** Probes the seat behind Stand along -Fwd: distance to its front edge and the seat height. False = no seat found. */
+	bool ProbeSeat(const FVector& StandFeet, const FVector& Fwd, float& OutFrontDist, float& OutSeatZ) const;
+	void BeginSitAlign();
+	float HipShift() const;
+	void MeasureSeated();
+	/** A walker that has made no progress for a while: arrive here / back out of furniture / detour / skip the point. */
+	void RecoverBlocked(const TCHAR* Reason);
+	/** A path that turns back behind a walker: it slows to a stop along its facing, turns on the spot, then walks on. */
+	bool HandleReversal(float DeltaSeconds);
+	/** Slows a walker to a stop along its facing (true while still moving). */
+	bool DecelerateToStop(float DeltaSeconds);
+	void TickProgressWatchdog(float DeltaSeconds);
 
 	FRandomStream Rng;
 	EP9FriendActivity Activity = EP9FriendActivity::Idle;
@@ -305,7 +374,16 @@ private:
 	bool bMeetAfterStand = false;
 	EP9FriendActivity PreSpeakActivity = EP9FriendActivity::Idle;
 	// stop state
-	int32 SitPhase = 0;          // 0 none, 1 sitting down, 2 seated, 3 standing up
+	int32 SitPhase = 0;          // 0 turn (+ shuffle onto the stand point), 1 sitting down, 2 seated, 3 standing up, 4 settle before
+	                             // sitting, 5 short walk to the stand point, 6 settle after standing up (Stage 9C)
+	FVector SitAlignTarget = FVector::ZeroVector;
+	bool bSitAligned = true;
+	float SitSettleLeft = 0.0f;
+	float SitSeatFront = 0.0f;   // seat front edge: distance behind the aligned stand point (cm), -1 = unknown
+	float SitSeatZ = 0.0f;
+	float MeasuredHipShift = 0.0f;
+	bool bSitMeasured = false;
+	float SeatedTime = 0.0f;
 	bool bLeaveAfterTurn = false;
 	// meet state
 	FVector MeetSlot = FVector::ZeroVector;
@@ -332,10 +410,33 @@ private:
 	bool bExplicitZ = false;     // follow the path points' Z instead of tracing the floor (inside the train)
 	float SpeedScale = 1.0f;     // > 1 when hurrying (getting off the train)
 	bool bDrunkLeg = false;      // Stage 5G
+	bool bLoggedPassThrough = false;   // Stage 8A
 	bool bClimbing = false;      // Stage 5G: the current path segment rises (stairs up)
 	float ClimbSlope = 0.0f;
+	int32 StairDir = 0;          // Stage 7B: +1 on stairs going up, -1 going down, 0 flat (from the floor probe)
+	float StairRampZ = 0.0f;     // Stage 7B: feet height on the stair ramp (phase source)
+	float StairOffTime = 0.0f;   // Stage 7B: time since the last nosing under the body (short landing gaps keep the clip)
+	float BlockedTime = 0.0f;    // Stage 7B: time held up by another body
+	int32 AvoidSide = 0;         // Stage 7B: side chosen while passing a body (kept until clear)
+	float EdgeHoldTime = 0.0f;   // Stage 7B: time a step was refused because it would leave the floor
+	bool bHoldingForBody = false;              // Stage 7B: waiting (idle) behind another body
+	FVector SteerSmooth = FVector::ZeroVector; // Stage 7B: eased avoidance steering (no twitching)
+	float PacePhase = 0.0f;                    // Stage 7B: per-person slow pace variation
 	float NextDrunkLine = 0.0f;
 	int32 LastDrunkLine = INDEX_NONE;
+	// Stage 9A transitions / recovery
+	float TurnRate = 0.0f;                     // current angular speed of an on-the-spot turn (deg/s, signed)
+	float LastTurnCall = -1.0f;                // WorldTime of the last TurnTowardsYaw (a new turn starts from rest)
+	float LastClipRate = 1.0f;                 // rate of the moving clip last tick (the outgoing stride settles from it)
+	int32 PivotPhase = 0;                      // 0 none, 1 slowing along the facing, 2 turning on the spot
+	FVector LastGoodFeet = FVector::ZeroVector;
+	bool bHaveGoodFeet = false;
+	bool bStrictPath = false;                  // no corner cutting until the next path point (recovery legs)
+	bool bEscaping = false;                    // backing out of furniture: the floor guard is lifted for this one leg
+	float WatchTime = 0.0f;
+	float WatchBestDist = 0.0f;
+	FVector WatchTarget = FVector::ZeroVector;
+	int32 Recoveries = 0;
 	// epilogue wake-up (Stage 5C)
 	TWeakObjectPtr<AActor> WakeProxy;
 	int32 ScriptPhase = 0;       // 1 mirroring the proxy, 2 walking back to the stall, 3 turning to the counter

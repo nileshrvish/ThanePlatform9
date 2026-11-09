@@ -1,4 +1,5 @@
 #include "P9StationAnnouncer.h"
+#include "P9Captions.h"
 #include "ThanePlatform9.h"
 #include "Components/AudioComponent.h"
 #include "Engine/World.h"
@@ -143,6 +144,7 @@ bool AP9StationAnnouncer::PlaySound(USoundBase* Sound, int32 Platform, FName Log
 	}
 	CurrentId = LogId;
 	PlayCounts.FindOrAdd(LogId)++;
+	if (Current) P9Captions::NotifySound(this, Sound);              // Stage 9B: captions (cinematic announcements only are listed)
 	UE_LOG(LogP9, Log, TEXT("Announcer: PLAY %s (platform %d, %s, pitch %.2f, %.1fs) event '%s'"), *LogId.ToString(), Platform,
 		bTrainPA ? TEXT("train PA") : TEXT("station speaker"), Pitch, Sound->GetDuration() / FMath::Max(Pitch, 0.1f), *EventKey);
 	return Current != nullptr;

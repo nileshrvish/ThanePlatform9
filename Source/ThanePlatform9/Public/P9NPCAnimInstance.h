@@ -37,6 +37,12 @@ public:
 	void PlayClip(UAnimSequence* Seq, bool bLoop, float BlendTime, float StartTime = 0.0f);
 	void SetRate(float InRate) { Rate = FMath::Max(0.0f, InRate); }
 	void SetTime(float InTime);
+	/**
+	 * Stage 9A: the clip being faded out keeps playing at StartRate and slows to a stop as the blend completes (instead of
+	 * running on at the new clip's rate). Used when a walker stops: the last stride settles instead of scurrying in place.
+	 * Applies to the current blend only (reset by the next PlayClip).
+	 */
+	void SetOutgoingRateDecay(float StartRate) { bPrevDecay = true; PrevRate0 = FMath::Max(0.0f, StartRate); }
 	float GetTime() const { return CurTime; }
 	UAnimSequence* GetClip() const { return Cur; }
 
@@ -58,4 +64,6 @@ private:
 	float Rate = 1.0f;
 	bool bCurLoop = true;
 	bool bPrevLoop = true;
+	bool bPrevDecay = false;      // Stage 9A
+	float PrevRate0 = 1.0f;
 };

@@ -1,0 +1,95 @@
+{
+ "ImportGroups": [
+  {
+   "GroupName": "Player9A",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Footbridge_Run_L1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Footbridge_Run_L2.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Footbridge_Run_R1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Footbridge_Run_R2.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Footbridge_Walk_L1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Footbridge_Walk_L2.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Footbridge_Walk_L3.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Footbridge_Walk_R1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Footbridge_Walk_R2.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Footbridge_Walk_R3.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Platform_Run_L1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Platform_Run_L2.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Platform_Run_R1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Platform_Run_R2.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Platform_Walk_L1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Platform_Walk_L2.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Platform_Walk_L3.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Platform_Walk_R1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Platform_Walk_R2.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Platform_Walk_R3.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Stairs_Run_L1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Stairs_Run_L2.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Stairs_Run_R1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Stairs_Run_R2.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Stairs_Walk_L1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Stairs_Walk_L2.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Stairs_Walk_L3.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Stairs_Walk_R1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Stairs_Walk_R2.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Player9A/SFX_Step9A_Stairs_Walk_R3.wav"
+   ],
+   "DestinationPath": "/Game/P9/Audio/OriginalAudioPack9A/Player",
+   "FactoryName": "SoundFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true
+  },
+  {
+   "GroupName": "Train9A",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Train9A/SFX_Train9A_BrakeApply.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Train9A/SFX_Train9A_BrakeFriction_Loop.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Train9A/SFX_Train9A_Clatter_01.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Train9A/SFX_Train9A_Clatter_02.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Train9A/SFX_Train9A_Clatter_03.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Train9A/SFX_Train9A_Clatter_04.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Train9A/SFX_Train9A_Clatter_05.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Train9A/SFX_Train9A_Horn_Distant.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Train9A/SFX_Train9A_Horn_Double.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Train9A/SFX_Train9A_Horn_Long.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Train9A/SFX_Train9A_Horn_Short.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Train9A/SFX_Train9A_Idle_Loop.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Train9A/SFX_Train9A_Roll_Loop.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Train9A/SFX_Train9A_StopRelease.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/SFX/Train9A/SFX_Train9A_Traction_Loop.wav"
+   ],
+   "DestinationPath": "/Game/P9/Audio/OriginalAudioPack9A/Train",
+   "FactoryName": "SoundFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true
+  },
+  {
+   "GroupName": "Weather9A",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/Weather9A/SFX_Thunder9A_Close_01.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/Weather9A/SFX_Thunder9A_Close_02.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/Weather9A/SFX_Thunder9A_DistantRoll_01.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/Weather9A/SFX_Thunder9A_DistantRoll_02.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/Weather9A/SFX_Thunder9A_DistantRoll_03.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/Weather9A/SFX_Thunder9A_DistantRoll_04.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/Weather9A/SFX_Thunder9A_Strong_01.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/Weather9A/SFX_Thunder9A_Strong_02.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/Weather9A/SFX_Thunder9A_Strong_03.wav"
+   ],
+   "DestinationPath": "/Game/P9/Audio/OriginalAudioPack9A/Weather",
+   "FactoryName": "SoundFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true
+  },
+  {
+   "GroupName": "Ambience9A",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9A/Out/Ambience9A/AMB_Platform_Wind9A_Loop.wav"
+   ],
+   "DestinationPath": "/Game/P9/Audio/OriginalAudioPack9A/Ambience",
+   "FactoryName": "SoundFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true
+  }
+ ]
+}

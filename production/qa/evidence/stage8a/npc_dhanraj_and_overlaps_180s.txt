@@ -1,0 +1,968 @@
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.60 loc=V(X=-110.60, Y=2907.97, Z=690.00) yaw=-79 route=1/8 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.00 loc=V(X=-1103.88, Y=-1136.43, Z=90.00) yaw=-178 route=0/12 dwell=0.0 path=11 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-336.63, Y=-1083.87, Z=90.00) yaw=-177 route=3/5 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=-418.09, Y=-1225.73, Z=90.00) yaw=-3 route=5/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=8.50 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.80 loc=V(X=-71.78, Y=2722.64, Z=690.00) yaw=-78 route=1/8 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.00 loc=V(X=-1348.26, Y=-1146.01, Z=90.00) yaw=-178 route=0/12 dwell=0.0 path=11 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-515.64, Y=-1094.50, Z=90.00) yaw=-177 route=3/5 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=-249.38, Y=-1235.68, Z=90.00) yaw=-3 route=5/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=0.44 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.05 loc=V(X=-30.82, Y=2527.12, Z=690.00) yaw=-78 route=1/8 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.00 loc=V(X=-1396.74, Y=-1307.58, Z=90.00) yaw=-78 route=1/12 dwell=0.0 path=10 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-700.46, Y=-1105.48, Z=90.00) yaw=-177 route=3/5 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=-78.61, Y=-1245.75, Z=90.00) yaw=-3 route=5/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=1.96 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.34 loc=V(X=-9.04, Y=2329.14, Z=690.00) yaw=-90 route=2/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.00 loc=V(X=-1357.64, Y=-1489.48, Z=106.67) yaw=-78 route=1/12 dwell=0.0 path=10 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-863.90, Y=-1115.19, Z=90.00) yaw=-177 route=3/5 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=71.73, Y=-1254.61, Z=90.00) yaw=-3 route=5/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=0.50 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.55 loc=V(X=-53.67, Y=2151.76, Z=690.00) yaw=-110 route=2/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.00 loc=V(X=-1230.58, Y=-1504.26, Z=175.77) yaw=-1 route=2/12 dwell=0.0 path=9 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-1047.75, Y=-1126.11, Z=90.00) yaw=-177 route=3/5 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=239.43, Y=-1264.50, Z=90.00) yaw=-3 route=5/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=2.02 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX7B_Idle pos=1.26 loc=V(X=-60.60, Y=2126.09, Z=690.00) yaw=-105 route=2/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7B_StairsUp pos=0.20 loc=V(X=-1120.22, Y=-1506.20, Z=236.88) yaw=-1 route=2/12 dwell=0.0 path=9 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-1228.37, Y=-1136.83, Z=90.00) yaw=-177 route=3/5 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=413.71, Y=-1274.78, Z=90.00) yaw=-3 route=5/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=0.49 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.11 loc=V(X=-64.36, Y=2112.50, Z=690.00) yaw=-105 route=2/8 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7B_StairsUp pos=0.00 loc=V(X=-1009.84, Y=-1508.14, Z=298.68) yaw=-1 route=2/12 dwell=0.0 path=9 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-1409.15, Y=-1147.57, Z=90.00) yaw=-177 route=3/5 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=594.22, Y=-1285.43, Z=90.00) yaw=-3 route=5/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=2.01 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.29 loc=V(X=-83.99, Y=1927.93, Z=690.00) yaw=-89 route=2/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7B_StairsUp pos=0.30 loc=V(X=-920.95, Y=-1509.70, Z=347.99) yaw=-1 route=2/12 dwell=0.0 path=9 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-1555.67, Y=-1109.81, Z=90.00) yaw=162 route=2/5 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=751.92, Y=-1294.73, Z=90.00) yaw=-3 route=5/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=0.54 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.48 loc=V(X=-78.92, Y=1736.23, Z=690.00) yaw=-88 route=2/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.00 loc=V(X=-794.22, Y=-1511.93, Z=390.00) yaw=-1 route=2/12 dwell=0.0 path=9 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-1719.29, Y=-1057.63, Z=90.00) yaw=162 route=2/5 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=930.71, Y=-1305.27, Z=90.00) yaw=-3 route=5/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=2.06 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.73 loc=V(X=-73.97, Y=1548.70, Z=690.00) yaw=-88 route=2/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.00 loc=V(X=-628.54, Y=-1514.84, Z=443.82) yaw=-1 route=2/12 dwell=0.0 path=9 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-1884.00, Y=-1009.54, Z=90.00) yaw=171 route=2/5 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=1111.41, Y=-1315.93, Z=90.00) yaw=-3 route=5/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=0.59 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.90 loc=V(X=-69.15, Y=1366.24, Z=690.00) yaw=-88 route=2/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7B_StairsUp pos=0.89 loc=V(X=-539.67, Y=-1516.40, Z=493.12) yaw=-1 route=2/12 dwell=0.0 path=9 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-2031.86, Y=-1042.39, Z=90.00) yaw=-166 route=1/5 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=1267.92, Y=-1325.16, Z=90.00) yaw=-3 route=5/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=2.06 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.06 loc=V(X=-64.15, Y=1177.36, Z=690.00) yaw=-88 route=2/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7B_StairsUp pos=0.72 loc=V(X=-429.30, Y=-1518.34, Z=554.23) yaw=-1 route=2/12 dwell=0.0 path=9 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-2204.11, Y=-1086.72, Z=90.00) yaw=-166 route=1/5 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Idle  clip=SK_P9_NPC3D_rupesh_MX7B_Idle pos=0.00 loc=V(X=1350.00, Y=-1330.00, Z=90.00) yaw=-3 route=6/7 dwell=9.5 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=3.58 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.28 loc=V(X=-59.19, Y=989.63, Z=690.00) yaw=-88 route=2/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7B_StairsUp pos=0.55 loc=V(X=-318.94, Y=-1520.28, Z=615.35) yaw=-1 route=2/12 dwell=0.0 path=9 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-2377.96, Y=-1131.46, Z=90.00) yaw=-166 route=1/5 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Idle  clip=SK_P9_NPC3D_rupesh_MX7B_Idle pos=0.00 loc=V(X=1350.00, Y=-1330.00, Z=90.00) yaw=-3 route=6/7 dwell=7.9 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=5.11 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.49 loc=V(X=-54.13, Y=798.04, Z=690.00) yaw=-88 route=2/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.00 loc=V(X=-212.46, Y=-1522.15, Z=675.07) yaw=-1 route=2/12 dwell=0.0 path=9 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Turn  clip=SK_P9_NPC3D_Rohit_MX7A_TurnInPlace pos=0.00 loc=V(X=-2450.00, Y=-1150.00, Z=90.00) yaw=110 route=0/5 dwell=11.3 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Idle  clip=SK_P9_NPC3D_rupesh_MX7B_Idle pos=0.00 loc=V(X=1350.00, Y=-1330.00, Z=90.00) yaw=-3 route=6/7 dwell=6.5 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=6.63 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.74 loc=V(X=-48.95, Y=601.97, Z=690.00) yaw=-88 route=2/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.00 loc=V(X=-53.19, Y=-1474.41, Z=690.00) yaw=65 route=3/12 dwell=0.0 path=8 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Idle  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=-2450.00, Y=-1150.00, Z=90.00) yaw=90 route=0/5 dwell=10.1 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Idle  clip=SK_P9_NPC3D_rupesh_MX7B_Idle pos=0.00 loc=V(X=1350.00, Y=-1330.00, Z=90.00) yaw=-3 route=6/7 dwell=4.9 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=8.15 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=1.02 loc=V(X=-43.67, Y=402.13, Z=690.00) yaw=-88 route=2/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.00 loc=V(X=-4.78, Y=-1239.31, Z=690.00) yaw=84 route=4/12 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Idle  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=-2450.00, Y=-1150.00, Z=90.00) yaw=90 route=0/5 dwell=8.5 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Idle  clip=SK_P9_NPC3D_rupesh_MX7B_Idle pos=0.00 loc=V(X=1350.00, Y=-1330.00, Z=90.00) yaw=-3 route=6/7 dwell=3.3 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=9.62 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.26 loc=V(X=-38.37, Y=201.83, Z=690.00) yaw=-88 route=2/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.00 loc=V(X=-4.47, Y=-998.86, Z=690.00) yaw=90 route=4/12 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Idle  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=-2450.00, Y=-1150.00, Z=90.00) yaw=90 route=0/5 dwell=6.9 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Idle  clip=SK_P9_NPC3D_rupesh_MX7B_Idle pos=0.00 loc=V(X=1350.00, Y=-1330.00, Z=90.00) yaw=-3 route=6/7 dwell=1.7 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=0.05 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.56 loc=V(X=-33.20, Y=6.07, Z=690.00) yaw=-88 route=2/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.38 loc=V(X=-4.16, Y=-771.13, Z=690.00) yaw=90 route=4/12 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Idle  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=-2450.00, Y=-1150.00, Z=90.00) yaw=90 route=0/5 dwell=5.5 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Idle  clip=SK_P9_NPC3D_rupesh_MX7B_Idle pos=0.00 loc=V(X=1350.00, Y=-1330.00, Z=90.00) yaw=-3 route=6/7 dwell=0.3 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=1.57 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.80 loc=V(X=-28.03, Y=-189.57, Z=690.00) yaw=-88 route=2/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.91 loc=V(X=-3.87, Y=-549.65, Z=690.00) yaw=90 route=4/12 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Idle  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=-2450.00, Y=-1150.00, Z=90.00) yaw=90 route=0/5 dwell=3.9 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Turn  clip=SK_P9_NPC3D_rupesh_MX7A_TurnInPlace pos=0.00 loc=V(X=1350.00, Y=-1330.00, Z=90.00) yaw=165 route=6/7 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=0.09 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.98 loc=V(X=-49.64, Y=-370.53, Z=690.00) yaw=-90 route=2/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.38 loc=V(X=21.55, Y=-337.15, Z=690.00) yaw=89 route=4/12 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Idle  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=-2450.00, Y=-1150.00, Z=90.00) yaw=90 route=0/5 dwell=2.3 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=1238.15, Y=-1322.81, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=1.62 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.13 loc=V(X=-39.27, Y=-554.78, Z=690.00) yaw=-87 route=2/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.93 loc=V(X=19.80, Y=-115.78, Z=690.00) yaw=90 route=4/12 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Idle  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=-2450.00, Y=-1150.00, Z=90.00) yaw=90 route=0/5 dwell=0.9 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=1089.87, Y=-1313.28, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=0.15 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.30 loc=V(X=-28.84, Y=-739.46, Z=690.00) yaw=-87 route=2/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.44 loc=V(X=18.03, Y=107.09, Z=690.00) yaw=90 route=4/12 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Turn  clip=SK_P9_NPC3D_Rohit_MX7A_TurnInPlace pos=0.00 loc=V(X=-2450.00, Y=-1150.00, Z=90.00) yaw=19 route=0/5 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=918.67, Y=-1302.27, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=1.67 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.50 loc=V(X=-18.15, Y=-928.70, Z=690.00) yaw=-87 route=2/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=1.03 loc=V(X=16.21, Y=337.07, Z=690.00) yaw=90 route=4/12 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-2311.05, Y=-1112.11, Z=90.00) yaw=15 route=0/5 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=749.21, Y=-1291.38, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=0.19 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.07 loc=V(X=-7.35, Y=-1119.80, Z=690.00) yaw=-87 route=2/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.71 loc=V(X=14.32, Y=574.69, Z=690.00) yaw=90 route=4/12 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-2131.48, Y=-1063.13, Z=90.00) yaw=15 route=0/5 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=578.96, Y=-1280.43, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=1.71 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.07 loc=V(X=-17.65, Y=-1308.86, Z=690.00) yaw=-98 route=3/8 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.31 loc=V(X=12.45, Y=810.97, Z=690.00) yaw=90 route=4/12 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-1977.94, Y=-1021.26, Z=90.00) yaw=15 route=0/5 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=424.45, Y=-1270.50, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=0.24 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.07 loc=V(X=-62.57, Y=-1487.66, Z=690.00) yaw=-135 route=4/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.94 loc=V(X=10.58, Y=1045.85, Z=690.00) yaw=90 route=4/12 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Look  clip=SK_P9_NPC3D_Rohit_MX7A_TurnInPlace pos=0.00 loc=V(X=-1900.00, Y=-1000.00, Z=90.00) yaw=90 route=1/5 dwell=9.1 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=243.97, Y=-1258.90, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=1.76 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX7B_StairsDown pos=0.68 loc=V(X=-231.56, Y=-1492.56, Z=663.96) yaw=-178 route=4/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.54 loc=V(X=8.72, Y=1280.63, Z=690.00) yaw=90 route=4/12 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Look  clip=SK_P9_NPC3D_Rohit_MX7A_LookAround pos=0.00 loc=V(X=-1900.00, Y=-1000.00, Z=90.00) yaw=90 route=1/5 dwell=7.5 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=65.00, Y=-1247.39, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=0.23 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX7B_StairsDown pos=0.40 loc=V(X=-334.84, Y=-1495.56, Z=606.66) yaw=-178 route=4/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.13 loc=V(X=6.87, Y=1514.48, Z=690.00) yaw=90 route=4/12 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Look  clip=SK_P9_NPC3D_Rohit_MX7A_LookAround pos=0.00 loc=V(X=-1900.00, Y=-1000.00, Z=90.00) yaw=90 route=1/5 dwell=5.9 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=-114.83, Y=-1235.83, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=1.76 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX7B_StairsDown pos=0.16 loc=V(X=-436.94, Y=-1498.52, Z=550.07) yaw=-178 route=4/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.68 loc=V(X=0.09, Y=1735.61, Z=690.00) yaw=98 route=4/12 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Look  clip=SK_P9_NPC3D_Rohit_MX7A_LookAround pos=0.00 loc=V(X=-1900.00, Y=-1000.00, Z=90.00) yaw=90 route=1/5 dwell=4.5 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=-273.50, Y=-1225.63, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=0.25 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX7B_StairsDown pos=0.52 loc=V(X=-532.37, Y=-1501.29, Z=497.29) yaw=-178 route=4/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7B_Idle pos=0.21 loc=V(X=-64.27, Y=1877.14, Z=690.00) yaw=114 route=4/12 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Idle  clip=SK_P9_NPC3D_Rohit_MX7A_LookAround pos=0.00 loc=V(X=-1900.00, Y=-1000.00, Z=90.00) yaw=90 route=1/5 dwell=2.9 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=-450.22, Y=-1214.27, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=1.77 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX7B_StairsDown pos=0.31 loc=V(X=-638.90, Y=-1504.38, Z=437.57) yaw=-178 route=4/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7B_Idle pos=1.83 loc=V(X=-64.27, Y=1877.14, Z=690.00) yaw=114 route=4/12 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Idle  clip=SK_P9_NPC3D_Rohit_MX7A_LookAround pos=0.00 loc=V(X=-1900.00, Y=-1000.00, Z=90.00) yaw=90 route=1/5 dwell=1.3 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=-620.59, Y=-1203.32, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=3.24 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+StationLife: meet-up C2 at PF1_TeaStall with 2 friends
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX7B_StairsDown pos=0.74 loc=V(X=-749.74, Y=-1507.59, Z=390.00) yaw=-178 route=4/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.58 loc=V(X=-77.34, Y=1954.77, Z=690.00) yaw=98 route=4/12 dwell=0.0 path=8 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_LookAround pos=0.00 loc=V(X=-1866.58, Y=-1011.14, Z=90.00) yaw=-17 route=1/5 dwell=0.7 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=-631.93, Y=-1200.42, Z=90.00) yaw=9 route=6/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=4.76 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX7B_StairsDown pos=0.76 loc=V(X=-909.27, Y=-1512.22, Z=354.23) yaw=-178 route=4/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.11 loc=V(X=-45.72, Y=2173.21, Z=690.00) yaw=78 route=4/12 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-1727.04, Y=-1057.65, Z=90.00) yaw=-18 route=1/5 dwell=0.7 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=-461.99, Y=-1204.30, Z=90.00) yaw=-1 route=6/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=6.29 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX7B_StairsDown pos=0.70 loc=V(X=-1024.59, Y=-1515.56, Z=290.00) yaw=-178 route=4/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.63 loc=V(X=-9.76, Y=2390.31, Z=690.00) yaw=88 route=5/12 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-1562.53, Y=-1112.49, Z=90.00) yaw=-18 route=1/5 dwell=0.7 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=-293.00, Y=-1208.16, Z=90.00) yaw=-1 route=6/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=7.81 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX7B_StairsDown pos=0.76 loc=V(X=-1148.71, Y=-1519.16, Z=221.60) yaw=-178 route=4/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.17 loc=V(X=-6.16, Y=2615.50, Z=690.00) yaw=89 route=5/12 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-1398.15, Y=-1139.00, Z=90.00) yaw=3 route=2/5 dwell=0.7 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=-122.14, Y=-1212.06, Z=90.00) yaw=-1 route=6/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=9.33 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX7B_StairsDown pos=0.35 loc=V(X=-1241.92, Y=-1521.87, Z=169.51) yaw=-178 route=4/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.75 loc=V(X=-2.49, Y=2844.77, Z=690.00) yaw=89 route=5/12 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-1244.24, Y=-1130.73, Z=90.00) yaw=3 route=2/5 dwell=0.7 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=33.28, Y=-1215.61, Z=90.00) yaw=-1 route=6/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=0.92 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX7B_StairsDown pos=0.27 loc=V(X=-1349.84, Y=-1513.66, Z=106.67) yaw=142 route=5/8 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.38 loc=V(X=-0.70, Y=3081.66, Z=690.00) yaw=90 route=6/12 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-1067.03, Y=-1121.21, Z=90.00) yaw=3 route=2/5 dwell=0.7 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=213.55, Y=-1219.72, Z=90.00) yaw=-1 route=6/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=2.44 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-1399.77, Y=-1332.37, Z=90.00) yaw=105 route=5/8 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=1.02 loc=V(X=-0.51, Y=3315.50, Z=690.00) yaw=90 route=6/12 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-890.25, Y=-1111.71, Z=90.00) yaw=3 route=2/5 dwell=0.7 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=391.76, Y=-1223.79, Z=90.00) yaw=-1 route=6/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=0.44 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-1427.34, Y=-1165.28, Z=90.00) yaw=73 route=6/8 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.64 loc=V(X=-0.32, Y=3552.29, Z=690.00) yaw=90 route=6/12 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-730.33, Y=-1103.12, Z=90.00) yaw=3 route=2/5 dwell=0.7 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=549.79, Y=-1227.40, Z=90.00) yaw=-1 route=6/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=1.96 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-1238.30, Y=-1164.16, Z=90.00) yaw=0 route=6/8 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.27 loc=V(X=-0.13, Y=3786.98, Z=690.00) yaw=90 route=6/12 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-542.90, Y=-1093.05, Z=90.00) yaw=3 route=2/5 dwell=0.7 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=731.61, Y=-1231.55, Z=90.00) yaw=-1 route=6/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=0.44 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-1034.77, Y=-1162.95, Z=90.00) yaw=0 route=6/8 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.82 loc=V(X=-0.04, Y=4011.47, Z=690.00) yaw=90 route=7/12 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-358.00, Y=-1083.12, Z=90.00) yaw=3 route=2/5 dwell=0.7 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=907.85, Y=-1235.57, Z=90.00) yaw=-1 route=6/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=1.96 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-860.63, Y=-1161.92, Z=90.00) yaw=0 route=6/8 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.34 loc=V(X=-0.04, Y=4231.98, Z=690.00) yaw=90 route=7/12 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-199.31, Y=-1082.71, Z=90.00) yaw=-1 route=3/5 dwell=0.7 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=1057.32, Y=-1238.99, Z=90.00) yaw=-1 route=6/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=0.43 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-668.53, Y=-1160.78, Z=90.00) yaw=0 route=6/8 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.91 loc=V(X=-0.03, Y=4456.23, Z=690.00) yaw=90 route=7/12 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-16.75, Y=-1084.82, Z=90.00) yaw=-1 route=3/5 dwell=0.7 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=1228.58, Y=-1242.90, Z=90.00) yaw=-1 route=6/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=1.96 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-477.96, Y=-1159.65, Z=90.00) yaw=0 route=6/8 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.39 loc=V(X=-0.03, Y=4675.85, Z=690.00) yaw=90 route=7/12 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=162.89, Y=-1086.89, Z=90.00) yaw=-1 route=3/5 dwell=0.7 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7B_Idle pos=0.00 loc=V(X=1378.32, Y=-1246.32, Z=90.00) yaw=27 route=6/7 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=0.48 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-281.79, Y=-1158.49, Z=90.00) yaw=0 route=6/8 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.94 loc=V(X=-0.03, Y=4897.12, Z=690.00) yaw=90 route=7/12 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=314.29, Y=-1088.63, Z=90.00) yaw=-1 route=3/5 dwell=0.7 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7B_Idle pos=0.00 loc=V(X=1378.32, Y=-1246.32, Z=90.00) yaw=161 route=6/7 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=2.00 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-108.55, Y=-1157.46, Z=90.00) yaw=0 route=6/8 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.48 loc=V(X=-0.03, Y=5122.85, Z=690.00) yaw=90 route=7/12 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=486.58, Y=-1090.62, Z=90.00) yaw=-1 route=3/5 dwell=0.7 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7B_Idle pos=0.00 loc=V(X=1378.32, Y=-1246.32, Z=90.00) yaw=161 route=6/7 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=0.52 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=88.77, Y=-1156.29, Z=90.00) yaw=0 route=6/8 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.09 loc=V(X=-0.02, Y=5354.89, Z=690.00) yaw=90 route=7/12 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=662.88, Y=-1092.65, Z=90.00) yaw=-1 route=3/5 dwell=0.7 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7B_Idle pos=0.00 loc=V(X=1378.32, Y=-1246.32, Z=90.00) yaw=161 route=6/7 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=2.00 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=291.67, Y=-1155.09, Z=90.00) yaw=0 route=6/8 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.74 loc=V(X=-0.02, Y=5591.09, Z=690.00) yaw=90 route=7/12 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=839.63, Y=-1094.69, Z=90.00) yaw=-1 route=3/5 dwell=0.7 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7B_Idle pos=0.00 loc=V(X=1378.32, Y=-1246.32, Z=90.00) yaw=161 route=6/7 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=0.52 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=473.82, Y=-1154.01, Z=90.00) yaw=0 route=6/8 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.35 loc=V(X=-0.02, Y=5800.40, Z=690.00) yaw=90 route=7/12 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=994.81, Y=-1096.48, Z=90.00) yaw=-1 route=3/5 dwell=0.7 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7B_Idle pos=0.00 loc=V(X=1378.32, Y=-1246.32, Z=90.00) yaw=161 route=6/7 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=2.04 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=678.53, Y=-1152.80, Z=90.00) yaw=0 route=6/8 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.95 loc=V(X=-0.02, Y=6045.61, Z=690.00) yaw=90 route=7/12 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=1178.22, Y=-1098.60, Z=90.00) yaw=-1 route=3/5 dwell=0.7 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7B_Idle pos=0.00 loc=V(X=1378.32, Y=-1246.32, Z=90.00) yaw=161 route=6/7 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=0.52 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=882.00, Y=-1151.59, Z=90.00) yaw=0 route=6/8 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.58 loc=V(X=-0.01, Y=6290.37, Z=690.00) yaw=90 route=7/12 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=1234.30, Y=-1167.53, Z=90.00) yaw=-126 route=4/5 dwell=0.7 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7B_Idle pos=0.00 loc=V(X=1378.32, Y=-1246.32, Z=90.00) yaw=161 route=6/7 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=2.04 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+StationLife: 2 friends gathered, talking
+StationLife: Selfie says "Bhai, office ka kaam khatam hi nahi ho raha." (3.1s)
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=1053.59, Y=-1131.26, Z=90.00) yaw=14 route=6/8 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.17 loc=V(X=-0.01, Y=6497.03, Z=690.00) yaw=90 route=7/12 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Speak clip=SK_P9_NPC3D_Rohit_MX7A_Chat pos=0.00 loc=V(X=1215.15, Y=-1192.12, Z=90.00) yaw=-18 route=4/5 dwell=0.7 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7B_Idle pos=0.00 loc=V(X=1378.32, Y=-1246.32, Z=90.00) yaw=162 route=6/7 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=0.54 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Idle  clip=SK_P9_NPC3D_dhanraj_MX7B_Idle pos=0.00 loc=V(X=1150.00, Y=-1150.00, Z=90.00) yaw=-84 route=7/8 dwell=9.7 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.68 loc=V(X=-0.01, Y=6727.75, Z=690.00) yaw=90 route=7/12 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Speak clip=SK_P9_NPC3D_Rohit_MX7A_Chat pos=0.00 loc=V(X=1215.15, Y=-1192.12, Z=90.00) yaw=-18 route=4/5 dwell=0.7 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7B_Idle pos=0.00 loc=V(X=1378.32, Y=-1246.32, Z=90.00) yaw=162 route=6/7 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=2.06 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Idle  clip=SK_P9_NPC3D_dhanraj_MX7B_Idle pos=0.00 loc=V(X=1150.00, Y=-1150.00, Z=90.00) yaw=-84 route=7/8 dwell=8.1 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.21 loc=V(X=-0.01, Y=6960.01, Z=690.00) yaw=90 route=7/12 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=1215.15, Y=-1192.12, Z=90.00) yaw=-18 route=4/5 dwell=0.7 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7B_Idle pos=0.00 loc=V(X=1378.32, Y=-1246.32, Z=90.00) yaw=162 route=6/7 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=3.54 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+StationLife: Backpack says "Kaalji karu nakos re, shanivari Lonavlyala jauya." (4.3s)
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Idle  clip=SK_P9_NPC3D_dhanraj_MX7B_Idle pos=0.00 loc=V(X=1150.00, Y=-1150.00, Z=90.00) yaw=-84 route=7/8 dwell=6.7 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.78 loc=V(X=-0.00, Y=7161.98, Z=690.00) yaw=90 route=7/12 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=1215.15, Y=-1192.12, Z=90.00) yaw=-18 route=4/5 dwell=0.7 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Speak clip=SK_P9_NPC3D_rupesh_MX7A_Chat pos=0.00 loc=V(X=1378.32, Y=-1246.32, Z=90.00) yaw=161 route=6/7 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=5.06 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Idle  clip=SK_P9_NPC3D_dhanraj_MX7B_Idle pos=0.00 loc=V(X=1150.00, Y=-1150.00, Z=90.00) yaw=-84 route=7/8 dwell=5.1 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.24 loc=V(X=12.75, Y=7382.09, Z=690.00) yaw=67 route=7/12 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=1215.15, Y=-1192.12, Z=90.00) yaw=-18 route=4/5 dwell=0.7 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Speak clip=SK_P9_NPC3D_rupesh_MX7A_Chat pos=0.00 loc=V(X=1378.32, Y=-1246.32, Z=90.00) yaw=161 route=6/7 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=6.58 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Idle  clip=SK_P9_NPC3D_dhanraj_MX7B_Idle pos=0.00 loc=V(X=1150.00, Y=-1150.00, Z=90.00) yaw=-84 route=7/8 dwell=3.5 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.69 loc=V(X=214.17, Y=7408.74, Z=673.34) yaw=2 route=8/12 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=1215.15, Y=-1192.12, Z=90.00) yaw=-18 route=4/5 dwell=0.7 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7A_Chat pos=0.00 loc=V(X=1378.32, Y=-1246.32, Z=90.00) yaw=161 route=6/7 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Look  clip=SK_P9_NPC3D_Modi_MX7A_LookAround pos=0.05 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+StationLife: Selfie says "Pakka? Phir bolega plan cancel!" (3.5s)
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Idle  clip=SK_P9_NPC3D_dhanraj_MX7B_Idle pos=0.00 loc=V(X=1150.00, Y=-1150.00, Z=90.00) yaw=-84 route=7/8 dwell=2.1 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7B_StairsDown pos=0.06 loc=V(X=312.77, Y=7409.86, Z=618.82) yaw=0 route=9/12 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Speak clip=SK_P9_NPC3D_Rohit_MX7A_Chat pos=0.00 loc=V(X=1215.15, Y=-1192.12, Z=90.00) yaw=-18 route=4/5 dwell=0.7 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7A_Chat pos=0.00 loc=V(X=1378.32, Y=-1246.32, Z=90.00) yaw=162 route=6/7 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Look  clip=SK_P9_NPC3D_Modi_MX7A_LookAround pos=1.57 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Idle  clip=SK_P9_NPC3D_dhanraj_MX7B_Idle pos=0.00 loc=V(X=1150.00, Y=-1150.00, Z=90.00) yaw=-84 route=7/8 dwell=0.5 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.00 loc=V(X=434.50, Y=7409.88, Z=551.46) yaw=0 route=9/12 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Speak clip=SK_P9_NPC3D_Rohit_MX7A_Chat pos=0.00 loc=V(X=1215.15, Y=-1192.12, Z=90.00) yaw=-18 route=4/5 dwell=0.7 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7B_Idle pos=0.00 loc=V(X=1378.32, Y=-1246.32, Z=90.00) yaw=162 route=6/7 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Look  clip=SK_P9_NPC3D_Modi_MX7A_LookAround pos=3.09 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX5G_TurnInPlace pos=0.00 loc=V(X=1150.00, Y=-1150.00, Z=90.00) yaw=180 route=7/8 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7B_StairsDown pos=0.70 loc=V(X=546.48, Y=7409.89, Z=490.00) yaw=0 route=9/12 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Chat pos=0.00 loc=V(X=1215.15, Y=-1192.12, Z=90.00) yaw=-18 route=4/5 dwell=0.7 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7B_Idle pos=0.00 loc=V(X=1378.32, Y=-1246.32, Z=90.00) yaw=162 route=6/7 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7A_LookAround pos=4.57 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+StationLife: Backpack says "Naahi re, ya veles nakki." (2.7s)
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=1003.71, Y=-1150.00, Z=90.00) yaw=180 route=7/8 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7B_StairsDown pos=0.52 loc=V(X=654.09, Y=7409.90, Z=429.24) yaw=0 route=9/12 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Chat pos=0.00 loc=V(X=1215.15, Y=-1192.12, Z=90.00) yaw=-18 route=4/5 dwell=0.7 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Speak clip=SK_P9_NPC3D_rupesh_MX7A_Chat pos=0.00 loc=V(X=1378.32, Y=-1246.32, Z=90.00) yaw=161 route=6/7 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=1.08 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=811.38, Y=-1150.00, Z=90.00) yaw=180 route=7/8 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.00 loc=V(X=800.71, Y=7409.92, Z=390.00) yaw=0 route=9/12 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=1215.15, Y=-1192.12, Z=90.00) yaw=-18 route=4/5 dwell=0.7 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7A_Chat pos=0.00 loc=V(X=1378.32, Y=-1246.32, Z=90.00) yaw=161 route=6/7 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=2.60 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+StationLife: conversation over
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=615.58, Y=-1150.00, Z=90.00) yaw=180 route=7/8 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7B_StairsDown pos=0.27 loc=V(X=962.36, Y=7409.94, Z=325.07) yaw=0 route=9/12 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=1215.15, Y=-1192.12, Z=90.00) yaw=-18 route=4/5 dwell=0.7 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7B_Idle pos=0.00 loc=V(X=1378.32, Y=-1246.32, Z=90.00) yaw=161 route=6/7 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=4.08 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=444.12, Y=-1150.00, Z=90.00) yaw=180 route=7/8 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7B_StairsDown pos=0.38 loc=V(X=1064.33, Y=7409.96, Z=268.13) yaw=0 route=9/12 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=1215.15, Y=-1192.12, Z=90.00) yaw=-18 route=4/5 dwell=0.7 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Meet  clip=SK_P9_NPC3D_rupesh_MX7B_Idle pos=0.00 loc=V(X=1378.32, Y=-1246.32, Z=90.00) yaw=161 route=6/7 dwell=0.0 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=5.64 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=247.66, Y=-1150.00, Z=90.00) yaw=180 route=7/8 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7B_StairsDown pos=0.27 loc=V(X=1177.38, Y=7409.97, Z=206.67) yaw=0 route=9/12 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=1248.61, Y=-1155.79, Z=90.00) yaw=47 route=4/5 dwell=2.2 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=1369.85, Y=-1271.32, Z=90.00) yaw=-109 route=6/7 dwell=4.6 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=0.39 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=43.75, Y=-1150.00, Z=90.00) yaw=180 route=7/8 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7B_StairsDown pos=0.29 loc=V(X=1299.11, Y=7409.99, Z=137.57) yaw=0 route=9/12 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Idle  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=1300.00, Y=-1100.00, Z=90.00) yaw=47 route=4/5 dwell=1.4 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Look  clip=SK_P9_NPC3D_rupesh_MX7A_LookAround pos=0.00 loc=V(X=1350.00, Y=-1330.00, Z=90.00) yaw=-109 route=6/7 dwell=3.6 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=1.92 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-138.13, Y=-1150.00, Z=90.00) yaw=180 route=7/8 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7B_StairsDown pos=0.80 loc=V(X=1410.56, Y=7395.71, Z=90.00) yaw=-27 route=10/12 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Turn  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=1300.00, Y=-1100.00, Z=90.00) yaw=47 route=4/5 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Look  clip=SK_P9_NPC3D_rupesh_MX7A_LookAround pos=0.00 loc=V(X=1350.00, Y=-1330.00, Z=90.00) yaw=-109 route=6/7 dwell=2.2 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=0.39 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-343.06, Y=-1150.00, Z=90.00) yaw=180 route=7/8 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.00 loc=V(X=1571.52, Y=7231.27, Z=90.00) yaw=-46 route=10/12 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=1273.60, Y=-1099.67, Z=90.00) yaw=179 route=4/5 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Look  clip=SK_P9_NPC3D_rupesh_MX7A_LookAround pos=0.00 loc=V(X=1350.00, Y=-1330.00, Z=90.00) yaw=-109 route=6/7 dwell=0.6 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=1.91 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-547.07, Y=-1150.00, Z=90.00) yaw=180 route=7/8 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Turn  clip=SK_P9_NPC3D_Nilesh_MX7A_TurnInPlace pos=0.00 loc=V(X=1700.00, Y=7100.00, Z=90.00) yaw=-74 route=11/12 dwell=19.6 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=1090.52, Y=-1097.38, Z=90.00) yaw=179 route=4/5 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Turn  clip=SK_P9_NPC3D_rupesh_MX7A_TurnInPlace pos=0.00 loc=V(X=1350.00, Y=-1330.00, Z=90.00) yaw=-165 route=6/7 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=0.44 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-751.79, Y=-1150.00, Z=90.00) yaw=180 route=7/8 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Idle  clip=SK_P9_NPC3D_Nilesh_MX7B_Idle pos=0.00 loc=V(X=1700.00, Y=7100.00, Z=90.00) yaw=-90 route=11/12 dwell=18.4 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=908.71, Y=-1095.11, Z=90.00) yaw=179 route=4/5 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=1239.51, Y=-1322.90, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=1.97 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-926.17, Y=-1150.00, Z=90.00) yaw=180 route=7/8 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Idle  clip=SK_P9_NPC3D_Nilesh_MX7B_Idle pos=0.00 loc=V(X=1700.00, Y=7100.00, Z=90.00) yaw=-90 route=11/12 dwell=17.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=755.20, Y=-1093.19, Z=90.00) yaw=179 route=4/5 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=1088.53, Y=-1313.19, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=3.49 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-1118.74, Y=-1150.00, Z=90.00) yaw=180 route=7/8 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Idle  clip=SK_P9_NPC3D_Nilesh_MX7B_Idle pos=0.00 loc=V(X=1700.00, Y=7100.00, Z=90.00) yaw=-90 route=11/12 dwell=15.4 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=583.25, Y=-1091.04, Z=90.00) yaw=179 route=4/5 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=910.01, Y=-1301.72, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=5.01 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-1312.23, Y=-1150.00, Z=90.00) yaw=180 route=7/8 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Idle  clip=SK_P9_NPC3D_Nilesh_MX7B_Idle pos=0.00 loc=V(X=1700.00, Y=7100.00, Z=90.00) yaw=-90 route=11/12 dwell=13.8 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=408.00, Y=-1088.85, Z=90.00) yaw=179 route=4/5 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=730.95, Y=-1290.20, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=6.53 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-1438.82, Y=-1193.98, Z=90.00) yaw=-97 route=6/8 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Idle  clip=SK_P9_NPC3D_Nilesh_MX7B_Idle pos=0.00 loc=V(X=1700.00, Y=7100.00, Z=90.00) yaw=-90 route=11/12 dwell=12.4 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=253.51, Y=-1086.92, Z=90.00) yaw=179 route=4/5 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=574.65, Y=-1280.16, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Look  clip=SK_P9_NPC3D_Modi_MX7A_LookAround pos=1.42 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-1389.37, Y=-1378.28, Z=90.00) yaw=-75 route=6/8 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Idle  clip=SK_P9_NPC3D_Nilesh_MX7B_Idle pos=0.00 loc=V(X=1700.00, Y=7100.00, Z=90.00) yaw=-90 route=11/12 dwell=10.8 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=77.64, Y=-1084.72, Z=90.00) yaw=179 route=4/5 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=393.05, Y=-1268.48, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Look  clip=SK_P9_NPC3D_Modi_MX7A_LookAround pos=2.90 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-1332.31, Y=-1508.40, Z=119.51) yaw=-13 route=5/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Idle  clip=SK_P9_NPC3D_Nilesh_MX7B_Idle pos=0.00 loc=V(X=1700.00, Y=7100.00, Z=90.00) yaw=-90 route=11/12 dwell=9.2 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-102.90, Y=-1082.46, Z=90.00) yaw=179 route=4/5 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=212.76, Y=-1256.89, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Look  clip=SK_P9_NPC3D_Modi_MX7A_LookAround pos=4.42 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX7B_StairsUp pos=0.20 loc=V(X=-1240.65, Y=-1509.59, Z=170.21) yaw=-1 route=5/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Idle  clip=SK_P9_NPC3D_Nilesh_MX7B_Idle pos=0.00 loc=V(X=1700.00, Y=7100.00, Z=90.00) yaw=-90 route=11/12 dwell=7.8 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-266.16, Y=-1080.62, Z=90.00) yaw=180 route=4/5 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=60.77, Y=-1247.12, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Look  clip=SK_P9_NPC3D_Modi_MX7A_LookAround pos=0.94 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX7B_StairsUp pos=0.95 loc=V(X=-1135.99, Y=-1510.95, Z=228.54) yaw=-1 route=5/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Idle  clip=SK_P9_NPC3D_Nilesh_MX7B_Idle pos=0.00 loc=V(X=1700.00, Y=7100.00, Z=90.00) yaw=-90 route=11/12 dwell=6.2 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-451.37, Y=-1090.68, Z=90.00) yaw=-177 route=3/5 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=-110.05, Y=-1236.14, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Look  clip=SK_P9_NPC3D_Modi_MX7A_LookAround pos=2.42 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX7B_StairsUp pos=0.55 loc=V(X=-1040.13, Y=-1512.19, Z=281.32) yaw=-1 route=5/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Idle  clip=SK_P9_NPC3D_Nilesh_MX7B_Idle pos=0.00 loc=V(X=1700.00, Y=7100.00, Z=90.00) yaw=-90 route=11/12 dwell=4.6 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-634.05, Y=-1101.53, Z=90.00) yaw=-177 route=3/5 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=-281.80, Y=-1225.10, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7A_LookAround pos=3.94 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX7B_StairsUp pos=0.14 loc=V(X=-944.28, Y=-1513.43, Z=334.79) yaw=-1 route=5/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Idle  clip=SK_P9_NPC3D_Nilesh_MX7B_Idle pos=0.00 loc=V(X=1700.00, Y=7100.00, Z=90.00) yaw=-90 route=11/12 dwell=3.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-817.50, Y=-1112.43, Z=90.00) yaw=-177 route=3/5 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=-451.12, Y=-1214.21, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=0.44 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX7B_StairsUp pos=0.55 loc=V(X=-860.40, Y=-1514.51, Z=381.32) yaw=-1 route=5/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Idle  clip=SK_P9_NPC3D_Nilesh_MX7B_Idle pos=0.00 loc=V(X=1700.00, Y=7100.00, Z=90.00) yaw=-90 route=11/12 dwell=1.6 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-976.37, Y=-1121.87, Z=90.00) yaw=-177 route=3/5 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=-597.91, Y=-1204.78, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=1.96 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-705.40, Y=-1516.52, Z=400.76) yaw=-1 route=5/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Idle  clip=SK_P9_NPC3D_Nilesh_MX7B_Idle pos=0.00 loc=V(X=1700.00, Y=7100.00, Z=90.00) yaw=-90 route=11/12 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-1151.18, Y=-1132.25, Z=90.00) yaw=-177 route=3/5 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=-770.87, Y=-1193.66, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=3.49 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX7B_StairsUp pos=0.76 loc=V(X=-607.37, Y=-1517.79, Z=456.67) yaw=-1 route=5/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.00 loc=V(X=1693.88, Y=7106.32, Z=90.00) yaw=134 route=11/12 dwell=0.0 path=11 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-1323.34, Y=-1142.48, Z=90.00) yaw=-177 route=3/5 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=-949.32, Y=-1182.19, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=1.08 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX7B_StairsUp pos=0.16 loc=V(X=-523.49, Y=-1518.87, Z=502.15) yaw=-1 route=5/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.00 loc=V(X=1558.26, Y=7246.46, Z=90.00) yaw=134 route=11/12 dwell=0.0 path=11 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-1472.74, Y=-1136.51, Z=90.00) yaw=165 route=2/5 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=-1105.24, Y=-1172.16, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=2.55 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX7B_StairsUp pos=0.76 loc=V(X=-427.64, Y=-1520.11, Z=554.93) yaw=-1 route=5/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.00 loc=V(X=1379.53, Y=7397.85, Z=92.43) yaw=157 route=10/12 dwell=0.0 path=10 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-1639.98, Y=-1083.08, Z=90.00) yaw=162 route=2/5 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=-1284.13, Y=-1160.66, Z=90.00) yaw=176 route=6/7 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=1.08 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX7B_StairsUp pos=0.34 loc=V(X=-331.78, Y=-1521.35, Z=608.40) yaw=-1 route=5/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7B_StairsUp pos=0.80 loc=V(X=1263.80, Y=7399.09, Z=156.67) yaw=179 route=10/12 dwell=0.0 path=10 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-1807.22, Y=-1029.64, Z=90.00) yaw=162 route=2/5 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=-1430.03, Y=-1183.06, Z=90.00) yaw=-103 route=5/7 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=2.60 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Walk  clip=SK_P9_NPC3D_dhanraj_MX7B_StairsUp pos=0.95 loc=V(X=-235.92, Y=-1522.59, Z=661.87) yaw=-1 route=5/8 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7B_StairsUp pos=0.28 loc=V(X=1162.22, Y=7400.19, Z=213.96) yaw=179 route=10/12 dwell=0.0 path=10 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Turn  clip=SK_P9_NPC3D_Rohit_MX7A_TurnInPlace pos=0.00 loc=V(X=-1900.00, Y=-1000.00, Z=90.00) yaw=93 route=1/5 dwell=10.9 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=-1389.91, Y=-1354.46, Z=90.00) yaw=-77 route=5/7 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=1.12 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+StationLife: meet-up C5 at PF1_TeaStall with 2 friends
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX7B_StairsUp pos=0.95 loc=V(X=-195.99, Y=-1517.51, Z=684.10) yaw=89 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7B_StairsUp pos=0.78 loc=V(X=1064.54, Y=7401.24, Z=268.13) yaw=179 route=10/12 dwell=0.0 path=10 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-1876.77, Y=-1007.74, Z=90.00) yaw=0 route=1/5 dwell=10.1 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7B_StairsUp pos=0.45 loc=V(X=-1359.84, Y=-1482.96, Z=106.67) yaw=-77 route=5/7 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=2.64 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-306.37, Y=-1485.16, Z=623.34) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7B_StairsUp pos=0.76 loc=V(X=954.16, Y=7402.43, Z=329.24) yaw=179 route=10/12 dwell=0.0 path=10 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-1702.58, Y=-1065.81, Z=90.00) yaw=-18 route=1/5 dwell=10.1 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7B_StairsUp pos=0.00 loc=V(X=-1252.19, Y=-1513.10, Z=163.96) yaw=-1 route=4/7 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=1.12 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX7B_StairsDown pos=0.59 loc=V(X=-417.08, Y=-1452.72, Z=561.18) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7B_StairsUp pos=0.66 loc=V(X=852.58, Y=7403.52, Z=385.49) yaw=179 route=10/12 dwell=0.0 path=10 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-1526.85, Y=-1124.38, Z=90.00) yaw=-18 route=1/5 dwell=10.1 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7B_StairsUp pos=0.61 loc=V(X=-1156.49, Y=-1514.04, Z=216.74) yaw=-1 route=4/7 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=2.64 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-521.73, Y=-1422.05, Z=502.85) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.00 loc=V(X=702.41, Y=7405.13, Z=402.85) yaw=179 route=10/12 dwell=0.0 path=10 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-1371.21, Y=-1137.26, Z=90.00) yaw=3 route=2/5 dwell=10.1 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7B_StairsUp pos=0.82 loc=V(X=-1063.29, Y=-1514.97, Z=268.82) yaw=-1 route=4/7 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=1.16 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-628.13, Y=-1390.87, Z=443.82) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7B_StairsUp pos=0.80 loc=V(X=584.65, Y=7406.40, Z=468.13) yaw=179 route=10/12 dwell=0.0 path=10 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-1175.62, Y=-1126.81, Z=90.00) yaw=3 route=2/5 dwell=10.1 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7B_StairsUp pos=0.05 loc=V(X=-944.03, Y=-1516.15, Z=334.79) yaw=-1 route=4/7 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=2.53 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.00 loc=V(X=481.67, Y=7407.51, Z=525.07) yaw=179 route=10/12 dwell=0.0 path=10 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-1005.74, Y=-1117.73, Z=90.00) yaw=3 route=2/5 dwell=10.1 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7B_StairsUp pos=0.64 loc=V(X=-854.30, Y=-1517.04, Z=384.79) yaw=-1 route=4/7 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=1.20 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.00 loc=V(X=362.50, Y=7408.79, Z=591.74) yaw=179 route=10/12 dwell=0.0 path=10 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-831.54, Y=-1108.41, Z=90.00) yaw=3 route=2/5 dwell=10.1 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=-697.78, Y=-1518.59, Z=404.93) yaw=-1 route=4/7 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=2.72 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7B_StairsUp pos=0.30 loc=V(X=273.61, Y=7409.75, Z=640.00) yaw=179 route=10/12 dwell=0.0 path=10 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-680.40, Y=-1100.34, Z=90.00) yaw=3 route=2/5 dwell=10.1 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7B_StairsUp pos=0.66 loc=V(X=-614.03, Y=-1519.42, Z=451.46) yaw=-1 route=4/7 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=1.28 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7B_StairsUp pos=0.21 loc=V(X=163.25, Y=7409.97, Z=690.00) yaw=180 route=9/12 dwell=0.0 path=9 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-504.93, Y=-1090.95, Z=90.00) yaw=3 route=2/5 dwell=10.1 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7B_StairsUp pos=0.24 loc=V(X=-518.32, Y=-1520.36, Z=504.93) yaw=-1 route=4/7 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=2.80 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.17 loc=V(X=6.33, Y=7323.51, Z=690.00) yaw=-93 route=8/12 dwell=0.0 path=8 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-330.07, Y=-1081.80, Z=90.00) yaw=3 route=2/5 dwell=10.1 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7B_StairsUp pos=0.84 loc=V(X=-422.61, Y=-1521.31, Z=556.67) yaw=-1 route=4/7 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=4.27 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.75 loc=V(X=5.93, Y=7110.70, Z=690.00) yaw=-90 route=8/12 dwell=0.0 path=8 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=-177.22, Y=-1082.81, Z=90.00) yaw=-1 route=3/5 dwell=10.1 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7B_StairsUp pos=0.39 loc=V(X=-330.07, Y=-1522.23, Z=609.10) yaw=-1 route=4/7 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=5.79 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.27 loc=V(X=5.49, Y=6875.21, Z=690.00) yaw=-90 route=8/12 dwell=0.0 path=8 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=4.16, Y=-1084.92, Z=90.00) yaw=-1 route=3/5 dwell=10.1 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7B_StairsUp pos=0.78 loc=V(X=-225.57, Y=-1523.26, Z=667.43) yaw=-1 route=4/7 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=7.32 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.86 loc=V(X=5.05, Y=6641.01, Z=690.00) yaw=-90 route=8/12 dwell=0.0 path=8 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=189.31, Y=-1087.08, Z=90.00) yaw=-1 route=3/5 dwell=10.1 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=-84.37, Y=-1523.20, Z=690.00) yaw=2 route=4/7 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=8.80 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.36 loc=V(X=4.67, Y=6436.36, Z=690.00) yaw=-90 route=8/12 dwell=0.0 path=8 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=351.14, Y=-1088.96, Z=90.00) yaw=-1 route=3/5 dwell=10.1 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=-37.57, Y=-1396.13, Z=690.00) yaw=76 route=3/7 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=0.34 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.91 loc=V(X=4.24, Y=6207.78, Z=690.00) yaw=-90 route=8/12 dwell=0.0 path=8 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=534.68, Y=-1091.09, Z=90.00) yaw=-1 route=3/5 dwell=10.1 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=-3.70, Y=-1233.10, Z=690.00) yaw=87 route=2/7 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=1.86 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.41 loc=V(X=3.81, Y=5980.30, Z=690.00) yaw=-90 route=8/12 dwell=0.0 path=8 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=719.71, Y=-1093.25, Z=90.00) yaw=-1 route=3/5 dwell=10.1 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=0.71, Y=-1064.94, Z=690.00) yaw=89 route=2/7 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=3.38 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.99 loc=V(X=3.43, Y=5774.43, Z=690.00) yaw=-90 route=8/12 dwell=0.0 path=8 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=878.46, Y=-1095.09, Z=90.00) yaw=-1 route=3/5 dwell=10.1 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=4.70, Y=-912.30, Z=690.00) yaw=89 route=2/7 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=4.91 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.59 loc=V(X=2.97, Y=5533.74, Z=690.00) yaw=-90 route=8/12 dwell=0.0 path=8 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=1053.12, Y=-1097.13, Z=90.00) yaw=-1 route=3/5 dwell=10.1 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.25 loc=V(X=9.65, Y=-723.39, Z=690.00) yaw=89 route=2/7 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=6.43 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.13 loc=V(X=2.52, Y=5293.55, Z=690.00) yaw=-90 route=8/12 dwell=0.0 path=8 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=1226.76, Y=-1099.15, Z=90.00) yaw=-1 route=3/5 dwell=10.1 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.42 loc=V(X=14.05, Y=-555.25, Z=690.00) yaw=89 route=2/7 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=7.90 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.77 loc=V(X=2.12, Y=5080.69, Z=690.00) yaw=-90 route=8/12 dwell=0.0 path=8 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=1262.94, Y=-1190.27, Z=90.00) yaw=-104 route=4/5 dwell=10.1 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.69 loc=V(X=18.57, Y=-382.58, Z=690.00) yaw=89 route=2/7 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=9.42 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.36 loc=V(X=1.66, Y=4832.78, Z=690.00) yaw=-90 route=8/12 dwell=0.0 path=8 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=1238.74, Y=-1284.21, Z=90.00) yaw=-20 route=4/5 dwell=10.1 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.99 loc=V(X=23.17, Y=-206.94, Z=690.00) yaw=89 route=2/7 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=1.01 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=1.01 loc=V(X=1.19, Y=4584.00, Z=690.00) yaw=-90 route=8/12 dwell=0.0 path=8 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=1238.74, Y=-1284.21, Z=90.00) yaw=46 route=4/5 dwell=10.1 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=1.32 loc=V(X=27.71, Y=-33.25, Z=690.00) yaw=89 route=2/7 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=2.53 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.58 loc=V(X=0.76, Y=4355.91, Z=690.00) yaw=-90 route=8/12 dwell=0.0 path=8 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=1238.74, Y=-1284.21, Z=90.00) yaw=46 route=4/5 dwell=10.1 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.14 loc=V(X=32.12, Y=135.02, Z=690.00) yaw=89 route=2/7 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=4.06 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.13 loc=V(X=0.34, Y=4131.39, Z=690.00) yaw=-90 route=8/12 dwell=0.0 path=8 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=1238.74, Y=-1284.21, Z=90.00) yaw=46 route=4/5 dwell=10.1 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.34 loc=V(X=36.47, Y=301.08, Z=690.00) yaw=89 route=2/7 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=5.53 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.66 loc=V(X=0.09, Y=3910.07, Z=690.00) yaw=-90 route=7/12 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=1238.74, Y=-1284.21, Z=90.00) yaw=46 route=4/5 dwell=10.1 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.54 loc=V(X=40.74, Y=464.32, Z=690.00) yaw=89 route=2/7 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Idle  clip=SK_P9_NPC3D_Modi_MX7B_Idle pos=7.05 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.17 loc=V(X=0.06, Y=3689.41, Z=690.00) yaw=-90 route=7/12 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=1238.74, Y=-1284.21, Z=90.00) yaw=46 route=4/5 dwell=10.1 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.70 loc=V(X=45.00, Y=626.98, Z=690.00) yaw=89 route=2/7 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Look  clip=SK_P9_NPC3D_Modi_MX7A_LookAround pos=0.44 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.71 loc=V(X=0.04, Y=3471.30, Z=690.00) yaw=-90 route=7/12 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=1238.74, Y=-1284.21, Z=90.00) yaw=46 route=4/5 dwell=10.1 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.86 loc=V(X=49.23, Y=788.52, Z=690.00) yaw=89 route=2/7 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Look  clip=SK_P9_NPC3D_Modi_MX7A_LookAround pos=1.92 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.27 loc=V(X=0.02, Y=3245.50, Z=690.00) yaw=-90 route=7/12 dwell=0.0 path=7 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=1238.74, Y=-1284.21, Z=90.00) yaw=46 route=4/5 dwell=10.1 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=1.08 loc=V(X=53.61, Y=955.86, Z=690.00) yaw=89 route=2/7 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Look  clip=SK_P9_NPC3D_Modi_MX7A_LookAround pos=3.44 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.84 loc=V(X=0.00, Y=3015.54, Z=690.00) yaw=-90 route=6/12 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=1238.74, Y=-1284.21, Z=90.00) yaw=46 route=4/5 dwell=10.1 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=1.32 loc=V(X=58.05, Y=1125.66, Z=690.00) yaw=89 route=2/7 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Look  clip=SK_P9_NPC3D_Modi_MX7A_LookAround pos=4.96 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.43 loc=V(X=0.00, Y=2783.49, Z=690.00) yaw=-90 route=6/12 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=1238.74, Y=-1284.21, Z=90.00) yaw=46 route=4/5 dwell=10.1 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.16 loc=V(X=73.39, Y=1296.05, Z=690.00) yaw=84 route=1/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Look  clip=SK_P9_NPC3D_Modi_MX7A_LookAround pos=1.48 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.05 loc=V(X=0.00, Y=2552.28, Z=690.00) yaw=-90 route=6/12 dwell=0.0 path=6 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=1238.74, Y=-1284.21, Z=90.00) yaw=46 route=4/5 dwell=10.1 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.43 loc=V(X=91.58, Y=1466.44, Z=690.00) yaw=84 route=1/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Look  clip=SK_P9_NPC3D_Modi_MX7A_LookAround pos=2.96 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.73 loc=V(X=0.00, Y=2311.79, Z=690.00) yaw=-90 route=5/12 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=1238.74, Y=-1284.21, Z=90.00) yaw=46 route=4/5 dwell=10.1 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.73 loc=V(X=110.45, Y=1643.14, Z=690.00) yaw=84 route=1/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Look  clip=SK_P9_NPC3D_Modi_MX7A_LookAround pos=4.48 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Meet  clip=SK_P9_NPC3D_dhanraj_MX2_Walk pos=0.00 loc=V(X=-641.56, Y=-1386.93, Z=440.00) yaw=164 route=5/8 dwell=0.0 path=3 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7B_Idle pos=0.09 loc=V(X=59.36, Y=2125.05, Z=690.00) yaw=-72 route=5/12 dwell=0.0 path=5 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1796.44, Y=-1248.56, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Meet  clip=SK_P9_NPC3D_Rohit_MX7B_Idle pos=0.00 loc=V(X=1238.74, Y=-1284.21, Z=90.00) yaw=46 route=4/5 dwell=10.1 path=0 sit=0 meet=1 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.99 loc=V(X=128.65, Y=1813.60, Z=690.00) yaw=84 route=1/7 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Look  clip=SK_P9_NPC3D_Modi_MX7A_LookAround pos=1.00 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm

@@ -1,0 +1,266 @@
+{
+ "ImportGroups": [
+  {
+   "GroupName": "LanternManTex",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Creatures8A/LanternMan/T_P9_LanternMan_BaseColor.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Creatures8A/LanternMan/T_P9_LanternMan_Normal.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Creatures8A/LanternMan/T_P9_LanternMan_Roughness.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Creatures8A/LanternMan/T_P9_LanternMan_Emissive.png"
+   ],
+   "DestinationPath": "/Game/P9/Creatures8A/LanternMan",
+   "FactoryName": "TextureFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true
+  },
+  {
+   "GroupName": "GreetingTex",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Creatures8A/Greeting/T_P9_Greeting_BaseColor.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Creatures8A/Greeting/T_P9_Greeting_Normal.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Creatures8A/Greeting/T_P9_Greeting_Roughness.png"
+   ],
+   "DestinationPath": "/Game/P9/Creatures8A/Greeting",
+   "FactoryName": "TextureFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true
+  },
+  {
+   "GroupName": "LanternManMesh",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Creatures8A/LanternMan/SM_P9_LanternMan.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Creatures8A/LanternMan",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_StaticMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": false,
+    "bImportAnimations": false,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "StaticMeshImportData": {
+     "bCombineMeshes": true,
+     "bImportMeshLODs": true,
+     "bAutoGenerateCollision": false,
+     "bOneConvexHullPerUCX": true,
+     "bGenerateLightmapUVs": false,
+     "bBuildNanite": false,
+     "bRemoveDegenerates": true,
+     "NormalImportMethod": "FBXNIM_ImportNormals",
+     "VertexColorImportOption": "Ignore",
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "ImportTranslation": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+     },
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": 0,
+      "Roll": 0
+     }
+    }
+   }
+  },
+  {
+   "GroupName": "GreetingMesh",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Creatures8A/Greeting/SM_P9_Greeting_rest.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Creatures8A/Greeting/SM_P9_Greeting_lunge.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Creatures8A/Greeting",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_StaticMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": false,
+    "bImportAnimations": false,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "StaticMeshImportData": {
+     "bCombineMeshes": true,
+     "bImportMeshLODs": true,
+     "bAutoGenerateCollision": false,
+     "bOneConvexHullPerUCX": true,
+     "bGenerateLightmapUVs": false,
+     "bBuildNanite": false,
+     "bRemoveDegenerates": true,
+     "NormalImportMethod": "FBXNIM_ImportNormals",
+     "VertexColorImportOption": "Ignore",
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "ImportTranslation": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+     },
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": 0,
+      "Roll": 0
+     }
+    }
+   }
+  },
+  {
+   "GroupName": "Endless8A",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Footbridge/Endless8A/Export/SM_P9_FOBB_South8A.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Footbridge/Endless8A/Export/SM_P9_FOBB_End8A.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Footbridge/Endless8A/Export/SM_P9_FOBB_Bay8A.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Footbridge/Endless8A/Export/SM_P9_FOBB_BayLeadIn8A.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Footbridge/Endless8A/Export/SM_P9_StairPF910_Upper8A.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Footbridge/Endless8A/Export/SM_P9_EscalatorStep8A.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Anomalies8A/Endless",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_StaticMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": false,
+    "bImportAnimations": false,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "StaticMeshImportData": {
+     "bCombineMeshes": true,
+     "bImportMeshLODs": true,
+     "bAutoGenerateCollision": false,
+     "bOneConvexHullPerUCX": true,
+     "bGenerateLightmapUVs": false,
+     "bBuildNanite": false,
+     "bRemoveDegenerates": true,
+     "NormalImportMethod": "FBXNIM_ImportNormals",
+     "VertexColorImportOption": "Ignore",
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "ImportTranslation": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+     },
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": 0,
+      "Roll": 0
+     }
+    }
+   }
+  },
+  {
+   "GroupName": "SeatTex",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies8A/Textures/T_P9_Anom8_TrainSeat_Red.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies8A/Textures/T_P9_Anom8_TrainSeat_DarkRed.png"
+   ],
+   "DestinationPath": "/Game/P9/Anomalies8A/Textures",
+   "FactoryName": "TextureFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true
+  },
+  {
+   "GroupName": "Music",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/Music/BGM_Anomaly_Ambience.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/Music/BGM_Final_Epilogue.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/Music/BGM_Main_Station_Ambience.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/Music/BGM_Platform9_Horror.wav"
+   ],
+   "DestinationPath": "/Game/P9/Audio/OriginalAudioPack/Music",
+   "FactoryName": "SoundFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true
+  },
+  {
+   "GroupName": "Ambience",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/Ambience/AMB_Footbridge_Loop.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/Ambience/AMB_Platform_Wind_Loop.wav"
+   ],
+   "DestinationPath": "/Game/P9/Audio/OriginalAudioPack/Ambience",
+   "FactoryName": "SoundFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true
+  },
+  {
+   "GroupName": "SFX",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Horror/SFX_Horror_CreepyBreathing.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Horror/SFX_Horror_DeepImpact.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Horror/SFX_Horror_DistortedElectrical.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Horror/SFX_Horror_LowHit.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Horror/SFX_Horror_MetallicStinger.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Horror/SFX_Horror_ReverseBell.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Horror/SFX_Horror_Transition.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Horror/SFX_Horror_WhisperTexture.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Player/SFX_Footstep_Footbridge_01.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Player/SFX_Footstep_Footbridge_02.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Player/SFX_Footstep_Footbridge_03.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Player/SFX_Footstep_Footbridge_04.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Player/SFX_Footstep_Platform_01.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Player/SFX_Footstep_Platform_02.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Player/SFX_Footstep_Platform_03.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Player/SFX_Footstep_Platform_04.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Player/SFX_Footstep_Stairs_01.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Player/SFX_Footstep_Stairs_02.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Player/SFX_Footstep_Stairs_03.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Player/SFX_Footstep_Stairs_04.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Player/SFX_Gate_Move.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Player/SFX_Interact_01.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Player/SFX_Interact_02.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Player/SFX_Jump.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Player/SFX_Land.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Railway/SFX_Rail_Screech.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Railway/SFX_Railway_Hum_Loop.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Railway/SFX_Train_Approach.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Railway/SFX_Train_Horn_Distant.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Railway/SFX_Train_Moving_Loop.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/SFX/Railway/SFX_Train_Pass.wav"
+   ],
+   "DestinationPath": "/Game/P9/Audio/OriginalAudioPack/SFX",
+   "FactoryName": "SoundFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true
+  },
+  {
+   "GroupName": "Creatures",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/Creatures/Greeting/SFX_Greeting_DistantCall.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/Creatures/Greeting/SFX_Greeting_DistortedLayer.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/Creatures/Greeting/SFX_Greeting_JumpscareImpact.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/Creatures/Greeting/SFX_Greeting_Scream.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/Creatures/Kanchana/SFX_Kanchana_Breathing_Loop.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/Creatures/Kanchana/SFX_Kanchana_Footstep_Close_01.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/Creatures/Kanchana/SFX_Kanchana_Footstep_Close_02.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/Creatures/Kanchana/SFX_Kanchana_Footstep_Close_03.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/Creatures/Kanchana/SFX_Kanchana_Footstep_Distant_01.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/Creatures/Kanchana/SFX_Kanchana_Footstep_Distant_02.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/Creatures/Kanchana/SFX_Kanchana_Footstep_Distant_03.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/Creatures/Kanchana/SFX_Kanchana_Movement.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/Creatures/Kanchana/SFX_Kanchana_Presence_Loop.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/Creatures/LanternMan/SFX_LanternMan_ElectricalFlicker.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/Creatures/LanternMan/SFX_LanternMan_Flame_Loop.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/Creatures/LanternMan/SFX_LanternMan_LanternCreak.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/Creatures/LanternMan/SFX_LanternMan_LowRumble_Loop.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack8A/Out/Creatures/LanternMan/SFX_LanternMan_Stinger.wav"
+   ],
+   "DestinationPath": "/Game/P9/Audio/OriginalAudioPack/Creatures",
+   "FactoryName": "SoundFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true
+  }
+ ]
+}
