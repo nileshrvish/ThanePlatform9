@@ -1,0 +1,13 @@
+Stage 7C - single-APK Android build (2026-11-07)
+APK: C:\Users\niles\Documents\Unreal Projects\_builds\ThanePlatform9_Android_7C\Android_ETC2\ThanePlatform9-arm64.apk
+Size: 194,569,630 bytes (185.6 MiB)
+SHA-256: 9f1cd3e1f67a21768d6d7e908708dfeced6cbcf35d83319d46941540301e68b4
+Build: UE 5.7.4 BuildCookRun, Android, ETC2, Development, arm64-v8a only; 354 s; exit 0; 0 warnings/errors in the log
+Package: com.YourCompany.ThanePlatform9 versionCode 1 (1.0), minSdk 26, targetSdk 34, native-code arm64-v8a
+Single APK: yes - 1 .apk, no .obb, no .aab, no split APKs. Game data (pak) embedded as assets/main.obb.png (96.9 MB) inside the APK
+  (UE's bPackageDataInsideApk=True mechanism; nothing is read from external storage).
+Config used (unchanged): DefaultEngine.ini bPackageDataInsideApk=True; engine defaults bBuildForArm64=true, bBuildForX8664=false, bEnableBundle=False.
+Cook: 1,118 packages; includes 7B stair/idle clips (22 MX7B), Kanchana MX7A rig, 6C analog clock (14), map L_Station_Redesign.
+Other files in the output folder (not needed to install): Install_/Uninstall_ThanePlatform9-arm64.bat, SymbolizeCrashDump_*.bat,
+  ThanePlatform9_Symbols_v1/.../libUnreal.so (376 MB debug symbols for crash symbolication).
+Device testing: NOT performed by Claude - the user installs and tests on the phone (user instruction). No ADB device was connected.

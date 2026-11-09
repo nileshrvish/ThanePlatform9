@@ -1,0 +1,326 @@
+{
+ "ImportGroups": [
+  {
+   "GroupName": "MQ2_dhanraj",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/dhanraj/v002/Export_MQ2/SK_P9_NPC3D_dhanraj_MQ2.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/dhanraj/MQ2",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": false,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore",
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": -90,
+      "Roll": 0
+     }
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "MQ2_Nilesh",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Nilesh/v002/Export_MQ2/SK_P9_NPC3D_Nilesh_MQ2.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/Nilesh/MQ2",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": false,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore",
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": -90,
+      "Roll": 0
+     }
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "MQ2_shivshankar",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/shivshankar/v002/Export_MQ2/SK_P9_NPC3D_shivshankar_MQ2.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/shivshankar/MQ2",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": false,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore",
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": -90,
+      "Roll": 0
+     }
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "MQ2_Rohit",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Rohit/v002/Export_MQ2/SK_P9_NPC3D_Rohit_MQ2.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/Rohit/MQ2",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": false,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore",
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": -90,
+      "Roll": 0
+     }
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "MQ2_rupesh",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/rupesh/v002/Export_MQ2/SK_P9_NPC3D_rupesh_MQ2.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/rupesh/MQ2",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": false,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore",
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": -90,
+      "Roll": 0
+     }
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "MQ2_Modi",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Modi/v002/Export_MQ2/SK_P9_NPC3D_Modi_MQ2.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/Modi/MQ2",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": false,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore",
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": -90,
+      "Roll": 0
+     }
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "MQ2_kanchana",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/kanchana/v002/Export_MQ2/SK_P9_NPC3D_kanchana_MQ2.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/kanchana/MQ2",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": false,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore",
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": -90,
+      "Roll": 0
+     }
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  }
+ ]
+}

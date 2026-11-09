@@ -1,0 +1,4 @@
+p9.Campaign.Sim: 500 runs x 10 days = 5000 days | normal 1837 (36.7%) anomalous 3163 | violations 0 | non-deterministic 0 | scheduled-rule violations 0 | longest streak anomalous 10 normal 7 | same anomaly on consecutive days 19
+p9.Campaign.Sim: scheduled anomaly by day d3:151 d4:183 d5:166
+p9.Campaign.Sim: anomalies per day 0:1837 1:3163 2:0 3:0 | anomalous share by day d1:57% d2:58% d3:72% d4:76% d5:73% d6:61% d7:56% d8:61% d9:61% d10:58% | categories Supernatural:500 Environment:1438 Audio:248 Signage:749 Other:228
+p9.Campaign.Sim: per anomaly ClockWrong:237 IndicatorWrong:253 EndlessFootbridge:251 Kanchana:500 AnnouncementWrong:248 SignboardWrong:254 ClosedEntryOpen:230 PosterBoy:242 EndlessStair:269 TrackMissing:245 TicketCounterWrong:228 AnalogClockReverse:206

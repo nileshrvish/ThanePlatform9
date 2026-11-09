@@ -1,0 +1,1430 @@
+﻿Running AutomationTool...
+Using bundled DotNet SDK version: 8.0.412 win-x64
+Starting AutomationTool...
+Parsing command line: BuildCookRun -project="C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\ThanePlatform9.uproject" -platform=Android -cookflavor=ETC2 -clientconfig=Development -build -cook -stage -pak -package -archive -archivedirectory="C:\Users\niles\Documents\Unreal Projects\_builds\ThanePlatform9_Android_8B" -map=/Game/P9/Maps/L_Station_Redesign -cmdline=/Game/P9/Maps/L_Station_Redesign -nop4 -utf8output -unattended -nocompileeditor
+Initializing script modules...
+Total script module initialization time: 0.16 s.
+Using C:\Program Files\Microsoft Visual Studio\18\Community\MSBuild\Current\Bin\MSBuild.exe
+Executing commands...
+Setting up ProjectParams for C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\ThanePlatform9.uproject
+********** BUILD COMMAND STARTED **********
+Running: C:\Program Files\Epic Games\UE_5.7\Engine\Binaries\ThirdParty\DotNet\8.0.412\win-x64\dotnet.exe "C:\Program Files\Epic Games\UE_5.7\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" ThanePlatform9 Android Development -Project="C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\ThanePlatform9.uproject"  -remoteini="C:\Users\niles\Documents\Unreal Projects\ThanePlatform9"  -skipdeploy  -log="C:\Users\niles\AppData\Roaming\Unreal Engine\AutomationTool\Logs\C+Program+Files+Epic+Games+UE_5.7\UBA-ThanePlatform9-Android-Development.txt"
+Log file: C:\Users\niles\AppData\Roaming\Unreal Engine\AutomationTool\Logs\C+Program+Files+Epic+Games+UE_5.7\UBA-ThanePlatform9-Android-Development.txt
+Using 'git status' to determine working set for adaptive non-unity build (C:\Users\niles\Documents\Unreal Projects\ThanePlatform9).
+Invalidating makefile for ThanePlatform9 (source file added)
+Plugin 'ClaudeUnrealMCP' depends on plugin 'StructUtils' which was deprecated in 5.5 and will soon be removed. Please update your dependencies.
+Project 'ThanePlatform9' depends on plugin 'StructUtils' which was deprecated in 5.5 and will soon be removed. Please update your dependencies.
+Android (12470979, based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)
+Target: x86_64-w64-windows-gnu
+Thread model: posix
+InstalledDir: C:/Users/niles/AppData/Local/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/windows-x86_64/bin
+Android (12470979, based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)
+Target: x86_64-w64-windows-gnu
+Thread model: posix
+InstalledDir: C:/Users/niles/AppData/Local/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/windows-x86_64/bin
+NDK toolchain: r27c, NDK version: 270300, ClangVersion: 18.0.3
+UHT compiled-in object format Default
+Parsing headers for ThanePlatform9
+  Running Internal UnrealHeaderTool "C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\ThanePlatform9.uproject" "C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Intermediate\Build\Android\ThanePlatform9\Development\ThanePlatform9.uhtmanifest" -WarningsAsErrors -installed
+UHT processed ThanePlatform9 in 2.2462636 seconds (16 files written)
+Compiling Native 64-bit code with NDK API 'android-26'
+Link: C:\Users\niles\AppData\Local\Android\Sdk\ndk\27.2.12479018\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --gcc-toolchain="C:/Users/niles/AppData/Local/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/windows-x86_64" --sysroot="C:/Users/niles/AppData/Local/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/windows-x86_64/sysroot" -static-libstdc++ -no-canonical-prefixes -shared -Wl,-Bsymbolic -Wl,--no-undefined -Wl,--gc-sections -gz --target=aarch64-none-linux-android26 -DANDROID=1 -march=armv8-a -Wl,-no-pie -fuse-ld=lld -Wl,-soname,libUnreal.so -Wl,--version-script="C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Intermediate/Build/Android/a/ThanePlatform9/Development/ExportSymbols.ldscript" -Wl,--build-id=sha1 -Wl,--pack-dyn-relocs=android -Wl,--hash-style=gnu -z max-page-size=16384 -fdiagnostics-absolute-paths -fdiagnostics-color -fdiagnostics-format=msvc -o "C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Binaries/Android/ThanePlatform9-arm64.so" @"C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Intermediate/Build/Android/a/ThanePlatform9/Development/ThanePlatform9-arm64.so.rsp"
+Building ThanePlatform9...
+[Adaptive Build] Excluded from ThanePlatform9 unity file: P9AnalogClock.cpp, P9AnomalySpawnPoint.cpp, P9AudioDirector.cpp, P9CampaignDebug.cpp, P9CampaignDirector.cpp, P9CampaignStory.cpp, P9EndlessFootbridge.cpp, P9FriendNPC.cpp, P9GreetingScare.cpp, P9LanternMan.cpp, P9NPCLocomotion.cpp, P9ReverseEscalator.cpp, P9SilhouetteStalker.cpp
+Determining max actions to execute in parallel (20 physical cores, 28 logical cores)
+  Executing up to 20 processes, one per physical core
+  Requested 1.5 GB memory per action, 2.99 GB available: limiting max parallel actions to 1
+Using Unreal Build Accelerator local executor to run 19 action(s)
+  Storage capacity 40Gb
+---- Starting trace: 261108_012138 ----
+UbaServer - Listening on 0.0.0.0:1345
+[1/19] Compile [arm64] Module.ThanePlatform9.1.cpp
+[2/19] Compile [arm64] Module.ThanePlatform9.2.cpp
+[3/19] Compile [arm64] Module.ThanePlatform9.3.cpp
+[4/19] Compile [arm64] Module.ThanePlatform9.4.cpp
+[5/19] Compile [arm64] P9AnalogClock.cpp
+[6/19] Compile [arm64] P9AnomalySpawnPoint.cpp
+[7/19] Compile [arm64] P9AudioDirector.cpp
+[8/19] Compile [arm64] P9CampaignDebug.cpp
+[9/19] Compile [arm64] P9CampaignDirector.cpp
+[10/19] Compile [arm64] P9CampaignStory.cpp
+[11/19] Compile [arm64] P9EndlessFootbridge.cpp
+[12/19] Compile [arm64] P9FriendNPC.cpp
+[13/19] Compile [arm64] P9GreetingScare.cpp
+[14/19] Compile [arm64] P9LanternMan.cpp
+[15/19] Compile [arm64] P9NPCLocomotion.cpp
+[16/19] Compile [arm64] P9ReverseEscalator.cpp
+[17/19] Compile [arm64] P9SilhouetteStalker.cpp
+[18/19] clang++ ThanePlatform9-arm64.so
+[19/19] WriteMetadata ThanePlatform9.target [NoUba]
+
+Trace written to file C:/Users/niles/AppData/Roaming/Unreal Engine/AutomationTool/Logs/C+Program+Files+Epic+Games+UE_5.7/UBA-ThanePlatform9-Android-Development.uba with size 10.7kb
+Total time in Unreal Build Accelerator local executor: 60.93 seconds
+
+Result: Succeeded
+Total execution time: 70.34 seconds
+Took 70.51s to run dotnet.exe, ExitCode=0
+No build products were made
+Build command time: 70.53 s
+********** BUILD COMMAND COMPLETED **********
+********** COOK COMMAND STARTED **********
+HasMapsToCook /Game/P9/Maps/L_Station_Redesign
+Params.HasMapsToCook /Game/P9/Maps/L_Station_Redesign
+Running UnrealEditor Cook for project C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\ThanePlatform9.uproject
+Commandlet log file is C:\Program Files\Epic Games\UE_5.7\Engine\Programs\AutomationTool\Saved\Cook-2026.11.08-01.22.39.txt
+Running: C:\Program Files\Epic Games\UE_5.7\Engine\Binaries\Win64\UnrealEditor-Cmd.exe "C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\ThanePlatform9.uproject" -run=Cook -Map=/Game/P9/Maps/L_Station_Redesign -TargetPlatform=Android_ETC2  -unversioned -fileopenlog -abslog="C:\Program Files\Epic Games\UE_5.7\Engine\Programs\AutomationTool\Saved\Cook-2026.11.08-01.22.39.txt" -stdout -CrashForUAT -unattended -NoLogTimes
+LogInit: Display: Running engine for game: ThanePlatform9
+LogCore: Display: Requested channels: 'cpu,gpu,frame,log,bookmark,screenshot,region'
+LogTrace: Display: Control listening on port 1985
+LogCsvProfiler: Display: Metadata set : platform="Windows"
+LogCsvProfiler: Display: Metadata set : config="Development"
+LogCsvProfiler: Display: Metadata set : buildversion="++UE5+Release-5.7-CL-51494982"
+LogCsvProfiler: Display: Metadata set : engineversion="5.7.4-51494982+++UE5+Release-5.7"
+LogCsvProfiler: Display: Metadata set : enginereleaseversion="5.7.4"
+LogCsvProfiler: Display: Metadata set : os="Windows 11 (26H2) [10.0.26300.9711] "
+LogCsvProfiler: Display: Metadata set : cpu="GenuineIntel|Intel(R) Core(TM) i7-14700HX"
+LogCsvProfiler: Display: Metadata set : pgoenabled="0"
+LogCsvProfiler: Display: Metadata set : pgoprofilingenabled="0"
+LogCsvProfiler: Display: Metadata set : ltoenabled="0"
+LogCsvProfiler: Display: Metadata set : asan="0"
+LogCsvProfiler: Display: Metadata set : mergedmodules="0"
+LogCsvProfiler: Display: Metadata set : commandline="" "C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\ThanePlatform9.uproject" -run=Cook -Map=/Game/P9/Maps/L_Station_Redesign -TargetPlatform=Android_ETC2 -unversioned -fileopenlog -abslog="C:\Program Files\Epic Games\UE_5.7\Engine\Programs\AutomationTool\Saved\Cook-2026.11.08-01.22.39.txt" -stdout -CrashForUAT -unattended -NoLogTimes""
+LogCsvProfiler: Display: Metadata set : loginid="0693cefa4e90349259d8c2b9cd87f12a"
+LogCsvProfiler: Display: Metadata set : llm="0"
+LogCsvProfiler: Display: Metadata set : systemresolution.resx="1280"
+LogCsvProfiler: Display: Metadata set : systemresolution.resy="720"
+LogAudio: Display: Audio Device Manager not initializing due to all audio being disabled. If this is not intentional, please check command line arguments for "-nosound".
+LogConfig: Display: Loading VulkanPC ini files took 0.04 seconds
+LogConfig: Display: Loading Windows ini files took 0.05 seconds
+LogConfig: Display: Loading Unix ini files took 0.05 seconds
+LogConfig: Display: Loading Mac ini files took 0.05 seconds
+LogConfig: Display: Loading Linux ini files took 0.06 seconds
+LogAssetRegistry: Display: Asset registry cache read as 71.4 MiB from ../../../../../../Users/niles/Documents/Unreal Projects/ThanePlatform9/Intermediate/CachedAssetRegistry_0.bin.
+LogConfig: Display: Loading Android ini files took 0.07 seconds
+LogConfig: Display: Loading IOS ini files took 0.08 seconds
+LogConfig: Display: Loading VisionOS ini files took 0.08 seconds
+LogConfig: Display: Loading TVOS ini files took 0.08 seconds
+LogPluginManager: Display: The Plugin StructUtils has been marked deprecated for 5.5 and will be removed soon. Please update your dependencies.
+RenderDocPlugin: Display: RenderDoc plugin will not be loaded. Use '-AttachRenderDoc' on the cmd line or enable 'renderdoc.AutoAttach' in the plugin settings.
+LogHAL: Display: Platform has ~ 16 GB [16869548032 / 17179869184 / 16], which maps to Larger [LargestMinGB=32, LargerMinGB=12, DefaultMinGB=8, SmallerMinGB=6, SmallestMinGB=0)
+LogCsvProfiler: Display: Metadata set : extradevelopmentmemorymb="0"
+LogTextureFormatASTC: Display: ASTCEnc version 5.0.1 library loaded
+LogTextureFormatManager: Display: Loaded Base TextureFormat: TextureFormatASTC
+LogTextureFormatManager: Display: Loaded Base TextureFormat: TextureFormatDXT
+LogTextureFormatManager: Display: Loaded Base TextureFormat: TextureFormatETC2
+LogTextureFormatManager: Display: Loaded Base TextureFormat: TextureFormatIntelISPCTexComp
+LogTextureFormatManager: Display: Loaded Base TextureFormat: TextureFormatUncompressed
+LogTextureFormatOodle: Display: Oodle Texture TFO init; latest sdk version = 2.9.14
+LogTextureFormatOodle: Display: Oodle Texture loading DLL: oo2tex_win64_2.9.14.dll
+LogTextureFormatOodle: Display: Oodle Texture loading DLL: oo2tex_win64_2.9.5.dll
+LogTextureFormatManager: Display: Loaded Base TextureFormat: TextureFormatOodle
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ASTC'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_DXT'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC2'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_OpenXR'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'AndroidClient'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ASTCClient'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_DXTClient'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_ETC2Client'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_OpenXRClient'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_Multi'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'Android_MultiClient'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'IOS'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'IOSClient'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'Linux'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxEditor'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxServer'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'LinuxClient'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'Mac'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'MacEditor'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'MacServer'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'MacClient'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'TVOS'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'TVOSClient'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'Windows'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsEditor'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsServer'
+LogTargetPlatformManager: Display: Loaded TargetPlatform 'WindowsClient'
+LogTargetPlatformManager: Display: Building Assets For Android_ETC2
+LogAudioDebug: Display: Lib vorbis DLL was dynamically loaded.
+LogObj: Display: Attempting to load config data for Default__SlateThemeManager before the Class has been constructed/registered/linked (likely during module loading or early startup). This will result in the load silently failing and should be fixed.
+LogCsvProfiler: Display: Metadata set : verbatimrhiname="Null"
+LogCsvProfiler: Display: Metadata set : rhiname="Null"
+LogCsvProfiler: Display: Metadata set : rhifeaturelevel="SM6"
+LogCsvProfiler: Display: Metadata set : shaderplatform="PCD3D_SM6"
+LogDerivedDataCache: Display: Memory: Max Cache Size: -1 MB
+LogDerivedDataCache: Display: ../../../Engine/DerivedDataCache/Compressed.ddp: Opened pak cache for reading. (1729 MiB)
+LogZenServiceInstance: Display: Launching zen utility 'C:/Program Files/Epic Games/UE_5.7/Engine/Binaries/Win64/zen.exe service status'.
+LogZenServiceInstance: Display: Launching zen utility 'C:/Program Files/Epic Games/UE_5.7/Engine/Binaries/Win64/zen.exe service status'.
+LogZenServiceInstance: Display: Read zen version cache file from 'C:/Users/niles/AppData/Local/UnrealEngine/5.7/Saved/Zen/zen.version', version: '5.7.6-202510061608-windows-x64-release-9a1ebb9'
+LogZenServiceInstance: Display: Read zen version cache file from 'C:/Users/niles/AppData/Local/UnrealEngine/Common/Zen/Install/zen.version', version: '5.7.6-202510061608-windows-x64-release-9a1ebb9'
+LogZenServiceInstance: Display: Installed service at 'C:/Users/niles/AppData/Local/UnrealEngine/Common/Zen/Install/zenserver.exe' is up to date
+LogZenServiceInstance: Display: Launching executable 'C:/Users/niles/AppData/Local/UnrealEngine/Common/Zen/Install/zenserver.exe', working dir 'C:/Users/niles/AppData/Local/UnrealEngine/Common/Zen/Install', data dir 'C:/Users/niles/AppData/Local/UnrealEngine/Common/Zen/Data', args '--port 8558 --data-dir C:\Users\niles\AppData\Local\UnrealEngine\Common\Zen\Data --http asio --gc-cache-duration-seconds 1209600 --gc-interval-seconds 21600 --gc-low-diskspace-threshold 2147483648 --cache-bucket-limit-overwrites --quiet --http-forceloopback --owner-pid 152104  --child-id Zen_152104_Startup'
+LogZenServiceInstance: Display: Unreal Zen Storage Server HTTP service at http://[::1]:8558 status: OK!.
+LogDerivedDataCache: Display: ZenLocal: Using ZenServer HTTP service at [::1] with namespace ue.ddc status: OK!.
+LogDerivedDataCache: Display: C:/Users/niles/AppData/Local/UnrealEngine/Common/DerivedDataCache: Performance: Latency=0.11ms. RandomReadSpeed=24.16MBs, RandomWriteSpeed=207.01MBs. Assigned SpeedClass 'Local'
+LogUbaHorde: Display: UBA/Horde Configuration [Uba.Provider.Horde]: Not Enabled
+LogShaderCompilers: Display: No distributed shader compiler controller found
+LogShaderCompilers: Display: Using 25 local workers for shader compilation
+LogShaderCompilers: Display: Compiling shader autogen file: ../../../../../../Users/niles/Documents/Unreal Projects/ThanePlatform9/Intermediate/ShaderAutogen/PCD3D_SM6/AutogenShaderHeaders.ush
+LogShaderCompilers: Display: Autogen file is unchanged, skipping write.
+LogEditorDomain: Display: EditorDomain is Disabled
+LogAssetRegistry: Display: AssetDataGatherer spent 0.000s loading caches ../../../../../../Users/niles/Documents/Unreal Projects/ThanePlatform9/Intermediate/CachedAssetRegistry_*.bin.
+LogDeviceProfileManager: Display: Deviceprofile LinuxArm64Editor not found.
+LogDeviceProfileManager: Display: Deviceprofile LinuxArm64 not found.
+LogCsvProfiler: Display: Metadata set : deviceprofile="WindowsEditor"
+LogStreaming: Display: FlushAsyncLoading(1): 1 QueuedPackages, 0 AsyncPackages
+LogStreaming: Display: Flushing package /Engine/Functions/Engine_MaterialFunctions01/Shading/PowerToRoughness (state: WaitingForIo) recursively from another package /Engine/EngineMaterials/DefaultTextMaterialOpaque (state: CreateLinkerLoadExports) will result in a partially loaded package to avoid a deadlock.
+LogStreaming: Display: Package /Engine/EngineMaterials/DefaultTextMaterialOpaque is adding a dynamic import to package /Engine/Functions/Engine_MaterialFunctions01/Shading/PowerToRoughness because of a recursive sync load
+LogStreaming: Display: Flushing package /Engine/Functions/Engine_MaterialFunctions01/Shading/PowerToRoughness (state: DeferredPostLoad) recursively from another package /Engine/EngineMaterials/DefaultTextMaterialOpaque (state: CreateLinkerLoadExports) will result in a partially loaded package to avoid a deadlock.
+LogStreaming: Display: Flushing package /Engine/Functions/Engine_MaterialFunctions01/Shading/ConvertFromDiffSpec (state: WaitingForIo) recursively from another package /Engine/EngineMaterials/DefaultTextMaterialOpaque (state: CreateLinkerLoadExports) will result in a partially loaded package to avoid a deadlock.
+LogStreaming: Display: Package /Engine/EngineMaterials/DefaultTextMaterialOpaque is adding a dynamic import to package /Engine/Functions/Engine_MaterialFunctions01/Shading/ConvertFromDiffSpec because of a recursive sync load
+LogStreaming: Display: Flushing package /Engine/Functions/Engine_MaterialFunctions01/Shading/ConvertFromDiffSpec (state: DeferredPostLoad) recursively from another package /Engine/EngineMaterials/DefaultTextMaterialOpaque (state: CreateLinkerLoadExports) will result in a partially loaded package to avoid a deadlock.
+LogStreaming: Display: Flushing package /Engine/EngineMaterials/WorldGridMaterial (state: WaitingForIo) recursively from another package /Engine/EngineMaterials/DefaultTextMaterialOpaque (state: CreateLinkerLoadExports) will result in a partially loaded package to avoid a deadlock.
+LogStreaming: Display: Flushing package /Engine/EngineMaterials/DefaultDeferredDecalMaterial (state: WaitingForIo) recursively from another package /Engine/EngineMaterials/WorldGridMaterial (state: CreateLinkerLoadExports) will result in a partially loaded package to avoid a deadlock.
+LogStreaming: Display: Flushing package /Engine/EngineMaterials/DefaultLightFunctionMaterial (state: WaitingForIo) recursively from another package /Engine/EngineMaterials/DefaultDeferredDecalMaterial (state: CreateLinkerLoadExports) will result in a partially loaded package to avoid a deadlock.
+LogStreaming: Display: Flushing package /Engine/EngineMaterials/DefaultPostProcessMaterial (state: WaitingForIo) recursively from another package /Engine/EngineMaterials/DefaultLightFunctionMaterial (state: CreateLinkerLoadExports) will result in a partially loaded package to avoid a deadlock.
+LogStreaming: Display: Package /Engine/EngineMaterials/DefaultLightFunctionMaterial is adding a dynamic import to package /Engine/EngineMaterials/DefaultPostProcessMaterial because of a recursive sync load
+LogStreaming: Display: Flushing package /Engine/EngineMaterials/DefaultPostProcessMaterial (state: DeferredPostLoad) recursively from another package /Engine/EngineMaterials/DefaultLightFunctionMaterial (state: CreateLinkerLoadExports) will result in a partially loaded package to avoid a deadlock.
+LogStreaming: Display: Package /Engine/EngineMaterials/DefaultDeferredDecalMaterial is adding a dynamic import to package /Engine/EngineMaterials/DefaultLightFunctionMaterial because of a recursive sync load
+LogStreaming: Display: Flushing package /Engine/EngineMaterials/DefaultLightFunctionMaterial (state: DeferredPostLoad) recursively from another package /Engine/EngineMaterials/DefaultDeferredDecalMaterial (state: CreateLinkerLoadExports) will result in a partially loaded package to avoid a deadlock.
+LogStreaming: Display: Package /Engine/EngineMaterials/WorldGridMaterial is adding a dynamic import to package /Engine/EngineMaterials/DefaultDeferredDecalMaterial because of a recursive sync load
+LogStreaming: Display: Flushing package /Engine/EngineMaterials/DefaultDeferredDecalMaterial (state: DeferredPostLoad) recursively from another package /Engine/EngineMaterials/WorldGridMaterial (state: CreateLinkerLoadExports) will result in a partially loaded package to avoid a deadlock.
+LogStreaming: Display: Package /Engine/EngineMaterials/DefaultTextMaterialOpaque is adding a dynamic import to package /Engine/EngineMaterials/WorldGridMaterial because of a recursive sync load
+LogStreaming: Display: Flushing package /Engine/EngineMaterials/WorldGridMaterial (state: DeferredPostLoad) recursively from another package /Engine/EngineMaterials/DefaultTextMaterialOpaque (state: CreateLinkerLoadExports) will result in a partially loaded package to avoid a deadlock.
+LogTextureEncodingSettings: Display: Texture Encode Speed: Final (cook).
+LogTextureEncodingSettings: Display: Oodle Texture Encode Speed settings: Fast: RDO Off Lambda=0, Effort=Normal Final: RDO Off Lambda=0, Effort=Normal
+LogTextureEncodingSettings: Display: Shared linear texture encoding: Disabled
+LogMeshReduction: Display: Using QuadricMeshReduction for automatic static mesh reduction
+LogMeshReduction: Display: Using SkeletalMeshReduction for automatic skeletal mesh reduction
+LogMeshReduction: Display: Using ProxyLODMeshReduction for automatic mesh merging
+LogMeshReduction: Display: No distributed automatic mesh merging module available
+LogVirtualization: Display: VirtualizationSystem name found in ini file: None
+LogVirtualization: Display: FNullVirtualizationSystem mounted, virtualization will be disabled
+LogWorldPartition: Display: FWorldPartitionClassDescRegistry::Initialize started...
+LogWorldPartition: Display: FWorldPartitionClassDescRegistry::Initialize took 4.309 ms
+LogMetaSound: Display: MetaSound Page Target Initialized to 'Default'
+LogAudio: Display: Registering Engine Module Parameter Interfaces...
+LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+LogCsvProfiler: Display: Metadata set : largeworldcoordinates="1"
+LogCook: Display: CookProcessCount=1. CookMultiprocess is disabled and the cooker is running as a single process.
+LogCook: Display: CookSettings for Memory:
+	MemoryMaxUsedVirtual 0MiB
+	MemoryMaxUsedPhysical 0MiB
+	MemoryMinFreeVirtual 2048MiB
+	MemoryMinFreePhysical 2048MiB
+	MemoryTriggerGCAtPressureLevel None
+	SoftGCMemoryUseTrigger disabled
+	SoftGCTimeBudgetTrigger enabled (0.05 budget, 30s min period)
+LogCook: Display: SkipOnlyEditorOnly is enabled, unsolicited packages will not be cooked unless they are referenced from the cooked version of the instigator package.
+LogEditorDomain: Display: Cycle detected in parents of class /Script/RigVMDeveloper.RigVMUnitNode. Allow flags for editordomain and incremental cooking will be invalid.
+LogZenServiceInstance: Display: Launching zen utility 'C:/Program Files/Epic Games/UE_5.7/Engine/Binaries/Win64/zen.exe service status'.
+LogZenServiceInstance: Display: Launching zen utility 'C:/Program Files/Epic Games/UE_5.7/Engine/Binaries/Win64/zen.exe service status'.
+LogZenStore: Display: Establishing oplog 'ThanePlatform9.f0b625b2/EditorDomain'
+LogZenStore: Display: Zen project 'ThanePlatform9.f0b625b2' already exists
+LogZenStore: Display: Zen oplog 'ThanePlatform9.f0b625b2/EditorDomain' already exists
+LogCook: Display: Waiting for Asset Registry
+LogAssetRegistry: Display: Starting OnFilesLoaded.Broadcast
+LogPlacementMode: Display: The Asset Registry is done with its initial scan, the list of placeable classes has been updated.
+LogAssetRegistry: Display: Completed OnFilesLoaded.Broadcast: -0.095s
+LogCook: Display: INCREMENTAL COOK DEPENDENCIES: Disabled. Incremental Cook Dependencies are disabled because the cooker is not using ZenStore, and we do not yet support storage of Incremental Cook dependency data with loose cooked packages. Falling back to legacy iterative cook mode.
+LogCook: Display: CalculateGlobalDependenciesHash(Android_ETC2):
+LogCook: Display: 	[Engine]:Core.System.CanStripEditorOnlyExportsAndImports = True
+LogCook: Display: 	[Engine]:Core.System.CanSkipEditorReferencedPackagesWhenCooking = False
+LogCook: Display: 	CanUseUnversionedPropertySerialization = True
+LogCook: Display: 	[Editor]:CookSettings.AutomaticOptionalInclusionAssetType = /Script/Niagara.NiagaraScript, /Script/Niagara.NiagaraEmitter, /Script/Niagara.NiagaraSystem, /Script/NiagaraEditor.NiagaraParameterDefinitions, /Script/Niagara.NiagaraEffectType, /Script/Niagara.NiagaraValidationRuleSet
+LogCook: Display: 	IsCookFlagSet(ECookInitializationFlags::Unversioned) = True
+LogCook: Display: 	FCoreRedirects::AppendHashOfGlobalRedirects = 9e692a6cb3dabfbf03017947d37b152b05f971f328ad35a2a08da0c52b4bccf5
+LogCook: Display: 	GlobalDependenciesHash(Android_ETC2) = 5b9191c2371d93a107f21f0874ae83b298f3b1b9d743c2d0f0ea7d213910c725
+LogCook: Display: FULL COOK: Incremental Cook Dependencies are disabled, and -legacyiterative was not specified. Deleting previously cooked packages for platform Android_ETC2 and recooking all packages discovered in the current cook.
+LogCook: Display: Sandbox cleanup took 0.057 seconds for platforms Android_ETC2
+LogCook: Display: Compiling global changed shaders for platform 'Android_ETC2'
+LogShaderLibrary: Display:
+LogShaderLibrary: Display: Shader Library 'Global' (SF_VULKAN_ES31_ANDROID-VULKAN_ES3_1_ANDROID) Stats:
+LogShaderLibrary: Display: =================
+LogShaderLibrary: Display: Assets: 1, Unique Shadermaps: 160 (16000.00%)
+LogShaderLibrary: Display: Total Shaders: 2007, Unique Shaders: 2002 (99.75%)
+LogShaderLibrary: Display: Total Shader Size: 7.34mb, Unique Shaders Size: 7.33mb (99.96%)
+LogShaderLibrary: Display: === Extended info:
+LogShaderLibrary: Display: Minimum number of shaders in shadermap: 1
+LogShaderLibrary: Display: Median number of shaders in shadermap: 3
+LogShaderLibrary: Display: Maximum number of shaders in shadermap: 373
+LogShaderLibrary: Display: Number of shadermaps referencing top 10 most shared shaders:
+LogShaderLibrary: Display:     3, 2, 2, 2, 1, 1, 1, 1, 1, 1
+LogShaderLibrary: Display: Unique shaders itemization (sorted by compressed size):
+LogShaderLibrary: Display: SF_Compute: 1140 shaders (56.94%), compressed size: 4.85 MB (4.36 KB avg per shader), uncompressed size: 17.10 MB (15.36 KB avg per shader)
+LogShaderLibrary: Display: SF_Pixel: 783 shaders (39.11%), compressed size: 2.40 MB (3.14 KB avg per shader), uncompressed size: 7.75 MB (10.14 KB avg per shader)
+LogShaderLibrary: Display: SF_Vertex: 79 shaders (3.95%), compressed size: 0.08 MB (1.05 KB avg per shader), uncompressed size: 0.18 MB (2.33 KB avg per shader)
+LogShaderLibrary: Display: Textual dump saved to '../../../../../../Users/niles/Documents/Unreal Projects/ThanePlatform9/Saved/Shaders/SF_VULKAN_ES31_ANDROID-VULKAN_ES3_1_ANDROID/ShaderDebug-Global-SF_VULKAN_ES31_ANDROID-VULKAN_ES3_1_ANDROID/Dump.txt'
+LogShaderLibrary: Display: =================
+LogShaderLibrary: Display:
+LogShaderLibrary: Display: Shader Library 'Global' (GLSL_ES3_1_ANDROID-OPENGL_ES3_1_ANDROID) Stats:
+LogShaderLibrary: Display: =================
+LogShaderLibrary: Display: Assets: 1, Unique Shadermaps: 155 (15500.00%)
+LogShaderLibrary: Display: Total Shaders: 1559, Unique Shaders: 1559 (100.00%)
+LogShaderLibrary: Display: Total Shader Size: 4.12mb, Unique Shaders Size: 4.12mb (100.00%)
+LogShaderLibrary: Display: === Extended info:
+LogShaderLibrary: Display: Minimum number of shaders in shadermap: 1
+LogShaderLibrary: Display: Median number of shaders in shadermap: 3
+LogShaderLibrary: Display: Maximum number of shaders in shadermap: 205
+LogShaderLibrary: Display: Number of shadermaps referencing top 10 most shared shaders:
+LogShaderLibrary: Display:     1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+LogShaderLibrary: Display: Unique shaders itemization (sorted by compressed size):
+LogShaderLibrary: Display: SF_Compute: 715 shaders (45.86%), compressed size: 2.14 MB (3.06 KB avg per shader), uncompressed size: 9.80 MB (14.04 KB avg per shader)
+LogShaderLibrary: Display: SF_Pixel: 768 shaders (49.26%), compressed size: 1.92 MB (2.56 KB avg per shader), uncompressed size: 6.43 MB (8.57 KB avg per shader)
+LogShaderLibrary: Display: SF_Vertex: 76 shaders (4.87%), compressed size: 0.06 MB (0.80 KB avg per shader), uncompressed size: 0.12 MB (1.68 KB avg per shader)
+LogShaderLibrary: Display: Textual dump saved to '../../../../../../Users/niles/Documents/Unreal Projects/ThanePlatform9/Saved/Shaders/GLSL_ES3_1_ANDROID-OPENGL_ES3_1_ANDROID/ShaderDebug-Global-GLSL_ES3_1_ANDROID-OPENGL_ES3_1_ANDROID/Dump.txt'
+LogShaderLibrary: Display: =================
+LogCook: Display: Discovering localized assets for cultures: en
+LogCook: Display: Found 0 localized assets
+LogCook: Display: Cooked packages 0 Packages Remain 404 Total 404
+LogCook: Display: Cook Diagnostics: OpenFileHandles=235, VirtualMemory=1439MiB, VirtualMemoryAvailable=14999MiB
+LogCook: Display: Garbage collection triggered (Soft). Triggered by conditions:
+  CookSettings.SoftGCTimeTrigger: Periodic triggering of SoftGC: No duration data.
+LogCookCommandlet: Display: GarbageCollection... (Periodic GC)
+LogStaticMesh: Display: Building static mesh SM_P9_LanternMan (Required Memory Estimate: 46.41205 MB)...
+LogStaticMesh: Display: Building static mesh SM_P9_FOBB_BayLeadIn8A (Required Memory Estimate: 0.281669 MB)...
+LogStaticMesh: Display: Building static mesh SM_P9_Greeting_rest (Required Memory Estimate: 62.3462 MB)...
+LogStaticMesh: Display: Building static mesh SM_P9_FOBB_End8A (Required Memory Estimate: 0.482381 MB)...
+LogStaticMesh: Display: Building static mesh SM_P9_FOBB_South8A (Required Memory Estimate: 0.820753 MB)...
+LogStaticMesh: Display: Building static mesh SM_P9_StairPF910_Upper8A (Required Memory Estimate: 0.153695 MB)...
+LogStaticMesh: Display: Building static mesh SM_P9_EscalatorStep8A (Required Memory Estimate: 0.015114 MB)...
+LogStaticMesh: Display: Building static mesh SM_P9_Greeting_lunge (Required Memory Estimate: 62.3462 MB)...
+LogStaticMesh: Display: Building static mesh SM_P9_FOBB_Bay8A (Required Memory Estimate: 0.281669 MB)...
+LogStaticMesh: Display: Waiting for static meshes to be ready 0/3 (/Game/P9/Creatures8A/LanternMan/SM_P9_LanternMan) ...
+LogStaticMesh: Display: Building static mesh SM_P9_Greeting_rest (Required Memory Estimate: 62.3462 MB)...
+LogStaticMesh: Display: Building static mesh SM_P9_Greeting_lunge (Required Memory Estimate: 62.3462 MB)...
+LogStaticMesh: Display: Building static mesh SM_P9_LanternMan (Required Memory Estimate: 46.41205 MB)...
+LogCook: Display: Cooked packages 224 Packages Remain 980 Total 1204
+LogMaterial: Display: Missing cached shadermap for M_P9_Creature8A_v2 in VULKAN_ES3_1_ANDROID, Default, ES3_1, Game (DDC key hash: 16e807d9edc108a99bf2a6a23b66ae2a3624264e), compiling.
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Train_Pass...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Train_Moving_Loop...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Train_Approach...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Train_Horn_Distant...
+LogAudioDerivedData: Display: SFX_Train_Horn_Distant compressed to 12.73% (from 243KB to 31KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Train_Horn_Distant.SFX_Train_Horn_Distant: Duration=2.60 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=31769 bytes, ChunkN=0)
+LogAudioDerivedData: Display: SFX_Train_Pass compressed to 13.83% (from 750KB to 103KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Train_Pass.SFX_Train_Pass: Duration=8.00 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=106179 bytes, ChunkN=0)
+LogAudioDerivedData: Display: SFX_Train_Approach compressed to 10.23% (from 843KB to 86KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: SFX_Train_Moving_Loop compressed to 11.88% (from 937KB to 111KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Train_Moving_Loop.SFX_Train_Moving_Loop: Duration=10.00 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=114059 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Train_Approach.SFX_Train_Approach: Duration=9.00 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=88353 bytes, ChunkN=0)
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Rail_Screech...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Railway_Hum_Loop...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Kanchana_Presence_Loop...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Kanchana_Movement...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Kanchana_Footstep_Distant_03...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Kanchana_Footstep_Distant_02...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Kanchana_Footstep_Distant_01...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Kanchana_Footstep_Close_03...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Kanchana_Footstep_Close_02...
+LogAudioDerivedData: Display: SFX_Kanchana_Footstep_Distant_03 compressed to 16.69% (from 30KB to 5KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: SFX_Kanchana_Footstep_Distant_01 compressed to 15.36% (from 30KB to 4KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: SFX_Kanchana_Footstep_Close_02 compressed to 15.20% (from 30KB to 4KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Kanchana_Footstep_Close_01...
+LogAudioDerivedData: Display: SFX_Kanchana_Footstep_Close_03 compressed to 14.82% (from 30KB to 4KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Kanchana_Breathing_Loop...
+LogAudioDerivedData: Display: SFX_Kanchana_Footstep_Close_01 compressed to 15.36% (from 30KB to 4KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Horror_WhisperTexture...
+LogAudioDerivedData: Display: SFX_Kanchana_Footstep_Distant_02 compressed to 16.60% (from 30KB to 4KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Horror_Transition...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Horror_ReverseBell...
+LogAudioDerivedData: Display: SFX_Kanchana_Movement compressed to 14.50% (from 168KB to 24KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: SFX_Rail_Screech compressed to 18.33% (from 300KB to 55KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: SFX_Horror_Transition compressed to 14.50% (from 234KB to 33KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: SFX_Horror_ReverseBell compressed to 8.16% (from 421KB to 34KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: SFX_Railway_Hum_Loop compressed to 22.04% (from 750KB to 165KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: SFX_Kanchana_Breathing_Loop compressed to 15.84% (from 843KB to 133KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: SFX_Kanchana_Presence_Loop compressed to 11.88% (from 1,125KB to 133KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Horror_MetallicStinger...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Horror_LowHit...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Horror_DistortedElectrical...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Horror_DeepImpact...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Horror_CreepyBreathing...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Land...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Jump...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Interact_02...
+LogAudioDerivedData: Display: SFX_Land compressed to 9.77% (from 46KB to 4KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Interact_01...
+LogAudioDerivedData: Display: SFX_Jump compressed to 15.90% (from 32KB to 5KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Gate_Move...
+LogAudioDerivedData: Display: SFX_Interact_02 compressed to 4.28% (from 23KB to 1KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Footstep_Stairs_04...
+LogAudioDerivedData: Display: SFX_Interact_01 compressed to 4.50% (from 23KB to 1KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Footstep_Stairs_03...
+LogAudioDerivedData: Display: SFX_Horror_MetallicStinger compressed to 10.81% (from 375KB to 40KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Footstep_Stairs_02...
+LogAudioDerivedData: Display: SFX_Footstep_Stairs_03 compressed to 15.76% (from 30KB to 4KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Footstep_Platform_04...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Footstep_Stairs_01...
+LogAudioDerivedData: Display: SFX_Footstep_Stairs_04 compressed to 15.93% (from 30KB to 4KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: SFX_Footstep_Stairs_02 compressed to 15.43% (from 30KB to 4KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Footstep_Platform_01...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Footstep_Platform_03...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Footstep_Platform_02...
+LogAudioDerivedData: Display: SFX_Horror_LowHit compressed to 2.46% (from 234KB to 5KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Footstep_Footbridge_03...
+LogAudioDerivedData: Display: SFX_Horror_WhisperTexture compressed to 14.23% (from 1,312KB to 186KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: SFX_Footstep_Platform_04 compressed to 15.03% (from 30KB to 4KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Footstep_Footbridge_04...
+LogAudioDerivedData: Display: SFX_Footstep_Platform_02 compressed to 14.51% (from 30KB to 4KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: SFX_Footstep_Platform_01 compressed to 15.25% (from 30KB to 4KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Footstep_Footbridge_02...
+LogAudioDerivedData: Display: SFX_Footstep_Platform_03 compressed to 15.43% (from 30KB to 4KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: SFX_Footstep_Stairs_01 compressed to 15.77% (from 30KB to 4KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave BGM_Platform9_Horror...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Footstep_Footbridge_01...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave BGM_Main_Station_Ambience...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave BGM_Final_Epilogue...
+LogAudioDerivedData: Display: SFX_Footstep_Footbridge_03 compressed to 14.15% (from 30KB to 4KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave BGM_Anomaly_Ambience...
+LogAudioDerivedData: Display: SFX_Footstep_Footbridge_04 compressed to 14.35% (from 30KB to 4KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave AMB_Platform_Wind_Loop...
+LogAudioDerivedData: Display: SFX_Footstep_Footbridge_01 compressed to 14.04% (from 30KB to 4KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave AMB_Footbridge_Loop...
+LogAudioDerivedData: Display: SFX_Footstep_Footbridge_02 compressed to 13.99% (from 30KB to 4KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_LanternMan_Stinger...
+LogAudioDerivedData: Display: SFX_Gate_Move compressed to 14.92% (from 206KB to 30KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: SFX_Horror_DistortedElectrical compressed to 15.37% (from 281KB to 43KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_LanternMan_LowRumble_Loop...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_LanternMan_Flame_Loop...
+LogAudioDerivedData: Display: SFX_Horror_DeepImpact compressed to 12.27% (from 375KB to 46KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_LanternMan_LanternCreak...
+LogAudioDerivedData: Display: SFX_LanternMan_LanternCreak compressed to 15.04% (from 187KB to 28KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_LanternMan_ElectricalFlicker...
+LogAudioDerivedData: Display: SFX_LanternMan_Stinger compressed to 9.98% (from 468KB to 46KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Greeting_Scream...
+LogAudioDerivedData: Display: SFX_LanternMan_ElectricalFlicker compressed to 16.83% (from 234KB to 39KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Greeting_JumpscareImpact...
+LogAudioDerivedData: Display: SFX_Horror_CreepyBreathing compressed to 16.36% (from 900KB to 147KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: SFX_LanternMan_LowRumble_Loop compressed to 7.29% (from 937KB to 68KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Greeting_DistantCall...
+LogAudioDerivedData: Display: Building compressed audio format BINKA hash BINKA_SCVER_5028_R4DV_false_SR0_48000.000000_SR1_32000.000000_SR2_24000.000000_SR3_12000.000000_SR4_8000.000000_QMOD_1.000000_CQLT_-1_ASTH_0.000000_INLC_false_LCK1_0.000000_CSZE_65536_LCF_false_ZCS_256_MCSO_-1_END wave SFX_Greeting_DistortedLayer...
+LogAudioDerivedData: Display: SFX_LanternMan_Flame_Loop compressed to 14.08% (from 750KB to 105KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: SFX_Greeting_JumpscareImpact compressed to 12.59% (from 281KB to 35KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: SFX_Greeting_Scream compressed to 19.52% (from 225KB to 43KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: SFX_Greeting_DistortedLayer compressed to 19.19% (from 281KB to 53KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudioDerivedData: Display: SFX_Greeting_DistantCall compressed to 14.22% (from 515KB to 73KB) with BINKA at Quality 80 with Quality Modifier 1.00
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Rail_Screech.SFX_Rail_Screech: Duration=3.20 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=56319 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Railway_Hum_Loop.SFX_Railway_Hum_Loop: Duration=8.00 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=169259 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_Kanchana_Presence_Loop.SFX_Kanchana_Presence_Loop: Duration=12.00 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=136815 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_Kanchana_Movement.SFX_Kanchana_Movement: Duration=1.80 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=25053 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_Kanchana_Footstep_Distant_03.SFX_Kanchana_Footstep_Distant_03: Duration=0.32 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=5123 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_Kanchana_Footstep_Distant_02.SFX_Kanchana_Footstep_Distant_02: Duration=0.32 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=5095 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_Kanchana_Footstep_Distant_01.SFX_Kanchana_Footstep_Distant_01: Duration=0.32 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=4711 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_Kanchana_Footstep_Close_03.SFX_Kanchana_Footstep_Close_03: Duration=0.32 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=4547 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_Kanchana_Footstep_Close_02.SFX_Kanchana_Footstep_Close_02: Duration=0.32 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=4663 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_Kanchana_Footstep_Close_01.SFX_Kanchana_Footstep_Close_01: Duration=0.32 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=4711 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_Kanchana_Breathing_Loop.SFX_Kanchana_Breathing_Loop: Duration=9.00 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=136865 bytes, ChunkN=0)
+LogAudioDerivedData: Display: AMB_Platform_Wind_Loop compressed to 12.92% (from 7,500KB to 968KB) with BINKA at Quality 45 with Quality Modifier 1.00
+LogAudioDerivedData: Display: AMB_Footbridge_Loop compressed to 12.14% (from 8,437KB to 1,024KB) with BINKA at Quality 45 with Quality Modifier 1.00
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Horror_WhisperTexture.SFX_Horror_WhisperTexture: Duration=7.00 secs, Channels=2), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=191237 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Horror_Transition.SFX_Horror_Transition: Duration=2.50 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=34801 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Horror_ReverseBell.SFX_Horror_ReverseBell: Duration=4.50 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=35233 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Horror_MetallicStinger.SFX_Horror_MetallicStinger: Duration=4.00 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=41487 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Horror_LowHit.SFX_Horror_LowHit: Duration=2.50 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=5901 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Horror_DistortedElectrical.SFX_Horror_DistortedElectrical: Duration=3.00 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=44269 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Horror_DeepImpact.SFX_Horror_DeepImpact: Duration=4.00 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=47091 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Horror_CreepyBreathing.SFX_Horror_CreepyBreathing: Duration=9.60 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=150791 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Land.SFX_Land: Duration=0.50 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=4681 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Jump.SFX_Jump: Duration=0.35 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=5337 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Interact_02.SFX_Interact_02: Duration=0.25 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=1017 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Interact_01.SFX_Interact_01: Duration=0.25 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=1069 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Gate_Move.SFX_Gate_Move: Duration=2.20 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=31509 bytes, ChunkN=0)
+LogAudioDerivedData: Display: BGM_Anomaly_Ambience compressed to 15.71% (from 16,875KB to 2,650KB) with BINKA at Quality 45 with Quality Modifier 1.00
+LogAudioDerivedData: Display: BGM_Final_Epilogue compressed to 8.40% (from 22,875KB to 1,922KB) with BINKA at Quality 45 with Quality Modifier 1.00
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Footstep_Stairs_04.SFX_Footstep_Stairs_04: Duration=0.32 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=4887 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Footstep_Stairs_03.SFX_Footstep_Stairs_03: Duration=0.32 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=4835 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Footstep_Stairs_02.SFX_Footstep_Stairs_02: Duration=0.32 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=4735 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Footstep_Stairs_01.SFX_Footstep_Stairs_01: Duration=0.32 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=4839 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Footstep_Platform_04.SFX_Footstep_Platform_04: Duration=0.32 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=4611 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Footstep_Platform_03.SFX_Footstep_Platform_03: Duration=0.32 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=4735 bytes, ChunkN=0)
+LogAudioDerivedData: Display: BGM_Platform9_Horror compressed to 4.70% (from 22,500KB to 1,057KB) with BINKA at Quality 45 with Quality Modifier 1.00
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Footstep_Platform_02.SFX_Footstep_Platform_02: Duration=0.32 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=4451 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Footstep_Platform_01.SFX_Footstep_Platform_01: Duration=0.32 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=4679 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Footstep_Footbridge_04.SFX_Footstep_Footbridge_04: Duration=0.32 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=4403 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Footstep_Footbridge_03.SFX_Footstep_Footbridge_03: Duration=0.32 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=4339 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Footstep_Footbridge_02.SFX_Footstep_Footbridge_02: Duration=0.32 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=4291 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Footstep_Footbridge_01.SFX_Footstep_Footbridge_01: Duration=0.32 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=4307 bytes, ChunkN=0)
+LogAudioDerivedData: Display: BGM_Main_Station_Ambience compressed to 10.12% (from 33,750KB to 3,417KB) with BINKA at Quality 45 with Quality Modifier 1.00
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/Music/BGM_Platform9_Horror.BGM_Platform9_Horror: Duration=120.00 secs, Channels=2), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=6, Chunk0=28 bytes, Chunk1=262083 bytes, ChunkN=261865)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/Music/BGM_Main_Station_Ambience.BGM_Main_Station_Ambience: Duration=180.00 secs, Channels=2), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=15, Chunk0=28 bytes, Chunk1=261571 bytes, ChunkN=261647)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/Music/BGM_Final_Epilogue.BGM_Final_Epilogue: Duration=122.00 secs, Channels=2), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=9, Chunk0=28 bytes, Chunk1=261715 bytes, ChunkN=261405)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/Music/BGM_Anomaly_Ambience.BGM_Anomaly_Ambience: Duration=90.00 secs, Channels=2), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=12, Chunk0=28 bytes, Chunk1=261405 bytes, ChunkN=261007)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/Ambience/AMB_Platform_Wind_Loop.AMB_Platform_Wind_Loop: Duration=40.00 secs, Channels=2), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=5, Chunk0=28 bytes, Chunk1=261867 bytes, ChunkN=261603)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/Ambience/AMB_Footbridge_Loop.AMB_Footbridge_Loop: Duration=45.00 secs, Channels=2), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=6, Chunk0=28 bytes, Chunk1=261831 bytes, ChunkN=261555)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_LanternMan_Stinger.SFX_LanternMan_Stinger: Duration=5.00 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=47909 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_LanternMan_LowRumble_Loop.SFX_LanternMan_LowRumble_Loop: Duration=10.00 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=69939 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_LanternMan_LanternCreak.SFX_LanternMan_LanternCreak: Duration=2.00 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=28879 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_LanternMan_Flame_Loop.SFX_LanternMan_Flame_Loop: Duration=8.00 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=108163 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_LanternMan_ElectricalFlicker.SFX_LanternMan_ElectricalFlicker: Duration=2.50 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=40389 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_Greeting_Scream.SFX_Greeting_Scream: Duration=2.40 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=44971 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_Greeting_JumpscareImpact.SFX_Greeting_JumpscareImpact: Duration=3.00 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=36265 bytes, ChunkN=0)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_Greeting_DistortedLayer.SFX_Greeting_DistortedLayer: Duration=3.00 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=55249 bytes, ChunkN=0)
+LogCook: Display: Garbage collection triggered (Full). Triggered by conditions:
+  CookSettings.MemoryMinFreePhysical: Available physical memory 1268MiB is less than 2048MiB.
+LogCook: Display: Cooked packages 601 Packages Remain 604 Total 1205
+LogCookCommandlet: Display: GarbageCollection... (Exceeded Max Memory)
+LogAudio: Display: Chunk stats for (SoundWave /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_Greeting_DistantCall.SFX_Greeting_DistantCall: Duration=5.50 secs, Channels=1), Settings(FirstChunkSize=4294967295 frames, InlineFirst=false, MaxChunkSize=262144), Chunks=2, Chunk0=28 bytes, Chunk1=75091 bytes, ChunkN=0)
+LogCook: Display: GarbageCollection Results: Garbage Collection was not very impactful.
+LogCook: Display: 	MemoryAnalysis: General:
+		Type: Full
+	Duration: 0.086s
+LogCook: Display: 	MemoryAnalysis: NumObjects:
+		Capacity:           25231360
+		Process Min:           44993
+		Process Max:           57903
+		Process Spread:        12910
+		Before GC:             57903
+		After GC:              44993
+		Freed by GC:           12910
+LogCook: Display: 	MemoryAnalysis: Virtual Memory:
+		Process Min:            1411 MB
+		Process Max:            2154 MB
+		Process Spread:          743 MB
+		Before GC:              2154 MB
+		After GC:               2154 MB
+		Freed by GC:               0 MB
+LogCook: Display: 	MemoryAnalysis: Allocator Stats Before:
+		Item Malloc calls 0
+		Item Realloc calls 0
+		Item Free calls 0
+		Item Total Allocator calls 0
+LogCook: Display: 	MemoryAnalysis: Allocator Stats After:
+		Item Malloc calls 0
+		Item Realloc calls 0
+		Item Free calls 0
+		Item Total Allocator calls 0
+LogCook: Display: Extended memory diagnostics are disabled. Run with -llm or -trace=memtag to log information for UObject classes and LLM tags.
+LogCook: Display: Garbage collection triggers ignored: Out of memory condition has been detected, but is only 0s after the last GC. It will be prevented until 60 seconds have passed and we may run out of memory.
+Garbage collection triggered by conditions:
+  CookSettings.MemoryMinFreePhysical: Available physical memory 1281MiB is less than 2048MiB.
+LogMaterial: Display: Missing cached shadermap for M_P9_Creature8A_v2 in OPENGL_ES3_1_ANDROID, Default, ES3_1, Game (DDC key hash: d2b163c33f251a9b6df839e7232997d8401b80cd), compiling.
+LogCook: Display: Cooked packages 710 Packages Remain 495 Total 1205
+LogTexture: Display: Building textures: /Game/P9/Creatures8A/LanternMan/T_P9_LanternMan_Roughness.T_P9_LanternMan_Roughness (AutoETC2, 2048x2048 x1x1x1) (Required Memory Estimate: 178.333323 MB), EncodeSpeed: Final
+LogTexture: Display: Building textures: /Game/P9/Creatures8A/LanternMan/T_P9_LanternMan_Normal.T_P9_LanternMan_Normal (ETC2_RG11, 2048x2048 x1x1x1) (Required Memory Estimate: 192.99999 MB), EncodeSpeed: Final
+LogTexture: Display: Building textures: /Game/P9/Creatures8A/LanternMan/T_P9_LanternMan_Emissive.T_P9_LanternMan_Emissive (AutoETC2, 512x512 x1x1x1) (Required Memory Estimate: 12.083323 MB), EncodeSpeed: Final
+LogTexture: Display: Building textures: /Game/P9/Creatures8A/LanternMan/T_P9_LanternMan_BaseColor.T_P9_LanternMan_BaseColor (AutoETC2, 2048x2048 x1x1x1) (Required Memory Estimate: 190.333323 MB), EncodeSpeed: Final
+LogTexture: Display: Building textures: /Game/P9/Anomalies8A/Textures/T_P9_Anom8_TrainSeat_DarkRed.T_P9_Anom8_TrainSeat_DarkRed (AutoETC2, 256x256 x1x1x1) (Required Memory Estimate: 3.958323 MB), EncodeSpeed: Final
+LogTexture: Display: Building textures: /Game/P9/Creatures8A/Greeting/T_P9_Greeting_BaseColor.T_P9_Greeting_BaseColor (AutoETC2, 2048x2048 x1x1x1) (Required Memory Estimate: 190.333323 MB), EncodeSpeed: Final
+LogTexture: Display: Building textures: /Game/P9/Anomalies8A/Textures/T_P9_Anom8_TrainSeat_Red.T_P9_Anom8_TrainSeat_Red (AutoETC2, 256x256 x1x1x1) (Required Memory Estimate: 3.958323 MB), EncodeSpeed: Final
+LogTexture: Display: Building textures: /Game/P9/Creatures8A/Greeting/T_P9_Greeting_Roughness.T_P9_Greeting_Roughness (AutoETC2, 2048x2048 x1x1x1) (Required Memory Estimate: 178.333323 MB), EncodeSpeed: Final
+LogTexture: Display: Building textures: /Game/P9/Creatures8A/Greeting/T_P9_Greeting_Normal.T_P9_Greeting_Normal (ETC2_RG11, 2048x2048 x1x1x1) (Required Memory Estimate: 192.99999 MB), EncodeSpeed: Final
+LogCook: Display: Cooked packages 809 Packages Remain 396 Total 1205
+LogCook: Display: Cooked packages 909 Packages Remain 296 Total 1205
+LogCook: Display: Cooked packages 928 Packages Remain 277 Total 1205
+LogCook: Display: Cooking /NNEDenoiser/NNEDIM_ColorAlbedoNormal_Alpha -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /NNEDenoiser/NNEDIM_ColorAlbedoNormal_Default -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /NNEDenoiser/NNEDOM_Output_Alpha -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /NNEDenoiser/NNEDIM_HighQuality_Default -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /NNEDenoiser/NNEDIM_HighQuality_Alpha -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /NNEDenoiser/NNEDTOM_Output_Default -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /NNEDenoiser/NNEDTOM_Output_Alpha -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /NNEDenoiser/NNEDTIM_ColorAlbedoNormal_Default -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /NNEDenoiser/NNEDTIM_ColorAlbedoNormal_Alpha -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /NNEDenoiser/NNEDOM_Output_Default -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /NNEDenoiser/NNEDT_Oidn2-3_Balanced -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /NNEDenoiser/NNED_Oidn2-3_HighQuality_Alpha -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /NNEDenoiser/NNED_Oidn2-3_HighQuality -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /NNEDenoiser/NNED_Oidn2-3_Fast_Alpha -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /NNEDenoiser/NNED_Oidn2-3_Balanced_Alpha -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /NNEDenoiser/NNED_Oidn2-3_Fast -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /NNEDenoiser/NNED_Oidn2-3_Balanced -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /NNEDenoiser/NNEDT_Oidn2-3_Balanced_Alpha -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /NNEDenoiser/NNE_oidn2-3-0_rt_hdr_alb_nrm_small__dyn__fp16_opset11_DenoiseAlpha -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /NNEDenoiser/NNE_oidn2-3-0_rt_hdr_alb_nrm_small__dyn__fp16_opset11_ForwardAlpha -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /NNEDenoiser/NNE_oidn2-3-0_rt_hdr_calb_cnrm_large__dyn__fp16_opset11_ForwardAlpha -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /NNEDenoiser/NNE_oidn2-3-0_rt_hdr_alb_nrm__dyn__fp16_opset11_ForwardAlpha -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /Interchange/Pipelines/DefaultMaterialXPipeline -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /Interchange/Pipelines/DefaultAssetsPipeline -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /Interchange/Pipelines/DefaultMaterialPipeline -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /Interchange/Pipelines/DefaultGLTFPipeline -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /Interchange/Pipelines/DefaultGLTFAssetsPipeline -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /Interchange/Pipelines/DefaultGLTFSceneAssetsPipeline -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /Interchange/Pipelines/DefaultSceneLevelPipeline -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /Interchange/Pipelines/DefaultSceneAssetsPipeline -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /Interchange/Pipelines/DefaultTexturePipeline -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /NNEDenoiser/NNE_oidn2-3-0_rt_hdr_calb_cnrm_large__dyn__fp16_opset11_DenoiseAlpha -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /NNEDenoiser/NNE_oidn2-3-0_rt_hdr_alb_nrm__dyn__fp16_opset11_DenoiseAlpha -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooking /Interchange/Pipelines/DefaultAudioPipeline -> Rejected PlatformSpecificNeverCook
+LogCook: Display: Cooked packages 993 Packages Remain 212 Total 1205
+LogCook: Display: Cooked packages 1025 Packages Remain 180 Total 1205
+LogCook: Display: Cooked packages 1078 Packages Remain 127 Total 1205
+LogCook: Display: Cooked packages 1100 Packages Remain 105 Total 1205
+LogCook: Display: Cooked packages 1136 Packages Remain 69 Total 1205
+LogTexture: Display: /Engine/EngineMaterials/BaseFlattenDiffuseMap_VT.BaseFlattenDiffuseMap_VT is marked for virtual streaming but virtual texture streaming is not available.
+LogTexture: Display: /Engine/EngineMaterials/BaseFlattenDiffuseMap_VT.BaseFlattenDiffuseMap_VT is marked for virtual streaming but virtual texture streaming is not available.
+LogTexture: Display: /Engine/EngineMaterials/BaseFlattenEmissiveMap_VT.BaseFlattenEmissiveMap_VT is marked for virtual streaming but virtual texture streaming is not available.
+LogTexture: Display: /Engine/EngineMaterials/BaseFlattenEmissiveMap_VT.BaseFlattenEmissiveMap_VT is marked for virtual streaming but virtual texture streaming is not available.
+LogTexture: Display: /Engine/EngineMaterials/BaseFlattenGrayscaleMap_VT.BaseFlattenGrayscaleMap_VT is marked for virtual streaming but virtual texture streaming is not available.
+LogTexture: Display: /Engine/EngineMaterials/BaseFlattenGrayscaleMap_VT.BaseFlattenGrayscaleMap_VT is marked for virtual streaming but virtual texture streaming is not available.
+LogTexture: Display: /Engine/EngineMaterials/BaseFlattenLinearColor_VT.BaseFlattenLinearColor_VT is marked for virtual streaming but virtual texture streaming is not available.
+LogTexture: Display: /Engine/EngineMaterials/BaseFlattenLinearColor_VT.BaseFlattenLinearColor_VT is marked for virtual streaming but virtual texture streaming is not available.
+LogTexture: Display: /Engine/EngineMaterials/BaseFlattenNormalMap_VT.BaseFlattenNormalMap_VT is marked for virtual streaming but virtual texture streaming is not available.
+LogTexture: Display: /Engine/EngineMaterials/BaseFlattenNormalMap_VT.BaseFlattenNormalMap_VT is marked for virtual streaming but virtual texture streaming is not available.
+LogTexture: Display: /Engine/EngineMaterials/Black_1x1_EXR_Texture_VT.Black_1x1_EXR_Texture_VT is marked for virtual streaming but virtual texture streaming is not available.
+LogTexture: Display: /Engine/EngineMaterials/Black_1x1_EXR_Texture_VT.Black_1x1_EXR_Texture_VT is marked for virtual streaming but virtual texture streaming is not available.
+LogCook: Display: Cooked packages 1177 Packages Remain 28 Total 1205
+LogCook: Display: Cook Diagnostics: OpenFileHandles=6096, VirtualMemory=4216MiB, VirtualMemoryAvailable=11430MiB
+LogCook: Display: Cooked packages 1200 Packages Remain 5 Total 1205
+LogCook: Display: Cooked packages 1202 Packages Remain 3 Total 1205
+LogCook: Display: Cooked packages 1203 Packages Remain 2 Total 1205
+LogCook: Display: Cooked packages 1203 Packages Remain 2 Total 1205
+LogCook: Display: Garbage collection triggered (Soft). Triggered by conditions:
+  CookSettings.SoftGCTimeTrigger: Periodic triggering of SoftGC: SoftGCTimeFractionBudget == 0.050. TimeSinceLastGCSeconds == 36.240. CurrentTimeBudget == 1.907. ExpectedDuration == 0.053.
+LogCookCommandlet: Display: GarbageCollection... (Periodic GC)
+LogCook: Display: Cooked packages 1203 Packages Remain 2 Total 1205
+LogCook: Display: Cooked packages 1203 Packages Remain 2 Total 1205
+LogCook: Display: Cooked packages 1203 Packages Remain 2 Total 1205
+LogCook: Display: Cook Diagnostics: OpenFileHandles=2631, VirtualMemory=3410MiB, VirtualMemoryAvailable=12842MiB
+LogCook: Display: Garbage collection triggers ignored: Out of memory condition has been detected, but is only 54s after the last GC. It will be prevented until 60 seconds have passed and we may run out of memory.
+Garbage collection triggered by conditions:
+  CookSettings.MemoryMinFreePhysical: Available physical memory 2040MiB is less than 2048MiB.
+LogCook: Display: Cooked packages 1203 Packages Remain 2 Total 1205
+LogCook: Display: Garbage collection triggered (Full). Triggered by conditions:
+  CookSettings.MemoryMinFreePhysical: Available physical memory 1805MiB is less than 2048MiB.
+LogCookCommandlet: Display: GarbageCollection... (Exceeded Max Memory)
+LogCook: Display: GarbageCollection Results: Garbage Collection was not very impactful.
+LogCook: Display: 	MemoryAnalysis: General:
+		Type: Full
+	Duration: 0.017s
+LogCook: Display: 	MemoryAnalysis: NumObjects:
+		Capacity:           25231360
+		Process Min:           44906
+		Process Max:           59391
+		Process Spread:        14485
+		Before GC:             44906
+		After GC:              44906
+		Freed by GC:               0
+LogCook: Display: 	MemoryAnalysis: Virtual Memory:
+		Process Min:            1411 MB
+		Process Max:            3640 MB
+		Process Spread:         2229 MB
+		Before GC:              3575 MB
+		After GC:               3575 MB
+		Freed by GC:               0 MB
+LogCook: Display: 	MemoryAnalysis: Allocator Stats Before:
+		Item Malloc calls 0
+		Item Realloc calls 0
+		Item Free calls 0
+		Item Total Allocator calls 0
+LogCook: Display: 	MemoryAnalysis: Allocator Stats After:
+		Item Malloc calls 0
+		Item Realloc calls 0
+		Item Free calls 0
+		Item Total Allocator calls 0
+LogCook: Display: Extended memory diagnostics are disabled. Run with -llm or -trace=memtag to log information for UObject classes and LLM tags.
+LogCook: Display: Garbage collection triggers ignored: Out of memory condition has been detected, but is only 0s after the last GC. It will be prevented until 60 seconds have passed and we may run out of memory.
+Garbage collection triggered by conditions:
+  CookSettings.MemoryMinFreePhysical: Available physical memory 1805MiB is less than 2048MiB.
+LogCook: Display: Cooked packages 1203 Packages Remain 2 Total 1205
+LogCook: Display: Cooked packages 1203 Packages Remain 2 Total 1205
+LogCook: Display: Cooked packages 1204 Packages Remain 1 Total 1205
+LogCook: Display: Cooked packages 1205 Packages Remain 0 Total 1205
+LogCook: Display: Cook Diagnostics: OpenFileHandles=2635, VirtualMemory=3095MiB, VirtualMemoryAvailable=13008MiB
+LogShaderCompilers: Display: ================================================
+LogShaderCompilers: Display: === FShaderJobCache stats ===
+LogShaderCompilers: Display: Total job queries 24, among them cache hits 0 (0.00%), DDC hits 0 (0.00%), Duplicates 6 (25.00%)
+LogShaderCompilers: Display: Tracking 18 distinct input hashes that result in 14 distinct outputs (77.78%)
+LogShaderCompilers: Display: RAM used: 127.59 KiB of 819.20 MiB budget. Usage: 0.02%
+LogShaderCompilers: Display: === Shader Compilation stats ===
+LogShaderCompilers: Display: Shaders Compiled: 18
+LogShaderCompilers: Display: Jobs assigned 18, completed 18 (100%)
+LogShaderCompilers: Display: Average time worker was idle: 1.24 s
+LogShaderCompilers: Display: Time job spent in pending queue: average 0.06 s, longest 0.11 s
+LogShaderCompilers: Display: Job execution time: average 3.88 s, max 10.64 s
+LogShaderCompilers: Display: Job life time (pending + execution): average 3.94 s, max 10.66
+LogShaderCompilers: Display: Shader code size: total 293.851 KiB, numShaders 18, average 16.324 KiB, min 3.976 KiB, max 25.888 KiB
+LogShaderCompilers: Display: Time at least one job was in flight (either pending or executed): 14.01 s
+LogShaderCompilers: Display: Mutex wait stall in FShaderJobCache::SubmitJobs:  0.00%
+LogShaderCompilers: Display: Jobs were issued in 18 batches (only local compilation was used), average 1.00 jobs/batch
+LogShaderCompilers: Display: Average processing rate: 1.28 jobs/sec
+LogShaderCompilers: Display: Total thread time: 62.693 s
+LogShaderCompilers: Display: Total thread preprocess time: 0.399 s
+LogShaderCompilers: Display: Percentage time preprocessing: 0.64%
+LogShaderCompilers: Display: Effective parallelization: 4.47 (times faster than compiling all shaders on one thread). Compare with number of workers: 24 - 0.186440
+LogShaderCompilers: Display: Top 5 most expensive shader types by average time:
+LogShaderCompilers: Display: TMobileBasePassPSFMobileDirectionalLightCSMAndSHIndirectPolicyLOCAL_LIGHTS_ENABLED (compiled    2 times, average 6.59 sec, max 10.59 sec, min 2.60 sec)
+LogShaderCompilers: Display: TMobileBasePassPSFMobileDirectionalLightAndSHIndirectPolicyLOCAL_LIGHTS_ENABLED (compiled    2 times, average 5.82 sec, max 9.09 sec, min 2.54 sec)
+LogShaderCompilers: Display: TMobileBasePassPSFMobileDirectionalLightAndCSMPolicyLOCAL_LIGHTS_ENABLED (compiled    2 times, average 5.61 sec, max 8.65 sec, min 2.57 sec)
+LogShaderCompilers: Display:       TMobileBasePassPSFNoLightMapPolicyLOCAL_LIGHTS_ENABLED (compiled    2 times, average 5.58 sec, max 8.70 sec, min 2.47 sec)
+LogShaderCompilers: Display: TMobileBasePassPSFMobileDirectionalLightAndSHIndirectPolicyLOCAL_LIGHTS_DISABLED (compiled    2 times, average 1.84 sec, max 1.87 sec, min 1.81 sec)
+LogShaderCompilers: Display: Top 5 shader types by total compile time:
+LogShaderCompilers: Display: TMobileBasePassPSFMobileDirectionalLightCSMAndSHIndirectPolicyLOCAL_LIGHTS_ENABLED - 21.03% of total time (compiled    2 times, average 6.59 sec, max 10.59 sec, min 2.60 sec)
+LogShaderCompilers: Display: TMobileBasePassPSFMobileDirectionalLightAndSHIndirectPolicyLOCAL_LIGHTS_ENABLED - 18.56% of total time (compiled    2 times, average 5.82 sec, max 9.09 sec, min 2.54 sec)
+LogShaderCompilers: Display: TMobileBasePassPSFMobileDirectionalLightAndCSMPolicyLOCAL_LIGHTS_ENABLED - 17.90% of total time (compiled    2 times, average 5.61 sec, max 8.65 sec, min 2.57 sec)
+LogShaderCompilers: Display:       TMobileBasePassPSFNoLightMapPolicyLOCAL_LIGHTS_ENABLED - 17.82% of total time (compiled    2 times, average 5.58 sec, max 8.70 sec, min 2.47 sec)
+LogShaderCompilers: Display: TMobileBasePassPSFMobileDirectionalLightAndSHIndirectPolicyLOCAL_LIGHTS_DISABLED - 5.87% of total time (compiled    2 times, average 1.84 sec, max 1.87 sec, min 1.81 sec)
+LogShaderCompilers: Display: === Material stats ===
+LogShaderCompilers: Display: Materials Cooked:        294
+LogShaderCompilers: Display: Materials Translated:    2
+LogShaderCompilers: Display: Material Total Translate Time: 0.00 s
+LogShaderCompilers: Display: Material Translation Only: 0.00 s (68%)
+LogShaderCompilers: Display: Material DDC Serialization Only: 0.00 s (0%)
+LogShaderCompilers: Display: Material Cache Hits: 0 (0%)
+LogShaderCompilers: Display: ================================================
+LogAssetRegistryGenerator: Display: Saving asset registry v22.
+LogAssetRegistryGenerator: Display: Generated development asset registry C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Saved/Cooked/Android_ETC2/ThanePlatform9/Metadata/DevelopmentAssetRegistry.bin num assets 1219, size is 1920.72kb, XxHash64[LE] = 0x9CA708DF607365C, waited on hash 0.00 seconds
+LogAssetRegistryGenerator: Display: Generated asset registry num assets 1178, size is 1398.56kb
+LogShaderLibrary: Display:
+LogShaderLibrary: Display: Shader Library 'ThanePlatform9' (SF_VULKAN_ES31_ANDROID-VULKAN_ES3_1_ANDROID) Stats:
+LogShaderLibrary: Display: =================
+LogShaderLibrary: Display: Assets: 108, Unique Shadermaps: 103 (95.37%)
+LogShaderLibrary: Display: Total Shaders: 1328, Unique Shaders: 1019 (76.73%)
+LogShaderLibrary: Display: Total Shader Size: 6.85mb, Unique Shaders Size: 5.76mb (84.12%)
+LogShaderLibrary: Display: === Extended info:
+LogShaderLibrary: Display: Minimum number of shaders in shadermap: 1
+LogShaderLibrary: Display: Median number of shaders in shadermap: 9
+LogShaderLibrary: Display: Maximum number of shaders in shadermap: 181
+LogShaderLibrary: Display: Number of shadermaps referencing top 10 most shared shaders:
+LogShaderLibrary: Display:     21, 20, 15, 15, 11, 11, 9, 9, 9, 7
+LogShaderLibrary: Display: Unique shaders itemization (sorted by compressed size):
+LogShaderLibrary: Display: SF_Pixel: 667 shaders (65.46%), compressed size: 4.46 MB (6.84 KB avg per shader), uncompressed size: 18.16 MB (27.88 KB avg per shader)
+LogShaderLibrary: Display: SF_Vertex: 207 shaders (20.31%), compressed size: 0.80 MB (3.94 KB avg per shader), uncompressed size: 2.79 MB (13.80 KB avg per shader)
+LogShaderLibrary: Display: SF_Compute: 145 shaders (14.23%), compressed size: 0.51 MB (3.60 KB avg per shader), uncompressed size: 1.86 MB (13.17 KB avg per shader)
+LogShaderLibrary: Display: Textual dump saved to '../../../../../../Users/niles/Documents/Unreal Projects/ThanePlatform9/Saved/Shaders/SF_VULKAN_ES31_ANDROID-VULKAN_ES3_1_ANDROID/ShaderDebug-ThanePlatform9-SF_VULKAN_ES31_ANDROID-VULKAN_ES3_1_ANDROID/Dump.txt'
+LogShaderLibrary: Display: =================
+LogShaderLibrary: Display:
+LogShaderLibrary: Display: Shader Library 'ThanePlatform9' (GLSL_ES3_1_ANDROID-OPENGL_ES3_1_ANDROID) Stats:
+LogShaderLibrary: Display: =================
+LogShaderLibrary: Display: Assets: 108, Unique Shadermaps: 103 (95.37%)
+LogShaderLibrary: Display: Total Shaders: 1679, Unique Shaders: 1391 (82.85%)
+LogShaderLibrary: Display: Total Shader Size: 7.90mb, Unique Shaders Size: 7.13mb (90.31%)
+LogShaderLibrary: Display: === Extended info:
+LogShaderLibrary: Display: Minimum number of shaders in shadermap: 1
+LogShaderLibrary: Display: Median number of shaders in shadermap: 10
+LogShaderLibrary: Display: Maximum number of shaders in shadermap: 231
+LogShaderLibrary: Display: Number of shadermaps referencing top 10 most shared shaders:
+LogShaderLibrary: Display:     21, 20, 15, 15, 11, 11, 9, 9, 9, 7
+LogShaderLibrary: Display: Unique shaders itemization (sorted by compressed size):
+LogShaderLibrary: Display: SF_Pixel: 1039 shaders (74.69%), compressed size: 6.15 MB (6.06 KB avg per shader), uncompressed size: 25.04 MB (24.68 KB avg per shader)
+LogShaderLibrary: Display: SF_Vertex: 207 shaders (14.88%), compressed size: 0.62 MB (3.05 KB avg per shader), uncompressed size: 1.99 MB (9.84 KB avg per shader)
+LogShaderLibrary: Display: SF_Compute: 145 shaders (10.42%), compressed size: 0.37 MB (2.63 KB avg per shader), uncompressed size: 1.41 MB (9.94 KB avg per shader)
+LogShaderLibrary: Display: Textual dump saved to '../../../../../../Users/niles/Documents/Unreal Projects/ThanePlatform9/Saved/Shaders/GLSL_ES3_1_ANDROID-OPENGL_ES3_1_ANDROID/ShaderDebug-ThanePlatform9-GLSL_ES3_1_ANDROID-OPENGL_ES3_1_ANDROID/Dump.txt'
+LogShaderLibrary: Display: =================
+LogCook: Display: Dependent plugin "SteamShared" referenced by "EOS Shared" wasn't found in enabled plugins list when creating cook metadata file... skipping
+LogCook: Display: Finalize package store(s)...
+LogCook: Display: Cook by the book total time in tick 78.545027s total time 80.512352
+LogCook: Display: Peak Used virtual 4381 MiB Peak Used physical 4158 MiB
+LogCook: Display: Packages Cooked: 1164, Packages Incrementally Skipped: 0, Packages Skipped by Platform: 41, Total Packages: 1205
+LogCookStats: Display: Hierarchy Timer Information:
+LogCookStats: Display:   Root: 0.000s (0)
+LogCookStats: Display:     CleanSandbox: 0.057s (1)
+LogCookStats: Display:     CollectFilesToCook: 0.003s (1)
+LogCookStats: Display:       CookModificationDelegate: 0.000s (1)
+LogCookStats: Display:     GenerateLongPackageName: 0.000s (1)
+LogCookStats: Display:     TickMainCookLoop: 78.545s (5)
+LogCookStats: Display:       PumpPollables: 0.008s (28)
+LogCookStats: Display:       PumpRequests: 0.017s (39)
+LogCookStats: Display:       LoadPackageForCooking: 2.357s (4894)
+LogCookStats: Display:       ValidateSourcePackage: 0.000s (1245)
+LogCookStats: Display:       SavingPackages: 18.712s (5804)
+LogCookStats: Display:         PollPendingCookedPlatformDatas: 5.742s (140111)
+LogCookStats: Display:         PrepareSave: 3.828s (139090)
+LogCookStats: Display:         PrecachePlatformDataForNextPackage: 3.370s (1204)
+LogCookStats: Display:           PrepareSave: 3.370s (1578)
+LogCookStats: Display:         SaveCookedPackage: 5.640s (1205)
+LogCookStats: Display:           GEditorSavePackage: 5.566s (1171)
+LogCookStats: Display:             VerifyCanCookPackage: 0.004s (1164)
+LogCookStats: Display:         ClearAllCachedCookedPlatformData: 0.021s (1205)
+LogCookStats: Display:       PostLoadPackageFixup: 0.000s (4)
+LogCookStats: Display:       WaitForAsync: 55.996s (926555)
+LogCookStats: Display:     CookByTheBookFinished: 0.249s (1)
+LogCookStats: Display:       SavingCurrentIniSettings: 0.030s (1)
+LogCookStats: Display:         ProcessingAccessedStrings: 0.003s (1)
+LogCookStats: Display:       ChunkGeneration: 0.008s (1)
+LogCookStats: Display:       CalculateReferencedSet: 0.000s (1)
+LogCookStats: Display:       FinishPopulateShaderLibrary: 0.001s (1)
+LogCookStats: Display:       GeneratorPreSave: 0.000s (1)
+LogCookStats: Display:       BuildChunkManifest: 0.020s (1)
+LogCookStats: Display:         FixupPackageDependenciesForChunks: 0.004s (1)
+LogCookStats: Display:       SaveManifests: 0.000s (1)
+LogCookStats: Display:       SaveAssetRegistry: 0.057s (1)
+LogCookStats: Display:       WriteCookerOpenOrder: 0.032s (1)
+LogCookStats: Display:       WriteCookMetadata: 0.002s (1)
+LogCookStats: Display:       WriteReferencedSet: 0.001s (1)
+LogCookStats: Display:       FinalizePackageStore: 0.002s (1)
+LogCookStats: Display: Misc Cook Stats
+LogCookStats: Display: ===============
+LogCookStats: Display: Niagara
+LogCookStats: Display:     NiagaraScriptTranslationCount=0
+LogCookStats: Display:     NiagaraCpuScriptCompileCount=0
+LogCookStats: Display:     NiagaraCpuScriptDdcCacheHitCount=0
+LogCookStats: Display:     NiagaraCpuScriptDdcCacheMissCount=0
+LogCookStats: Display:     NiagaraGpuScriptCompileCount=0
+LogCookStats: Display:     NiagaraGpuScriptDdcCacheHitCount=0
+LogCookStats: Display:     NiagaraGpuScriptDdcCacheMissCount=0
+LogCookStats: Display:     NiagaraSystemWaitForCompilationCompleteTime=0.000000
+LogCookStats: Display: ComputeKernelShader.Misc
+LogCookStats: Display:     ShadersCompiled=0
+LogCookStats: Display: NiagaraShader.Misc
+LogCookStats: Display:     ShadersCompiled=0
+LogCookStats: Display: ShaderCompiler
+LogCookStats: Display:     BlockingTimeSec=0.000186
+LogCookStats: Display:     AsyncCompileTimeSec=69.757024
+LogCookStats: Display:     GlobalBeginCompileShaderTimeSec=0.003880
+LogCookStats: Display:     GlobalBeginCompileShaderCalls=24
+LogCookStats: Display:     ProcessAsyncResultsTimeSec=0.010522
+LogCookStats: Display: GlobalShader.Misc
+LogCookStats: Display:     ShadersCompiled=0
+LogCookStats: Display: Material
+LogCookStats: Display:     FinishCacheShadersSec=0.252725
+LogCookStats: Display: Package.Load
+LogCookStats: Display:     NumRequestedLoads=3960
+LogCookStats: Display:     NumPackagesLoaded=4362
+LogCookStats: Display:     NumInlineLoads=402
+LogCookStats: Display:     LoadPackageTimeSec=2.618256
+LogCookStats: Display: Package.Save
+LogCookStats: Display:     NumPackagesIncrementallySkipped=0
+LogCookStats: Display:     NumPackagesSaved=1171
+LogCookStats: Display:     SavePackageTimeSec=5.490138
+LogCookStats: Display:     TagPackageExportsPresaveTimeSec=0.000000
+LogCookStats: Display:     TagPackageExportsTimeSec=0.000000
+LogCookStats: Display:     FullyLoadLoadersTimeSec=0.000000
+LogCookStats: Display:     ResetLoadersTimeSec=0.000000
+LogCookStats: Display:     TagPackageExportsGetObjectsWithOuter=0.000000
+LogCookStats: Display:     TagPackageExportsGetObjectsWithMarks=0.000000
+LogCookStats: Display:     SerializeImportsTimeSec=0.000000
+LogCookStats: Display:     SortExportsSeekfreeInnerTimeSec=0.000000
+LogCookStats: Display:     SerializeExportsTimeSec=0.000000
+LogCookStats: Display:     SerializeBulkDataTimeSec=0.006127
+LogCookStats: Display:     AsyncWriteTimeSec=0.000000
+LogCookStats: Display:     MBWritten=0.000000
+LogCookStats: Display: CookOnTheFlyServer
+LogCookStats: Display:     PeakRequestQueueSize=1203
+LogCookStats: Display:     PeakLoadQueueSize=222
+LogCookStats: Display:     PeakSaveQueueSize=223
+LogCookStats: Display: Package.DifferentPackagesSizeMBPerAsset
+LogCookStats: Display: Package.NumberOfDifferencesInPackagesPerAsset
+LogCookStats: Display: Package.PackageDifferencesSizeMBPerAsset
+LogCookStats: Display: Package.DiffTotal
+LogCookStats: Display:     NumberOfDifferentPackages=0
+LogCookStats: Display:     DifferentPackagesSizeMB=0.000000
+LogCookStats: Display:     NumberOfDifferencesInPackages=0
+LogCookStats: Display:     PackageDifferencesSizeMB=0.000000
+LogCookStats: Display: UnversionedProperties
+LogCookStats: Display:     SavedStructs=0
+LogCookStats: Display:     SavedMB=0
+LogCookStats: Display:     EquivalentTaggedMB=0
+LogCookStats: Display:     CompressionRatio=-nan(ind)
+LogCookStats: Display:     BitfieldWasteKB=0
+LogCookStats: Display:
+LogCookStats: Display: Cook Profile
+LogCookStats: Display: ============
+LogCookStats: Display:  0.CookWallTimeSec=93.758621
+LogCookStats: Display:  0. 0.StartupWallTimeSec=12.432199
+LogCookStats: Display:  0. 1.StartCookByTheBookTimeSec=2.196239
+LogCookStats: Display:  0. 1. 0.BlockOnAssetRegistryTimeSec=0.028049
+LogCookStats: Display:  0. 1. 1.GameCookModificationDelegateTimeSec=0.000249
+LogCookStats: Display:  0. 2.TickCookOnTheSideTimeSec=68.969665
+LogCookStats: Display:  0. 2. 0.TickCookOnTheSideLoadPackagesTimeSec=2.358461
+LogCookStats: Display:  0. 2. 1.TickCookOnTheSideSaveCookedPackageTimeSec=5.639852
+LogCookStats: Display:  0. 2. 1. 0.TickCookOnTheSideResolveRedirectorsTimeSec=0.000000
+LogCookStats: Display:  0. 2. 2.TickCookOnTheSidePrepareSaveTimeSec=7.207823
+LogCookStats: Display:  0. 3.TickLoopGCTimeSec=0.330439
+LogCookStats: Display:  0. 4.TickLoopRecompileShaderRequestsTimeSec=0.000000
+LogCookStats: Display:  0. 5.TickLoopShaderProcessAsyncResultsTimeSec=0.000043
+LogCookStats: Display:  0. 6.TickLoopProcessDeferredCommandsTimeSec=0.000020
+LogCookStats: Display:  0. 7.TickLoopTickCommandletStatsTimeSec=0.000008
+LogCookStats: Display:  0. 8.TickLoopFlushRenderingCommandsTimeSec=0.007967
+LogCookStats: Display:  0. 9.ShaderFlushTimeSec=0.000000
+LogCookStats: Display:  0. 10.ValidationTimeSec=0.000261
+LogCookStats: Display:  1.CookParameters=
+LogCookStats: Display:  1. 0.TargetPlatforms=Android_ETC2
+LogCookStats: Display:  1. 1.CookProject=ThanePlatform9
+LogCookStats: Display:  1. 2.CookCultures=
+LogCookStats: Display:  1. 3.IsCookAll=false
+LogCookStats: Display:  1. 4.IsCookOnTheFly=false
+LogCookStats: Display:  1. 5.IsIterativeCook=false
+LogCookStats: Display:  1. 6.IsUnversioned=true
+LogCookStats: Display:  1. 7.CookLabel=
+LogCookStats: Display:  1. 8.IsFastCook=false
+LogCookStats: Display:
+LogCookStats: Display: DDC Summary Stats
+LogCookStats: Display: =================
+LogCookStats: Display: BackEnd         =InstalledDerivedDataBackendGraph
+LogCookStats: Display: HasLocalCache   =      true
+LogCookStats: Display: HasSharedCache  =     false
+LogCookStats: Display: HasCloudCache   =     false
+LogCookStats: Display: HasZenCache     =      true
+LogCookStats: Display: TotalGetHits    =      6379
+LogCookStats: Display: TotalGetMisses  =       173
+LogCookStats: Display: TotalGets       =      6552
+LogCookStats: Display: TotalGetHitPct  =  0.973596
+LogCookStats: Display: GetMissPct      =  0.026404
+LogCookStats: Display: TotalPutHits    =       361
+LogCookStats: Display: TotalPutMisses  =         0
+LogCookStats: Display: TotalPuts       =       361
+LogCookStats: Display: TotalPutHitPct  =  1.000000
+LogCookStats: Display: PutMissPct      =  0.000000
+LogCookStats: Display: LocalGetHits    =      5759
+LogCookStats: Display: LocalGetMisses  =       173
+LogCookStats: Display: LocalGetTotal   =      5932
+LogCookStats: Display: LocalGetHitPct  =  0.970836
+LogCookStats: Display: SharedGetHits   =         0
+LogCookStats: Display: SharedGetTotal  =         0
+LogCookStats: Display: SharedGetHitPct =  0.000000
+LogCookStats: Display: ZenLocalGetHits =      5759
+LogCookStats: Display: ZenLocalGetTotal=      5932
+LogCookStats: Display: ZenLocalGetHitPct=  0.970836
+LogCookStats: Display: ZenRemoteGetHits=         0
+LogCookStats: Display: ZenRemoteGetTotal=         0
+LogCookStats: Display: ZenRemoteGetHitPct=  0.000000
+LogCookStats: Display: ZenRemoteReadSpeed=  0.000000
+LogCookStats: Display: ZenRemoteWriteSpeed=  0.000000
+LogCookStats: Display: ZenRemoteLatency=  0.000000
+LogCookStats: Display: CloudGetHits    =         0
+LogCookStats: Display: CloudGetTotal   =         0
+LogCookStats: Display: CloudGetHitPct  =  0.000000
+LogCookStats: Display: LocalLatency    =  0.352075
+LogCookStats: Display: LocalReadSpeed  = 34.830041
+LogCookStats: Display: LocalWriteSpeed =447.422469
+LogCookStats: Display: SharedLatency   =  0.000000
+LogCookStats: Display: SharedReadSpeed =  0.000000
+LogCookStats: Display: SharedWriteSpeed=  0.000000
+LogCookStats: Display: CloudLatency    =  0.000000
+LogCookStats: Display: CloudReadSpeed  =  0.000000
+LogCookStats: Display: CloudWriteSpeed =  0.000000
+LogCookStats: Display:
+LogCookStats: Display: DDC Resource Stats
+LogCookStats: Display: =======================================================================================================
+LogCookStats: Display: Asset Type                          Total Time (Sec)  GameThread Time (Sec)  Assets Built  MB Processed
+LogCookStats: Display: ----------------------------------  ----------------  ---------------------  ------------  ------------
+LogCookStats: Display: StaticMesh                                     15.74                   0.07            12         14.29
+LogCookStats: Display: Audio                                           0.83                   1.87            55          5.49
+LogCookStats: Display: Texture                                         0.60                   3.56            46         50.31
+LogCookStats: Display: MaterialShader                                  0.23                   0.45             2         15.54
+LogCookStats: Display: BodySetup                                       0.18                   0.00             3          0.99
+LogCookStats: Display: BulkDataList                                    0.11                   0.00             0          0.62
+LogCookStats: Display: STREAMEDAUDIO                                   0.07                   0.00           206         13.43
+LogCookStats: Display: NavCollision                                    0.02                   0.00             9          0.05
+LogCookStats: Display: CardRepresentation                              0.02                   0.00             9          0.04
+LogCookStats: Display: GlobalShader                                    0.01                   0.01             0         12.38
+LogCookStats: Display: AnimationSequence                               0.00                   0.00             0          0.97
+LogCookStats: Display: Shader                                          0.00                   0.00            18          0.00
+LogCookStats: Display: SkeletalMesh                                    0.00                   0.00             0         17.72
+LogCookStats: Display: CKERSM                                          0.00                   0.00             0          0.48
+LogCookStats: Display: MaterialTranslation                             0.00                   0.00             1          0.00
+LogPackageBuildDependencyTracker: Display: Package Accesses (701 referencing packages with a total of 5165 unique accesses)
+LogConfigBuildDependencyTracker: Display: Config Accesses (769 referencing packages with a total of 4784 unique accesses). 1829 unique accesses that were not associated with a package.
+LogCook: Display: Done!
+LogSavePackage: Display: Took 0.001393s to verify the EDL loading graph.
+LogInit: Display:
+LogInit: Display: Success - 0 error(s), 0 warning(s)
+LogInit: Display:
+
+Execution of commandlet took:  1m 21s (81.33 seconds)
+LogShaderCompilers: Display: Shaders left to compile 0
+Took 97.06s to run UnrealEditor-Cmd.exe, ExitCode=0
+Cook command time: 97.11 s
+********** COOK COMMAND COMPLETED **********
+********** STAGE COMMAND STARTED **********
+Creating UECommandLine.txt
+Creating Staging Manifest...
+Excluding config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\Localization\Keywords.ini
+Excluding config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\Localization\ToolTips.ini
+Excluding config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\BaseEditorKeyBindings.ini
+Excluding config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\Localization\RepairData.ini
+Excluding config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\BasePakFileRules.ini
+Excluding config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\Localization\Category.ini
+Excluding config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\BaseEditorSettings.ini
+Excluding config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\BaseEditor.ini
+Excluding config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\Localization\Editor.ini
+Excluding config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\Localization\PortableObjectExport.ini
+Excluding config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\Localization\WordCount.ini
+Excluding config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\Localization\PortableObjectImport.ini
+Excluding config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\BaseSourceControlSettings.ini
+Excluding config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\BaseLightmass.ini
+Excluding config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\Localization\PropertyNames.ini
+Excluding config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\Localization\Engine.ini
+Excluding config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\BaseEditorPerProjectUserSettings.ini
+Excluding config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\BaseUnrealInsightsSettings.ini
+Including config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\BaseEngine.ini
+Including config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\Layouts\UE4ClassicLayout.ini
+Including config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\BaseScalability.ini
+Including config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\BaseRuntimeOptions.ini
+Including config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\BaseInstallBundle.ini
+Including config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\BaseDeviceProfiles.ini
+Including config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\BaseGameUserSettings.ini
+Including config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\BaseGame.ini
+Including config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\Android\BaseAndroidEngine.ini
+Including config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\Android\AndroidScalability.ini
+Including config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\BaseMaterialExpressions.ini
+Including config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\BaseInput.ini
+Including config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\BaseHardware.ini
+Including config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\BaseCompat.ini
+Including config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\Base.ini
+Including config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\Layouts\DefaultLayout.ini
+Including config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\Android\BaseAndroidInput.ini
+Including config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\Android\BaseAndroidGame.ini
+Including config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\VulkanPC\DataDrivenPlatformInfo.ini
+Including config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\Android\DataDrivenPlatformInfo.ini
+Including config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\Android\BaseAndroidInstallBundle.ini
+Including config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\Android\AndroidEngine.ini
+Including config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\PluginBase.ini
+Including config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\ConsoleVariables.ini
+Including config file C:\Program Files\Epic Games\UE_5.7\Engine\Config\ConfigRedirects.ini
+Excluding config file C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Config\DefaultEditor.ini
+Including config file C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Config\DefaultGame.ini
+Including config file C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Config\DefaultInput.ini
+Including config file C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Config\DefaultEngine.ini
+Cleaning Stage Directory: C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\StagedBuilds\Android_ETC2
+Creating pak using staging manifest.
+DumpManifest: C:\Users\niles\AppData\Roaming\Unreal Engine\AutomationTool\Logs\C+Program+Files+Epic+Games+UE_5.7\PrePak_Android_ETC2_NonUFSFiles.txt, NumItems: 8
+DumpManifest: C:\Users\niles\AppData\Roaming\Unreal Engine\AutomationTool\Logs\C+Program+Files+Epic+Games+UE_5.7\PrePak_Android_ETC2_NonUFSFilesDebug.txt, NumItems: 5
+DumpManifest: C:\Users\niles\AppData\Roaming\Unreal Engine\AutomationTool\Logs\C+Program+Files+Epic+Games+UE_5.7\PrePak_Android_ETC2_UFSFiles.txt, NumItems: 4588
+Excluding C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\Cooked\Android_ETC2\Engine\Content\EngineMaterials\DefaultBloomKernel.uasset from pak files
+Excluding C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\Cooked\Android_ETC2\Engine\Content\EngineMaterials\DefaultBloomKernel.uexp from pak files
+Excluding C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\Cooked\Android_ETC2\Engine\Content\EngineMaterials\PPM_DefaultCalibrationColor.uasset from pak files
+Excluding C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\Cooked\Android_ETC2\Engine\Content\EngineMaterials\PPM_DefaultCalibrationColor.uexp from pak files
+Excluding C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\Cooked\Android_ETC2\Engine\Content\EngineMaterials\PPM_DefaultCalibrationGrayscale.uasset from pak files
+Excluding C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\Cooked\Android_ETC2\Engine\Content\EngineMaterials\PPM_DefaultCalibrationGrayscale.uexp from pak files
+Excluding C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\Cooked\Android_ETC2\Engine\Content\EngineMaterials\DefaultCalibrationColor.uasset from pak files
+Excluding C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\Cooked\Android_ETC2\Engine\Content\EngineMaterials\DefaultCalibrationColor.uexp from pak files
+Excluding C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\Cooked\Android_ETC2\Engine\Content\EngineMaterials\DefaultCalibrationGrayscale.uasset from pak files
+Excluding C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\Cooked\Android_ETC2\Engine\Content\EngineMaterials\DefaultCalibrationGrayscale.uexp from pak files
+Using 0 pak order files:
+Running UnrealPak with arguments: "C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\ThanePlatform9.uproject"  -cryptokeys="C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\Cooked\Android_ETC2\ThanePlatform9\Metadata\Crypto.json" -unattended -patchpaddingalign=0 -AlignForMemoryMapping=16 -compressionformats=Oodle -compresslevel=4 -compressmethod=Mermaid  -platform=Android  -CreateMultiple="C:\Users\niles\AppData\Roaming\Unreal Engine\AutomationTool\Logs\C+Program+Files+Epic+Games+UE_5.7\PakCommands.txt"
+Running: C:\Program Files\Epic Games\UE_5.7\Engine\Binaries\Win64\UnrealPak.exe "C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\ThanePlatform9.uproject"  -cryptokeys="C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\Cooked\Android_ETC2\ThanePlatform9\Metadata\Crypto.json" -unattended -patchpaddingalign=0 -AlignForMemoryMapping=16 -compressionformats=Oodle -compresslevel=4 -compressmethod=Mermaid  -platform=Android  -CreateMultiple="C:\Users\niles\AppData\Roaming\Unreal Engine\AutomationTool\Logs\C+Program+Files+Epic+Games+UE_5.7\PakCommands.txt"
+LogPakFile: Display: ProjectDir: ../../../../../../Users/niles/Documents/Unreal Projects/ThanePlatform9/
+LogPakFile: Display: Parsing crypto keys from a crypto key cache file
+LogPakFile: Display: CompressionFormats in priority order: Oodle, Zlib
+LogPakFile: Display: Oodle enabled on 'NoPluginCompression' files
+LogPakFile: Display: Loading response file C:\Program Files\Epic Games\UE_5.7\Engine\Programs\AutomationTool\Saved\ResponseFiles\PakList_ThanePlatform9-Android_ETC2.txt
+LogPakFile: Display: Added 1664 entries to add to pak file.
+LogPakFile: Display: Collecting files to add to pak file...
+LogPakFile: Display: Collected 1664 files in 0.00s.
+LogPakFile: Display: Creating pak C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Saved/StagedBuilds/Android_ETC2/ThanePlatform9/Content/Paks/ThanePlatform9-Android_ETC2.pak.
+OodleDataCompression: Display: Oodle v2.9.14 format for pak/iostore with method=Mermaid, level=4=Normal
+LogPakFile: Display: Created pak file: C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Saved/StagedBuilds/Android_ETC2/ThanePlatform9/Content/Paks/ThanePlatform9-Android_ETC2.pak
+LogPakFile: Display: CompressionFormat 0 [Oodle] : 357 files, 23652743 -> 9284277 bytes
+LogPakFile: Display: CompressionFormat 2 [None] : 1307 files, 1172235 -> 1172235 bytes
+LogPakFile: Display: Added 1664 files, 10683068 bytes total
+LogPakFile: Display: PrimaryIndex size: 22866 bytes
+LogPakFile: Display: PathHashIndex size: 49939 bytes
+LogPakFile: Display: FullDirectoryIndex size: 53318 bytes
+LogPakFile: Display: Compression summary: 39.25% of original size. Compressed Size 9284277 bytes, Original Size 23652743 bytes.
+LogPakFile: Display: Encryption - DISABLED
+LogPakFile: Display:
+LogPakFile: Display: Writer and Compression Threads exited.
+LogPakFile: Display: UnrealPak executed in 0.483432 seconds
+Took 0.79s to run UnrealPak.exe, ExitCode=0
+Running UnrealPak with arguments: "C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\ThanePlatform9.uproject" -CreateGlobalContainer="C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\StagedBuilds\Android_ETC2\ThanePlatform9\Content\Paks\global.utoc" -PackageStoreManifest="C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\Cooked\Android_ETC2\ThanePlatform9\Metadata\packagestore.manifest" -CookedDirectory="C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\Cooked\Android_ETC2" -Commands="C:\Users\niles\AppData\Roaming\Unreal Engine\AutomationTool\Logs\C+Program+Files+Epic+Games+UE_5.7\IoStoreCommands.txt" -ScriptObjects="C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\Cooked\Android_ETC2\ThanePlatform9\Metadata\scriptobjects.bin" -patchpaddingalign=0 -AlignForMemoryMapping=16 -compressionformats=Oodle -compresslevel=4 -compressmethod=Mermaid   -cryptokeys="C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\Cooked\Android_ETC2\ThanePlatform9\Metadata\Crypto.json" -compressionMinBytesSaved=1024 -compressionMinPercentSaved=5 -WriteBackMetadataToAssetRegistry=Disabled -platform=Android  -unattended
+Running: C:\Program Files\Epic Games\UE_5.7\Engine\Binaries\Win64\UnrealPak.exe "C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\ThanePlatform9.uproject" -CreateGlobalContainer="C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\StagedBuilds\Android_ETC2\ThanePlatform9\Content\Paks\global.utoc" -PackageStoreManifest="C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\Cooked\Android_ETC2\ThanePlatform9\Metadata\packagestore.manifest" -CookedDirectory="C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\Cooked\Android_ETC2" -Commands="C:\Users\niles\AppData\Roaming\Unreal Engine\AutomationTool\Logs\C+Program+Files+Epic+Games+UE_5.7\IoStoreCommands.txt" -ScriptObjects="C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\Cooked\Android_ETC2\ThanePlatform9\Metadata\scriptobjects.bin" -patchpaddingalign=0 -AlignForMemoryMapping=16 -compressionformats=Oodle -compresslevel=4 -compressmethod=Mermaid   -cryptokeys="C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\Cooked\Android_ETC2\ThanePlatform9\Metadata\Crypto.json" -compressionMinBytesSaved=1024 -compressionMinPercentSaved=5 -WriteBackMetadataToAssetRegistry=Disabled -platform=Android  -unattended
+LogPakFile: Display: ProjectDir: ../../../../../../Users/niles/Documents/Unreal Projects/ThanePlatform9/
+LogIoStore: Display: ==================== IoStore Utils ====================
+LogIoStore: Display: Parsing crypto keys from a crypto key cache file 'C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\Cooked\Android_ETC2\ThanePlatform9\Metadata\Crypto.json'
+LogIoStore: Display: Container signing - DISABLED
+LogIoStore: Display: Directory index - ENABLED
+LogIoStore: Display: Using compression format 'Oodle'
+LogConfig: Display: Read in platform Android ini files took 0.01 seconds
+LogIoStore: Display: Using memory mapping alignment '16'
+LogIoStore: Display: Using compression block size '65536'
+LogIoStore: Display: Using compression block alignment '0'
+LogIoStore: Display: Using compression min bytes saved '1024'
+LogIoStore: Display: Using compression min percent saved '5'
+LogIoStore: Display: Using max partition size '0'
+LogIoStore: Display: Not using DDC for compression
+LogIoStore: Display: Using command list file: 'C:\Users\niles\AppData\Roaming\Unreal Engine\AutomationTool\Logs\C+Program+Files+Epic+Games+UE_5.7\IoStoreCommands.txt'
+LogIoStore: Display: Selected Oodle level 4 (Normal) from command line for shaders
+LogIoStore: Display: Fetched 1171 oplog items from Manifest in 0.00 seconds
+LogIoStore: Display: Parsed 1171 oplog items 0.00 seconds, 1756 chunks
+LogIoStore: Display: Using input asset registry: C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Saved/Cooked/Android_ETC2/ThanePlatform9/Metadata/DevelopmentAssetRegistry.bin
+LogIoStore: Display: Loaded 476 chunk hashes from AssetRegistry in 0.02 seconds, 476 hashes updated in 0.00 seconds
+LogIoStore: Display: Searching for cooked assets in folder 'C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\Cooked\Android_ETC2'
+LogIoStore: Display: Found '2928' files
+LogIoStore: Display: Creating container targets...
+OodleDataCompression: Display: Oodle v2.9.14 format for pak/iostore with method=Mermaid, level=4=Normal
+LogIoStore: Display: Parsing packages...
+LogIoStore: Display: Reading package assets...
+LogIoStore: Display: Reading 1000/1159: 'C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Saved/Cooked/Android_ETC2/ThanePlatform9/Content/P9/Environment/OHEMasts/MI_P9_MastPlate_34_78.uasset'
+LogIoStore: Display: Packages read 1,159 files in 0.02 seconds, 2,040,908 total bytes, 127,875,639 bytes per second
+LogIoStore: Display: Processing shader libraries, compressing with Oodle Mermaid, level 4 (Normal)
+LogShaderLibrary: Display: Created IoStoreShaderArchive header: shaders grouped in 151 groups (58 of them didn't need new indices), average uncompressed size 158444 bytes, min 1180 bytes, max 940912 bytes (r.ShaderCodeLibrary.MaxShaderGroupSize=1048576)
+LogIoStore: Display: ThanePlatform9-SF_VULKAN_ES31_ANDROID(VULKAN_ES3_1_ANDROID): Recompressed 1019 shaders as 151 groups. Library size changed from 5903 KB (3.96 : 1 ratio) to 3898 KB (5.99 : 1 ratio), 66.04% of previous.
+LogShaderLibrary: Display: Created IoStoreShaderArchive header: shaders grouped in 152 groups (58 of them didn't need new indices), average uncompressed size 196160 bytes, min 269 bytes, max 1019051 bytes (r.ShaderCodeLibrary.MaxShaderGroupSize=1048576)
+LogIoStore: Display: ThanePlatform9-GLSL_ES3_1_ANDROID(OPENGL_ES3_1_ANDROID): Recompressed 1391 shaders as 152 groups. Library size changed from 7305 KB (3.99 : 1 ratio) to 2408 KB (12.09 : 1 ratio), 32.96% of previous.
+LogShaderLibrary: Display: Created IoStoreShaderArchive header: shaders grouped in 161 groups (68 of them didn't need new indices), average uncompressed size 106516 bytes, min 228 bytes, max 1029878 bytes (r.ShaderCodeLibrary.MaxShaderGroupSize=1048576)
+LogIoStore: Display: Global-GLSL_ES3_1_ANDROID(OPENGL_ES3_1_ANDROID): Recompressed 1559 shaders as 161 groups. Library size changed from 4217 KB (3.97 : 1 ratio) to 1446 KB (11.58 : 1 ratio), 34.31% of previous.
+LogShaderLibrary: Display: Created IoStoreShaderArchive header: shaders grouped in 179 groups (69 of them didn't need new indices), average uncompressed size 146617 bytes, min 493 bytes, max 963055 bytes (r.ShaderCodeLibrary.MaxShaderGroupSize=1048576)
+LogIoStore: Display: Global-SF_VULKAN_ES31_ANDROID(VULKAN_ES3_1_ANDROID): Recompressed 2002 shaders as 179 groups. Library size changed from 7508 KB (3.41 : 1 ratio) to 4754 KB (5.39 : 1 ratio), 63.32% of previous.
+LogIoStore: Display: Shaders processed in 0.13 seconds
+LogIoStore: Display: Initialized WriteRequestManager with MaxConcurrentSourceReads=14 (28 cores), MaxSourceBufferMemory=3072MiB
+LogIoStore: Display: Processing redirects...
+LogIoStore: Display: Creating disk layout...
+LogIoStore: Display: Ordered 1159 packages using fallback bundle order
+LogIoStore: Display: Serializing container(s)...
+LogIoStore: Display: Writing and compressing took 0.17 seconds, writes to disk took 0.12 seconds for 116,959,408 bytes @ 954,266,668 bytes per second.
+LogIoStore: Display: global: Found perfect hashmap for 1 items.
+LogIoStore: Display: ThanePlatform9-Android_ETC2: Found perfect hashmap for 2399 items.
+LogIoStore: Display: Finalize took 0.0 seconds for 2 writers to write 262,935 bytes, 37,758,486 bytes per second
+LogIoStore: Display: Writing tocs... [Physical: 698 MiB, Virtual: 3560 MiB]
+LogIoStore: Display: 476 / 2,400 hashes were loaded from the hash database, by type:
+LogIoStore: Display:     BulkData                   476
+LogIoStore: Display: 1,635 / 2,400 chunks attempted to compress, by type:
+LogIoStore: Display:     ExportBundleData           1,159 / 1,159
+LogIoStore: Display:     BulkData                   476 / 476
+LogIoStore: Display:     MemoryMappedBulkData       0 / 116
+LogIoStore: Display:     ScriptObjects              0 / 1
+LogIoStore: Display:     ContainerHeader            0 / 1
+LogIoStore: Display:     ShaderCodeLibrary          0 / 4
+LogIoStore: Display:     ShaderCode                 0 / 643
+LogIoStore: Display: Source bytes read:
+LogIoStore: Display:     Zen:                                  0
+LogIoStore: Display:     Loose File:                 254,641,713
+LogIoStore: Display:         ExportBundleData        125,787,662 bytes over 2,318 reads
+LogIoStore: Display:         BulkData                126,843,845 bytes over 476 reads
+LogIoStore: Display:         MemoryMappedBulkData      2,010,206 bytes over 232 reads
+LogIoStore: Display:     Memory:                      26,113,514
+LogIoStore: Display:         ShaderCodeLibrary           497,744 bytes over 8 reads
+LogIoStore: Display:         ShaderCode               25,615,770 bytes over 1,286 reads
+LogIoStore: Display: Calculating stats...
+LogIoStore: Display:
+LogIoStore: Display: Container Summary
+LogIoStore: Display: ==================
+LogIoStore: Display:
+LogIoStore: Display: Container                                               Flags      Chunk(s) #       TOC (KiB)       Raw Size (MiB)           Size (MiB)
+LogIoStore: Display: ----------------------------------------------------------------------------------------------------------------------------------------------
+LogIoStore: Display: global                                              -/-/-/-/-               1            0.67                 2.54                 2.54 -
+LogIoStore: Display: ThanePlatform9-Android_ETC2                         C/-/-/I/-            2399          256.10               195.64               109.00 (44.29% Oodle)
+LogIoStore: Display: ----------------------------------------------------------------------------------------------------------------------------------------------
+LogIoStore: Display: Total                                                                    2400          256.77               198.18               111.54
+LogIoStore: Display:
+LogIoStore: Display: ** Flags: (C)ompressed / (E)ncrypted / (S)igned) / (I)ndexed) / (O)nDemand **
+LogIoStore: Display:
+LogIoStore: Display: Compression block padding:     0.00 MiB
+LogIoStore: Display:
+LogIoStore: Display: Container Directory Index
+LogIoStore: Display: ==========================
+LogIoStore: Display:
+LogIoStore: Display: Container                                          Size (KiB)
+LogIoStore: Display: ----------------------------------------------------------------------------------------------------------------------------------------------
+LogIoStore: Display: global                                                   0.00
+LogIoStore: Display: ThanePlatform9-Android_ETC2                             83.51
+LogIoStore: Display:
+LogIoStore: Display: Container Patch Report
+LogIoStore: Display: ========================
+LogIoStore: Display:
+LogIoStore: Display: Container                                             Total #       Modified #          Added #   Modified (MiB)      Added (MiB)
+LogIoStore: Display: ----------------------------------------------------------------------------------------------------------------------------------------------
+LogIoStore: Display: global                                                      1                0                0             0.00             0.00
+LogIoStore: Display: ThanePlatform9-Android_ETC2                              2399                0             2399             0.00           109.00
+LogIoStore: Display:
+LogIoStore: Display: PackageStore
+LogIoStore: Display: =============
+LogIoStore: Display:
+LogIoStore: Display: Container                                          Size (KiB)      Packages #     Localized #
+LogIoStore: Display: ----------------------------------------------------------------------------------------------------------------------------------------------
+LogIoStore: Display: ThanePlatform9-Android_ETC2                                38            1159               0
+LogIoStore: Display: ----------------------------------------------------------------------------------------------------------------------------------------------
+LogIoStore: Display: Total                                                      38            1159               0
+LogIoStore: Display:
+LogIoStore: Display:
+LogIoStore: Display: Input:      1159 Packages
+LogIoStore: Display: Input:     59.98 MiB UExp
+LogIoStore: Display: Input:      1.95 MiB UAsset
+LogIoStore: Display: Input:    121.93 MiB UBulk
+LogIoStore: Display: Input:      6.06 MiB for 340 Global shaders
+LogIoStore: Display: Input:    612.23 KiB for 114 Shared shaders
+LogIoStore: Display: Input:      6.56 KiB for 6 Unique shaders
+LogIoStore: Display: Input:      5.55 MiB for 183 Inline shaders
+LogIoStore: Display:
+LogIoStore: Display: Output:     7885 Name map entries
+LogIoStore: Display: Output:     1989 Imported package entries
+LogIoStore: Display: Output:      508 Packages without imports
+LogIoStore: Display: Output:        0 Public runtime script objects
+LogIoStore: Display: Output:     1.24 MiB HeaderData
+LogIoStore: Display: Output:     2.54 MiB InitialLoadData
+LogIoStore: Display:
+LogIoStore: Display: Success
+LogPakFile: Display: UnrealPak executed in 0.520336 seconds
+Took 0.76s to run UnrealPak.exe, ExitCode=0
+DumpManifest: C:\Users\niles\AppData\Roaming\Unreal Engine\AutomationTool\Logs\C+Program+Files+Epic+Games+UE_5.7\FinalCopyAndroid_UFSFiles.txt, NumItems: 4589
+DumpManifest: C:\Users\niles\AppData\Roaming\Unreal Engine\AutomationTool\Logs\C+Program+Files+Epic+Games+UE_5.7\FinalCopyAndroid_NonUFSFiles.txt, NumItems: 8
+DumpManifest: C:\Users\niles\AppData\Roaming\Unreal Engine\AutomationTool\Logs\C+Program+Files+Epic+Games+UE_5.7\FinalCopyAndroid_NonUFSFilesDebug.txt, NumItems: 5
+Copying NonUFSFiles to staging directory: C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\StagedBuilds\Android_ETC2
+Copying DebugFiles to staging directory: C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\StagedBuilds\Android_ETC2
+Stage command time: 2.21 s
+********** STAGE COMMAND COMPLETED **********
+********** PACKAGE COMMAND STARTED **********
+BaseApkName = C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Binaries/Android\ThanePlatform9.apk
+Creating C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\StagedBuilds\Android_ETC2.obb from C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Saved\StagedBuilds\Android_ETC2
+[1/1] Adding Engine/Binaries/ThirdParty/Vulkan/Android/16kb_page_support.patch to OBB
+[2/2] Adding Engine/Config/StagedBuild_ThanePlatform9.ini to OBB
+[3/3] Adding Engine/Content/Renderer/TessellationTable.bin to OBB
+[4/4] Adding Engine/Content/SlateDebug/Fonts/LastResort.tps to OBB
+[5/5] Adding Engine/Content/SlateDebug/Fonts/LastResort.ttf to OBB
+[6/6] Adding Engine/Extras/GPUDumpViewer/GPUDumpViewer.html to OBB
+[7/7] Adding Engine/Extras/GPUDumpViewer/OpenGPUDumpViewer.bat to OBB
+[8/8] Adding Engine/Extras/GPUDumpViewer/OpenGPUDumpViewer.sh to OBB
+[9/9] Adding ThanePlatform9/Content/Paks/global.ucas to OBB
+[10/10] Adding ThanePlatform9/Content/Paks/global.utoc to OBB
+[11/11] Adding ThanePlatform9/Content/Paks/ThanePlatform9-Android_ETC2.pak to OBB
+[12/12] Adding ThanePlatform9/Content/Paks/ThanePlatform9-Android_ETC2.ucas to OBB
+[13/13] Adding ThanePlatform9/Content/Paks/ThanePlatform9-Android_ETC2.utoc to OBB
+AndroidPlugin: Plugins\Online\Android\OnlineSubsystemGooglePlay\Source\OnlineSubsystemGooglePlay_UPL.xml
+AndroidPlugin: Plugins\Runtime\AndroidPermission\Source\AndroidPermission\AndroidPermission_APL.xml
+AndroidPlugin: Plugins\Runtime\AndroidFileServer\Source\AndroidFileServer\AndroidFileServer_UPL.xml
+AndroidPlugin: Plugins\Runtime\GoogleCloudMessaging\Source\GoogleCloudMessaging\GoogleCloudMessaging_UPL.xml
+AndroidPlugin: Plugins\Runtime\GooglePAD\Source\GooglePAD\GooglePAD_APL.xml
+AndroidPlugin: Source\Runtime\Core\Core_APL.xml
+AndroidPlugin: Source\Runtime\Online\Voice\AndroidVoiceImpl_UPL.xml
+AndroidPlugin: Source\ThirdParty\vkquality\VKQuality_UPL.xml
+AndroidPlugin: Source\ThirdParty\libGPUCounters\libGPUCounters_UPL.xml
+AndroidPlugin: Source\ThirdParty\heapprofd\heapprofd_UPL.xml
+UPL: Engine\Plugins/Online/Android/OnlineSubsystemGooglePlay/Source/OnlineSubsystemGooglePlay_UPL.xml
+UPL: Engine\Plugins/Runtime/AndroidPermission/Source/AndroidPermission/AndroidPermission_APL.xml
+UPL: Engine\Plugins/Runtime/AndroidFileServer/Source/AndroidFileServer/AndroidFileServer_UPL.xml
+UPL: Engine\Plugins/Runtime/GoogleCloudMessaging/Source/GoogleCloudMessaging/GoogleCloudMessaging_UPL.xml
+UPL: Engine\Plugins/Runtime/GooglePAD/Source/GooglePAD/GooglePAD_APL.xml
+UPL: Engine\Source/Runtime/Core/Core_APL.xml
+UPL: Engine\Source/Runtime/Online/Voice/AndroidVoiceImpl_UPL.xml
+UPL: Engine\Source/ThirdParty/vkquality/VKQuality_UPL.xml
+UPL: Engine\Source/ThirdParty/libGPUCounters/libGPUCounters_UPL.xml
+UPL: Engine\Source/ThirdParty/heapprofd/heapprofd_UPL.xml
+Target SDK Version 34
+Android (12470979, based on r522817c) clang version 18.0.3 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)
+Target: x86_64-w64-windows-gnu
+Thread model: posix
+InstalledDir: C:/Users/niles/AppData/Local/Android/Sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/windows-x86_64/bin
+Using package name: 'com.YourCompany.ThanePlatform9'
+GotStoreVersion found v1. (bUseChangeListAsStoreVersion=False IsBuildMachine=False EngineChangeList=0)
+Writing packageInfo pkgName:com.YourCompany.ThanePlatform9 storeVersion:1 versionDisplayName:1.0 to C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Binaries\Android\packageInfo.txt
+
+====08-11-2026 01:24:19====PREPARING TO MAKE APK=================================================================
+bBuildForES31: true
+bSupportsVulkan: true
+Building Java with SDK API level 'android-35'
+Building with Build Tools version '35.0.1'
+
+==== Writing to OBB data file C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Build\Android\src\com\YourCompany\ThanePlatform9\OBBData.java ====
+
+==== OBB data file up to date so not writing. ====
+
+==== Writing to shim file C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Build\Android\src\com\epicgames\unreal\DownloadShim.java ====
+
+==== Shim data file up to date so not writing. ====
+
+==== Writing to template target file C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Build\Android\src\com\YourCompany\ThanePlatform9\AlarmReceiver.java ====
+
+==== Template target file up to date so not writing. ====
+
+==== Writing to template target file C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Build\Android\src\com\YourCompany\ThanePlatform9\DownloaderActivity.java ====
+
+==== Template target file up to date so not writing. ====
+
+==== Writing to template target file C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Build\Android\src\com\YourCompany\ThanePlatform9\OBBDownloaderService.java ====
+
+==== Template target file up to date so not writing. ====
+Cleaning up files based on template dir C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Build\Android\src\com\YourCompany\ThanePlatform9
+bDontBundleLibrariesInAPK is set to false, due to an archive build.
+C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Binaries\Android\ThanePlatform9-arm64.apk is out of date due to newer input file C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Binaries\Android\ThanePlatform9-arm64.so
+C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Binaries\Android\ThanePlatform9-arm64.apk is out of date due to newer input file C:\Users\niles\Documents\Unreal Projects\ThanePlatform9/Saved/StagedBuilds/Android_ETC2/ThanePlatform9/Content/Paks\ThanePlatform9-Android_ETC2.pak
+UPL Init: arm64-v8a
+Subsystem Google Play SDK Android init
+Context: 'Engine/Plugins/Online/Android/OnlineSubsystemGooglePlay/Source' using Architecture='arm64-v8a', NodeName='init', Input=''
+Variables:
+	bool bEnableGooglePlaySupport = false
+
+	bool bSupportsInAppPurchasing = false
+
+	int RequestCodeForPlayGamesActivities = 80002
+
+	string PluginDir = Engine/Plugins/Online/Android/OnlineSubsystemGooglePlay/Source
+
+	string AbsPluginDir = C:/Program Files/Epic Games/UE_5.7/Engine/Plugins/Online/Android/OnlineSubsystemGooglePlay/Source
+
+	string UnrealArch = arm64
+
+	string Architecture = arm64-v8a
+
+	string BuildDir = C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Intermediate/Android/arm64
+
+	string AbsBuildDir = C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Intermediate/Android/arm64
+
+
+Android Permission Plugin Init
+AndroidFileServer Plugin Init
+Google Cloud Messaging init
+GCMClientSenderID set: false
+GooglePAD Plugin Init
+GooglePAD enabled: false
+Core UPL init
+Android Voice init
+VKQuality init
+libGPUCounters init
+heapprofd init
+On build machine.
+
+====08-11-2026 01:24:20====PREPARING NATIVE CODE=====arm64============================================================
+bPackageDataInsideApk = True
+Obb location C:\Users\niles\Documents\Unreal Projects\ThanePlatform9/Saved/StagedBuilds/Android_ETC2.obb
+Obb destination location C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Intermediate\Android\arm64/assets
+Obb file exists...
+Copying C:\Users\niles\Documents\Unreal Projects\ThanePlatform9/Saved/StagedBuilds/Android_ETC2.obb to C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Intermediate\Android\arm64/assets\main.obb.png
+UnrealCommandLine.txt exists...
+AddRepositories: Directory C:\Users\niles\AppData\Local\Android\Sdk\extras not found; ignored
+AARImports: com.google.android.gms, play-services-auth, 20.7.0
+AARImports: com.google.android.gms, play-services-games-v2, 19.0.0
+Copying permission_library directory to staging before build
+
+Directory C:/Program Files/Epic Games/UE_5.7/Engine/Source/ThirdParty/AndroidPermission/permission_library copied to C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Intermediate/Android/arm64/JavaLibs/permission_library (True)
+
+==== Writing to OBB data file C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Intermediate\Android\arm64\src\com\YourCompany\ThanePlatform9\OBBData.java ====
+
+==== OBB data file up to date so not writing. ====
+Compile SDK is 35+, adding Android Profiler access.
+Copying libVkLayer_khronos_validation.so vulkan layer from C:\Program Files\Epic Games\UE_5.7\Engine\Binaries\ThirdParty\Vulkan\Android\arm64-v8a
+DebugVulkanLayerDirectory 
+File Engine/Plugins/Runtime/AndroidFileServer/Source/AndroidFileServer/Android/java/com/epicgames/unreal/RemoteFileManager.java copied to C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Intermediate/Android/arm64/src/com/epicgames/unreal/RemoteFileManager.java
+File Engine/Plugins/Runtime/AndroidFileServer/Source/AndroidFileServer/Android/java/com/epicgames/unreal/IAndroidFileServerSetup.java copied to C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Intermediate/Android/arm64/src/com/epicgames/unreal/IAndroidFileServerSetup.java
+File Engine/Plugins/Runtime/AndroidFileServer/Source/AndroidFileServer/Android/java/com/epicgames/unreal/RemoteFileManagerActivity.java copied to C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Intermediate/Android/arm64/src/com/epicgames/unreal/RemoteFileManagerActivity.java
+File Engine/Plugins/Runtime/AndroidFileServer/Source/AndroidFileServer/Android/java/com/epicgames/unreal/RemoteFileManagerService.java copied to C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Intermediate/Android/arm64/src/com/epicgames/unreal/RemoteFileManagerService.java
+File C:/Program Files/Epic Games/UE_5.7/Engine/Source/Runtime/Core/Private/Android/Java/ProfilerAccessor.java copied to C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Intermediate/Android/arm64/src/com/epicgames/unreal/androidprofiling/ProfilerAccessor.java
+File C:/Program Files/Epic Games/UE_5.7/Engine/Source/ThirdParty/vkquality/libs/arm64-v8a/libvkquality.so copied to C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Intermediate/Android/arm64/libs/arm64-v8a/libvkquality.so
+Copying libvkquality.so
+File C:/Program Files/Epic Games/UE_5.7/Engine/Source/ThirdParty/vkquality/vkq_library/vkquality/src/main/assets/vkqualitydata.vkq copied to C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Intermediate/Android/arm64/assets/vkqualitydata.vkq
+Copying vkqualitydata.vkq
+File C:/Program Files/Epic Games/UE_5.7/Engine/Source/ThirdParty/libGPUCounters/lib/arm64-v8a/libGPUCounters.so copied to C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Intermediate/Android/arm64/libs/arm64-v8a/libGPUCounters.so
+Copying libGPUCounters.so
+File C:/Program Files/Epic Games/UE_5.7/Engine/Source/ThirdParty/heapprofd/arm64-v8a/libheapprofd_standalone_client.so copied to C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Intermediate/Android/arm64/libs/arm64-v8a/libheapprofd_standalone_client.so
+Copying heapprofd_standalone_client.so
+
+====08-11-2026 01:24:21====PERFORMING FINAL APK PACKAGE OPERATION=====arm64===========================================
+Copied file C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Intermediate\Android\arm64\gradle\app\src\main\assets\main.obb.png.
+
+Directory Engine/Plugins/Runtime/AndroidFileServer/Source/AndroidFileServer/../AFSStub copied to C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Intermediate/Android/arm64/gradle/AFSProject (True)
+
+Directory Engine/Plugins/Runtime/AndroidFileServer/Source/AndroidFileServer/Android copied to C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Intermediate/Android/arm64/gradle/AFSProject/app/src/main (True)
+
+Directory C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Intermediate/Android/arm64/gradle/app/src/main/res copied to C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Intermediate/Android/arm64/gradle/AFSProject/app/src/main/res (True)
+
+Directory C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Intermediate/Android/arm64/gradle/gradle copied to C:/Users/niles/Documents/Unreal Projects/ThanePlatform9/Intermediate/Android/arm64/gradle/AFSProject/gradle (True)
+
+Creating rungradle.bat to work around commandline length limit (using unused drive letter Z:)
+Making .apk with Gradle...
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.7/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:compileDebugAidl UP-TO-DATE
+> Task :app:generateDebugBuildConfig UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :downloader_library:preBuild UP-TO-DATE
+> Task :downloader_library:preDebugBuild UP-TO-DATE
+> Task :downloader_library:writeDebugAarMetadata UP-TO-DATE
+> Task :permission_library:preBuild UP-TO-DATE
+> Task :permission_library:preDebugBuild UP-TO-DATE
+> Task :permission_library:writeDebugAarMetadata UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :downloader_library:generateDebugResValues UP-TO-DATE
+> Task :downloader_library:generateDebugResources UP-TO-DATE
+> Task :downloader_library:packageDebugResources UP-TO-DATE
+> Task :permission_library:generateDebugResValues UP-TO-DATE
+> Task :permission_library:generateDebugResources UP-TO-DATE
+> Task :permission_library:packageDebugResources UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :downloader_library:extractDeepLinksDebug UP-TO-DATE
+> Task :downloader_library:processDebugManifest UP-TO-DATE
+> Task :permission_library:extractDeepLinksDebug UP-TO-DATE
+> Task :permission_library:processDebugManifest UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :downloader_library:compileDebugLibraryResources UP-TO-DATE
+> Task :downloader_library:parseDebugLocalResources UP-TO-DATE
+> Task :downloader_library:generateDebugRFile UP-TO-DATE
+> Task :permission_library:compileDebugLibraryResources UP-TO-DATE
+> Task :permission_library:parseDebugLocalResources UP-TO-DATE
+> Task :permission_library:generateDebugRFile UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+> Task :downloader_library:javaPreCompileDebug UP-TO-DATE
+> Task :downloader_library:compileDebugJavaWithJavac UP-TO-DATE
+> Task :downloader_library:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :permission_library:javaPreCompileDebug UP-TO-DATE
+> Task :permission_library:compileDebugJavaWithJavac UP-TO-DATE
+> Task :permission_library:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :app:compileDebugJavaWithJavac UP-TO-DATE
+> Task :app:mergeDebugShaders UP-TO-DATE
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :downloader_library:mergeDebugShaders UP-TO-DATE
+> Task :downloader_library:compileDebugShaders NO-SOURCE
+> Task :downloader_library:generateDebugAssets UP-TO-DATE
+> Task :downloader_library:packageDebugAssets UP-TO-DATE
+> Task :permission_library:mergeDebugShaders UP-TO-DATE
+> Task :permission_library:compileDebugShaders NO-SOURCE
+> Task :permission_library:generateDebugAssets UP-TO-DATE
+> Task :permission_library:packageDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets
+> Task :app:l8DexDesugarLibDebug UP-TO-DATE
+> Task :downloader_library:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :permission_library:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :app:desugarDebugFileDependencies UP-TO-DATE
+> Task :app:dexBuilderDebug UP-TO-DATE
+> Task :app:mergeDebugGlobalSynthetics UP-TO-DATE
+> Task :app:processDebugJavaRes UP-TO-DATE
+> Task :downloader_library:processDebugJavaRes NO-SOURCE
+> Task :permission_library:processDebugJavaRes NO-SOURCE
+> Task :app:mergeDebugJavaResource UP-TO-DATE
+> Task :app:checkDebugDuplicateClasses UP-TO-DATE
+> Task :app:mergeExtDexDebug UP-TO-DATE
+> Task :downloader_library:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :permission_library:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :app:mergeProjectDexDebug UP-TO-DATE
+> Task :app:compressDebugAssets
+> Task :app:mergeDebugJniLibFolders
+> Task :app:mergeLibDexDebug UP-TO-DATE
+> Task :downloader_library:mergeDebugJniLibFolders UP-TO-DATE
+> Task :downloader_library:mergeDebugNativeLibs NO-SOURCE
+> Task :downloader_library:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :permission_library:mergeDebugJniLibFolders UP-TO-DATE
+> Task :permission_library:mergeDebugNativeLibs NO-SOURCE
+> Task :permission_library:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :app:validateSigningDebug UP-TO-DATE
+> Task :app:writeDebugAppMetadata UP-TO-DATE
+> Task :app:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :app:mergeDebugNativeLibs
+> Task :app:stripDebugDebugSymbols
+> Task :app:ueCleanDebugAPK
+> Task :app:packageDebug
+> Task :app:createDebugApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleDebug
+> Task :app:ueCompleteDebug
+
+BUILD SUCCESSFUL in 16s
+76 actionable tasks: 8 executed, 68 up-to-date
+Writing symbols to C:\Users\niles\Documents\Unreal Projects\ThanePlatform9\Binaries\Android\ThanePlatform9_Symbols_v1\ThanePlatform9arm64\libUnreal.so
+
+====08-11-2026 01:24:38====COMPLETED MAKE APK=======================================================================
+Using this aapt: C:\Users\niles\AppData\Local\Android\Sdk\build-tools\35.0.1\aapt.exe
+GetPackageInfo ReturnValue: com.YourCompany.ThanePlatform9
+Writing bat for install with data in APK
+Writing bat for uninstall with data in APK
+Writing bat for symbolize
+GetPackageInfo ReturnValue: 1
+Package command time: 19.77 s
+********** PACKAGE COMMAND COMPLETED **********
+********** ARCHIVE COMMAND STARTED **********
+Archiving to C:\Users\niles\Documents\Unreal Projects\_builds\ThanePlatform9_Android_8B
+GetPackageInfo ReturnValue: com.YourCompany.ThanePlatform9
+GetPackageInfo ReturnValue: 1
+GetPackageInfo ReturnValue: com.YourCompany.ThanePlatform9
+GetPackageInfo ReturnValue: 1
+GetPackageInfo ReturnValue: 1
+Archive command time: 0.24 s
+********** ARCHIVE COMMAND COMPLETED **********
+BuildCookRun time: 190.76 s
+BUILD SUCCESSFUL
+AutomationTool executed for 0h 3m 11s
+AutomationTool exiting with ExitCode=0 (Success)

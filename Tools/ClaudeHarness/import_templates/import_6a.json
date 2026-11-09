@@ -1,0 +1,82 @@
+{
+ "ImportGroups": [
+  {
+   "GroupName": "Track6A",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies6A/Export/SM_P9_TrackPanel_GapRails.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies6A/Export/SM_P9_TrackPanel_GapAll.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Anomalies6A",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_StaticMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": false,
+    "bImportAnimations": false,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "StaticMeshImportData": {
+     "bCombineMeshes": true,
+     "bAutoGenerateCollision": false,
+     "bOneConvexHullPerUCX": true,
+     "bGenerateLightmapUVs": false,
+     "bBuildNanite": false,
+     "bRemoveDegenerates": true,
+     "NormalImportMethod": "FBXNIM_ImportNormals",
+     "VertexColorImportOption": "Ignore",
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "ImportTranslation": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+     },
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": 0,
+      "Roll": 0
+     }
+    }
+   }
+  },
+  {
+   "GroupName": "Tex6A",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies6A/Textures/T_P9_Anom6_AdPoster_Boy.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies6A/Textures/T_P9_Anom6_BookingCounter_123.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies6A/Textures/T_P9_Anom6_BookingCounter_174.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies6A/Textures/T_P9_Anom6_BookingCounter_231.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies6A/Textures/T_P9_Anom6_BookingCounter_312.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies6A/Textures/T_P9_Anom6_ClockDigits.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies6A/Textures/T_P9_Anom6_FOBSignPF4_5_Arrows.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies6A/Textures/T_P9_Anom6_FOBSignPF4_5_Number.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies6A/Textures/T_P9_Anom6_FOBSignPF6_7_Arrows.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies6A/Textures/T_P9_Anom6_FOBSignPF6_7_Number.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies6A/Textures/T_P9_Anom6_FOBSignPF8_Arrows.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies6A/Textures/T_P9_Anom6_FOBSignPF8_Number.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies6A/Textures/T_P9_Anom6_Indicator_Dadar.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies6A/Textures/T_P9_Anom6_Indicator_Panvel.png",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Anomalies6A/Textures/T_P9_Anom6_Indicator_Thane.png"
+   ],
+   "DestinationPath": "/Game/P9/Anomalies6A/Textures",
+   "FactoryName": "TextureFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true
+  },
+  {
+   "GroupName": "PA6A",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Announcements/Final/SW_P9_PA_PF9_Anom6_Platform10.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/Announcements/Final/SW_P9_PA_PF9_Anom6_Panvel.wav"
+   ],
+   "DestinationPath": "/Game/P9/Announcements",
+   "FactoryName": "SoundFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true
+  }
+ ]
+}

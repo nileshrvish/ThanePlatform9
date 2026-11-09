@@ -1,8 +1,15 @@
 #include "P9CampaignDirector.h"
+#include "P9Captions.h"
+#include "P9MainMenu.h"
 #include "ThanePlatform9.h"
 #include "P9AnomalySpawnPoint.h"
 #include "P9CampaignSave.h"
 #include "P9SeatComponent.h"
+#include "P9SilhouetteStalker.h"
+#include "P9AnalogClock.h"
+#include "P9EndlessFootbridge.h"
+#include "P9LanternMan.h"
+#include "P9ReverseEscalator.h"
 #include "P9Train.h"
 #include "P9StationAnnouncer.h"
 #include "Camera/PlayerCameraManager.h"
@@ -17,6 +24,7 @@
 #include "Engine/GameViewportClient.h"
 #include "Engine/StaticMesh.h"
 #include "Engine/StaticMeshActor.h"
+#include "Engine/Texture2D.h"
 #include "Engine/World.h"
 #include "EngineUtils.h"
 #include "GameFramework/Character.h"
@@ -43,10 +51,28 @@ namespace P9Campaign
 	constexpr float IntroFadeTime = 1.4f;
 	constexpr float DecisionGraceTime = 1.0f;        // events in the first second of a day belong to the previous one
 	constexpr float ZonePollInterval = 0.1f;
-	constexpr float FigureVanishDistance = 1100.0f;
 	const FName SpawnedTag(TEXT("P9Anomaly"));
-	TAutoConsoleVariable<float> CVarScareFigureLife(TEXT("p9.Campaign.ScareHoldSeconds"), 0.65f,
-		TEXT("How long the close-range apparition stays in front of the player (seconds; raise only to inspect it)."));
+
+	// ---- Stage 6A constants ----
+	const TCHAR* Folder6A = TEXT("/Game/P9/Anomalies6A");
+	const TCHAR* Materials6A = TEXT("/Game/P9/Anomalies6A/Materials");
+	const TCHAR* PAFolder = TEXT("/Game/P9/Announcements");
+	/** Dynamic clock: atlas cells (px) and where each of the five characters "HH:MM" is drawn on the 512x192 face. */
+	constexpr int32 ClockFaceW = 512, ClockFaceH = 192;
+	constexpr float ClockAtlasW = 2048.0f, ClockAtlasH = 256.0f, ClockCellW = 128.0f, ClockCellH = 192.0f;
+	constexpr float ClockSlotX[5] = {25.0f, 125.0f, 190.0f, 260.0f, 360.0f};   // left edge of each 128 px cell (gen_6a_textures.py fit, 5 px dot pitch)
+	/** Poster eyes (AdStand local cm, poster plane faces +X at x 2.1): eye centres, pupil lift off the paper, travel. */
+	const FVector EyeCentres[2] = {FVector(2.1f, 9.14f, 168.6f), FVector(2.1f, -9.14f, 168.6f)};
+	constexpr float PupilLift = 0.45f;
+	constexpr float PupilTravelY = 2.6f, PupilTravelZ = 1.0f;          // eye whites: 40 x 28 px = 4.7 x 3.0 cm radii
+	const FVector PupilScale(0.006f, 0.034f, 0.034f);                  // the 100 cm engine sphere -> a 3.4 cm disc
+	/** Loop anomalies: the screen dips to this darkness when the player is sent back. */
+	constexpr float LoopBlinkAlpha = 0.92f, LoopBlinkSeconds = 0.45f;
+	// ---- Stage 8A constants ----
+	const TCHAR* Endless8A = TEXT("/Game/P9/Anomalies8A/Endless");
+	const TCHAR* Materials8A = TEXT("/Game/P9/Anomalies8A/Materials");
+	/** Seconds the player must have an anomaly in view before it counts as noticed (anomaly ambience only). */
+	constexpr float NoticeSeconds = 0.5f;
 
 	FSoftObjectPath AssetPath(const TCHAR* Folder, const TCHAR* Name)
 	{
@@ -83,9 +109,37 @@ namespace P9Campaign
 		V.Param = Param;
 		return V;
 	}
-	const TCHAR* HeroPath = TEXT("/Game/P9/Entities/SM_P9_Entity_Hero.SM_P9_Entity_Hero");
-	const TCHAR* TallPath = TEXT("/Game/P9/Entities/SM_P9_Entity_Tall.SM_P9_Entity_Tall");
-	const TCHAR* PassengerPath = TEXT("/Game/P9/Entities/SM_P9_Entity_Passenger.SM_P9_Entity_Passenger");
+	/** Stage 6A: a material variant from the 6A folder, usable only at points whose id contains PointMatch. */
+	FP9AnomalyVariant Material6A(const TCHAR* Id, int32 Difficulty, const TCHAR* Material, const TCHAR* PointMatch = TEXT(""), bool bLater = false)
+	{
+		FP9AnomalyVariant V = Variant(Id, Difficulty);
+		V.Material = TSoftObjectPtr<UMaterialInterface>(AssetPath(Materials6A, Material));
+		V.PointMatch = PointMatch;
+		V.bChangeAfterLookAway = bLater;
+		return V;
+	}
+	/** Stage 4D material (still in use for the 6A signboard anomaly), restricted to matching points. */
+	FP9AnomalyVariant Material4D(const TCHAR* Id, int32 Difficulty, const TCHAR* Material, const TCHAR* PointMatch)
+	{
+		FP9AnomalyVariant V = MaterialVariant(Id, Difficulty, Material);
+		V.PointMatch = PointMatch;
+		return V;
+	}
+	/** "HH:MM" -> minutes since midnight (wraps); anything unparsable -> 23:47, the station clock's own time. */
+	int32 ParseClock(const FString& Text)
+	{
+		FString H, M;
+		if (!Text.Split(TEXT(":"), &H, &M) || !H.IsNumeric() || !M.IsNumeric())
+		{
+			return 23 * 60 + 47;
+		}
+		return ((FCString::Atoi(*H) * 60 + FCString::Atoi(*M)) % 1440 + 1440) % 1440;
+	}
+	FString FormatClock(int32 Minutes)
+	{
+		Minutes = (Minutes % 1440 + 1440) % 1440;
+		return FString::Printf(TEXT("%02d:%02d"), Minutes / 60, Minutes % 60);
+	}
 
 	template <typename T>
 	T* FindNamedComponent(const AActor* Actor, const FString& Name)
@@ -156,15 +210,9 @@ AP9CampaignDirector::AP9CampaignDirector()
 	RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
 	SetHidden(true);
 	FigureMesh = TSoftObjectPtr<UStaticMesh>(FSoftObjectPath(TEXT("/Game/P9/Anomalies/SM_P9_Apparition.SM_P9_Apparition")));
-	auto Scare = [](const TCHAR* N) { return TSoftObjectPtr<USoundBase>(P9Campaign::AssetPath(TEXT("/Game/P9/Anomalies/Audio4D"), N)); };
-	StingClose = Scare(TEXT("SW_P9_Scare_StingClose"));
-	StingCarriage = Scare(TEXT("SW_P9_Scare_StingCarriage"));
-	StingFootbridge = Scare(TEXT("SW_P9_Scare_StingFootbridge"));
-	ScareDrone = Scare(TEXT("SW_P9_Scare_Drone"));
-	ScareRush = Scare(TEXT("SW_P9_Scare_ClothRush"));
-	HeroMesh = TSoftObjectPtr<UStaticMesh>(P9Campaign::AssetPath(TEXT("/Game/P9/Entities"), TEXT("SM_P9_Entity_Hero")));
-	TallMesh = TSoftObjectPtr<UStaticMesh>(P9Campaign::AssetPath(TEXT("/Game/P9/Entities"), TEXT("SM_P9_Entity_Tall")));
-	PassengerMesh = TSoftObjectPtr<UStaticMesh>(P9Campaign::AssetPath(TEXT("/Game/P9/Entities"), TEXT("SM_P9_Entity_Passenger")));
+	ClockDigits = TSoftObjectPtr<UTexture2D>(P9Campaign::AssetPath(TEXT("/Game/P9/Anomalies6A/Textures"), TEXT("T_P9_Anom6_ClockDigits")));
+	PupilMesh = TSoftObjectPtr<UStaticMesh>(FSoftObjectPath(TEXT("/Engine/BasicShapes/Sphere.Sphere")));
+	PupilMaterial = TSoftObjectPtr<UMaterialInterface>(P9Campaign::AssetPath(P9Campaign::Materials6A, TEXT("MI_P9_Anom6_PosterPupil")));
 	ChaiwalaMesh = TSoftObjectPtr<UStaticMesh>(FSoftObjectPath(TEXT("/Game/P9/Characters/SM_P9_Chaiwala.SM_P9_Chaiwala")));
 	ChaiwalaWakeLine = TSoftObjectPtr<USoundBase>(FSoftObjectPath(TEXT("/Game/P9/Announcements/SW_P9_VO_Chaiwala_Wake.SW_P9_VO_Chaiwala_Wake")));
 	ChaiwalaCallLine = TSoftObjectPtr<USoundBase>(FSoftObjectPath(TEXT("/Game/P9/Announcements/SW_P9_VO_Chaiwala_Call.SW_P9_VO_Chaiwala_Call")));
@@ -183,16 +231,31 @@ AP9CampaignDirector::AP9CampaignDirector()
 		{TEXT("/Game/P9/Environment/StationSignage/MI_P9_TrainIndicator_PF1"), TEXT("T_P9_TrainIndicator_PF1_4B")},
 		{TEXT("/Game/P9/Environment/StationSignage/MI_P9_TrainIndicator_PF9_10"), TEXT("T_P9_TrainIndicator_PF9_10_4B")},
 		{TEXT("/Game/P9/Environment/StationSignage/MI_P9_TrainIndicator_Concourse"), TEXT("T_P9_TrainIndicator_Concourse_4B")}};
-	ReflectionSting = TSoftObjectPtr<USoundBase>(P9Campaign::AssetPath(P9Campaign::AudioFolder, TEXT("SW_P9_Anom_StingReflection")));
 	ApparitionSting = TSoftObjectPtr<USoundBase>(P9Campaign::AssetPath(P9Campaign::AudioFolder, TEXT("SW_P9_Anom_StingApparition")));
+	// Stage 8A assets
+	{
+		using namespace P9Campaign;
+		auto SM = [](const TCHAR* Folder, const TCHAR* Name) { return TSoftObjectPtr<UStaticMesh>(AssetPath(Folder, Name)); };
+		LanternManMesh = SM(TEXT("/Game/P9/Creatures8A/LanternMan"), TEXT("SM_P9_LanternMan"));
+		GreetingStandMesh = SM(TEXT("/Game/P9/Creatures8A/Greeting"), TEXT("SM_P9_Greeting_rest"));
+		GreetingLungeMesh = SM(TEXT("/Game/P9/Creatures8A/Greeting"), TEXT("SM_P9_Greeting_lunge"));
+		BridgeSouthMesh = SM(Endless8A, TEXT("SM_P9_FOBB_South8A"));
+		BridgeEndMesh = SM(Endless8A, TEXT("SM_P9_FOBB_End8A"));
+		BridgeBayMesh = SM(Endless8A, TEXT("SM_P9_FOBB_Bay8A"));
+		BridgeLeadInMesh = SM(Endless8A, TEXT("SM_P9_FOBB_BayLeadIn8A"));
+		BridgeTubeMesh = SM(TEXT("/Game/P9/Environment/StationLighting"), TEXT("SM_P9_TubeLight"));
+		EscalatorUpperMesh = SM(Endless8A, TEXT("SM_P9_StairPF910_Upper8A"));
+		EscalatorStepMesh = SM(Endless8A, TEXT("SM_P9_EscalatorStep8A"));
+	}
 	BuildDefaultCatalogue();
 }
 
 void AP9CampaignDirector::BuildDefaultCatalogue()
 {
+	// Stage 6A: the catalogue was replaced by the user's eleven anomalies (one per anomalous day; Kanchana scheduled on days 3-5)
 	using namespace P9Campaign;
 	auto Def = [this](const TCHAR* Id, const TCHAR* Name, EP9AnomalyCategory Category, EP9AnomalyHandler Handler, float Weight,
-		TArray<EP9AnomalyLocation> Locations, TArray<FName> InTags, TArray<FName> Exclude) -> FP9AnomalyDef&
+		TArray<EP9AnomalyLocation> Locations) -> FP9AnomalyDef&
 	{
 		FP9AnomalyDef& D = Anomalies.AddDefaulted_GetRef();
 		D.Id = FName(Id);
@@ -201,179 +264,198 @@ void AP9CampaignDirector::BuildDefaultCatalogue()
 		D.Handler = Handler;
 		D.Weight = Weight;
 		D.LocationTypes = MoveTemp(Locations);
-		D.Tags = MoveTemp(InTags);
-		D.ExcludeTags = MoveTemp(Exclude);
 		return D;
 	};
-	const FName Sign(TEXT("Sign")), Light(TEXT("Light")), Bench(TEXT("Bench")), Figure(TEXT("Figure")), TrainTag(TEXT("Train")), PA(TEXT("PA"));
 
-	// ---- signage / environment ----
+	// 1. the Platform 9/10 clock: its time changes (redrawn at runtime in the board's own dot-matrix glyphs)
 	{
-		FP9AnomalyDef& D = Def(TEXT("PlatformSignWrong"), TEXT("Platform sign shows the wrong number"), EP9AnomalyCategory::Signage, EP9AnomalyHandler::MaterialSwap, 1.0f,
-			{EP9AnomalyLocation::PlatformSign}, {Sign}, {});
-		D.MaterialSlotMatch = TEXT("Sign_PF9_10");                    // Stage 4B: the Platform 9/10 signs
-		D.Variants = {MaterialVariant(TEXT("Number13"), 2, TEXT("MI_P9_Anom_SignPF9_10_A")), LaterVariant(TEXT("ChangesBehindYou"), 3, TEXT("MI_P9_Anom_SignPF9_10_A")),
-			MaterialVariant(TEXT("Misspelt"), 1, TEXT("MI_P9_Anom_SignPF9_10_C"))};
-	}
-	{
-		FP9AnomalyDef& D = Def(TEXT("FOBSignWrong"), TEXT("Footbridge sign arrows / number wrong"), EP9AnomalyCategory::Signage, EP9AnomalyHandler::MaterialSwap, 0.9f,
-			{EP9AnomalyLocation::FOBSign}, {Sign}, {});
-		D.MaterialSlotMatch = TEXT("FOBSign_PF2_3");
-		D.Variants = {MaterialVariant(TEXT("ArrowsReversed"), 2, TEXT("MI_P9_Anom_FOBSignPF2_3_A")), MaterialVariant(TEXT("Platform9"), 2, TEXT("MI_P9_Anom_FOBSignPF2_3_B"))};
-	}
-	{
-		FP9AnomalyDef& D = Def(TEXT("FOBSignPF9Wrong"), TEXT("Footbridge sign for platforms 9/10 wrong"), EP9AnomalyCategory::Signage, EP9AnomalyHandler::MaterialSwap, 0.9f,
-			{EP9AnomalyLocation::FOBSignPF9}, {Sign}, {});
-		D.MaterialSlotMatch = TEXT("FOBSign_PF9_10");
-		D.Variants = {MaterialVariant(TEXT("ArrowsReversed"), 2, TEXT("MI_P9_Anom_FOBSignPF9_10_A")), MaterialVariant(TEXT("Platform13"), 2, TEXT("MI_P9_Anom_FOBSignPF9_10_B"))};
-	}
-	{
-		FP9AnomalyDef& D = Def(TEXT("IndicatorWrong"), TEXT("Train indicator shows something impossible"), EP9AnomalyCategory::Signage, EP9AnomalyHandler::MaterialSwap, 1.0f,
-			{EP9AnomalyLocation::Indicator}, {Sign}, {});
-		D.MaterialSlotMatch = TEXT("TrainIndicator_PF9_10");          // Stage 4B: the Platform 9/10 indicator (Vashi)
-		D.Variants = {MaterialVariant(TEXT("ImpossibleTime"), 1, TEXT("MI_P9_Anom_IndicatorPF9_10_A")), MaterialVariant(TEXT("DoNotBoard"), 3, TEXT("MI_P9_Anom_IndicatorPF9_10_B")),
-			MaterialVariant(TEXT("NoReturn"), 2, TEXT("MI_P9_Anom_IndicatorPF9_10_C")), LaterVariant(TEXT("NoReturnLater"), 3, TEXT("MI_P9_Anom_IndicatorPF9_10_C"))};
-	}
-	{
-		FP9AnomalyDef& D = Def(TEXT("ClockWrong"), TEXT("Station clock shows the wrong time"), EP9AnomalyCategory::Environment, EP9AnomalyHandler::MaterialSwap, 1.0f,
-			{EP9AnomalyLocation::Clock}, {}, {});
+		FP9AnomalyDef& D = Def(TEXT("ClockWrong"), TEXT("Station clock time changes"), EP9AnomalyCategory::Environment, EP9AnomalyHandler::DynamicClock, 1.0f,
+			{EP9AnomalyLocation::Clock});
 		D.MaterialSlotMatch = TEXT("StationClock");
-		D.Variants = {MaterialVariant(TEXT("HalfHourBack"), 1, TEXT("MI_P9_Anom_Clock_A")), MaterialVariant(TEXT("Impossible"), 2, TEXT("MI_P9_Anom_Clock_B")),
-			MaterialVariant(TEXT("Midnight"), 2, TEXT("MI_P9_Anom_Clock_C")), LaterVariant(TEXT("StopsAtMidnight"), 3, TEXT("MI_P9_Anom_Clock_C"))};
+		FP9AnomalyVariant Back = Variant(TEXT("RunsBackwards"), 2); Back.Text = TEXT("23:47"); Back.Param = 1.0f; Back.Scale.X = 2.5f;   // one minute back every 2.5 s
+		FP9AnomalyVariant Race = Variant(TEXT("Racing"), 1); Race.Text = TEXT("23:47"); Race.Param = 2.0f; Race.Scale.X = 0.35f;       // minutes fly by
+		FP9AnomalyVariant Hour = Variant(TEXT("WrongHour"), 3); Hour.Text = TEXT("03:47");                                              // fixed, four hours off
+		FP9AnomalyVariant Bad = Variant(TEXT("Impossible"), 1); Bad.Text = TEXT("27:63");                                               // a time that cannot exist
+		D.Variants = {Back, Race, Hour, Bad};
 	}
+	// 2. the Platform 9/10 train indicator: another destination instead of Vashi
 	{
-		FP9AnomalyDef& D = Def(TEXT("LampFault"), TEXT("Platform lamp off / red / flickering"), EP9AnomalyCategory::Environment, EP9AnomalyHandler::LampFault, 1.0f,
-			{EP9AnomalyLocation::Lamp}, {Light}, {});
-		FP9AnomalyVariant Off = Variant(TEXT("Off"), 2); Off.Param = 0.0f;
-		FP9AnomalyVariant Flicker = Variant(TEXT("Flicker"), 1); Flicker.Param = 1.0f;
-		FP9AnomalyVariant Red = Variant(TEXT("Red"), 3); Red.Param = 2.0f; Red.Color = FLinearColor(1.0f, 0.08f, 0.05f);
-		D.Variants = {Off, Flicker, Red};
+		FP9AnomalyDef& D = Def(TEXT("IndicatorWrong"), TEXT("Train indicator shows another destination"), EP9AnomalyCategory::Signage, EP9AnomalyHandler::MaterialSwap, 1.0f,
+			{EP9AnomalyLocation::Indicator});
+		D.MaterialSlotMatch = TEXT("TrainIndicator_PF9_10");
+		D.Variants = {Material6A(TEXT("Panvel"), 3, TEXT("MI_P9_Anom6_Indicator_Panvel")), Material6A(TEXT("Dadar"), 2, TEXT("MI_P9_Anom6_Indicator_Dadar")),
+			Material6A(TEXT("Thane"), 1, TEXT("MI_P9_Anom6_Indicator_Thane")), Material6A(TEXT("PanvelLater"), 3, TEXT("MI_P9_Anom6_Indicator_Panvel"), TEXT(""), true)};
 	}
+	// 3. endless footbridge. Stage 8A: no teleport - walking north on deck B the bridge's end recedes as the player walks
+	//    (AP9EndlessFootbridge: the real north end is swapped for a moving copy, bays are laid behind it; walking back is free)
 	{
-		FP9AnomalyDef& D = Def(TEXT("BenchMissing"), TEXT("A platform bench is gone"), EP9AnomalyCategory::Environment, EP9AnomalyHandler::HideActor, 0.9f,
-			{EP9AnomalyLocation::Bench}, {Bench}, {Bench});
-		D.Variants = {Variant(TEXT("Gone"), 2)};
+		FP9AnomalyDef& D = Def(TEXT("EndlessFootbridge"), TEXT("The footbridge never reaches Platform 9"), EP9AnomalyCategory::Environment, EP9AnomalyHandler::EndlessBridge, 1.0f,
+			{EP9AnomalyLocation::FOBLoop});
+		D.Variants = {Variant(TEXT("Recedes"), 2)};
 	}
+	// 4. Kanchana: one seeded day of days 3-5; once seen she follows and speaks. Stage 8A: she starts on Platform 9 (the two
+	//    KANCHANA_PF9* points, checked clear of benches, columns, walls and the train)
 	{
-		FP9AnomalyDef& D = Def(TEXT("ExtraBench"), TEXT("An extra bench on the platform"), EP9AnomalyCategory::Other, EP9AnomalyHandler::ExtraProp, 0.8f,
-			{EP9AnomalyLocation::BenchSlot}, {Bench}, {Bench});
-		FP9AnomalyVariant Aligned = Variant(TEXT("Aligned"), 1); Aligned.Param = 0.0f;
-		FP9AnomalyVariant Turned = Variant(TEXT("Turned"), 2); Turned.Param = 90.0f;
-		D.Variants = {Aligned, Turned};
+		FP9AnomalyDef& D = Def(TEXT("Kanchana"), TEXT("Kanchana waits on Platform 9 and follows once seen"), EP9AnomalyCategory::Supernatural, EP9AnomalyHandler::Stalker, 1.0f,
+			{EP9AnomalyLocation::StalkerSpot});
+		D.bScheduled = true;
+		D.ScheduleFirstDay = 3;
+		D.ScheduleLastDay = 5;
+		FP9AnomalyVariant Follows = Variant(TEXT("Follows"), 3);
+		Follows.PointMatch = TEXT("KANCHANA_PF9");
+		D.Variants = {Follows};
 	}
-	// ---- train ----
-	{
-		FP9AnomalyDef& D = Def(TEXT("TrainDestination"), TEXT("Train destination board is wrong"), EP9AnomalyCategory::Train, EP9AnomalyHandler::TrainDestination, 0.9f,
-			{EP9AnomalyLocation::TrainDestination}, {TrainTag}, {});
-		FP9AnomalyVariant A = Variant(TEXT("Platform9"), 2); A.Text = TEXT("PLATFORM 9");
-		FP9AnomalyVariant B = Variant(TEXT("NoReturn"), 3); B.Text = TEXT("NO RETURN");
-		FP9AnomalyVariant C = Variant(TEXT("Misspelt"), 1); C.Text = TEXT("VAHSI  S");
-		D.Variants = {A, B, C};
-	}
-	{
-		FP9AnomalyDef& D = Def(TEXT("TrainSeats"), TEXT("Train seats are the wrong colour"), EP9AnomalyCategory::Train, EP9AnomalyHandler::TrainSeatTint, 0.8f,
-			{EP9AnomalyLocation::TrainSeats}, {TrainTag}, {});
-		FP9AnomalyVariant Red = MaterialVariant(TEXT("Red"), 2, TEXT("MI_P9_Anom_TrainSeat_Red"));
-		FP9AnomalyVariant Pale = Variant(TEXT("Bloodless"), 1); Pale.Color = FLinearColor(1.6f, 1.6f, 1.6f);
-		D.Variants = {Red, Pale};
-	}
-	{
-		FP9AnomalyDef& D = Def(TEXT("TrainLights"), TEXT("Train interior lights abnormal"), EP9AnomalyCategory::Train, EP9AnomalyHandler::TrainLights, 0.8f,
-			{EP9AnomalyLocation::TrainLights}, {TrainTag, Light}, {});
-		FP9AnomalyVariant Off = Variant(TEXT("Dark"), 2); Off.Param = 0.0f;
-		FP9AnomalyVariant Flicker = Variant(TEXT("Flicker"), 1); Flicker.Param = 1.0f;
-		FP9AnomalyVariant Red = Variant(TEXT("Red"), 3); Red.Param = 2.0f; Red.Color = FLinearColor(1.0f, 0.05f, 0.03f);
-		D.Variants = {Off, Flicker, Red};
-	}
-	// ---- audio ----
+	// 5. the Platform 9 arrival announcement is wrong (played when the Vashi local is called in)
 	{
 		FP9AnomalyDef& D = Def(TEXT("AnnouncementWrong"), TEXT("Station announcement is wrong"), EP9AnomalyCategory::Audio, EP9AnomalyHandler::PAAnnouncement, 1.0f,
-			{EP9AnomalyLocation::PASystem}, {PA}, {PA});
-		// Stage 4B: the Marathi Platform 9 arrival announcement for the Vashi local, altered (played when it is called in)
-		const TCHAR* PAFolder = TEXT("/Game/P9/Announcements");
-		FP9AnomalyVariant P13 = Variant(TEXT("Platform13"), 2); P13.Sound = TSoftObjectPtr<USoundBase>(AssetPath(PAFolder, TEXT("SW_P9_PA_PF9_Anom_Platform13"))); P13.Param = 1.0f;
-		FP9AnomalyVariant Turn = Variant(TEXT("DoNotTurn"), 3); Turn.Sound = TSoftObjectPtr<USoundBase>(AssetPath(PAFolder, TEXT("SW_P9_PA_PF9_Anom_DoNotTurn"))); Turn.Param = 1.0f;
-		FP9AnomalyVariant Slow = Variant(TEXT("Slowed"), 1); Slow.Sound = TSoftObjectPtr<USoundBase>(AssetPath(PAFolder, TEXT("SW_P9_PA_PF9_VashiArrival"))); Slow.Param = 0.78f;
-		D.Variants = {P13, Turn, Slow};
+			{EP9AnomalyLocation::PASystem});
+		auto PA = [](const TCHAR* Id, int32 Difficulty, const TCHAR* Sound, float Pitch)
+		{
+			FP9AnomalyVariant V = Variant(Id, Difficulty);
+			V.Sound = TSoftObjectPtr<USoundBase>(AssetPath(PAFolder, Sound));
+			V.Param = Pitch;
+			return V;
+		};
+		D.Variants = {PA(TEXT("Platform13"), 2, TEXT("SW_P9_PA_PF9_Anom_Platform13"), 1.0f), PA(TEXT("Platform10"), 3, TEXT("SW_P9_PA_PF9_Anom6_Platform10"), 1.0f),
+			PA(TEXT("Panvel"), 3, TEXT("SW_P9_PA_PF9_Anom6_Panvel"), 1.0f), PA(TEXT("DoNotTurn"), 1, TEXT("SW_P9_PA_PF9_Anom_DoNotTurn"), 1.0f),
+			PA(TEXT("Slowed"), 2, TEXT("SW_P9_PA_PF9_VashiArrival"), 0.78f)};
 	}
+	// 6. a signboard's number or arrows are wrong (footbridge signs on the route, the Platform 9/10 island signs)
 	{
-		FP9AnomalyDef& D = Def(TEXT("Footsteps"), TEXT("Footsteps following the player"), EP9AnomalyCategory::Audio, EP9AnomalyHandler::FollowFootsteps, 0.8f,
-			{EP9AnomalyLocation::PlayerFollow}, {}, {});
-		FP9AnomalyVariant V = Variant(TEXT("Behind"), 2); V.Sound = TSoftObjectPtr<USoundBase>(AssetPath(AudioFolder, TEXT("SW_P9_Anom_Footsteps")));
-		D.Variants = {V};
+		FP9AnomalyDef& D = Def(TEXT("SignboardWrong"), TEXT("Signboard number or arrows wrong"), EP9AnomalyCategory::Signage, EP9AnomalyHandler::MaterialSwap, 1.0f,
+			{EP9AnomalyLocation::FOBSign, EP9AnomalyLocation::FOBSignPF9, EP9AnomalyLocation::PlatformSign});
+		D.MaterialSlotMatch = TEXT("Sign_");            // MI_P9_FOBSign_<n> / MI_P9_Sign_PF9_10_Red, never the frame
+		D.Variants = {
+			Material4D(TEXT("PF23Arrows"), 2, TEXT("MI_P9_Anom_FOBSignPF2_3_A"), TEXT("SignPF23")), Material4D(TEXT("PF23Number"), 2, TEXT("MI_P9_Anom_FOBSignPF2_3_B"), TEXT("SignPF23")),
+			Material6A(TEXT("PF45Arrows"), 2, TEXT("MI_P9_Anom6_FOBSignPF4_5_Arrows"), TEXT("SignPF45")), Material6A(TEXT("PF45Number"), 2, TEXT("MI_P9_Anom6_FOBSignPF4_5_Number"), TEXT("SignPF45")),
+			Material6A(TEXT("PF67Arrows"), 2, TEXT("MI_P9_Anom6_FOBSignPF6_7_Arrows"), TEXT("SignPF67")), Material6A(TEXT("PF67Number"), 2, TEXT("MI_P9_Anom6_FOBSignPF6_7_Number"), TEXT("SignPF67")),
+			Material6A(TEXT("PF8Arrows"), 2, TEXT("MI_P9_Anom6_FOBSignPF8_Arrows"), TEXT("SignPF8")), Material6A(TEXT("PF8Number"), 2, TEXT("MI_P9_Anom6_FOBSignPF8_Number"), TEXT("SignPF8")),
+			Material4D(TEXT("PF910Arrows"), 2, TEXT("MI_P9_Anom_FOBSignPF9_10_A"), TEXT("FOB_SignPF910")), Material4D(TEXT("PF910Number"), 2, TEXT("MI_P9_Anom_FOBSignPF9_10_B"), TEXT("FOB_SignPF910")),
+			Material4D(TEXT("Island13"), 2, TEXT("MI_P9_Anom_SignPF9_10_A"), TEXT("PF910_Sign")), Material4D(TEXT("IslandSwapped"), 3, TEXT("MI_P9_Anom_SignPF9_10_B"), TEXT("PF910_Sign"))};
 	}
+	// 7. a closed platform entry on the footbridge stands open
 	{
-		FP9AnomalyDef& D = Def(TEXT("PhantomHorn"), TEXT("Train horn from where no track runs"), EP9AnomalyCategory::Audio, EP9AnomalyHandler::PhantomHorn, 0.7f,
-			{EP9AnomalyLocation::HornSource}, {}, {});
-		FP9AnomalyVariant V = Variant(TEXT("Distant"), 2); V.Sound = TSoftObjectPtr<USoundBase>(FSoftObjectPath(TEXT("/Game/P9/Environment/Trains/Audio/SW_P9_TrainHorn.SW_P9_TrainHorn")));
-		D.Variants = {V};
-		D.bEnabled = false;                                          // Stage 4D: replaced by GhostTrain (sound with a visible source)
+		FP9AnomalyDef& D = Def(TEXT("ClosedEntryOpen"), TEXT("A closed platform entry stands open"), EP9AnomalyCategory::Environment, EP9AnomalyHandler::HideActor, 1.0f,
+			{EP9AnomalyLocation::ClosedEntry});
+		// the CLOSED - NO ENTRY plate hangs on the panel, so it goes with it (left alone it would float in the doorway)
+		FP9AnomalyVariant Open = Variant(TEXT("Open"), 2); Open.Param = 1.0f;
+		D.Variants = {Open};
 	}
+	// 8. the advertisement becomes a boy whose eyes follow the player
 	{
-		FP9AnomalyDef& D = Def(TEXT("GhostTrain"), TEXT("A dark train on track 10 that should not exist"), EP9AnomalyCategory::Train, EP9AnomalyHandler::StaticProp, 0.7f,
-			{EP9AnomalyLocation::DistantView}, {TEXT("Distant")}, {});
-		// the local's own livery and lit headlights: a near-black shell vanished into the night ground in PIE
-		FP9AnomalyVariant V = MeshVariant(TEXT("Waiting"), 2, TEXT("/Game/P9/Environment/Trains/SM_P9_LocalTrain_CabShell.SM_P9_LocalTrain_CabShell"));
-		V.Sound = TSoftObjectPtr<USoundBase>(AssetPath(TEXT("/Game/P9/Anomalies/Audio4D"), TEXT("SW_P9_Scare_GhostTrain")));
-		D.Variants = {V};
-	}
-	{
-		FP9AnomalyDef& D = Def(TEXT("PosterWrong"), TEXT("The tea advertisement is watching / someone is behind him"), EP9AnomalyCategory::Signage, EP9AnomalyHandler::MaterialSwap, 1.0f,
-			{EP9AnomalyLocation::Poster}, {TEXT("Poster")}, {});
+		FP9AnomalyDef& D = Def(TEXT("PosterBoy"), TEXT("The poster shows a boy whose eyes follow you"), EP9AnomalyCategory::Signage, EP9AnomalyHandler::PosterEyes, 1.0f,
+			{EP9AnomalyLocation::Poster});
 		D.MaterialSlotMatch = TEXT("AdPoster");
-		D.Variants = {MaterialVariant(TEXT("Watching"), 1, TEXT("MI_P9_Anom_AdPoster_Watching")), MaterialVariant(TEXT("SomeoneBehind"), 2, TEXT("MI_P9_Anom_AdPoster_Behind")),
-			LaterVariant(TEXT("WatchingLater"), 3, TEXT("MI_P9_Anom_AdPoster_Watching"))};
+		D.Variants = {Material6A(TEXT("BoyWatching"), 2, TEXT("MI_P9_Anom6_AdPoster_Boy")), Material6A(TEXT("BoyWatchingLater"), 3, TEXT("MI_P9_Anom6_AdPoster_Boy"), TEXT(""), true)};
 	}
+	// 9. endless stair. Stage 8A: the lower flight to Platform 9 runs upwards like an escalator against the player (no teleport);
+	//    climbing back up stops it (AP9ReverseEscalator)
 	{
-		FP9AnomalyDef& D = Def(TEXT("WallSilhouette"), TEXT("A human shape pressed into the end wall"), EP9AnomalyCategory::Supernatural, EP9AnomalyHandler::StaticProp, 0.8f,
-			{EP9AnomalyLocation::WallRelief}, {Figure}, {Figure});
-		FP9AnomalyVariant Pressed = MeshVariant(TEXT("Pressed"), 3, HeroPath); Pressed.Scale = FVector(0.16f, 1.0f, 1.0f);
-		FP9AnomalyVariant Emerging = MeshVariant(TEXT("Emerging"), 2, HeroPath); Emerging.Scale = FVector(0.45f, 1.0f, 1.0f);
-		for (FP9AnomalyVariant* P : {&Pressed, &Emerging}) P->Material = TSoftObjectPtr<UMaterialInterface>(AssetPath(MaterialFolder, TEXT("MI_P9_Anom_WallStain")));
-		D.Variants = {Pressed, Emerging};
+		FP9AnomalyDef& D = Def(TEXT("EndlessStair"), TEXT("The Platform 9 stair carries you back up"), EP9AnomalyCategory::Environment, EP9AnomalyHandler::ReverseEscalator, 1.0f,
+			{EP9AnomalyLocation::StairLoop});
+		D.Variants = {Variant(TEXT("Escalator"), 2)};
 	}
+	// 10. a section of track 9 or 10 is missing
 	{
-		FP9AnomalyDef& D = Def(TEXT("ImpossibleShadow"), TEXT("A person's shadow with nobody there"), EP9AnomalyCategory::Supernatural, EP9AnomalyHandler::StaticProp, 0.8f,
-			{EP9AnomalyLocation::FloorShadow}, {TEXT("Shadow")}, {});
-		FP9AnomalyVariant Stand = MeshVariant(TEXT("Standing"), 2, TEXT("/Game/P9/Anomalies/SM_P9_FloorShadow.SM_P9_FloorShadow"));
-		FP9AnomalyVariant Long = MeshVariant(TEXT("Long"), 1, TEXT("/Game/P9/Anomalies/SM_P9_FloorShadow.SM_P9_FloorShadow")); Long.Scale = FVector(1.6f, 1.1f, 1.0f);
-		for (FP9AnomalyVariant* P : {&Stand, &Long}) P->Material = TSoftObjectPtr<UMaterialInterface>(AssetPath(MaterialFolder, TEXT("MI_P9_Anom_FloorShadow")));
-		D.Variants = {Stand, Long};
+		FP9AnomalyDef& D = Def(TEXT("TrackMissing"), TEXT("A section of track is missing"), EP9AnomalyCategory::Environment, EP9AnomalyHandler::MeshSwap, 1.0f,
+			{EP9AnomalyLocation::Track});
+		auto Gap = [](const TCHAR* Id, int32 Difficulty, const TCHAR* Mesh)
+		{
+			FP9AnomalyVariant V = Variant(Id, Difficulty);
+			V.Mesh = TSoftObjectPtr<UStaticMesh>(AssetPath(Folder6A, Mesh));
+			return V;
+		};
+		D.Variants = {Gap(TEXT("RailsGone"), 2, TEXT("SM_P9_TrackPanel_GapRails")), Gap(TEXT("TrackGone"), 1, TEXT("SM_P9_TrackPanel_GapAll"))};
 	}
-	// ---- supernatural ----
+	// 11. the booking office: window bars horizontal and the window numbers wrong
 	{
-		FP9AnomalyDef& D = Def(TEXT("DistantFigure"), TEXT("A figure at the end of the platform"), EP9AnomalyCategory::Supernatural, EP9AnomalyHandler::DistantFigure, 0.9f,
-			{EP9AnomalyLocation::PlatformEnd}, {Figure}, {Figure});
-		FP9AnomalyVariant Facing = MeshVariant(TEXT("Facing"), 2, HeroPath, 0.0f);
-		FP9AnomalyVariant Away = MeshVariant(TEXT("BackTurned"), 2, HeroPath, 180.0f);
-		D.Variants = {Facing, Away};
-		D.Jumpscare = EP9JumpscareType::Apparition;
-		D.JumpscareChance = 0.45f;
+		FP9AnomalyDef& D = Def(TEXT("TicketCounterWrong"), TEXT("Booking office bars horizontal, window numbers wrong"), EP9AnomalyCategory::Other, EP9AnomalyHandler::MaterialSwap, 1.0f,
+			{EP9AnomalyLocation::TicketCounter});
+		D.MaterialSlotMatch = TEXT("BookingCounter");
+		D.Variants = {Material6A(TEXT("Bars231"), 2, TEXT("MI_P9_Anom6_BookingCounter_231")), Material6A(TEXT("Bars312"), 2, TEXT("MI_P9_Anom6_BookingCounter_312")),
+			Material6A(TEXT("Bars174"), 1, TEXT("MI_P9_Anom6_BookingCounter_174")), Material6A(TEXT("BarsOnly"), 3, TEXT("MI_P9_Anom6_BookingCounter_123"))};
 	}
+	// 12. Stage 6C: the footbridge concourse's analog clock runs backwards (counterclockwise). Weight 0.8: the station already has
+	//     one clock anomaly (ClockWrong), so the two clock anomalies together stay below a fifth of the anomalous days.
 	{
-		FP9AnomalyDef& D = Def(TEXT("WatchingFigure"), TEXT("A figure on the footbridge, gone when you look away"), EP9AnomalyCategory::Supernatural, EP9AnomalyHandler::WatchingFigure, 0.8f,
-			{EP9AnomalyLocation::Footbridge}, {Figure}, {Figure});
-		FP9AnomalyVariant V = MeshVariant(TEXT("Watching"), 2, TallPath, 0.0f);
-		FP9AnomalyVariant Near = MeshVariant(TEXT("Approaching"), 3, TallPath, 1.0f);   // closer every time you look back
-		D.Variants = {V, Near};
-		D.Jumpscare = EP9JumpscareType::Footbridge;                 // only the Approaching variant can lunge
-		D.JumpscareChance = 0.5f;
+		FP9AnomalyDef& D = Def(TEXT("AnalogClockReverse"), TEXT("The footbridge analog clock runs backwards"), EP9AnomalyCategory::Environment, EP9AnomalyHandler::AnalogClock, 0.8f,
+			{EP9AnomalyLocation::AnalogClock});
+		auto Rev = [](const TCHAR* Id, int32 Difficulty, float Rate, float Pause, float Slow, bool bWaitUntilSeen)
+		{
+			FP9AnomalyVariant V = Variant(Id, Difficulty);
+			V.Param = Rate;                                            // x real time, backwards
+			V.Scale = FVector(Pause, Slow, bWaitUntilSeen ? 1.0f : 0.0f);
+			return V;
+		};
+		D.Variants = {Rev(TEXT("Backwards"), 1, 1.0f, 0.0f, 0.0f, false),          // runs backwards all day at real speed: watch the second hand
+			Rev(TEXT("Unwinding"), 2, 12.0f, 1.5f, 6.0f, true),                       // seen -> stops -> second hand back -> minutes unwind
+			Rev(TEXT("Rewinding"), 3, 60.0f, 2.5f, 3.0f, true)};                      // the same, then an hour a minute backwards
 	}
+	// 13. Stage 8A: one Platform 9 lamp burns red (its spot and fill lights and its tube) - the rest of the station stays normal
 	{
-		FP9AnomalyDef& D = Def(TEXT("WindowFigure"), TEXT("Someone standing inside the train"), EP9AnomalyCategory::Supernatural, EP9AnomalyHandler::WindowFigure, 0.7f,
-			{EP9AnomalyLocation::TrainWindow}, {Figure, TrainTag}, {Figure});
-		FP9AnomalyVariant FarEnd = MeshVariant(TEXT("FarEnd"), 2, HeroPath, 0.0f);       // can become jumpscare B
-		FP9AnomalyVariant Door = MeshVariant(TEXT("AtDoor"), 2, HeroPath, 1.0f);
-		FP9AnomalyVariant Window = MeshVariant(TEXT("FacingWindow"), 3, HeroPath, 2.0f);  // standing, face to the glass
-		D.Variants = {FarEnd, Door, Window};
-		D.Jumpscare = EP9JumpscareType::Carriage;
-		D.JumpscareChance = 0.5f;
+		FP9AnomalyDef& D = Def(TEXT("RedLightPF9"), TEXT("A Platform 9 lamp burns red"), EP9AnomalyCategory::Environment, EP9AnomalyHandler::LightTint, 1.0f,
+			{EP9AnomalyLocation::PlatformLamp});
+		auto Red = [](const TCHAR* Id, int32 Difficulty, FLinearColor Color, float Intensity, float PulseDepth, float PulsePeriod)
+		{
+			FP9AnomalyVariant V = Variant(Id, Difficulty);
+			V.Color = Color;
+			V.Param = Intensity;
+			V.Scale = FVector(PulseDepth, PulsePeriod, 0.0f);
+			return V;
+		};
+		D.Variants = {Red(TEXT("Crimson"), 2, FLinearColor(1.0f, 0.035f, 0.02f), 1.35f, 0.12f, 4.5f),   // deep red, a slow uneasy swell
+			Red(TEXT("BloodRed"), 3, FLinearColor(0.9f, 0.0f, 0.0f), 1.7f, 0.2f, 3.0f),                       // strong, pulsing
+			Red(TEXT("DullRed"), 1, FLinearColor(1.0f, 0.16f, 0.07f), 1.1f, 0.05f, 6.0f)};                    // a sick red-orange, almost steady
+	}
+	// 14. Stage 8A: the Vashi local's seat upholstery is red (both cars; texture recoloured from the original, same UVs and mesh)
+	{
+		FP9AnomalyDef& D = Def(TEXT("TrainSeatsRed"), TEXT("The train's seats are red"), EP9AnomalyCategory::Train, EP9AnomalyHandler::TrainMaterial, 1.0f,
+			{EP9AnomalyLocation::TrainSeats});
+		D.MaterialSlotMatch = TEXT("Train_Seat");
+		auto Seat = [](const TCHAR* Id, int32 Difficulty, const TCHAR* Material)
+		{
+			FP9AnomalyVariant V = Variant(Id, Difficulty);
+			V.Material = TSoftObjectPtr<UMaterialInterface>(AssetPath(Materials8A, Material));
+			return V;
+		};
+		D.Variants = {Seat(TEXT("Red"), 2, TEXT("MI_P9_Anom8_TrainSeat_Red")), Seat(TEXT("DarkRed"), 1, TEXT("MI_P9_Anom8_TrainSeat_DarkRed"))};
+	}
+	// 15. Stage 8A: one coach of the Vashi local is dark (which one comes from the day's seed through the point choice)
+	{
+		FP9AnomalyDef& D = Def(TEXT("CoachLightOff"), TEXT("One coach of the train is dark"), EP9AnomalyCategory::Train, EP9AnomalyHandler::TrainLightsOff, 1.0f,
+			{EP9AnomalyLocation::TrainLights});
+		auto Dark = [](const TCHAR* Id, int32 Difficulty, float Residual, bool bDiesOnApproach)
+		{
+			FP9AnomalyVariant V = Variant(Id, Difficulty);
+			V.Param = Residual;                                                       // what is left of the coach's light
+			V.Scale = FVector(1.0f, 1.0f, bDiesOnApproach ? 1.0f : 0.0f);
+			return V;
+		};
+		D.Variants = {Dark(TEXT("Dark"), 3, 0.04f, false), Dark(TEXT("Dim"), 1, 0.14f, false), Dark(TEXT("DiesOnApproach"), 2, 0.04f, true)};
+	}
+	// 16. Stage 8A: the Lantern Man stands motionless in the darkest part of Platform 9; the lamp beside him flickers
+	{
+		FP9AnomalyDef& D = Def(TEXT("LanternMan"), TEXT("A man with a lantern stands at the dark end of Platform 9"), EP9AnomalyCategory::Supernatural,
+			EP9AnomalyHandler::LanternFigure, 1.0f, {EP9AnomalyLocation::LanternSpot});
+		D.Variants = {Variant(TEXT("Standing"), 2)};
 	}
 }
 
 // =====================================================================================================================
 // generation
 // =====================================================================================================================
+int32 AP9CampaignDirector::ScheduledDay(const FP9AnomalyDef& D, int32 InRunSeed) const
+{
+	if (!D.bScheduled)
+	{
+		return INDEX_NONE;
+	}
+	const int32 First = FMath::Clamp(D.ScheduleFirstDay, 1, NumDays);
+	const int32 Last = FMath::Clamp(D.ScheduleLastDay, First, NumDays);
+	const uint32 H = HashCombine(GetTypeHash(InRunSeed), GetTypeHash(D.Id.ToString() + TEXT("#6A")));
+	return First + static_cast<int32>(H % static_cast<uint32>(Last - First + 1));
+}
+
 FP9DayPlan AP9CampaignDirector::GenerateDayPlan(int32 InRunSeed, int32 InDay, int32 Attempt, const TArray<FString>& InHistory) const
 {
 	using namespace P9Campaign;
@@ -386,25 +468,51 @@ FP9DayPlan AP9CampaignDirector::GenerateDayPlan(int32 InRunSeed, int32 InDay, in
 	Plan.bAnomalous = DayRng.FRand() < AnomalyDayChance;
 	Plan.Difficulty = FMath::Max(1, PickWeighted(DayRng, DifficultyWeights) + 1);
 	Plan.Seed = static_cast<int32>(HashCombine(DaySeed, GetTypeHash(Attempt * 104729 + 7)));
+	// Stage 6A: a scheduled anomaly (Kanchana) owns its day outright: that day is anomalous and she is its only anomaly
+	int32 ScheduledDef = INDEX_NONE;
+	for (int32 d = 0; d < Anomalies.Num() && ScheduledDef == INDEX_NONE; ++d)
+	{
+		const FP9AnomalyDef& D = Anomalies[d];
+		if (D.bEnabled && D.bScheduled && !D.Variants.IsEmpty() && ScheduledDay(D, InRunSeed) == InDay)
+		{
+			ScheduledDef = d;
+		}
+	}
+	if (ScheduledDef != INDEX_NONE)
+	{
+		Plan.bAnomalous = true;
+	}
 	if (!Plan.bAnomalous)
 	{
 		return Plan;
 	}
 	FRandomStream Rng(Plan.Seed);
-	// extreme days always stack at least two anomalies
-	const int32 Want = FMath::Max(Plan.Difficulty >= 4 ? 2 : 1, PickWeighted(Rng, AnomalyCountWeights) + 1);
+	const int32 Want = ScheduledDef != INDEX_NONE ? 1 : FMath::Max(1, PickWeighted(Rng, AnomalyCountWeights) + 1);
 
 	TSet<int32> UsedPoints;
 	TSet<FString> UsedTargets;
 	TArray<FName> DayTags;
 	TArray<int32> UsedDefs;
+	auto VariantFits = [this](const FP9AnomalyVariant& V, int32 p)
+	{
+		return V.PointMatch.IsEmpty() || SpawnPoints[p]->PointId.ToString().Contains(V.PointMatch);
+	};
 	auto FreePoints = [&](const FP9AnomalyDef& D)
 	{
 		TArray<int32> Out;
 		for (int32 p = 0; p < SpawnPoints.Num(); ++p)
 		{
 			const AP9AnomalySpawnPoint* Point = SpawnPoints[p];
-			if (Point && D.LocationTypes.Contains(Point->LocationType) && !UsedPoints.Contains(p) && !UsedTargets.Contains(Point->GetTargetKey()) && IsPointAllowed(Point))
+			if (!Point || !D.LocationTypes.Contains(Point->LocationType) || UsedPoints.Contains(p) || UsedTargets.Contains(Point->GetTargetKey()) || !IsPointAllowed(Point))
+			{
+				continue;
+			}
+			bool bAnyVariant = false;
+			for (const FP9AnomalyVariant& V : D.Variants)
+			{
+				bAnyVariant |= VariantFits(V, p);
+			}
+			if (bAnyVariant)
 			{
 				Out.Add(p);
 			}
@@ -415,34 +523,45 @@ FP9DayPlan AP9CampaignDirector::GenerateDayPlan(int32 InRunSeed, int32 InDay, in
 	{
 		TArray<int32> Candidates;
 		TArray<float> Weights;
-		for (int32 d = 0; d < Anomalies.Num(); ++d)
+		if (ScheduledDef != INDEX_NONE)
 		{
-			const FP9AnomalyDef& D = Anomalies[d];
-			if (!D.bEnabled || D.Variants.IsEmpty() || UsedDefs.Contains(d) || SharesTag(D.ExcludeTags, DayTags) || FreePoints(D).IsEmpty())
+			if (!FreePoints(Anomalies[ScheduledDef]).IsEmpty())
 			{
-				continue;
+				Candidates.Add(ScheduledDef);
+				Weights.Add(1.0f);
 			}
-			bool bExcludedByPicked = false;
-			for (int32 u : UsedDefs)
+		}
+		else
+		{
+			for (int32 d = 0; d < Anomalies.Num(); ++d)
 			{
-				bExcludedByPicked |= SharesTag(Anomalies[u].ExcludeTags, D.Tags);
-			}
-			if (bExcludedByPicked)
-			{
-				continue;
-			}
-			float W = D.Weight;
-			for (int32 k = 1; k <= RepetitionPenalty.Num() && k <= InHistory.Num(); ++k)
-			{
-				TArray<FString> Ids;
-				InHistory[InHistory.Num() - k].ParseIntoArray(Ids, TEXT("|"));
-				if (Ids.Contains(D.Id.ToString()))
+				const FP9AnomalyDef& D = Anomalies[d];
+				if (!D.bEnabled || D.bScheduled || D.Variants.IsEmpty() || UsedDefs.Contains(d) || SharesTag(D.ExcludeTags, DayTags) || FreePoints(D).IsEmpty())
 				{
-					W *= RepetitionPenalty[k - 1];
+					continue;
 				}
+				bool bExcludedByPicked = false;
+				for (int32 u : UsedDefs)
+				{
+					bExcludedByPicked |= SharesTag(Anomalies[u].ExcludeTags, D.Tags);
+				}
+				if (bExcludedByPicked)
+				{
+					continue;
+				}
+				float W = D.Weight;
+				for (int32 k = 1; k <= RepetitionPenalty.Num() && k <= InHistory.Num(); ++k)
+				{
+					TArray<FString> Ids;
+					InHistory[InHistory.Num() - k].ParseIntoArray(Ids, TEXT("|"));
+					if (Ids.Contains(D.Id.ToString()))
+					{
+						W *= RepetitionPenalty[k - 1];
+					}
+				}
+				Candidates.Add(d);
+				Weights.Add(W);
 			}
-			Candidates.Add(d);
-			Weights.Add(W);
 		}
 		const int32 Pick = PickWeighted(Rng, Weights);
 		if (Pick == INDEX_NONE)
@@ -456,18 +575,14 @@ FP9DayPlan AP9CampaignDirector::GenerateDayPlan(int32 InRunSeed, int32 InDay, in
 		TArray<float> VariantWeights;
 		for (const FP9AnomalyVariant& V : D.Variants)
 		{
-			VariantWeights.Add(V.Weight * (V.Difficulty == FMath::Min(Plan.Difficulty, 3) ? 2.0f : 1.0f));
+			VariantWeights.Add(VariantFits(V, PointIndex) ? V.Weight * (V.Difficulty == FMath::Min(Plan.Difficulty, 3) ? 2.0f : 1.0f) : 0.0f);
 		}
 		const int32 VariantIndex = FMath::Max(0, PickWeighted(Rng, VariantWeights));
-		// subtle days never scare; extreme days scare more often (still a roll, so never guaranteed)
-		const float ScareChance = Plan.Difficulty <= 1 ? 0.0f : D.JumpscareChance * (Plan.Difficulty >= 4 ? 1.5f : 1.0f);
-		const bool bScare = D.Jumpscare != EP9JumpscareType::None && Rng.FRand() < ScareChance;
 
 		FP9PlannedAnomaly& A = Plan.Anomalies.AddDefaulted_GetRef();
 		A.DefIndex = DefIndex;
 		A.VariantIndex = VariantIndex;
 		A.PointIndex = PointIndex;
-		A.bJumpscare = bScare;
 		A.DefId = D.Id;
 		A.VariantId = D.Variants[VariantIndex].Id;
 		A.PointId = SpawnPoints[PointIndex]->PointId;
@@ -511,6 +626,10 @@ void AP9CampaignDirector::BeginPlay()
 		OpeningTrain->bAutoCycle = false;
 		OpeningTrain->OnArrived.AddDynamic(this, &AP9CampaignDirector::HandleOpeningArrived);
 	}
+	if (!Stalker)
+	{
+		for (TActorIterator<AP9SilhouetteStalker> It(GetWorld()); It; ++It) { Stalker = *It; break; }
+	}
 	int32 Invalid = 0, Rejected = 0;
 	for (const AP9AnomalySpawnPoint* P : SpawnPoints)
 	{
@@ -551,6 +670,10 @@ void AP9CampaignDirector::Tick(float DeltaSeconds)
 	WorldTimeNow = GetWorld()->GetTimeSeconds();
 	if (Phase == EP9DayPhase::Inactive)
 	{
+		if (AP9MainMenu::HoldsCampaign(GetWorld()))
+		{
+			return;                                                 // Stage 9B: the main menu is up - the campaign starts when the player chooses
+		}
 		if (!PlayerCharacter())
 		{
 			return;
@@ -710,7 +833,7 @@ void AP9CampaignDirector::StartDay(bool bTeleport)
 	FString Active;
 	for (const FP9ActiveAnomaly& A : ActiveAnomalies)
 	{
-		Active += FString::Printf(TEXT(" %s:%s@%s%s"), *A.Plan.DefId.ToString(), *A.Plan.VariantId.ToString(), *A.Plan.PointId.ToString(), A.Plan.bJumpscare ? TEXT("(scare)") : TEXT(""));
+		Active += FString::Printf(TEXT(" %s:%s@%s"), *A.Plan.DefId.ToString(), *A.Plan.VariantId.ToString(), *A.Plan.PointId.ToString());
 	}
 	UE_LOG(LogP9, Log, TEXT("Campaign: DAY %d/%d started (run %d seed %d token %d) plan: %s | active %d:%s"),
 		Day, NumDays, RunId, RunSeed, DayToken, *Plan.ToString(), ActiveAnomalies.Num(), *Active);
@@ -909,25 +1032,20 @@ bool AP9CampaignDirector::ActivateAnomaly(const FP9PlannedAnomaly& Plan)
 	switch (Def.Handler)
 	{
 	case EP9AnomalyHandler::MaterialSwap: bOk = ActivateMaterialSwap(A, Def, V, Point); break;
-	case EP9AnomalyHandler::LampFault: bOk = ActivateLampFault(A, V, Point); break;
-	case EP9AnomalyHandler::HideActor: bOk = ActivateHideActor(Point); break;
-	case EP9AnomalyHandler::ExtraProp: bOk = ActivateExtraProp(V, Point); break;
-	case EP9AnomalyHandler::TrainDestination: bOk = ActivateTrainDestination(A, V); break;
-	case EP9AnomalyHandler::TrainSeatTint: bOk = ActivateTrainSeatTint(A, V); break;
-	case EP9AnomalyHandler::TrainLights: bOk = ActivateTrainLights(A, V, Point); break;
-	case EP9AnomalyHandler::PAAnnouncement:
-	case EP9AnomalyHandler::FollowFootsteps:
-	case EP9AnomalyHandler::PhantomHorn:
-		bOk = V.Sound.LoadSynchronous() != nullptr;
-		break;
-	case EP9AnomalyHandler::DistantFigure:
-	case EP9AnomalyHandler::WatchingFigure:
-	case EP9AnomalyHandler::WindowFigure:
-		bOk = ActivateFigure(A, Def, V, Point);
-		break;
-	case EP9AnomalyHandler::StaticProp:
-		bOk = ActivateStaticProp(A, V, Point);
-		break;
+	case EP9AnomalyHandler::HideActor: bOk = ActivateHideActor(V, Point); break;
+	case EP9AnomalyHandler::PAAnnouncement: bOk = V.Sound.LoadSynchronous() != nullptr; break;
+	case EP9AnomalyHandler::DynamicClock: bOk = ActivateDynamicClock(A, Def, V, Point); break;
+	case EP9AnomalyHandler::MeshSwap: bOk = ActivateMeshSwap(A, V, Point); break;
+	case EP9AnomalyHandler::LoopTeleport: bOk = Point->LoopTrigger.IsValid && !Point->LoopOffset.IsNearlyZero(); break;
+	case EP9AnomalyHandler::PosterEyes: bOk = ActivatePosterEyes(A, Def, V, Point); break;
+	case EP9AnomalyHandler::Stalker: bOk = ActivateStalker(Point); break;
+	case EP9AnomalyHandler::AnalogClock: bOk = ActivateAnalogClock(V, Point); break;
+	case EP9AnomalyHandler::LightTint: bOk = ActivateLightTint(A, V, Point); break;
+	case EP9AnomalyHandler::TrainMaterial: bOk = ActivateTrainMaterial(Def, V, Point); break;
+	case EP9AnomalyHandler::TrainLightsOff: bOk = ActivateTrainLightsOff(A, V, Point); break;
+	case EP9AnomalyHandler::LanternFigure: bOk = ActivateLanternFigure(A, Point); break;
+	case EP9AnomalyHandler::EndlessBridge: bOk = ActivateEndlessBridge(A, Point); break;
+	case EP9AnomalyHandler::ReverseEscalator: bOk = ActivateReverseEscalator(A, Point); break;
 	}
 	if (!bOk)
 	{
@@ -939,6 +1057,10 @@ bool AP9CampaignDirector::ActivateAnomaly(const FP9PlannedAnomaly& Plan)
 			if (R.Mesh) for (int32 i = 0; i < R.Materials.Num(); ++i) R.Mesh->SetMaterial(i, R.Materials[i]);
 			if (R.Light) { R.Light->SetIntensity(R.Intensity); R.Light->SetLightFColor(R.LightColor); R.Light->SetVisibility(R.bLightVisible); }
 			if (R.Actor) { R.Actor->SetActorHiddenInGame(R.bHidden); R.Actor->SetActorEnableCollision(R.bCollision); }
+		}
+		if (A.Target)
+		{
+			A.Target->OnCanvasRenderTargetUpdate.RemoveAll(this);
 		}
 		UE_LOG(LogP9, Warning, TEXT("Campaign: anomaly %s:%s@%s FAILED to activate - not counted"), *Plan.DefId.ToString(), *Plan.VariantId.ToString(), *Plan.PointId.ToString());
 		return false;
@@ -977,281 +1099,522 @@ bool AP9CampaignDirector::ActivateMaterialSwap(FP9ActiveAnomaly& A, const FP9Ano
 	return false;
 }
 
-bool AP9CampaignDirector::ActivateLampFault(FP9ActiveAnomaly& A, const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point)
+bool AP9CampaignDirector::ActivateHideActor(const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point)
 {
-	// the lamp's light plus any further lights listed on the point (its fill light): all change together
-	TArray<ULightComponent*> Lights;
-	ULightComponent* Main = Point->TargetActor ? Point->TargetActor->FindComponentByClass<ULightComponent>() : nullptr;
-	if (!Main)
-	{
-		return false;
-	}
-	Lights.Add(Main);
-	for (const AActor* Extra : Point->ExtraActors)
-	{
-		if (ULightComponent* L = Extra ? Extra->FindComponentByClass<ULightComponent>() : nullptr)
-		{
-			Lights.Add(L);
-		}
-	}
-	for (const ULightComponent* L : Lights)
-	{
-		if (L->Mobility == EComponentMobility::Static)
-		{
-			return false;
-		}
-	}
-	for (ULightComponent* L : Lights)
-	{
-		RecordLight(L);
-		A.Lights.Add(L);
-		A.BaseIntensity.Add(L->Intensity);
-	}
-	UStaticMeshComponent* Tube = Point->SecondaryActor ? Point->SecondaryActor->FindComponentByClass<UStaticMeshComponent>() : nullptr;
-	if (Tube)
-	{
-		RecordMesh(Tube);
-		for (int32 i = 0; i < Tube->GetNumMaterials(); ++i)
-		{
-			const UMaterialInterface* Current = Tube->GetMaterial(i);
-			if (!Current || !Current->GetName().Contains(TEXT("LampTube")))
-			{
-				continue;
-			}
-			if (UMaterialInstanceDynamic* MID = Tube->CreateDynamicMaterialInstance(i))
-			{
-				A.MIDs.Add(MID);
-				A.BaseIntensity.Add(MID->K2_GetScalarParameterValue(TEXT("Intensity")));
-			}
-		}
-	}
-	if (V.Param == 0.0f)
-	{
-		for (ULightComponent* L : A.Lights) L->SetIntensity(0.0f);
-		for (UMaterialInstanceDynamic* MID : A.MIDs) MID->SetScalarParameterValue(TEXT("Intensity"), 0.0f);
-	}
-	else if (V.Param >= 2.0f)
-	{
-		for (ULightComponent* L : A.Lights) L->SetLightColor(V.Color);
-		for (UMaterialInstanceDynamic* MID : A.MIDs) MID->SetVectorParameterValue(TEXT("TubeColor"), V.Color);
-	}
-	return true;
-}
-
-bool AP9CampaignDirector::ActivateHideActor(AP9AnomalySpawnPoint* Point)
-{
+	// Stage 6A: the target with everything listed on the point (a closed stair head: its panel, the blocking volume behind it, a tarp)
 	AActor* Target = Point->TargetActor;
 	if (!Target || Target->IsHidden())
 	{
 		return false;
 	}
-	RecordActor(Target);
-	Target->SetActorHiddenInGame(true);
-	Target->SetActorEnableCollision(false);
+	TArray<AActor*> Group = {Target};
+	for (AActor* Extra : Point->ExtraActors)
+	{
+		if (Extra) Group.AddUnique(Extra);
+	}
+	if (V.Param >= 1.0f && Point->SecondaryActor)
+	{
+		Group.AddUnique(Point->SecondaryActor);                      // e.g. the CLOSED - NO ENTRY sign goes too
+	}
+	for (AActor* Actor : Group)
+	{
+		RecordActor(Actor);
+		Actor->SetActorHiddenInGame(true);
+		Actor->SetActorEnableCollision(false);
+	}
 	return true;
 }
 
-bool AP9CampaignDirector::ActivateExtraProp(const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point)
+bool AP9CampaignDirector::ActivateAnalogClock(const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point)
 {
-	const UStaticMeshComponent* Template = Point->TargetActor ? Point->TargetActor->FindComponentByClass<UStaticMeshComponent>() : nullptr;
-	UStaticMesh* Mesh = Template ? Template->GetStaticMesh() : nullptr;
-	if (!Mesh)
+	// Stage 6C: the clock keeps its own time; the anomaly only changes the direction it runs. CleanupDay puts it back.
+	AP9AnalogClock* Clock = Cast<AP9AnalogClock>(Point->TargetActor);
+	if (!Clock || !Clock->HasAllParts() || Clock->IsReversed())
 	{
 		return false;
 	}
-	const FTransform Xf(FRotator(0.0f, Point->GetActorRotation().Yaw + V.Param, 0.0f), Point->GetActorLocation());
-	const FBoxSphereBounds Bounds = Mesh->GetBounds();
-	FCollisionQueryParams Params(SCENE_QUERY_STAT(P9ExtraProp), false);
-	const FVector Center = Xf.TransformPosition(Bounds.Origin) + FVector(0.0f, 0.0f, 4.0f);
-	if (GetWorld()->OverlapBlockingTestByChannel(Center, Xf.GetRotation(), ECC_Pawn, FCollisionShape::MakeBox(Bounds.BoxExtent * 0.92f), Params))
+	Clock->BeginReverse(V.Param, V.Scale.X, V.Scale.Y, V.Scale.Z > 0.5f);
+	return true;
+}
+
+// ---------------------------------------------------------------------------------------------------------------- Stage 8A
+bool AP9CampaignDirector::ActivateLightTint(FP9ActiveAnomaly& A, const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point)
+{
+	// the lamp's own lights (spot on the target, fill among the extras) take the colour; its tube glows the same colour
+	TArray<ULightComponent*> Lights;
+	if (Point->TargetActor) Point->TargetActor->GetComponents<ULightComponent>(Lights);
+	for (AActor* Extra : Point->ExtraActors)
 	{
-		UE_LOG(LogP9, Log, TEXT("Campaign: extra prop at %s overlaps something - spawn rejected"), *Point->PointId.ToString());
+		TArray<ULightComponent*> More;
+		if (Extra) Extra->GetComponents<ULightComponent>(More);
+		Lights.Append(More);
+	}
+	if (Lights.IsEmpty())
+	{
 		return false;
 	}
-	AStaticMeshActor* Prop = GetWorld()->SpawnActorDeferred<AStaticMeshActor>(AStaticMeshActor::StaticClass(), Xf, this);
-	if (!Prop)
+	for (ULightComponent* L : Lights)
+	{
+		RecordLight(L);
+		A.Lights.Add(L);
+		A.LightBase.Add(L->Intensity * FMath::Max(0.1f, V.Param));
+		L->SetLightColor(V.Color);
+		L->SetIntensity(L->Intensity * FMath::Max(0.1f, V.Param));
+	}
+	if (UStaticMeshComponent* Tube = Point->SecondaryActor ? Point->SecondaryActor->FindComponentByClass<UStaticMeshComponent>() : nullptr)
+	{
+		for (int32 i = 0; i < Tube->GetNumMaterials(); ++i)
+		{
+			const UMaterialInterface* M = Tube->GetMaterial(i);
+			if (M && M->GetName().Contains(TEXT("LampTube")))
+			{
+				RecordMesh(Tube);
+				if (UMaterialInstanceDynamic* MID = Tube->CreateDynamicMaterialInstance(i))
+				{
+					MID->SetVectorParameterValue(TEXT("TubeColor"), V.Color);
+					A.MIDs.Add(MID);
+				}
+				break;
+			}
+		}
+	}
+	return true;
+}
+
+void AP9CampaignDirector::TickLightTint(FP9ActiveAnomaly& A, const FP9AnomalyVariant& V, float DeltaSeconds)
+{
+	// a slow swell, never off: the area stays readable, it just is not right
+	const float Period = FMath::Max(0.5f, V.Scale.Y);
+	const float S = 1.0f + V.Scale.X * FMath::Sin(2.0f * PI * A.Time / Period) + 0.25f * V.Scale.X * FMath::Sin(2.0f * PI * A.Time / (Period * 0.37f));
+	for (int32 i = 0; i < A.Lights.Num(); ++i)
+	{
+		if (A.Lights[i]) A.Lights[i]->SetIntensity(A.LightBase[i] * S);
+	}
+}
+
+bool AP9CampaignDirector::ActivateTrainMaterial(const FP9AnomalyDef& Def, const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point)
+{
+	// every matching slot on every mesh of the train (both cars' interiors), so it is the same in whichever car the player boards
+	AP9Train* T = Cast<AP9Train>(Point->TargetActor);
+	UMaterialInterface* Material = V.Material.LoadSynchronous();
+	if (!T || !Material)
 	{
 		return false;
 	}
-	UStaticMeshComponent* C = Prop->GetStaticMeshComponent();
+	int32 Changed = 0;
+	TArray<UStaticMeshComponent*> Meshes;
+	T->GetComponents<UStaticMeshComponent>(Meshes);
+	for (UStaticMeshComponent* M : Meshes)
+	{
+		bool bRecorded = false;
+		for (int32 i = 0; i < M->GetNumMaterials(); ++i)
+		{
+			const UMaterialInterface* Cur = M->GetMaterial(i);
+			if (Cur && Cur->GetName().Contains(Def.MaterialSlotMatch))
+			{
+				if (!bRecorded) { RecordMesh(M); bRecorded = true; }
+				M->SetMaterial(i, Material);
+				++Changed;
+			}
+		}
+	}
+	UE_LOG(LogP9, Log, TEXT("Campaign: %s - %d train seat slots now %s"), *Def.Id.ToString(), Changed, *Material->GetName());
+	return Changed > 0;
+}
+
+void AP9CampaignDirector::SetCarLights(FP9ActiveAnomaly& A, float Scale)
+{
+	for (int32 i = 0; i < A.Lights.Num(); ++i)
+	{
+		if (A.Lights[i]) A.Lights[i]->SetIntensity(A.LightBase[i] * Scale);
+	}
+	for (UMaterialInstanceDynamic* MID : A.MIDs)
+	{
+		if (MID) MID->SetScalarParameterValue(TEXT("Intensity"), 3.0f * FMath::Max(0.01f, Scale));
+	}
+}
+
+bool AP9CampaignDirector::ActivateTrainLightsOff(FP9ActiveAnomaly& A, const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point)
+{
+	// the point names the car ("Car0" / "Car1"): its two interior lights and its ceiling tubes' glow go down to the residual
+	AP9Train* T = Cast<AP9Train>(Point->TargetActor);
+	const FString Car = Point->TargetComponent.ToString();
+	if (!T || Car.IsEmpty())
+	{
+		return false;
+	}
+	for (int32 L = 0; L < 2; ++L)
+	{
+		if (ULightComponent* Light = P9Campaign::FindNamedComponent<ULightComponent>(T, FString::Printf(TEXT("%s_InteriorLight%d"), *Car, L)))
+		{
+			RecordLight(Light);
+			A.Lights.Add(Light);
+			A.LightBase.Add(Light->Intensity);
+		}
+	}
+	if (UStaticMeshComponent* Interior = P9Campaign::FindNamedComponent<UStaticMeshComponent>(T, Car + TEXT("_Interior")))
+	{
+		for (int32 i = 0; i < Interior->GetNumMaterials(); ++i)
+		{
+			const UMaterialInterface* M = Interior->GetMaterial(i);
+			if (M && M->GetName().Contains(TEXT("Train_Tube")))
+			{
+				RecordMesh(Interior);
+				if (UMaterialInstanceDynamic* MID = Interior->CreateDynamicMaterialInstance(i)) A.MIDs.Add(MID);
+				break;
+			}
+		}
+	}
+	if (A.Lights.Num() < 2)
+	{
+		return false;
+	}
+	A.Stage = V.Scale.Z > 0.5f ? 0 : 2;
+	SetCarLights(A, A.Stage == 2 ? V.Param : 1.0f);
+	return true;
+}
+
+void AP9CampaignDirector::TickTrainLightsOff(FP9ActiveAnomaly& A, const FP9AnomalyVariant& V, const AP9AnomalySpawnPoint* Point, float DeltaSeconds)
+{
+	if (A.Stage == 2 || !Point || !Point->TargetActor)
+	{
+		return;
+	}
+	const USceneComponent* CarRoot = P9Campaign::FindNamedComponent<USceneComponent>(Point->TargetActor, Point->TargetComponent.ToString());
+	const ACharacter* P = PlayerCharacter();
+	if (A.Stage == 0)
+	{
+		// dies as the player comes to it: within 12 m of the car while it is in the station, or aboard
+		const bool bNear = P && CarRoot && !Point->TargetActor->IsHidden() && FVector::Dist(P->GetActorLocation(), CarRoot->GetComponentLocation()) < 1200.0f;
+		if (bNear || (Train && Train->IsPlayerAboard()))
+		{
+			A.Stage = 1;
+			A.StageTime = 0.0f;
+			UE_LOG(LogP9, Log, TEXT("Campaign: %s - %s lights failing"), *A.Plan.DefId.ToString(), *Point->TargetComponent.ToString());
+		}
+		return;
+	}
+	A.StageTime += DeltaSeconds;
+	const float N = FMath::PerlinNoise1D(A.StageTime * 11.0f);
+	const float Level = A.StageTime < 1.6f ? (N > 0.05f ? 1.0f : (N > -0.25f ? 0.35f : V.Param)) : V.Param;
+	SetCarLights(A, Level);
+	if (A.StageTime >= 1.6f)
+	{
+		A.Stage = 2;
+	}
+}
+
+bool AP9CampaignDirector::ActivateLanternFigure(FP9ActiveAnomaly& A, AP9AnomalySpawnPoint* Point)
+{
+	UStaticMesh* Mesh = LanternManMesh.LoadSynchronous();
+	if (!Mesh || !Point->TargetActor)
+	{
+		return false;
+	}
+	FVector Spot = Point->GetActorLocation();
+	FHitResult Floor;
+	FCollisionQueryParams Params(SCENE_QUERY_STAT(P9LanternSpot), false);
+	if (GetWorld()->LineTraceSingleByChannel(Floor, Spot + FVector(0.0f, 0.0f, 150.0f), Spot - FVector(0.0f, 0.0f, 400.0f), ECC_Visibility, Params))
+	{
+		Spot = Floor.ImpactPoint;
+	}
+	// the lamp beside him: its lights (target spot + the extras' fill) and its tube (secondary)
+	TArray<ULightComponent*> Lamp;
+	Point->TargetActor->GetComponents<ULightComponent>(Lamp);
+	for (AActor* Extra : Point->ExtraActors)
+	{
+		TArray<ULightComponent*> More;
+		if (Extra) Extra->GetComponents<ULightComponent>(More);
+		Lamp.Append(More);
+	}
+	for (ULightComponent* L : Lamp) RecordLight(L);
+	UStaticMeshComponent* Tube = Point->SecondaryActor ? Point->SecondaryActor->FindComponentByClass<UStaticMeshComponent>() : nullptr;
+	if (Tube) RecordMesh(Tube);
+	const FTransform Xf(FRotator(0.0f, Point->GetActorRotation().Yaw, 0.0f), Spot + FVector(0.0f, 0.0f, 95.0f));
+	AP9LanternMan* Man = GetWorld()->SpawnActorDeferred<AP9LanternMan>(AP9LanternMan::StaticClass(), Xf, this);
+	if (!Man)
+	{
+		return false;
+	}
+	Man->Tags.Add(P9Campaign::SpawnedTag);
+	Man->FinishSpawning(Xf);
+	RecordSpawned(Man);
+	A.Extras.Add(Man);
+	// a lantern, not a torch: a little warm light round his hand (measured in PIE: 14 cd washed his own body out)
+	Man->LanternIntensity = 3.5f;
+	Man->LanternRadius = 300.0f;
+	Man->Setup(Mesh, Lamp, Tube, static_cast<int32>(HashCombine(HashCombine(GetTypeHash(RunSeed), GetTypeHash(Day)), GetTypeHash(Point->PointId))));
+	return true;
+}
+
+bool AP9CampaignDirector::ActivateEndlessBridge(FP9ActiveAnomaly& A, AP9AnomalySpawnPoint* Point)
+{
+	UStaticMesh* South = BridgeSouthMesh.LoadSynchronous();
+	UStaticMesh* End = BridgeEndMesh.LoadSynchronous();
+	UStaticMesh* Bay = BridgeBayMesh.LoadSynchronous();
+	UStaticMesh* Lead = BridgeLeadInMesh.LoadSynchronous();
+	if (!South || !End || !Bay || !Lead || Point->ExtraActors.Num() < 2 || !Point->LoopTrigger.IsValid)
+	{
+		return false;
+	}
+	for (AActor* Extra : Point->ExtraActors)
+	{
+		if (Extra) RecordActor(Extra);                                    // whatever the helper hides comes back at day end
+	}
+	AP9EndlessFootbridge* Bridge = GetWorld()->SpawnActorDeferred<AP9EndlessFootbridge>(AP9EndlessFootbridge::StaticClass(), FTransform::Identity, this);
+	if (!Bridge)
+	{
+		return false;
+	}
+	Bridge->Tags.Add(P9Campaign::SpawnedTag);
+	Bridge->FinishSpawning(FTransform::Identity);
+	RecordSpawned(Bridge);
+	A.Extras.Add(Bridge);
+	return Bridge->Setup(Point, South, End, Bay, Lead, BridgeTubeMesh.LoadSynchronous());
+}
+
+bool AP9CampaignDirector::ActivateReverseEscalator(FP9ActiveAnomaly& A, AP9AnomalySpawnPoint* Point)
+{
+	UStaticMesh* Upper = EscalatorUpperMesh.LoadSynchronous();
+	UStaticMesh* Step = EscalatorStepMesh.LoadSynchronous();
+	if (!Upper || !Step || !Point->TargetActor || Point->TargetActor->IsHidden())
+	{
+		return false;
+	}
+	RecordActor(Point->TargetActor);
+	AP9ReverseEscalator* Esc = GetWorld()->SpawnActorDeferred<AP9ReverseEscalator>(AP9ReverseEscalator::StaticClass(), Point->TargetActor->GetActorTransform(), this);
+	if (!Esc)
+	{
+		return false;
+	}
+	Esc->Tags.Add(P9Campaign::SpawnedTag);
+	Esc->FinishSpawning(Point->TargetActor->GetActorTransform());
+	RecordSpawned(Esc);
+	A.Extras.Add(Esc);
+	return Esc->Setup(Point->TargetActor, Upper, Step);
+}
+
+bool AP9CampaignDirector::IsAnyAnomalyNoticed() const
+{
+	for (const FP9ActiveAnomaly& A : ActiveAnomalies)
+	{
+		if (A.bNoticed) return true;
+	}
+	return false;
+}
+
+FString AP9CampaignDirector::GetAnomalyHelperStatus() const
+{
+	FString S;
+	for (const FP9ActiveAnomaly& A : ActiveAnomalies)
+	{
+		for (const AActor* E : A.Extras)
+		{
+			if (const AP9EndlessFootbridge* B = Cast<AP9EndlessFootbridge>(E)) S += TEXT(" bridge[") + B->GetStatus() + TEXT("]");
+			if (const AP9ReverseEscalator* R = Cast<AP9ReverseEscalator>(E)) S += TEXT(" escalator[") + R->GetStatus() + TEXT("]");
+			if (const AP9LanternMan* L = Cast<AP9LanternMan>(E)) S += FString::Printf(TEXT(" lantern[seen=%d at %s]"), L->HasBeenSeen() ? 1 : 0, *L->GetActorLocation().ToCompactString());
+		}
+		S += FString::Printf(TEXT(" %s noticed=%d stage=%d"), *A.Plan.DefId.ToString(), A.bNoticed ? 1 : 0, A.Stage);
+	}
+	return S;
+}
+
+void AP9CampaignDirector::TickNotice(FP9ActiveAnomaly& A, const FP9AnomalyDef& Def, const AP9AnomalySpawnPoint* Point, float DeltaSeconds)
+{
+	// "seen / met" only drives the anomaly ambience (user choice: never before it is found); every handler has its own test
+	if (A.bNoticed || !Point)
+	{
+		return;
+	}
+	bool bNow = false;
+	switch (Def.Handler)
+	{
+	case EP9AnomalyHandler::PAAnnouncement:
+		bNow = ConnectingCalls > 0 && bConnectingCalled;                          // the wrong announcement has been played
+		break;
+	case EP9AnomalyHandler::EndlessBridge:
+		for (const AActor* E : A.Extras) if (const AP9EndlessFootbridge* B = Cast<AP9EndlessFootbridge>(E)) bNow |= B->IsEngaged();
+		break;
+	case EP9AnomalyHandler::ReverseEscalator:
+		for (const AActor* E : A.Extras) if (const AP9ReverseEscalator* R = Cast<AP9ReverseEscalator>(E)) bNow |= R->IsEngaged();
+		break;
+	case EP9AnomalyHandler::LanternFigure:
+		for (const AActor* E : A.Extras) if (const AP9LanternMan* L = Cast<AP9LanternMan>(E)) bNow |= L->HasBeenSeen();
+		break;
+	case EP9AnomalyHandler::Stalker:
+		bNow = Stalker && !Stalker->IsHidden() && IsInView(Stalker->GetActorLocation() + FVector(0.0f, 0.0f, 120.0f), 0.8f, 2500.0f, Stalker, true);
+		break;
+	case EP9AnomalyHandler::TrainMaterial:
+	case EP9AnomalyHandler::TrainLightsOff:
+	{
+		const AActor* T = Point->TargetActor;
+		const ACharacter* P = PlayerCharacter();
+		bNow = (Train && Train->IsPlayerAboard()) || (T && P && !T->IsHidden() && FVector::Dist2D(P->GetActorLocation(), T->GetActorLocation()) < 2400.0f
+			&& IsInView(T->GetActorLocation() + FVector(0.0f, 0.0f, 200.0f), 0.5f, 2600.0f, T, false));
+		break;
+	}
+	default:
+	{
+		const AActor* T = Point->TargetActor;
+		const FVector Where = T ? T->GetComponentsBoundingBox(true).GetCenter() : Point->GetActorLocation();
+		bNow = IsInView(Where, 0.85f, 3500.0f, T, true);
+		break;
+	}
+	}
+	A.NoticeTime = bNow ? A.NoticeTime + DeltaSeconds : 0.0f;
+	if (A.NoticeTime >= P9Campaign::NoticeSeconds || (bNow && (Def.Handler == EP9AnomalyHandler::PAAnnouncement || Def.Handler == EP9AnomalyHandler::EndlessBridge
+		|| Def.Handler == EP9AnomalyHandler::ReverseEscalator || Def.Handler == EP9AnomalyHandler::LanternFigure)))
+	{
+		A.bNoticed = true;
+		UE_LOG(LogP9, Log, TEXT("Campaign: %s noticed by the player (anomaly ambience may play)"), *A.Plan.DefId.ToString());
+	}
+}
+
+bool AP9CampaignDirector::ActivateDynamicClock(FP9ActiveAnomaly& A, const FP9AnomalyDef& Def, const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point)
+{
+	UStaticMeshComponent* Mesh = Point->TargetActor ? Point->TargetActor->FindComponentByClass<UStaticMeshComponent>() : nullptr;
+	if (!Mesh || !ClockDigits.LoadSynchronous())
+	{
+		return false;
+	}
+	int32 Slot = INDEX_NONE;
+	for (int32 i = 0; i < Mesh->GetNumMaterials() && Slot == INDEX_NONE; ++i)
+	{
+		const UMaterialInterface* Current = Mesh->GetMaterial(i);
+		Slot = Current && Current->GetName().Contains(Def.MaterialSlotMatch) ? i : INDEX_NONE;
+	}
+	if (Slot == INDEX_NONE)
+	{
+		return false;
+	}
+	UCanvasRenderTarget2D* Face = UCanvasRenderTarget2D::CreateCanvasRenderTarget2D(this, UCanvasRenderTarget2D::StaticClass(), P9Campaign::ClockFaceW, P9Campaign::ClockFaceH);
+	if (!Face)
+	{
+		return false;
+	}
+	RecordMesh(Mesh);
+	UMaterialInstanceDynamic* MID = Mesh->CreateDynamicMaterialInstance(Slot);
+	if (!MID)
+	{
+		return false;
+	}
+	MID->SetTextureParameterValue(TEXT("PanelTexture"), Face);
+	A.MIDs.Add(MID);
+	A.Target = Face;
+	// a running clock starts at the station's own time and drifts; a fixed one shows the variant text as it is
+	A.ClockMinutes = P9Campaign::ParseClock(V.Text);
+	ClockTextNow = V.Param > 0.0f ? P9Campaign::FormatClock(A.ClockMinutes) : V.Text;
+	Face->OnCanvasRenderTargetUpdate.AddDynamic(this, &AP9CampaignDirector::DrawClock);
+	Face->UpdateResource();
+	return true;
+}
+
+void AP9CampaignDirector::DrawClock(UCanvas* Canvas, int32 Width, int32 Height)
+{
+	using namespace P9Campaign;
+	// black LED face, then each character's dot-matrix cell from the atlas, added (cells overlap; their backgrounds are black)
+	Canvas->K2_DrawTexture(nullptr, FVector2D::ZeroVector, FVector2D(Width, Height), FVector2D::ZeroVector, FVector2D::UnitVector, FLinearColor::Black, BLEND_Opaque);
+	UTexture2D* Atlas = ClockDigits.Get();
+	if (!Atlas)
+	{
+		return;
+	}
+	const float Sx = Width / static_cast<float>(ClockFaceW), Sy = Height / static_cast<float>(ClockFaceH);
+	for (int32 k = 0; k < 5 && k < ClockTextNow.Len(); ++k)
+	{
+		const TCHAR C = ClockTextNow[k];
+		const int32 Cell = C == TEXT(':') ? 10 : (FChar::IsDigit(C) ? C - TEXT('0') : INDEX_NONE);
+		if (Cell == INDEX_NONE)
+		{
+			continue;
+		}
+		Canvas->K2_DrawTexture(Atlas, FVector2D(ClockSlotX[k] * Sx, 0.0f), FVector2D(ClockCellW * Sx, ClockCellH * Sy),
+			FVector2D(Cell * ClockCellW / ClockAtlasW, 0.0f), FVector2D(ClockCellW / ClockAtlasW, ClockCellH / ClockAtlasH), FLinearColor::White, BLEND_Additive);
+	}
+}
+
+bool AP9CampaignDirector::ActivateMeshSwap(FP9ActiveAnomaly& A, const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point)
+{
+	// the placed track is static (its mesh cannot change at runtime): hide it and stand a movable copy with the variant mesh in its place
+	AActor* Target = Point->TargetActor;
+	const UStaticMeshComponent* Template = Target ? Target->FindComponentByClass<UStaticMeshComponent>() : nullptr;
+	UStaticMesh* Mesh = V.Mesh.LoadSynchronous();
+	if (!Template || !Mesh || Target->IsHidden())
+	{
+		return false;
+	}
+	const FTransform Xf = Template->GetComponentTransform();
+	AStaticMeshActor* Copy = GetWorld()->SpawnActorDeferred<AStaticMeshActor>(AStaticMeshActor::StaticClass(), Xf, this);
+	if (!Copy)
+	{
+		return false;
+	}
+	UStaticMeshComponent* C = Copy->GetStaticMeshComponent();
 	C->SetMobility(EComponentMobility::Movable);
 	C->SetStaticMesh(Mesh);
 	for (int32 i = 0; i < Template->GetNumMaterials(); ++i)
 	{
 		C->SetMaterial(i, Template->GetMaterial(i));
 	}
-	C->SetCollisionProfileName(TEXT("BlockAll"));
-	Prop->Tags.Add(P9Campaign::SpawnedTag);
-	Prop->FinishSpawning(Xf);
-	RecordSpawned(Prop);
+	C->SetCollisionProfileName(Template->GetCollisionProfileName());
+	C->SetCollisionEnabled(Template->GetCollisionEnabled());
+	C->bNeverDistanceCull = true;
+	Copy->Tags.Add(P9Campaign::SpawnedTag);
+	Copy->FinishSpawning(Xf);
+	Copy->SetActorTransform(Xf);
+	RecordSpawned(Copy);
+	A.Extras.Add(Copy);
+	RecordActor(Target);
+	Target->SetActorHiddenInGame(true);
+	Target->SetActorEnableCollision(false);
 	return true;
 }
 
-bool AP9CampaignDirector::ActivateTrainDestination(FP9ActiveAnomaly& A, const FP9AnomalyVariant& V)
+bool AP9CampaignDirector::ActivatePosterEyes(FP9ActiveAnomaly& A, const FP9AnomalyDef& Def, const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point)
 {
-	if (!Train || V.Text.IsEmpty())
+	UStaticMesh* Disc = PupilMesh.LoadSynchronous();
+	UMaterialInterface* Dark = PupilMaterial.LoadSynchronous();
+	if (!Disc || !Dark || !Point->TargetActor || !ActivateMaterialSwap(A, Def, V, Point))
 	{
 		return false;
 	}
-	UCanvasRenderTarget2D* Target = UCanvasRenderTarget2D::CreateCanvasRenderTarget2D(this, UCanvasRenderTarget2D::StaticClass(), 512, 512);
-	if (!Target)
+	// two flattened discs just off the paper over the painted eye whites; TickPosterEyes turns them towards the camera
+	const FTransform Stand = Point->TargetActor->GetActorTransform();
+	for (const FVector& Eye : P9Campaign::EyeCentres)
 	{
-		return false;
-	}
-	int32 Slots = 0;
-	for (int32 Car = 0; Car < 2; ++Car)
-	{
-		UStaticMeshComponent* Shell = P9Campaign::FindNamedComponent<UStaticMeshComponent>(Train, FString::Printf(TEXT("Car%d_Shell"), Car));
-		if (!Shell)
-		{
-			continue;
-		}
-		const TArray<FName> Names = Shell->GetMaterialSlotNames();
-		bool bRecorded = false;
-		for (int32 i = 0; i < Names.Num(); ++i)
-		{
-			if (Names[i].ToString().StartsWith(TEXT("M_P9_TrainLights")))
-			{
-				if (!bRecorded)
-				{
-					RecordMesh(Shell);
-					bRecorded = true;
-				}
-				if (UMaterialInstanceDynamic* MID = Shell->CreateDynamicMaterialInstance(i))
-				{
-					MID->SetTextureParameterValue(TEXT("PanelTexture"), Target);
-					A.MIDs.Add(MID);
-					++Slots;
-				}
-			}
-		}
-	}
-	if (Slots == 0)
-	{
-		return false;
-	}
-	DestinationTextNow = V.Text;
-	A.Target = Target;
-	Target->OnCanvasRenderTargetUpdate.AddDynamic(this, &AP9CampaignDirector::DrawDestination);
-	Target->UpdateResource();
-	return true;
-}
-
-void AP9CampaignDirector::DrawDestination(UCanvas* Canvas, int32 Width, int32 Height)
-{
-	// same layout as AP9Train's own board: the baked lights atlas with the destination band redrawn
-	const FVector2D Size(Width, Height);
-	if (UTexture* Atlas = Train ? Train->LightsAtlas.LoadSynchronous() : nullptr)
-	{
-		Canvas->K2_DrawTexture(Atlas, FVector2D::ZeroVector, Size, FVector2D::ZeroVector, FVector2D::UnitVector, FLinearColor::White, BLEND_Opaque);
-	}
-	Canvas->K2_DrawTexture(nullptr, FVector2D(0.0f, Height * 0.5f), FVector2D(Width, Height * 0.25f), FVector2D::ZeroVector, FVector2D::UnitVector, FLinearColor(0.01f, 0.008f, 0.005f), BLEND_Opaque);
-	Canvas->K2_DrawText(GEngine->GetLargeFont(), DestinationTextNow.ToUpper(), FVector2D(Width * 0.5f, Height * 0.625f), FVector2D(2.6f, 3.2f),
-		FLinearColor(1.0f, 0.55f, 0.08f), 0.0f, FLinearColor::Transparent, FVector2D::ZeroVector, true, true, false, FLinearColor::Black);
-}
-
-bool AP9CampaignDirector::ActivateTrainSeatTint(FP9ActiveAnomaly& A, const FP9AnomalyVariant& V)
-{
-	int32 Slots = 0;
-	for (int32 Car = 0; Car < 2; ++Car)
-	{
-		UStaticMeshComponent* Interior = P9Campaign::FindNamedComponent<UStaticMeshComponent>(Train, FString::Printf(TEXT("Car%d_Interior"), Car));
-		if (!Interior)
-		{
-			continue;
-		}
-		for (int32 i = 0; i < Interior->GetNumMaterials(); ++i)
-		{
-			const UMaterialInterface* Current = Interior->GetMaterial(i);
-			if (Current && Current->GetName().Contains(TEXT("Train_Seat")))
-			{
-				RecordMesh(Interior);
-				// a variant material replaces the upholstery outright (a multiply tint cannot turn the blue fabric red)
-				if (UMaterialInterface* Replacement = V.Material.LoadSynchronous())
-				{
-					Interior->SetMaterial(i, Replacement);
-					++Slots;
-				}
-				else if (UMaterialInstanceDynamic* MID = Interior->CreateDynamicMaterialInstance(i))
-				{
-					MID->SetVectorParameterValue(TEXT("Tint"), V.Color);
-					A.MIDs.Add(MID);
-					++Slots;
-				}
-			}
-		}
-	}
-	return Slots > 0;
-}
-
-bool AP9CampaignDirector::ActivateTrainLights(FP9ActiveAnomaly& A, const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point)
-{
-	const FString Car = Point->TargetComponent.IsNone() ? FString(TEXT("Car1")) : Point->TargetComponent.ToString();
-	for (int32 L = 0; L < 2; ++L)
-	{
-		if (ULightComponent* Light = P9Campaign::FindNamedComponent<ULightComponent>(Train, FString::Printf(TEXT("%s_InteriorLight%d"), *Car, L)))
-		{
-			RecordLight(Light);
-			A.Lights.Add(Light);
-			A.BaseIntensity.Add(Light->Intensity);
-			if (V.Param == 0.0f) Light->SetIntensity(0.0f);
-			else if (V.Param >= 2.0f) Light->SetLightColor(V.Color);
-		}
-	}
-	return A.Lights.Num() > 0;
-}
-
-bool AP9CampaignDirector::ActivateFigure(FP9ActiveAnomaly& A, const FP9AnomalyDef& Def, const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point)
-{
-	if (Def.Handler == EP9AnomalyHandler::WindowFigure)
-	{
-		const FString CarName = Point->TargetComponent.IsNone() ? FString(TEXT("Car1")) : Point->TargetComponent.ToString();
-		USceneComponent* Car = Train ? P9Campaign::FindNamedComponent<USceneComponent>(Train, CarName) : nullptr;
-		if (!Car)
+		const FVector Where = Stand.TransformPosition(Eye + FVector(P9Campaign::PupilLift, 0.0f, 0.0f));
+		AActor* Pupil = SpawnFigure(Where, Stand.Rotator().Yaw, Disc, P9Campaign::PupilScale, Dark);
+		if (!Pupil)
 		{
 			return false;
 		}
-		// car-local placement; a car turned round mirrors the side
-		const bool bReversed = FMath::Abs(FRotator::NormalizeAxis(Car->GetRelativeRotation().Yaw)) > 90.0f;
-		const int32 Side = (Train->PlatformSideWorldY >= 0 ? 1 : -1) * (bReversed ? -1 : 1);
-		A.CarIndex = CarName.EndsWith(TEXT("0")) ? 0 : 1;
-		// Param 0: far end of the carriage in the aisle, facing down it; 1: just inside the door nearest the cab; 2: in a seat bay,
-		// face to the platform-side window (seen from the platform as a face at the glass)
-		// (x 348 is centred on a window, 391 stood behind the pier; 0.88 height so the face sits in the glass, not behind the shutter)
-		FVector Local(690.0f, Side * 140.0f, 110.0f);
-		float RelYaw = Side * 90.0f;
-		if (V.Param == 0.0f) { Local = FVector(-760.0f, 0.0f, 110.0f); RelYaw = 0.0f; }
-		else if (V.Param >= 2.0f) { Local = FVector(348.0f, Side * 150.0f, 110.0f); RelYaw = Side * 90.0f; }
-		AActor* Figure = SpawnFigure(Car->GetComponentTransform().TransformPosition(Local), Car->GetComponentRotation().Yaw + RelYaw, V.Mesh.LoadSynchronous(),
-			V.Param >= 2.0f ? FVector(1.0f, 1.0f, 0.88f) : FVector::OneVector);
-		if (!Figure)
+		Pupil->GetRootComponent()->SetWorldRotation(Stand.GetRotation());
+		Pupil->SetActorEnableCollision(false);
+		if (UStaticMeshComponent* C = Pupil->FindComponentByClass<UStaticMeshComponent>())
 		{
-			return false;
+			C->SetCastShadow(false);
 		}
-		Figure->AttachToComponent(Car, FAttachmentTransformRules::KeepWorldTransform);
-		A.Figure = Figure;
-		return true;
+		Pupil->SetActorHiddenInGame(V.bChangeAfterLookAway);       // the "later" variant shows them only once the poster has changed
+		A.Extras.Add(Pupil);
 	}
-	AActor* Figure = SpawnFigure(Point->GetActorLocation(), Point->GetActorRotation().Yaw, V.Mesh.LoadSynchronous());
-	if (!Figure)
-	{
-		return false;
-	}
-	A.Figure = Figure;
-	A.ScareFrom = Point->GetActorLocation();
 	return true;
 }
 
-bool AP9CampaignDirector::ActivateStaticProp(FP9ActiveAnomaly& A, const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point)
+bool AP9CampaignDirector::ActivateStalker(AP9AnomalySpawnPoint* Point)
 {
-	UStaticMesh* Mesh = V.Mesh.LoadSynchronous();
-	UMaterialInterface* Override = V.Material.IsNull() ? nullptr : V.Material.LoadSynchronous();
-	if (!Mesh || (!V.Material.IsNull() && !Override) || (!V.Sound.IsNull() && !V.Sound.LoadSynchronous()))
+	if (!Stalker)
 	{
 		return false;
 	}
-	A.Figure = SpawnFigure(Point->GetActorLocation(), Point->GetActorRotation().Yaw, Mesh, V.Scale, Override);
-	return A.Figure != nullptr;
+	// she stands on the floor under the point, facing along it until she turns to watch the player
+	FVector Spot = Point->GetActorLocation();
+	FHitResult Floor;
+	FCollisionQueryParams Params(SCENE_QUERY_STAT(P9StalkerSpot), false, Stalker);
+	if (GetWorld()->LineTraceSingleByChannel(Floor, Spot + FVector(0.0f, 0.0f, 150.0f), Spot - FVector(0.0f, 0.0f, 400.0f), ECC_Visibility, Params))
+	{
+		Spot = Floor.ImpactPoint;
+	}
+	return Stalker->BeginCampaignSighting(Spot, Point->GetActorRotation().Yaw);
 }
 
 AActor* AP9CampaignDirector::SpawnFigure(const FVector& Location, float Yaw, UStaticMesh* InMesh, const FVector& Scale, UMaterialInterface* OverrideAll)
@@ -1274,7 +1637,7 @@ AActor* AP9CampaignDirector::SpawnFigure(const FVector& Location, float Yaw, USt
 	C->SetCollisionProfileName(TEXT("NoCollision"));
 	C->SetCastShadow(true);
 	C->SetWorldScale3D(Scale);
-	C->bNeverDistanceCull = true;                          // the level's cull distances would hide distant anomalies (e.g. the train on track 10)
+	C->bNeverDistanceCull = true;                          // the level's cull distances would hide distant anomalies
 	if (OverrideAll)
 	{
 		for (int32 i = 0; i < Mesh->GetStaticMaterials().Num(); ++i) C->SetMaterial(i, OverrideAll);
@@ -1293,14 +1656,13 @@ void AP9CampaignDirector::TickAnomaly(FP9ActiveAnomaly& A, float DeltaSeconds)
 	A.Time += DeltaSeconds;
 	const FP9AnomalyDef& Def = Anomalies[A.Plan.DefIndex];
 	const FP9AnomalyVariant& V = Def.Variants[A.Plan.VariantIndex];
-	ACharacter* Player = PlayerCharacter();
-	APlayerController* PC = PlayerController();
-	if (A.PendingMesh && A.PendingMaterial && SpawnPoints.IsValidIndex(A.Plan.PointIndex))
+	const AP9AnomalySpawnPoint* Point = SpawnPoints.IsValidIndex(A.Plan.PointIndex) ? SpawnPoints[A.Plan.PointIndex].Get() : nullptr;
+	if (A.PendingMesh && A.PendingMaterial && Point)
 	{
 		// "it changed after you passed it": the player must have looked at it (0.5 s), then away (0.4 s)
 		// (bounds include non-colliding components: the signs have no collision)
-		const AActor* Target = SpawnPoints[A.Plan.PointIndex]->TargetActor;
-		const FVector Where = Target ? Target->GetComponentsBoundingBox(true).GetCenter() : SpawnPoints[A.Plan.PointIndex]->GetActorLocation();
+		const AActor* Target = Point->TargetActor;
+		const FVector Where = Target ? Target->GetComponentsBoundingBox(true).GetCenter() : Point->GetActorLocation();
 		if (IsInView(Where, 0.9f, 3500.0f, Target, false))
 		{
 			A.SeenTime += DeltaSeconds; A.AwayTime = 0.0f; A.bSeen |= A.SeenTime > 0.5f;
@@ -1309,314 +1671,96 @@ void AP9CampaignDirector::TickAnomaly(FP9ActiveAnomaly& A, float DeltaSeconds)
 		{
 			A.PendingMesh->SetMaterial(A.PendingSlot, A.PendingMaterial);
 			A.PendingMesh = nullptr;
+			if (Def.Handler == EP9AnomalyHandler::PosterEyes)
+			{
+				for (AActor* Extra : A.Extras) if (Extra) Extra->SetActorHiddenInGame(false);
+			}
 			UE_LOG(LogP9, Log, TEXT("Campaign: %s changed while the player looked away"), *A.Plan.DefId.ToString());
 		}
 	}
 	switch (Def.Handler)
 	{
-	case EP9AnomalyHandler::StaticProp:
-		if (A.Figure && !V.Sound.IsNull() && DayTime >= A.NextEvent && Player && IsInAnomalyZone(PlayerFeet()))
-		{
-			PlaySoundAt(V.Sound.LoadSynchronous(), A.Figure->GetActorLocation() + FVector(0.0f, 0.0f, 300.0f), ScareVolume, 1.0f, 16000.0f);
-			A.NextEvent = DayTime + PresentationStream.FRandRange(30.0f, 50.0f);
-		}
-		break;
-	case EP9AnomalyHandler::LampFault:
-	case EP9AnomalyHandler::TrainLights:
-		if (V.Param == 1.0f)
-		{
-			// irregular flicker: mostly on, with dropouts
-			const float N = FMath::PerlinNoise1D(A.Time * 6.3f + A.Plan.PointIndex * 11.1f);
-			const float Scale = N > -0.12f ? 1.0f : 0.04f;
-			for (int32 i = 0; i < A.Lights.Num(); ++i) A.Lights[i]->SetIntensity(A.BaseIntensity[i] * Scale);
-			for (int32 i = 0; i < A.MIDs.Num(); ++i)
-			{
-				const int32 Base = A.Lights.Num() + i;
-				if (A.BaseIntensity.IsValidIndex(Base)) A.MIDs[i]->SetScalarParameterValue(TEXT("Intensity"), A.BaseIntensity[Base] * Scale);
-			}
-		}
-		break;
-	case EP9AnomalyHandler::FollowFootsteps:
-		if (Player && DayTime >= A.NextEvent)
-		{
-			const UCharacterMovementComponent* Move = Player->GetCharacterMovement();
-			const bool bWalking = Move && Move->IsMovingOnGround() && Move->Velocity.Size2D() > 80.0f && !(Train && Train->IsPlayerAboard()) && IsInAnomalyZone(PlayerFeet());
-			if (bWalking)
-			{
-				const FVector Behind = Player->GetActorLocation() - Player->GetActorForwardVector().GetSafeNormal2D() * 380.0f;
-				PlaySoundAt(V.Sound.LoadSynchronous(), FVector(Behind.X, Behind.Y, PlayerFeet().Z + 10.0f), 1.0f, 1.0f, 2200.0f);
-				A.NextEvent = DayTime + PresentationStream.FRandRange(22.0f, 38.0f);
-				UE_LOG(LogP9, Log, TEXT("Campaign: footsteps played behind the player"));
-			}
-		}
-		break;
-	case EP9AnomalyHandler::PhantomHorn:
-		if (DayTime >= A.NextEvent && SpawnPoints.IsValidIndex(A.Plan.PointIndex) && Player && IsInAnomalyZone(PlayerFeet()))
-		{
-			PlaySoundAt(V.Sound.LoadSynchronous(), SpawnPoints[A.Plan.PointIndex]->GetActorLocation(), 1.0f, 0.92f, 14000.0f);
-			A.NextEvent = DayTime + PresentationStream.FRandRange(28.0f, 45.0f);
-			UE_LOG(LogP9, Log, TEXT("Campaign: phantom horn from %s"), *A.Plan.PointId.ToString());
-		}
-		break;
-	case EP9AnomalyHandler::DistantFigure:
-		if (A.Figure && !A.bGone && Player)
-		{
-			const FVector ToPlayer = Player->GetActorLocation() - A.Figure->GetActorLocation();
-			A.Figure->SetActorRotation(FRotator(0.0f, ToPlayer.Rotation().Yaw + V.Param, 0.0f));
-			if (ToPlayer.Size2D() < P9Campaign::FigureVanishDistance)
-			{
-				A.bGone = true;
-				A.Figure->SetActorHiddenInGame(true);
-				UE_LOG(LogP9, Log, TEXT("Campaign: distant figure vanished as the player approached"));
-				if (A.Plan.bJumpscare && !A.bScareDone && ScareAvailable() && Phase == EP9DayPhase::Exploring)
-				{
-					// A - anticipation: a low drone where it stood, then nothing (false safety)
-					A.ScareStage = 1; A.ScareTime = 0.0f;
-					PlaySoundAt(ScareDrone.LoadSynchronous(), A.Figure->GetActorLocation() + FVector(0.0f, 0.0f, 150.0f), 0.8f * ScareVolume, 1.0f, 2500.0f);
-				}
-			}
-		}
-		if (A.ScareStage > 0 && Player)
-		{
-			A.ScareTime += DeltaSeconds;
-			if (A.ScareStage == 1 && A.ScareTime >= 1.8f)
-			{
-				// reveal: in front of the player at a validated distance, face and silhouette lit by a short close light
-				float Yaw = 0.0f;
-				const FVector Spot = ScareSpotInFront(165.0f, Yaw);
-				A.Figure->SetActorLocationAndRotation(Spot, FRotator(0.0f, Yaw, 0.0f));
-				A.Figure->SetActorHiddenInGame(false);
-				ScareLightAt(Spot + (PC && PC->PlayerCameraManager ? (PC->PlayerCameraManager->GetCameraLocation() - Spot).GetSafeNormal2D() * 60.0f : FVector::ZeroVector) + FVector(0.0f, 0.0f, 200.0f), 900.0f, 1.0f);
-				PlayScare2D(StingClose, 1.0f);
-				ShakeTime = 0.25f; FlashAlpha = 0.12f;
-				LastJumpscareTime = WorldTimeNow; A.bScareDone = true; A.ScareStage = 2; A.ScareTime = 0.0f;
-				UE_LOG(LogP9, Log, TEXT("Campaign: JUMPSCARE A (close apparition) at %s"), *Spot.ToCompactString());
-			}
-			else if (A.ScareStage == 2 && A.ScareTime >= 0.95f)
-			{
-				A.Figure->SetActorHiddenInGame(true);              // aftermath: gone, a rush of cloth past the player
-				PlaySoundAt(ScareRush.LoadSynchronous(), Player->GetActorLocation(), 0.7f * ScareVolume, 1.0f, 1500.0f);
-				A.ScareStage = 3;
-			}
-		}
-		break;
-	case EP9AnomalyHandler::WatchingFigure:
-		if (V.Param == 1.0f && A.Figure && !A.bGone && Player)
-		{
-			const FVector Head = A.Figure->GetActorLocation() + FVector(0.0f, 0.0f, 210.0f);
-			const FVector ToPlayer = Player->GetActorLocation() - A.Figure->GetActorLocation();
-			if (A.ScareStage == 0)
-			{
-				A.Figure->SetActorRotation(FRotator(0.0f, ToPlayer.Rotation().Yaw, 0.0f));
-				const bool bView = IsInView(Head, 0.85f, 5000.0f, A.Figure, true);
-				if (bView) { A.SeenTime += DeltaSeconds; A.AwayTime = 0.0f; A.bSeen |= A.SeenTime > 0.4f; }
-				else if (A.bSeen && !IsInView(Head, 0.5f, 100000.0f, A.Figure, false) && (A.AwayTime += DeltaSeconds) > 0.5f && ToPlayer.Size2D() > 800.0f)
-				{
-					// closer every time you look back: 40% of the way, staying on the footbridge deck and at least 7 m off
-					FVector Next = A.Figure->GetActorLocation() + ToPlayer.GetSafeNormal2D() * FMath::Min(ToPlayer.Size2D() * 0.4f, ToPlayer.Size2D() - 700.0f);
-					Next.X = FMath::Clamp(Next.X, -150.0f, 150.0f); Next.Z = A.ScareFrom.Z;
-					A.Figure->SetActorLocation(Next);
-					A.bSeen = false; A.SeenTime = 0.0f; A.AwayTime = 0.0f; ++A.Steps;
-					PlaySoundAt(ScareRush.LoadSynchronous(), Next + FVector(0.0f, 0.0f, 120.0f), 0.35f * ScareVolume, 0.8f, 2500.0f);
-					UE_LOG(LogP9, Log, TEXT("Campaign: approaching figure stepped closer (%d, %.0f m away)"), A.Steps, ToPlayer.Size2D() / 100.0f);
-				}
-				// C - after it has come closer twice, the next clear look within 14 m makes it lunge once
-				if (A.Plan.bJumpscare && !A.bScareDone && A.Steps >= 2 && bView && A.SeenTime > 0.3f && ToPlayer.Size2D() < 1400.0f && ScareAvailable() && Phase == EP9DayPhase::Exploring)
-				{
-					float Yaw = 0.0f;
-					A.ScareTo = ScareSpotInFront(230.0f, Yaw); A.ScareTo.Z = A.Figure->GetActorLocation().Z;
-					A.ScareFrom = A.Figure->GetActorLocation(); A.ScareStage = 1; A.ScareTime = 0.0f;
-					PlayScare2D(StingFootbridge, 1.0f);
-					LastJumpscareTime = WorldTimeNow; A.bScareDone = true;
-					UE_LOG(LogP9, Log, TEXT("Campaign: JUMPSCARE C (footbridge lunge)"));
-				}
-			}
-			else
-			{
-				A.ScareTime += DeltaSeconds;
-				const float L = FMath::Clamp(A.ScareTime / 0.28f, 0.0f, 1.0f);
-				if (A.ScareStage == 1)
-				{
-					A.Figure->SetActorLocation(FMath::Lerp(A.ScareFrom, A.ScareTo, L * L * L));   // one sudden, accelerating movement
-					A.Figure->SetActorRotation(FRotator(0.0f, ToPlayer.Rotation().Yaw, 0.0f));
-					if (L >= 1.0f) { A.ScareStage = 2; ScareLightAt(A.ScareTo + FVector(0.0f, 0.0f, 260.0f) + ToPlayer.GetSafeNormal2D() * 80.0f, 700.0f, 0.9f); ShakeTime = 0.22f; }
-				}
-				else if (A.ScareStage == 2 && A.ScareTime >= 1.25f)
-				{
-					A.bGone = true; A.Figure->SetActorHiddenInGame(true); A.ScareStage = 3;
-				}
-			}
-		}
-		else if (A.Figure && !A.bGone && Player)
-		{
-			const FVector ToPlayer = Player->GetActorLocation() - A.Figure->GetActorLocation();
-			A.Figure->SetActorRotation(FRotator(0.0f, ToPlayer.Rotation().Yaw + V.Param, 0.0f));
-			const FVector Head = A.Figure->GetActorLocation() + FVector(0.0f, 0.0f, 160.0f);
-			if (IsInView(Head, 0.85f, 4500.0f, A.Figure, true))
-			{
-				A.SeenTime += DeltaSeconds;
-				A.AwayTime = 0.0f;
-				A.bSeen |= A.SeenTime > 0.4f;
-			}
-			else if (A.bSeen && !IsInView(Head, 0.5f, 100000.0f, A.Figure, false))
-			{
-				A.AwayTime += DeltaSeconds;
-				if (A.AwayTime > 0.5f)
-				{
-					A.bGone = true;
-					A.Figure->SetActorHiddenInGame(true);
-					UE_LOG(LogP9, Log, TEXT("Campaign: watching figure gone after the player looked away"));
-				}
-			}
-		}
-		break;
-	case EP9AnomalyHandler::WindowFigure:
-		if (A.Figure && !A.bGone && A.Plan.bJumpscare && !A.bScareDone && V.Param == 0.0f && Train && Player)
-		{
-			USceneComponent* Car = P9Campaign::FindNamedComponent<USceneComponent>(Train, FString::Printf(TEXT("Car%d"), A.CarIndex));
-			const FVector Head = A.Figure->GetActorLocation() + FVector(0.0f, 0.0f, 160.0f);
-			const bool bInCar = Car && Train->IsPlayerAboard() && FVector::Dist2D(Car->GetComponentLocation(), Player->GetActorLocation()) < 1000.0f;
-			if (A.ScareStage == 0)
-			{
-				// B - the passenger at the far end is seen from inside the carriage; then the lights fail
-				A.SeenTime = bInCar && IsInView(Head, 0.9f, 2200.0f, A.Figure, false) ? A.SeenTime + DeltaSeconds : 0.0f;
-				if (A.SeenTime > 0.6f && ScareAvailable() && Phase == EP9DayPhase::Exploring)
-				{
-					for (int32 L = 0; L < 2; ++L)
-					{
-						if (ULightComponent* Light = P9Campaign::FindNamedComponent<ULightComponent>(Train, FString::Printf(TEXT("Car%d_InteriorLight%d"), A.CarIndex, L)))
-						{
-							RecordLight(Light); A.Lights.Add(Light); A.BaseIntensity.Add(Light->Intensity); Light->SetIntensity(0.0f);
-						}
-					}
-					PlayScare2D(ScareDrone, 0.5f);
-					A.ScareStage = 1; A.ScareTime = 0.0f; LastJumpscareTime = WorldTimeNow; A.bScareDone = true;
-					UE_LOG(LogP9, Log, TEXT("Campaign: JUMPSCARE B (carriage) - lights out"));
-				}
-			}
-		}
-		if (A.ScareStage > 0 && A.Figure && Train && Player)
-		{
-			A.ScareTime += DeltaSeconds;
-			USceneComponent* Car = P9Campaign::FindNamedComponent<USceneComponent>(Train, FString::Printf(TEXT("Car%d"), A.CarIndex));
-			if (A.ScareStage == 1 && A.ScareTime >= 0.8f && Car)
-			{
-				// lights back: it stands in the aisle 2.3 m away, between the player and where it was
-				const FTransform CarXf = Car->GetComponentTransform();
-				const FVector P = CarXf.InverseTransformPosition(Player->GetActorLocation());
-				const FVector F = CarXf.InverseTransformPosition(A.Figure->GetActorLocation());
-				const float Dir = F.X >= P.X ? 1.0f : -1.0f;
-				const FVector Spot = CarXf.TransformPosition(FVector(FMath::Clamp(P.X + Dir * 230.0f, -850.0f, 850.0f), 0.0f, 110.0f));
-				A.Figure->SetActorLocationAndRotation(Spot, FRotator(0.0f, (Player->GetActorLocation() - Spot).GetSafeNormal2D().Rotation().Yaw, 0.0f));
-				for (int32 i = 0; i < A.Lights.Num(); ++i) if (A.Lights[i]) A.Lights[i]->SetIntensity(A.BaseIntensity[i] * 0.45f);   // a brown-out, not full light
-				PlayScare2D(StingCarriage, 1.0f);
-				ShakeTime = 0.22f; FlashAlpha = 0.08f; A.ScareStage = 2;
-				UE_LOG(LogP9, Log, TEXT("Campaign: JUMPSCARE B - lights back, passenger in the aisle"));
-			}
-			else if (A.ScareStage == 2 && A.ScareTime >= 2.0f)
-			{
-				for (ULightComponent* L : A.Lights) if (L) L->SetIntensity(0.0f);
-				A.Figure->SetActorHiddenInGame(true); A.bGone = true; A.ScareStage = 3;
-			}
-			else if (A.ScareStage == 3 && A.ScareTime >= 2.3f)
-			{
-				for (int32 i = 0; i < A.Lights.Num(); ++i) if (A.Lights[i]) A.Lights[i]->SetIntensity(A.BaseIntensity[i]);   // recovery
-				A.ScareStage = 4;
-			}
-		}
-		break;
-	default:
-		break;
+	case EP9AnomalyHandler::DynamicClock: TickClock(A, V, DeltaSeconds); break;
+	case EP9AnomalyHandler::LoopTeleport: TickLoop(A, Point, DeltaSeconds); break;
+	case EP9AnomalyHandler::PosterEyes: TickPosterEyes(A, Point, DeltaSeconds); break;
+	case EP9AnomalyHandler::LightTint: TickLightTint(A, V, DeltaSeconds); break;
+	case EP9AnomalyHandler::TrainLightsOff: TickTrainLightsOff(A, V, Point, DeltaSeconds); break;
+	default: break;
 	}
+	TickNotice(A, Def, Point, DeltaSeconds);
 }
 
-// =====================================================================================================================
-// jumpscares and presentation
-// =====================================================================================================================
-void AP9CampaignDirector::TriggerJumpscare(EP9JumpscareType Type, FP9ActiveAnomaly* Source)
+void AP9CampaignDirector::TickClock(FP9ActiveAnomaly& A, const FP9AnomalyVariant& V, float DeltaSeconds)
 {
-	if (Source && WorldTimeNow - LastJumpscareTime < JumpscareCooldown)
+	if (V.Param <= 0.0f || !A.Target)
 	{
-		UE_LOG(LogP9, Log, TEXT("Campaign: jumpscare skipped (cooldown %.0fs left)"), JumpscareCooldown - (WorldTimeNow - LastJumpscareTime));
+		return;                                                       // a fixed wrong time never moves
+	}
+	A.ClockAccum += DeltaSeconds;
+	const float Step = FMath::Max(0.05f, V.Scale.X);
+	if (A.ClockAccum < Step)
+	{
 		return;
 	}
-	LastJumpscareTime = WorldTimeNow;
-	APlayerController* PC = PlayerController();
+	const int32 Steps = FMath::FloorToInt(A.ClockAccum / Step);
+	A.ClockAccum -= Steps * Step;
+	A.ClockMinutes += V.Param >= 2.0f ? Steps : -Steps;             // 1 = backwards, 2 = racing forwards
+	ClockTextNow = P9Campaign::FormatClock(A.ClockMinutes);
+	A.Target->UpdateResource();
+}
+
+void AP9CampaignDirector::TickLoop(FP9ActiveAnomaly& A, const AP9AnomalySpawnPoint* Point, float DeltaSeconds)
+{
+	A.LoopCooldown = FMath::Max(0.0f, A.LoopCooldown - DeltaSeconds);
 	ACharacter* Player = PlayerCharacter();
-	if (Type == EP9JumpscareType::Apparition && PC && Player && PC->PlayerCameraManager)
+	if (!Point || !Player || A.LoopCooldown > 0.0f || Phase != EP9DayPhase::Exploring || (Train && Train->IsPlayerAboard()))
 	{
-		const FVector Forward = PC->PlayerCameraManager->GetCameraRotation().Vector().GetSafeNormal2D();
-		const FVector Feet = PlayerFeet();
-		const FVector Location = FVector(Player->GetActorLocation().X, Player->GetActorLocation().Y, Feet.Z) + Forward * 125.0f;
-		if (ScareFigure)
-		{
-			ScareFigure->Destroy();
-		}
-		ScareFigure = SpawnFigure(Location, (-Forward).Rotation().Yaw);
-		ScareFigureTime = FMath::Max(0.1f, P9Campaign::CVarScareFigureLife.GetValueOnGameThread());
-		PlaySound2D(ApparitionSting.LoadSynchronous(), 1.0f, 1.0f);
-		FlashAlpha = 0.55f;
-		ShakeTime = 0.5f;
+		return;
 	}
-	else
+	// only while moving on along the stretch (walking back the other way is the way out)
+	const FVector Along = Point->LoopDirection.GetSafeNormal();
+	if (!Point->LoopTrigger.IsInsideOrOn(PlayerFeet()) || FVector::DotProduct(Player->GetVelocity(), Along) < 20.0f)
 	{
-		PlaySound2D(ReflectionSting.LoadSynchronous(), 1.0f, 1.0f);
-		FlashAlpha = 0.85f;
-		ShakeTime = 0.35f;
+		return;
 	}
-	UE_LOG(LogP9, Log, TEXT("Campaign: JUMPSCARE %s"), Type == EP9JumpscareType::Apparition ? TEXT("apparition") : TEXT("reflection"));
+	Player->SetActorLocation(Player->GetActorLocation() + Point->LoopOffset, false, nullptr, ETeleportType::TeleportPhysics);
+	++A.Loops;
+	A.LoopCooldown = 0.6f;
+	// the station lights seem to dip for a moment - that is when it happens
+	FadeAlpha = FMath::Max(FadeAlpha, P9Campaign::LoopBlinkAlpha);
+	FadeTarget = 0.0f;
+	FadeSpeed = P9Campaign::LoopBlinkAlpha / P9Campaign::LoopBlinkSeconds;
+	UE_LOG(LogP9, Log, TEXT("Campaign: %s - player sent back by %s (loop %d)"), *A.Plan.DefId.ToString(), *Point->LoopOffset.ToCompactString(), A.Loops);
 }
 
-FVector AP9CampaignDirector::ScareSpotInFront(float Distance, float& OutYaw) const
+void AP9CampaignDirector::TickPosterEyes(FP9ActiveAnomaly& A, const AP9AnomalySpawnPoint* Point, float DeltaSeconds)
 {
-	// straight ahead of the camera on the player's floor, pulled closer if anything solid is in the way (never inside geometry)
+	using namespace P9Campaign;
 	const APlayerController* PC = PlayerController();
-	const ACharacter* C = PlayerCharacter();
-	if (!PC || !PC->PlayerCameraManager || !C) { OutYaw = 0.0f; return FVector::ZeroVector; }
-	const FVector Eye = PC->PlayerCameraManager->GetCameraLocation();
-	const FVector Fwd = PC->PlayerCameraManager->GetCameraRotation().Vector().GetSafeNormal2D();
-	float D = Distance;
-	FHitResult Hit;
-	FCollisionQueryParams Params(SCENE_QUERY_STAT(P9ScareSpot), false, C);
-	const FVector Waist(Eye.X, Eye.Y, PlayerFeet().Z + 90.0f);  // bins, benches and seat backs sit below eye height
-	for (const FVector& From : {Eye, Waist})
+	if (!Point || !Point->TargetActor || !PC || !PC->PlayerCameraManager || A.Extras.Num() < 2)
 	{
-		if (GetWorld()->SweepSingleByChannel(Hit, From, From + Fwd * (Distance + 30.0f), FQuat::Identity, ECC_Visibility, FCollisionShape::MakeSphere(25.0f), Params))
+		return;
+	}
+	// where the camera is, seen from the poster: the pupils turn towards it (clamped inside the painted eye whites)
+	const FTransform Stand = Point->TargetActor->GetActorTransform();
+	const FVector Cam = Stand.InverseTransformPosition(PC->PlayerCameraManager->GetCameraLocation());
+	const FVector Mid = (EyeCentres[0] + EyeCentres[1]) * 0.5f;
+	const FVector To = Cam - Mid;
+	FVector2D Want = FVector2D::ZeroVector;
+	if (To.X > 1.0f)
+	{
+		Want.X = FMath::Clamp(FMath::Atan2(To.Y, To.X) / FMath::DegreesToRadians(55.0f), -1.0f, 1.0f) * PupilTravelY;
+		Want.Y = FMath::Clamp(FMath::Atan2(To.Z, FVector2D(To.X, To.Y).Size()) / FMath::DegreesToRadians(40.0f), -1.0f, 1.0f) * PupilTravelZ;
+	}
+	A.EyeOffset = FMath::Vector2DInterpTo(A.EyeOffset, Want, DeltaSeconds, 6.0f);
+	for (int32 i = 0; i < 2; ++i)
+	{
+		if (AActor* Pupil = A.Extras[i])
 		{
-			D = FMath::Min(D, FMath::Max(95.0f, Hit.Distance - 40.0f));
+			const FVector Local = EyeCentres[i] + FVector(PupilLift, A.EyeOffset.X, A.EyeOffset.Y);
+			Pupil->SetActorLocation(Stand.TransformPosition(Local));
 		}
 	}
-	OutYaw = (-Fwd).Rotation().Yaw;
-	return FVector(C->GetActorLocation().X, C->GetActorLocation().Y, PlayerFeet().Z) + Fwd * D;
-}
-
-void AP9CampaignDirector::ScareLightAt(const FVector& Where, float Intensity, float Duration)
-{
-	if (!ScareLight)
-	{
-		ScareLight = NewObject<UPointLightComponent>(this, TEXT("P9ScareLight"));
-		ScareLight->SetMobility(EComponentMobility::Movable);
-		ScareLight->SetupAttachment(GetRootComponent());
-		ScareLight->RegisterComponent();
-		ScareLight->SetIntensityUnits(ELightUnits::Candelas);
-		ScareLight->SetCastShadows(false);
-		ScareLight->SetAttenuationRadius(450.0f);
-		ScareLight->SetLightColor(FLinearColor(0.85f, 0.9f, 1.0f));
-	}
-	ScareLight->SetWorldLocation(Where);
-	ScareLight->SetIntensity(Intensity);
-	ScareLight->SetVisibility(true);
-	ScareLightTime = Duration;
-}
-
-void AP9CampaignDirector::PlayScare2D(const TSoftObjectPtr<USoundBase>& Sound, float Volume)
-{
-	if (ScareVolume > 0.0f) PlaySound2D(Sound.LoadSynchronous(), Volume * ScareVolume, 1.0f);
-}
-
-void AP9CampaignDirector::DebugJumpscare(EP9JumpscareType Type)
-{
-	TriggerJumpscare(Type, nullptr);
 }
 
 void AP9CampaignDirector::TickPresentation(float DeltaSeconds)
@@ -1625,19 +1769,6 @@ void AP9CampaignDirector::TickPresentation(float DeltaSeconds)
 	FlashAlpha = FMath::Max(0.0f, FlashAlpha - DeltaSeconds * 2.2f);
 	TitleTime += DeltaSeconds;
 	HintTime += DeltaSeconds;
-	if (ScareLight && ScareLightTime > 0.0f && (ScareLightTime -= DeltaSeconds) <= 0.0f)
-	{
-		ScareLight->SetVisibility(false);                         // the scare light never outlives its beat
-	}
-	if (ScareFigure)
-	{
-		ScareFigureTime -= DeltaSeconds;
-		if (ScareFigureTime <= 0.0f)
-		{
-			ScareFigure->SetActorHiddenInGame(true);   // destroyed with the day's baseline
-			ScareFigure = nullptr;
-		}
-	}
 	APlayerController* PC = PlayerController();
 	if (PC && (ShakeTime > 0.0f || !ShakeOffset.IsNearlyZero()))
 	{
@@ -1688,6 +1819,7 @@ void AP9CampaignDirector::PlaySoundAt(USoundBase* Sound, const FVector& Location
 	if (UAudioComponent* Audio = UGameplayStatics::SpawnSoundAtLocation(this, Sound, Location, FRotator::ZeroRotator, Volume, Pitch, 0.0f, Attenuation))
 	{
 		CampaignSounds.Add(Audio);
+		P9Captions::NotifySound(this, Sound);                       // Stage 9B: captions (only sounds listed in DT_P9_Captions)
 	}
 }
 
@@ -1700,6 +1832,7 @@ void AP9CampaignDirector::PlaySound2D(USoundBase* Sound, float Volume, float Pit
 	if (UAudioComponent* Audio = UGameplayStatics::SpawnSound2D(this, Sound, Volume, Pitch))
 	{
 		CampaignSounds.Add(Audio);
+		P9Captions::NotifySound(this, Sound);                       // Stage 9B: captions
 	}
 }
 
@@ -1795,12 +1928,14 @@ void AP9CampaignDirector::CleanupDay()
 	RestoreBaseline();
 	ActiveAnomalies.Reset();
 	StopCampaignSounds();
-	if (IsValid(ScareFigure))
+	if (IsValid(Stalker))
 	{
-		ScareFigure->Destroy();
+		Stalker->EndCampaignSighting();                              // Stage 6A: Kanchana leaves with her day
 	}
-	ScareFigure = nullptr;
-	if (ScareLight) { ScareLight->SetVisibility(false); ScareLightTime = 0.0f; }
+	for (TActorIterator<AP9AnalogClock> It(GetWorld()); It; ++It)
+	{
+		It->EndReverse();                                            // Stage 6C: clockwise again, showing the correct time
+	}
 	if (APlayerController* PC = PlayerController())
 	{
 		if (!ShakeOffset.IsNearlyZero())
@@ -1831,6 +1966,10 @@ TMap<FString, FString> AP9CampaignDirector::CaptureSnapshot() const
 	{
 		// trains: visibility/collision belong to the story (hold stop, opening), not to anomalies
 		Snap.Add(Actor->GetName(), Actor->IsA<AP9Train>() ? FString(TEXT("train")) : FString::Printf(TEXT("hidden=%d collision=%d"), Actor->IsHidden() ? 1 : 0, Actor->GetActorEnableCollision() ? 1 : 0));
+		if (const AP9AnalogClock* Clock = Cast<AP9AnalogClock>(Actor))
+		{
+			Snap.Add(Actor->GetName() + TEXT("/clock"), Clock->IsReversed() ? TEXT("reversed") : TEXT("clockwise"));
+		}
 		TArray<UMeshComponent*> Meshes;
 		Actor->GetComponents<UMeshComponent>(Meshes);
 		for (const UMeshComponent* M : Meshes)
@@ -1993,12 +2132,17 @@ FString AP9CampaignDirector::GetStatusString() const
 	FString Active;
 	for (const FP9ActiveAnomaly& A : ActiveAnomalies)
 	{
-		Active += FString::Printf(TEXT(" %s:%s@%s%s%s"), *A.Plan.DefId.ToString(), *A.Plan.VariantId.ToString(), *A.Plan.PointId.ToString(),
-			A.Plan.bJumpscare ? TEXT("(scare") : TEXT(""), A.Plan.bJumpscare ? (A.bScareDone ? TEXT(" done)") : TEXT(")")) : TEXT(""));
+		Active += FString::Printf(TEXT(" %s:%s@%s"), *A.Plan.DefId.ToString(), *A.Plan.VariantId.ToString(), *A.Plan.PointId.ToString());
+		if (A.Loops > 0) Active += FString::Printf(TEXT("(loops %d)"), A.Loops);
 	}
-	return FString::Printf(TEXT("day=%d/%d run=%d seed=%d phase=%d status=%d token=%d dayTime=%.1f locked=%d zoneArmed=%d history=[%s] baselineRecords=%d active=%d:%s"),
+	FString KanchanaDay = TEXT("-");
+	for (const FP9AnomalyDef& D : Anomalies)
+	{
+		if (D.bScheduled && D.bEnabled) KanchanaDay = FString::Printf(TEXT("%s on day %d"), *D.Id.ToString(), ScheduledDay(D, RunSeed));
+	}
+	return FString::Printf(TEXT("day=%d/%d run=%d seed=%d phase=%d status=%d token=%d dayTime=%.1f locked=%d zoneArmed=%d history=[%s] baselineRecords=%d scheduled=%s active=%d:%s"),
 		Day, NumDays, RunId, RunSeed, static_cast<int32>(Phase), static_cast<int32>(Status), DayToken, DayTime, bDecisionLocked ? 1 : 0, bZoneArmed ? 1 : 0,
-		*FString::Join(History, TEXT(",")), Baseline.Num(), ActiveAnomalies.Num(), *Active);
+		*FString::Join(History, TEXT(",")), Baseline.Num(), *KanchanaDay, ActiveAnomalies.Num(), *Active);
 }
 
 // =====================================================================================================================

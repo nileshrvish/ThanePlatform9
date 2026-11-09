@@ -12,6 +12,7 @@ class UMaterialInterface;
 class UMeshComponent;
 class USoundBase;
 class UStaticMesh;
+class UStaticMeshComponent;
 
 UENUM(BlueprintType)
 enum class EP9AnomalyCategory : uint8
@@ -48,7 +49,16 @@ enum class EP9AnomalyLocation : uint8
 	Poster,            // Stage 4D: platform/footbridge advertisement stands
 	WallRelief,        // Stage 4D: wall faces where something can press through
 	FloorShadow,       // Stage 4D: floor spots under a lamp
-	DistantView        // Stage 4D: far sight-lines (seen from the zone, never on Platforms 1-8)
+	DistantView,       // Stage 4D: far sight-lines (seen from the zone, never on Platforms 1-8)
+	TicketCounter,     // Stage 6A: the concourse booking office front
+	ClosedEntry,       // Stage 6A: a closed stair head on the footbridge (gate / scaffold / barricade)
+	Track,             // Stage 6A: a track panel seen from Platform 9/10
+	FOBLoop,           // Stage 6A: the footbridge stretch that loops (endless footbridge)
+	StairLoop,         // Stage 6A: the Platform 9/10 stair flight that loops (endless stair)
+	StalkerSpot,       // Stage 6A: a place where Kanchana waits on her day
+	AnalogClock,       // Stage 6C: the footbridge concourse's analog clock (AP9AnalogClock)
+	PlatformLamp,      // Stage 8A: a Platform 9/10 lamp (spot light target, tube mesh secondary, fill light extra)
+	LanternSpot        // Stage 8A: a dark Platform 9 spot where the Lantern Man stands (target = the lamp beside it that flickers)
 };
 
 /** The behaviour that realises an anomaly; each has one implementation in AP9CampaignDirector. */
@@ -56,29 +66,20 @@ UENUM(BlueprintType)
 enum class EP9AnomalyHandler : uint8
 {
 	MaterialSwap,      // the target mesh slot matching MaterialSlotMatch shows the variant material
-	LampFault,         // platform lamp (light + tube): off / wrong colour / flicker
-	HideActor,         // the target is gone (hidden, no collision)
-	ExtraProp,         // a copy of the target's mesh appears at the point (overlap-validated)
-	TrainDestination,  // the train's destination board shows the variant text
-	TrainSeatTint,     // seat upholstery tinted
-	TrainLights,       // interior lights of one car: colour / flicker / off
-	PAAnnouncement,    // the station announcements are replaced by the variant
-	FollowFootsteps,   // footsteps behind the player
-	PhantomHorn,       // a train horn from where no train can be
-	DistantFigure,     // a figure at a platform end, gone when approached
-	WatchingFigure,    // a figure that is gone once the player looks away from it
-	WindowFigure,      // a figure inside the train (Param 0 far end of the carriage, 1 in the doorway, 2 facing the window)
-	StaticProp         // Stage 4D: a mesh appears at the point (wall silhouette, impossible shadow, a train that should not exist)
-};
-
-UENUM(BlueprintType)
-enum class EP9JumpscareType : uint8
-{
-	None,
-	Reflection,   // figure seen in the train window: looked at -> sting, flash, gone
-	Apparition,   // A: the distant figure vanishes, silence, then it stands right in front of the player
-	Carriage,     // B: a passenger at the far end of the carriage; the lights fail; it is much closer when they return
-	Footbridge    // C: the approaching figure on the footbridge lunges once
+	HideActor,         // the target and its ExtraActors are gone (hidden, no collision); Param >= 1 also hides SecondaryActor
+	PAAnnouncement,    // the Platform 9 arrival announcement is replaced by the variant (played when the Vashi local is called in)
+	DynamicClock,      // Stage 6A: the clock face is redrawn at runtime (Text = start time, Param 0 fixed / 1 backwards / 2 racing)
+	MeshSwap,          // Stage 6A: the target is hidden and the variant mesh stands in its place with its materials
+	LoopTeleport,      // Stage 6A: the point's LoopTrigger sends the player back by LoopOffset (endless footbridge / stair)
+	PosterEyes,        // Stage 6A: the poster changes to the variant material and its eyes follow the player
+	Stalker,           // Stage 6A: Kanchana waits at the point; once seen she follows the player and speaks
+	AnalogClock,       // Stage 6C: the target AP9AnalogClock runs backwards (Param = reverse rate x, Scale.X pause s, Scale.Y slow s, Scale.Z 1 = waits until seen)
+	LightTint,         // Stage 8A: the target lamp's lights take the variant Color (Param = intensity x, Scale.X pulse depth, Scale.Y pulse period s); tube glows the colour
+	TrainMaterial,     // Stage 8A: every mesh slot of the target train matching MaterialSlotMatch shows the variant material (both cars)
+	TrainLightsOff,    // Stage 8A: the point's car (TargetComponent "Car0"/"Car1") goes dark (Param = residual light 0..1; Scale.Z 1 = dies when the player comes near)
+	LanternFigure,     // Stage 8A: the Lantern Man stands motionless at the point; the target lamp beside him flickers
+	EndlessBridge,     // Stage 8A: the footbridge's north end recedes as the player walks on (AP9EndlessFootbridge) - no teleport
+	ReverseEscalator   // Stage 8A: the Platform 9/10 lower flight runs upwards like an escalator against the player (AP9ReverseEscalator)
 };
 
 UENUM(BlueprintType)
@@ -143,8 +144,10 @@ struct FP9AnomalyVariant
 	/** Stage 4D: mesh for figures / props (empty = handler default) and its scale. */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Anomaly") TSoftObjectPtr<UStaticMesh> Mesh;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Anomaly") FVector Scale = FVector::OneVector;
-	/** Stage 4D: MaterialSwap only - the target looks normal until the player has seen it and looked away. */
+	/** Stage 4D: MaterialSwap / PosterEyes - the target looks normal until the player has seen it and looked away. */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Anomaly") bool bChangeAfterLookAway = false;
+	/** Stage 6A: only usable at spawn points whose PointId contains this text (empty = any point of the definition). */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Anomaly") FString PointMatch;
 };
 
 USTRUCT(BlueprintType)
@@ -166,9 +169,13 @@ struct FP9AnomalyDef
 	/** MaterialSwap: substring of the current material name that identifies the slot to replace. */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Anomaly") FString MaterialSlotMatch;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Anomaly") TArray<FP9AnomalyVariant> Variants;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Anomaly|Jumpscare") EP9JumpscareType Jumpscare = EP9JumpscareType::None;
-	/** Chance (decided when the day is generated) that this anomaly carries its jumpscare. */
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Anomaly|Jumpscare", meta = (ClampMin = "0.0", ClampMax = "1.0")) float JumpscareChance = 0.0f;
+	/**
+	 * Stage 6A: never picked at random. It is the day's only anomaly on exactly one day of each run, chosen from
+	 * ScheduleFirstDay..ScheduleLastDay by the run seed (Kanchana: one of days 3-5).
+	 */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Anomaly|Schedule") bool bScheduled = false;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Anomaly|Schedule", meta = (ClampMin = "1")) int32 ScheduleFirstDay = 3;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Anomaly|Schedule", meta = (ClampMin = "1")) int32 ScheduleLastDay = 5;
 };
 
 /** One anomaly chosen for a day. */
@@ -180,7 +187,6 @@ struct FP9PlannedAnomaly
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Anomaly") int32 DefIndex = INDEX_NONE;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Anomaly") int32 VariantIndex = 0;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Anomaly") int32 PointIndex = INDEX_NONE;
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Anomaly") bool bJumpscare = false;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Anomaly") FName DefId;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Anomaly") FName VariantId;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Anomaly") FName PointId;
@@ -208,7 +214,7 @@ struct FP9DayPlan
 			Day, Attempt, Seed, Difficulty, bAnomalous ? TEXT("yes") : TEXT("no"), bFallbackNormal ? TEXT("yes") : TEXT("no"), Anomalies.Num());
 		for (const FP9PlannedAnomaly& A : Anomalies)
 		{
-			S += FString::Printf(TEXT(" [%s:%s@%s%s]"), *A.DefId.ToString(), *A.VariantId.ToString(), *A.PointId.ToString(), A.bJumpscare ? TEXT(" scare") : TEXT(""));
+			S += FString::Printf(TEXT(" [%s:%s@%s]"), *A.DefId.ToString(), *A.VariantId.ToString(), *A.PointId.ToString());
 		}
 		return S;
 	}
@@ -222,6 +228,7 @@ struct FP9BaselineRecord
 
 	UPROPERTY() TObjectPtr<UMeshComponent> Mesh = nullptr;
 	UPROPERTY() TArray<TObjectPtr<UMaterialInterface>> Materials;
+	/** The epilogue's failing carriage lights. */
 	UPROPERTY() TObjectPtr<ULightComponent> Light = nullptr;
 	float Intensity = 0.0f;
 	FColor LightColor = FColor::White;
@@ -239,27 +246,33 @@ struct FP9ActiveAnomaly
 	GENERATED_BODY()
 
 	UPROPERTY() FP9PlannedAnomaly Plan;
-	UPROPERTY() TObjectPtr<AActor> Figure = nullptr;
 	UPROPERTY() TArray<TObjectPtr<UMaterialInstanceDynamic>> MIDs;
-	UPROPERTY() TArray<TObjectPtr<ULightComponent>> Lights;
 	UPROPERTY() TObjectPtr<UCanvasRenderTarget2D> Target = nullptr;
+	/** Stage 6A: actors spawned for the anomaly (poster pupils, the stand-in track) - destroyed with the baseline. */
+	UPROPERTY() TArray<TObjectPtr<AActor>> Extras;
 	/** Stage 4D: a material swap waiting for the player to look away. */
 	UPROPERTY() TObjectPtr<UMeshComponent> PendingMesh = nullptr;
 	UPROPERTY() TObjectPtr<UMaterialInterface> PendingMaterial = nullptr;
 	int32 PendingSlot = INDEX_NONE;
-	/** Stage 4D: staged jumpscare state and the approaching figure's steps / the figure's carriage. */
-	int32 ScareStage = 0;
-	float ScareTime = 0.0f;
-	int32 Steps = 0;
-	int32 CarIndex = 0;
-	FVector ScareFrom = FVector::ZeroVector;
-	FVector ScareTo = FVector::ZeroVector;
-	TArray<float> BaseIntensity;
 	float Time = 0.0f;
 	float NextEvent = 0.0f;
 	float SeenTime = 0.0f;
 	float AwayTime = 0.0f;
 	bool bSeen = false;
-	bool bGone = false;
-	bool bScareDone = false;
+	/** Stage 6A: dynamic clock minutes since midnight and time since the last step; loop count and re-arm time. */
+	int32 ClockMinutes = 0;
+	float ClockAccum = 0.0f;
+	int32 Loops = 0;
+	float LoopCooldown = 0.0f;
+	/** Stage 6A: poster pupils' current offsets (smoothed). */
+	FVector2D EyeOffset = FVector2D::ZeroVector;
+	/** Stage 8A: the lights the anomaly drives and their original intensities (light tint pulse, coach lights, lamp flicker). */
+	UPROPERTY() TArray<TObjectPtr<ULightComponent>> Lights;
+	TArray<float> LightBase;
+	/** Stage 8A: 0 waiting, 1 flickering, 2 settled (coach lights that die on approach). */
+	int32 Stage = 0;
+	float StageTime = 0.0f;
+	/** Stage 8A: the player has seen / met this anomaly (drives the "after it's seen" anomaly ambience only - never a cue before). */
+	bool bNoticed = false;
+	float NoticeTime = 0.0f;
 };

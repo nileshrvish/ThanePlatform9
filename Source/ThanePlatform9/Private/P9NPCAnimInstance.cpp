@@ -16,6 +16,7 @@ float UP9NPCAnimInstance::Advance(const UAnimSequence* Seq, float Time, float De
 void UP9NPCAnimInstance::PlayClip(UAnimSequence* Seq, bool bLoop, float BlendTime, float StartTime)
 {
 	if (!Seq || (Seq == Cur && bLoop == bCurLoop)) return;
+	bPrevDecay = false;                                   // Stage 9A: the outgoing clip follows Rate unless the caller asks otherwise
 	if (Cur && BlendTime > 0.0f)
 	{
 		// mid-blend: the more visible of the two keeps fading out (avoids a pop when clips change quickly)
@@ -46,7 +47,8 @@ void UP9NPCAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 	CurTime = Advance(Cur, CurTime, D, bCurLoop);
 	if (Prev && Alpha < 1.0f)
 	{
-		PrevTime = Advance(Prev, PrevTime, D, bPrevLoop);
+		const float PD = bPrevDecay ? DeltaSeconds * PrevRate0 * (1.0f - Alpha) : D;   // Stage 9A: a stopping stride settles
+		PrevTime = Advance(Prev, PrevTime, PD, bPrevLoop);
 		Alpha = FMath::Min(1.0f, Alpha + DeltaSeconds / FMath::Max(0.01f, BlendDuration));
 		if (Alpha >= 1.0f) Prev = nullptr;
 	}

@@ -1,0 +1,26 @@
+{
+ "ImportGroups": [
+  {
+   "GroupName": "Music9B",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9B/Out/Music9B/BGM_Menu_9B.wav"
+   ],
+   "DestinationPath": "/Game/P9/Audio/OriginalAudioPack9B/Music",
+   "FactoryName": "SoundFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true
+  },
+  {
+   "GroupName": "UI9B",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9B/Out/UI9B/UI_Back_9B.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9B/Out/UI9B/UI_Click_9B.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/OriginalAudioPack9B/Out/UI9B/UI_Confirm_9B.wav"
+   ],
+   "DestinationPath": "/Game/P9/Audio/OriginalAudioPack9B/UI",
+   "FactoryName": "SoundFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true
+  }
+ ]
+}

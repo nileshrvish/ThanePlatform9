@@ -1,0 +1,45 @@
+LogP9: p9.Anomaly.Audit: SignboardWrong     PF45Number         diff 2 points 1 ok 
+LogP9: p9.Anomaly.Audit: SignboardWrong     PF67Arrows         diff 2 points 1 ok 
+LogP9: p9.Anomaly.Audit: SignboardWrong     PF67Number         diff 2 points 1 ok 
+LogP9: p9.Anomaly.Audit: SignboardWrong     PF8Arrows          diff 2 points 1 ok 
+LogP9: p9.Anomaly.Audit: SignboardWrong     PF8Number          diff 2 points 1 ok 
+LogP9: p9.Anomaly.Audit: SignboardWrong     PF910Arrows        diff 2 points 1 ok 
+LogP9: p9.Anomaly.Audit: SignboardWrong     PF910Number        diff 2 points 1 ok 
+LogP9: p9.Anomaly.Audit: SignboardWrong     Island13           diff 2 points 2 ok 
+LogP9: p9.Anomaly.Audit: SignboardWrong     IslandSwapped      diff 3 points 2 ok 
+LogP9: p9.Anomaly.Audit: ClosedEntryOpen    Open               diff 2 points 3 ok 
+LogP9: p9.Anomaly.Audit: PosterBoy          BoyWatching        diff 2 points 2 ok 
+LogP9: p9.Anomaly.Audit: PosterBoy          BoyWatchingLater   diff 3 points 2 ok 
+LogP9: p9.Anomaly.Audit: EndlessStair       Loop               diff 2 points 1 ok 
+LogP9: p9.Anomaly.Audit: TrackMissing       RailsGone          diff 2 points 1 ok 
+LogP9: p9.Anomaly.Audit: TrackMissing       TrackGone          diff 1 points 1 ok 
+LogP9: p9.Anomaly.Audit: TicketCounterWrong Bars231            diff 2 points 1 ok 
+LogP9: p9.Anomaly.Audit: TicketCounterWrong Bars312            diff 2 points 1 ok 
+LogP9: p9.Anomaly.Audit: TicketCounterWrong Bars174            diff 1 points 1 ok 
+LogP9: p9.Anomaly.Audit: TicketCounterWrong BarsOnly           diff 3 points 1 ok 
+LogP9: p9.Anomaly.Audit: AnalogClockReverse Backwards          diff 1 points 1 ok 
+LogP9: p9.Anomaly.Audit: AnalogClockReverse Unwinding          diff 2 points 1 ok 
+LogP9: p9.Anomaly.Audit: AnalogClockReverse Rewinding          diff 3 points 1 ok 
+LogP9: p9.Anomaly.Audit: 40 variants, 0 with problems
+LogP9: Story check: ok   - Dadar -> Thane opening train assigned
+LogP9: Story check: ok   - opening train board 'THANE  S' shows THANE
+LogP9: Story check: ok   - opening train route valid (closed)
+LogP9: Story check: ok   - opening train has its Platform 1 stop
+LogP9: Story check: ok   - opening train opens towards Platform 1 (-Y)
+LogP9: Story check: ok   - connecting Vashi local assigned
+LogP9: Story check: ok   - connecting train board 'VASHI  S' shows VASHI
+LogP9: Story check: ok   - connecting train route valid (closed)
+LogP9: Story check: ok   - connecting train has Platform 9 and hold stops
+LogP9: Story check: ok   - connecting train opens towards Platform 9 (+Y)
+LogP9: Story check: ok   - Platform 9 stop V(Y=6740.00, Z=-75.00) lies on track 9 in the Platform 9 zone
+LogP9: Story check: ok   - station announcer assigned
+LogP9: Story check: ok   - announcements valid (sounds load, platforms allowed)
+LogP9: Story check: ok   - train announcements limited to Platforms 1 and 9
+LogP9: Story check: ok   - Thane arrival announcement is a Platform 1 announcement
+LogP9: Story check: ok   - Vashi arrival/departure are Platform 9 announcements
+LogP9: Story check: ok   - 26/26 anomaly spawn points inside the footbridge / Platform 9 zone
+LogP9: Story check: ok   - MI_P9_TrainIndicator_PF1 shows T_P9_TrainIndicator_PF1_4B (has T_P9_TrainIndicator_PF1_4B)
+LogP9: Story check: ok   - MI_P9_TrainIndicator_PF9_10 shows T_P9_TrainIndicator_PF9_10_4B (has T_P9_TrainIndicator_PF9_10_4B)
+LogP9: Story check: ok   - MI_P9_TrainIndicator_Concourse shows T_P9_TrainIndicator_Concourse_4B (has T_P9_TrainIndicator_Concourse_4B)
+LogP9: Story check: 0 problems | facts: Dadar -> Thane Platform 1; connection Platform 9 to Vashi, getting off at Airoli
+MapCheck: Map check complete: 0 Error(s), 0 Warning(s), took 7.727ms to complete.

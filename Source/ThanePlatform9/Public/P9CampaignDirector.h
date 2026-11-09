@@ -8,7 +8,10 @@
 class AP9AnomalySpawnPoint;
 class AP9Train;
 class AP9StationAnnouncer;
+class AP9SilhouetteStalker;
 class ACharacter;
+class UTexture2D;
+class UMaterialInterface;
 class APlayerController;
 class UCanvas;
 class USoundAttenuation;
@@ -23,8 +26,9 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FP9CampaignDecisionSignature, int
  * Stage 4A: the ten-day anomaly campaign (Exit 8-style).
  *
  * Each day the director generates a plan from (RunSeed, Day, Attempt, History): normal or anomalous, then for an anomalous day
- * a weighted pick of 1..3 anomalies from the catalogue (Anomalies), each placed at a free compatible spawn point with one
- * controller per target, tag exclusions and a repetition penalty for anomalies seen on the run's recent days. A failed
+ * a weighted pick of anomalies (Stage 6A: exactly one) from the catalogue (Anomalies), placed at a free compatible spawn point with one
+ * controller per target, tag exclusions and a repetition penalty for anomalies seen on the run's recent days. A scheduled
+ * anomaly (Stage 6A: Kanchana) is never random: it is the only anomaly of one seeded day in its day range. A failed
  * activation is not counted; if an anomalous day ends up with no working anomaly the selection is retried (bounded) and
  * finally falls back to a normal day.
  *
@@ -58,8 +62,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign") bool bUseSaveGame = true;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign") FString SaveSlotName = TEXT("P9Campaign");
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign", meta = (ClampMin = "0.0", ClampMax = "1.0")) float AnomalyDayChance = 0.6f;
-	/** Relative weights of 1, 2, 3 ... anomalies on an anomalous day. */
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign") TArray<float> AnomalyCountWeights = {0.62f, 0.28f, 0.10f};
+	/** Relative weights of 1, 2, 3 ... anomalies on an anomalous day (Stage 6A: always exactly one). */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign") TArray<float> AnomalyCountWeights = {1.0f};
 	/** Relative weights of day difficulty 1 (subtle), 2, 3 (obvious). */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign") TArray<float> DifficultyWeights = {0.30f, 0.35f, 0.23f, 0.12f};   // Stage 4D tiers: subtle, moderate, hard, extreme (rolled per (seed, day), never fixed to a day number)
 	/** Weight multiplier for an anomaly seen 1, 2, 3 ... days ago in this run. */
@@ -108,23 +112,31 @@ public:
 	/** Platform 1 decision zone, tested against the player's feet. */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|World") FBox Platform1Zone = FBox(FVector(-2950.0f, -1690.0f, -15.0f), FVector(2950.0f, -900.0f, 60.0f));
 
+	/** The epilogue's passenger / final apparition mesh and sting. */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|Assets") TSoftObjectPtr<UStaticMesh> FigureMesh;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|Assets") TSoftObjectPtr<USoundBase> ReflectionSting;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|Assets") TSoftObjectPtr<USoundBase> ApparitionSting;
+	/** Stage 6A: dot-matrix glyph atlas for the dynamic clock (cells of ClockCellSize, "0".."9" then ":"). */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|Assets") TSoftObjectPtr<UTexture2D> ClockDigits;
+	/** Stage 6A: the poster boy's pupils (a flattened disc) and their material. */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|Assets") TSoftObjectPtr<UStaticMesh> PupilMesh;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|Assets") TSoftObjectPtr<UMaterialInterface> PupilMaterial;
 	/** Hard references saved with the level so everything the campaign (and the train's soft defaults) loads gets cooked. */
 	UPROPERTY(EditAnywhere, Category = "Campaign|Assets") TArray<TObjectPtr<UObject>> PreloadAssets;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|Jumpscare", meta = (ClampMin = "0.0")) float JumpscareCooldown = 45.0f;
-	/** Stage 4D: volume of the scare stings, drones and rushes (accessibility; 0 mutes them). */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Campaign|Jumpscare", meta = (ClampMin = "0.0", ClampMax = "1.5")) float ScareVolume = 1.0f;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|Jumpscare") TSoftObjectPtr<USoundBase> StingClose;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|Jumpscare") TSoftObjectPtr<USoundBase> StingCarriage;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|Jumpscare") TSoftObjectPtr<USoundBase> StingFootbridge;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|Jumpscare") TSoftObjectPtr<USoundBase> ScareDrone;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|Jumpscare") TSoftObjectPtr<USoundBase> ScareRush;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|Jumpscare") TSoftObjectPtr<UStaticMesh> HeroMesh;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|Jumpscare") TSoftObjectPtr<UStaticMesh> TallMesh;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|Jumpscare") TSoftObjectPtr<UStaticMesh> PassengerMesh;
+	/** Stage 6A: Kanchana (found in the level at BeginPlay when empty). */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|World") TObjectPtr<AP9SilhouetteStalker> Stalker;
+	/** Stage 8A: the Lantern Man (static, motionless) and the Greeting (epilogue final jumpscare: standing and lunging poses). */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|Assets") TSoftObjectPtr<UStaticMesh> LanternManMesh;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|Assets") TSoftObjectPtr<UStaticMesh> GreetingStandMesh;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|Assets") TSoftObjectPtr<UStaticMesh> GreetingLungeMesh;
+	/** Stage 8A: endless footbridge pieces (cut from the deck B shell + floor) and the station tube light for its bays. */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|Assets") TSoftObjectPtr<UStaticMesh> BridgeSouthMesh;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|Assets") TSoftObjectPtr<UStaticMesh> BridgeEndMesh;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|Assets") TSoftObjectPtr<UStaticMesh> BridgeBayMesh;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|Assets") TSoftObjectPtr<UStaticMesh> BridgeLeadInMesh;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|Assets") TSoftObjectPtr<UStaticMesh> BridgeTubeMesh;
+	/** Stage 8A: reverse escalator pieces (cut from the PF9/10 stair finish). */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|Assets") TSoftObjectPtr<UStaticMesh> EscalatorUpperMesh;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Campaign|Assets") TSoftObjectPtr<UStaticMesh> EscalatorStepMesh;
 
 	UPROPERTY(BlueprintAssignable, Category = "Campaign") FP9CampaignDaySignature OnDayStarted;
 	UPROPERTY(BlueprintAssignable, Category = "Campaign") FP9CampaignDecisionSignature OnDecision;
@@ -158,8 +170,8 @@ public:
 	bool SaveProgress() const;
 	bool LoadProgress();
 	bool DeleteSave() const;
-	/** Debug: fires a jumpscare now (ignores cooldown). */
-	void DebugJumpscare(EP9JumpscareType Type);
+	/** Stage 6A: the day a scheduled definition (Kanchana) takes in the run with this seed; INDEX_NONE if not scheduled. */
+	int32 ScheduledDay(const FP9AnomalyDef& Def, int32 InRunSeed) const;
 	FString GetStatusString() const;
 	int32 FindAnomalyDef(FName Id) const;
 	int32 FindSpawnPoint(FName Id) const;
@@ -172,6 +184,12 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Campaign") int32 GetNumActiveAnomalies() const { return ActiveAnomalies.Num(); }
 	const FP9DayPlan& GetCurrentPlan() const { return CurrentPlan; }
 	const TArray<FString>& GetHistory() const { return History; }
+	/** Stage 8A (read-only, for the audio director): has the player seen / met today's anomaly? Always false on normal days. */
+	bool IsAnyAnomalyNoticed() const;
+	int32 GetEpilogueStep() const { return EpilogueStep; }
+	float GetRideTime() const { return RideTime; }
+	/** Stage 8A debug: status of the endless footbridge / reverse escalator / Lantern Man of the current day ("" if none). */
+	FString GetAnomalyHelperStatus() const;
 
 	virtual void Tick(float DeltaSeconds) override;
 
@@ -197,14 +215,27 @@ private:
 	void PlaceChaiwala(const TArray<FVector>& Path, float Dist, float Yaw, float Pitch);
 	bool ActivateAnomaly(const FP9PlannedAnomaly& Plan);
 	bool ActivateMaterialSwap(FP9ActiveAnomaly& A, const FP9AnomalyDef& Def, const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point);
-	bool ActivateLampFault(FP9ActiveAnomaly& A, const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point);
-	bool ActivateHideActor(AP9AnomalySpawnPoint* Point);
-	bool ActivateExtraProp(const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point);
-	bool ActivateTrainDestination(FP9ActiveAnomaly& A, const FP9AnomalyVariant& V);
-	bool ActivateTrainSeatTint(FP9ActiveAnomaly& A, const FP9AnomalyVariant& V);
-	bool ActivateTrainLights(FP9ActiveAnomaly& A, const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point);
-	bool ActivateFigure(FP9ActiveAnomaly& A, const FP9AnomalyDef& Def, const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point);
+	bool ActivateHideActor(const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point);
+	bool ActivateDynamicClock(FP9ActiveAnomaly& A, const FP9AnomalyDef& Def, const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point);
+	bool ActivateMeshSwap(FP9ActiveAnomaly& A, const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point);
+	bool ActivatePosterEyes(FP9ActiveAnomaly& A, const FP9AnomalyDef& Def, const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point);
+	bool ActivateStalker(AP9AnomalySpawnPoint* Point);
+	bool ActivateAnalogClock(const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point);
+	// Stage 8A
+	bool ActivateLightTint(FP9ActiveAnomaly& A, const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point);
+	bool ActivateTrainMaterial(const FP9AnomalyDef& Def, const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point);
+	bool ActivateTrainLightsOff(FP9ActiveAnomaly& A, const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point);
+	bool ActivateLanternFigure(FP9ActiveAnomaly& A, AP9AnomalySpawnPoint* Point);
+	bool ActivateEndlessBridge(FP9ActiveAnomaly& A, AP9AnomalySpawnPoint* Point);
+	bool ActivateReverseEscalator(FP9ActiveAnomaly& A, AP9AnomalySpawnPoint* Point);
+	void TickLightTint(FP9ActiveAnomaly& A, const FP9AnomalyVariant& V, float DeltaSeconds);
+	void TickTrainLightsOff(FP9ActiveAnomaly& A, const FP9AnomalyVariant& V, const AP9AnomalySpawnPoint* Point, float DeltaSeconds);
+	void TickNotice(FP9ActiveAnomaly& A, const FP9AnomalyDef& Def, const AP9AnomalySpawnPoint* Point, float DeltaSeconds);
+	void SetCarLights(FP9ActiveAnomaly& A, float Scale);
 	void TickAnomaly(FP9ActiveAnomaly& A, float DeltaSeconds);
+	void TickClock(FP9ActiveAnomaly& A, const FP9AnomalyVariant& V, float DeltaSeconds);
+	void TickLoop(FP9ActiveAnomaly& A, const AP9AnomalySpawnPoint* Point, float DeltaSeconds);
+	void TickPosterEyes(FP9ActiveAnomaly& A, const AP9AnomalySpawnPoint* Point, float DeltaSeconds);
 	void TickDecisionZone(float DeltaSeconds);
 	void TickPhase(float DeltaSeconds);
 	void TickPresentation(float DeltaSeconds);
@@ -222,12 +253,6 @@ private:
 	TMap<FString, FString> CaptureSnapshot() const;
 
 	AActor* SpawnFigure(const FVector& Location, float Yaw, UStaticMesh* Mesh = nullptr, const FVector& Scale = FVector::OneVector, UMaterialInterface* OverrideAll = nullptr);
-	bool ActivateStaticProp(FP9ActiveAnomaly& A, const FP9AnomalyVariant& V, AP9AnomalySpawnPoint* Point);
-	bool ScareAvailable() const { return WorldTimeNow - LastJumpscareTime >= JumpscareCooldown; }
-	void ScareLightAt(const FVector& Where, float Intensity, float Duration);
-	void PlayScare2D(const TSoftObjectPtr<USoundBase>& Sound, float Volume);
-	FVector ScareSpotInFront(float Distance, float& OutYaw) const;
-	void TriggerJumpscare(EP9JumpscareType Type, FP9ActiveAnomaly* Source);
 	bool IsInView(const FVector& Location, float MinDot, float MaxDistance, const AActor* IgnoreActor, bool bTrace) const;
 	void PlaySoundAt(USoundBase* Sound, const FVector& Location, float Volume, float Pitch, float Falloff);
 	void PlaySound2D(USoundBase* Sound, float Volume, float Pitch);
@@ -242,7 +267,7 @@ private:
 	UFUNCTION() void HandleTrainDeparted(int32 StopIndex);
 	UFUNCTION() void HandleTrainArrived(int32 StopIndex);
 	UFUNCTION() void HandleOpeningArrived(int32 StopIndex);
-	UFUNCTION() void DrawDestination(UCanvas* Canvas, int32 Width, int32 Height);
+	UFUNCTION() void DrawClock(UCanvas* Canvas, int32 Width, int32 Height);
 
 	// HUD (Slate, above the mobile controls; hit-test invisible except the ending button)
 	void EnsureHud();
@@ -254,9 +279,6 @@ private:
 	UPROPERTY(Transient) TArray<FP9BaselineRecord> Baseline;
 	UPROPERTY(Transient) TArray<TObjectPtr<UAudioComponent>> CampaignSounds;
 	UPROPERTY(Transient) TObjectPtr<USoundAttenuation> SpatialAttenuation;
-	UPROPERTY(Transient) TObjectPtr<AActor> ScareFigure;
-	UPROPERTY(Transient) TObjectPtr<UPointLightComponent> ScareLight;
-	float ScareLightTime = 0.0f;
 	UPROPERTY(Transient) TObjectPtr<AActor> Chaiwala;
 	UPROPERTY(Transient) TObjectPtr<AActor> EpilogueFigure;
 	UPROPERTY(Transient) TObjectPtr<UAudioComponent> AmbienceAudio;
@@ -268,7 +290,8 @@ private:
 	TArray<FString> History;
 	TMap<FString, FString> InitialSnapshot;
 	FRandomStream PresentationStream;
-	FString DestinationTextNow;
+	/** Stage 6A: what DrawClock writes ("HH:MM"). */
+	FString ClockTextNow;
 
 	int32 Day = 1;
 	int32 RunSeed = 0;
@@ -316,7 +339,6 @@ private:
 	float HintDuration = 0.0f;
 	FText DayLabelOverride;
 	bool bFinalEnding = false;
-	float LastJumpscareTime = -1000.0f;
 	float WorldTimeNow = 0.0f;
 
 	// presentation state read by the HUD
@@ -330,7 +352,6 @@ private:
 	FText SubtitleText;
 	float ShakeTime = 0.0f;
 	FRotator ShakeOffset = FRotator::ZeroRotator;
-	float ScareFigureTime = 0.0f;
 	bool bEndingInput = false;
 	TSharedPtr<SWidget> HudWidget;
 };

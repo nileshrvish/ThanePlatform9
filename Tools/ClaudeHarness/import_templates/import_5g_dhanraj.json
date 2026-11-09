@@ -1,0 +1,114 @@
+{
+ "ImportGroups": [
+  {
+   "GroupName": "MX_dhanraj_mesh",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/dhanraj/mixamo/Export_MX/SK_P9_NPC3D_dhanraj_MX.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/dhanraj/MX5G",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": false,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 0.9331,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore",
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": -90,
+      "Roll": 0
+     }
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "MX_dhanraj_anims",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/dhanraj/mixamo/Export_MX/SK_P9_NPC3D_dhanraj_MX_Walk.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/dhanraj/mixamo/Export_MX/SK_P9_NPC3D_dhanraj_MX_DrunkWalk.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/dhanraj/mixamo/Export_MX/SK_P9_NPC3D_dhanraj_MX_StairsUp.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/dhanraj/mixamo/Export_MX/SK_P9_NPC3D_dhanraj_MX_SitTalk.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/dhanraj/MX5G/Anims",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_Animation",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": false,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": true,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": false,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore"
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 0.9331,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false,
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": -90,
+      "Roll": 0
+     }
+    },
+    "Skeleton": "/Game/P9/Characters/Station3D/dhanraj/MX5G/SK_P9_NPC3D_dhanraj_MX_Skeleton.SK_P9_NPC3D_dhanraj_MX_Skeleton"
+   }
+  },
+  {
+   "GroupName": "F1_Drunk_audio",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_F1_Drunk_1.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_F1_Drunk_2.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_F1_Drunk_3.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_F1_Drunk_4.wav",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationAudio/Final/SW_P9_NPC_F1_Drunk_5.wav"
+   ],
+   "DestinationPath": "/Game/P9/Audio/NPC",
+   "FactoryName": "SoundFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true
+  }
+ ]
+}

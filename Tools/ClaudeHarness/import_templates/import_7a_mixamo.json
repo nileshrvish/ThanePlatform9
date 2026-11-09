@@ -1,0 +1,574 @@
+{
+ "ImportGroups": [
+  {
+   "GroupName": "MX7A_Nilesh_mesh",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Nilesh/mixamo/Export_MX/SK_P9_NPC3D_Nilesh_MX.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/Nilesh/MX7A",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": false,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 0.9043,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore",
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": -90,
+      "Roll": 0
+     }
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "MX7A_Nilesh_anims",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Nilesh/mixamo/Export_MX/SK_P9_NPC3D_Nilesh_MX7A_Walk.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Nilesh/mixamo/Export_MX/SK_P9_NPC3D_Nilesh_MX7A_StairsUp.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Nilesh/mixamo/Export_MX/SK_P9_NPC3D_Nilesh_MX7A_SitIdle.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/Nilesh/MX7A/Anims",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_Animation",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": false,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": true,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": false,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore"
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 0.9043,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false,
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": -90,
+      "Roll": 0
+     }
+    },
+    "Skeleton": "/Game/P9/Characters/Station3D/Nilesh/MX7A/SK_P9_NPC3D_Nilesh_MX_Skeleton.SK_P9_NPC3D_Nilesh_MX_Skeleton"
+   }
+  },
+  {
+   "GroupName": "MX7A_shivshankar_mesh",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/shivshankar/mixamo/Export_MX/SK_P9_NPC3D_shivshankar_MX.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/shivshankar/MX7A",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": false,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 0.889,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore",
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": -90,
+      "Roll": 0
+     }
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "MX7A_shivshankar_anims",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/shivshankar/mixamo/Export_MX/SK_P9_NPC3D_shivshankar_MX7A_Walk.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/shivshankar/mixamo/Export_MX/SK_P9_NPC3D_shivshankar_MX7A_StairsUp.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/shivshankar/mixamo/Export_MX/SK_P9_NPC3D_shivshankar_MX7A_SitIdle.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/shivshankar/MX7A/Anims",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_Animation",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": false,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": true,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": false,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore"
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 0.889,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false,
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": -90,
+      "Roll": 0
+     }
+    },
+    "Skeleton": "/Game/P9/Characters/Station3D/shivshankar/MX7A/SK_P9_NPC3D_shivshankar_MX_Skeleton.SK_P9_NPC3D_shivshankar_MX_Skeleton"
+   }
+  },
+  {
+   "GroupName": "MX7A_Rohit_mesh",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Rohit/mixamo/Export_MX/SK_P9_NPC3D_Rohit_MX.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/Rohit/MX7A",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": false,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 0.9168,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore",
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": -90,
+      "Roll": 0
+     }
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "MX7A_Rohit_anims",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Rohit/mixamo/Export_MX/SK_P9_NPC3D_Rohit_MX7A_Walk.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Rohit/mixamo/Export_MX/SK_P9_NPC3D_Rohit_MX7A_StairsUp.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Rohit/mixamo/Export_MX/SK_P9_NPC3D_Rohit_MX7A_SitIdle.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/Rohit/MX7A/Anims",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_Animation",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": false,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": true,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": false,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore"
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 0.9168,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false,
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": -90,
+      "Roll": 0
+     }
+    },
+    "Skeleton": "/Game/P9/Characters/Station3D/Rohit/MX7A/SK_P9_NPC3D_Rohit_MX_Skeleton.SK_P9_NPC3D_Rohit_MX_Skeleton"
+   }
+  },
+  {
+   "GroupName": "MX7A_rupesh_mesh",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/rupesh/mixamo/Export_MX/SK_P9_NPC3D_rupesh_MX.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/rupesh/MX7A",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": false,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 0.9444,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore",
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": -90,
+      "Roll": 0
+     }
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "MX7A_rupesh_anims",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/rupesh/mixamo/Export_MX/SK_P9_NPC3D_rupesh_MX7A_Walk.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/rupesh/mixamo/Export_MX/SK_P9_NPC3D_rupesh_MX7A_StairsUp.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/rupesh/mixamo/Export_MX/SK_P9_NPC3D_rupesh_MX7A_SitIdle.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/rupesh/MX7A/Anims",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_Animation",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": false,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": true,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": false,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore"
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 0.9444,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false,
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": -90,
+      "Roll": 0
+     }
+    },
+    "Skeleton": "/Game/P9/Characters/Station3D/rupesh/MX7A/SK_P9_NPC3D_rupesh_MX_Skeleton.SK_P9_NPC3D_rupesh_MX_Skeleton"
+   }
+  },
+  {
+   "GroupName": "MX7A_Modi_mesh",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Modi/mixamo/Export_MX/SK_P9_NPC3D_Modi_MX.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/Modi/MX7A",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": false,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 0.8952,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore",
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": -90,
+      "Roll": 0
+     }
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "MX7A_Modi_anims",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Modi/mixamo/Export_MX/SK_P9_NPC3D_Modi_MX7A_Walk.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Modi/mixamo/Export_MX/SK_P9_NPC3D_Modi_MX7A_StairsUp.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/Modi/mixamo/Export_MX/SK_P9_NPC3D_Modi_MX7A_Chat.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/Modi/MX7A/Anims",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_Animation",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": false,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": true,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": false,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore"
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 0.8952,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false,
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": -90,
+      "Roll": 0
+     }
+    },
+    "Skeleton": "/Game/P9/Characters/Station3D/Modi/MX7A/SK_P9_NPC3D_Modi_MX_Skeleton.SK_P9_NPC3D_Modi_MX_Skeleton"
+   }
+  },
+  {
+   "GroupName": "MX7A_kanchana_mesh",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/kanchana/mixamo/Export_MX/SK_P9_NPC3D_kanchana_MX.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/kanchana/MX7A",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": false,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 0.8636,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore",
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": -90,
+      "Roll": 0
+     }
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "MX7A_kanchana_anims",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/kanchana/mixamo/Export_MX/SK_P9_NPC3D_kanchana_MX7A_Walk.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/kanchana/mixamo/Export_MX/SK_P9_NPC3D_kanchana_MX7A_StairsUp.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/StationNPCs3D/kanchana/mixamo/Export_MX/SK_P9_NPC3D_kanchana_MX7A_Idle.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/Station3D/kanchana/MX7A/Anims",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_Animation",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": false,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": true,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": false,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore"
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 0.8636,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false,
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": -90,
+      "Roll": 0
+     }
+    },
+    "Skeleton": "/Game/P9/Characters/Station3D/kanchana/MX7A/SK_P9_NPC3D_kanchana_MX_Skeleton.SK_P9_NPC3D_kanchana_MX_Skeleton"
+   }
+  }
+ ]
+}

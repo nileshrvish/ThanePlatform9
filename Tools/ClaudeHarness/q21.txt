@@ -1,0 +1,86 @@
+Silhouette: campaign sighting over (0 lines spoken)
+Campaign: cleaned up 1 anomalies
+Story: new day - Vashi local already waiting at its hold stop (hidden, idle)
+Campaign: forced plan used (debug)
+Campaign: saved day 10 run 5 seed 1606180050 status 0 history 0 -> ok
+Campaign: DAY 10/10 started (run 5 seed 1606180050 token 9) plan: day=10 attempt=0 seed=4242 difficulty=2 anomalous=no fallback=no count=0 | active 0:
+NPC Chaiwala: day 10 started - daily line available again
+NPC Curly: AVAILABLE (director day 10 phase 1 status 0)
+NPC Backpack: AVAILABLE (director day 10 phase 1 status 0)
+NPC Selfie: AVAILABLE (director day 10 phase 1 status 0)
+NPC Specs: AVAILABLE (director day 10 phase 1 status 0)
+NPC Stripe: AVAILABLE (director day 10 phase 1 status 0)
+p9.Test.Teleport: V(Y=2000.00, Z=700.00) yaw 90
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+StationLife: meet-up C3 at PF1_TeaStall with 2 friends
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+StationLife: 2 friends gathered, talking
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+StationLife: Stripe says "Tu Airolila utarnar na?" (2.2s)
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+StationLife: Selfie says "Haan, wahin se auto loonga." (2.2s)
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+StationLife: Stripe says "Theek aahe, pohochalyavar message kar." (3.0s)
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+StationLife: conversation over
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+p9.Friends.Overlaps: 0 overlapping pairs, deepest 0.0 cm
+NPC Curly     F1  Idle  clip=SK_P9_NPC3D_dhanraj_MX7B_Idle pos=3.55 loc=V(X=329.71, Y=3639.58, Z=690.00) yaw=0 route=0/8 dwell=1.5 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Stripe    F2  Walk  clip=SK_P9_NPC3D_Nilesh_MX7A_Walk pos=0.00 loc=V(X=379.39, Y=-1078.26, Z=90.00) yaw=-178 route=0/12 dwell=0.0 path=11 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Specs     F3  Walk  clip=SK_P9_NPC3D_shivshankar_MX7A_Walk pos=0.00 loc=V(X=1794.39, Y=-1247.74, Z=90.00) yaw=-22 route=1/6 dwell=0.0 path=1 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Selfie    F4  Walk  clip=SK_P9_NPC3D_Rohit_MX7A_Walk pos=0.00 loc=V(X=789.83, Y=-1101.48, Z=90.00) yaw=179 route=4/5 dwell=0.0 path=4 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Backpack  F5  Walk  clip=SK_P9_NPC3D_rupesh_MX7A_Walk pos=0.00 loc=V(X=-1417.93, Y=-1266.45, Z=90.00) yaw=105 route=4/7 dwell=0.0 path=2 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=1 daily=0 spoke=0
+NPC Chaiwala  CW  Chat  clip=SK_P9_NPC3D_Modi_MX7A_Pour pos=1.40 loc=V(X=512.00, Y=3650.00, Z=690.00) yaw=-177 route=0/0 dwell=0.0 path=0 sit=0 meet=0 avail=1 hidden=0 tick=1 lock=0 daily=1 spoke=0
+p9.Friends.Status: 6 NPCs

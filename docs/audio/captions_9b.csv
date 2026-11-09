@@ -1,0 +1,45 @@
+Name,SoundName,Order,Start,End,Text
+SW_P9_PA_PF1_ThaneArrival_00,SW_P9_PA_PF1_ThaneArrival,0,0.0,2.13,[Station chime]
+SW_P9_PA_PF1_ThaneArrival_01,SW_P9_PA_PF1_ThaneArrival,1,2.72,4.9,"ANNOUNCER: Pravashanche laksh asu dya.
+(Attention please, passengers.)"
+SW_P9_PA_PF1_ThaneArrival_02,SW_P9_PA_PF1_ThaneArrival,2,5.68,12.89,"ANNOUNCER: Dadarhun Thanyala yenari local gaadi Thane sthanakachya platform kramank ekavar aali aahe.
+(The local train from Dadar to Thane has arrived on platform number one of Thane station.)"
+SW_P9_PA_PF1_ThaneArrival_03,SW_P9_PA_PF1_ThaneArrival,3,13.26,17.95,"ANNOUNCER: Utaranyasathi pravashanni krupaya darvajyajaval gardi karu naye.
+(Passengers getting off, please do not crowd near the doors.)"
+SW_P9_PA_PF1_ThaneArrival_04,SW_P9_PA_PF1_ThaneArrival,4,18.17,25.91,"ANNOUNCER: Platformvar utarlyanantar krupaya pravashanchya vahatukila adthala honar nahi yachi kalaji ghya.
+(After getting off on the platform, please take care not to obstruct other passengers.)"
+SW_P9_PA_PF1_ThaneArrival_05,SW_P9_PA_PF1_ThaneArrival,5,26.36,27.25,"ANNOUNCER: Dhanyavaad.
+(Thank you.)"
+SW_P9_PA_PF9_Epilogue_NoAiroli_00,SW_P9_PA_PF9_Epilogue_NoAiroli,0,0.0,2.27,[Station chime]
+SW_P9_PA_PF9_Epilogue_NoAiroli_01,SW_P9_PA_PF9_Epilogue_NoAiroli,1,2.71,5.06,"ANNOUNCER: Pravashanche laksh asu dya.
+(Attention please, passengers.)"
+SW_P9_PA_PF9_Epilogue_NoAiroli_02,SW_P9_PA_PF9_Epilogue_NoAiroli,2,5.65,12.23,"ANNOUNCER: Vashikade jaanari local gaadi kahi kshanat platform kramank nauvar yenar aahe.
+(The local train towards Vashi will arrive on platform number nine in a few moments.)"
+SW_P9_PA_PF9_Epilogue_NoAiroli_03,SW_P9_PA_PF9_Epilogue_NoAiroli,3,12.43,16.14,"ANNOUNCER: Ya gaadicha Airoli sthanakavar thamba nahi.
+(This train does NOT stop at Airoli station.)"
+SW_P9_PA_PF9_Epilogue_NoAiroli_04,SW_P9_PA_PF9_Epilogue_NoAiroli,4,17.17,18.26,"ANNOUNCER: Dhanyavaad.
+(Thank you.)"
+SW_P9_VO_Chaiwala_Wake_01,SW_P9_VO_Chaiwala_Wake,1,0.07,2.79,"CHAIWALA: Saheb... Saheb, utha!
+(Sir... sir, wake up!)"
+SW_P9_VO_Chaiwala_Wake_02,SW_P9_VO_Chaiwala_Wake,2,3.0,3.96,"Thane aala.
+(We've reached Thane.)"
+SW_P9_VO_Chaiwala_Wake_03,SW_P9_VO_Chaiwala_Wake,3,4.07,5.96,"Kuthe jaycha aahe tumhala?
+(Where do you need to go?)"
+SW_P9_VO_Chaiwala_Call_01,SW_P9_VO_Chaiwala_Call,1,0.07,2.56,"CHAIWALA: Chaha... garam chaha!
+(Tea... hot tea!)"
+SW_P9_NPC_SH_1_01,SW_P9_NPC_SH_1,1,0.13,8.15,KANCHANA: Ae chikne... ruk! Tujhe hi toh dhoondh rahi thi main!
+SW_P9_NPC_SH_2_01,SW_P9_NPC_SH_2,1,0.13,6.9,KANCHANA: Itni aasani se nahi jaane dungi tujhe...
+SW_P9_NPC_SH_3_01,SW_P9_NPC_SH_3,1,0.14,6.26,KANCHANA: Idhar aa... tere liye kuch rakha hai.
+SW_P9_NPC_SH_4_01,SW_P9_NPC_SH_4,1,0.16,6.99,KANCHANA: Pehchana nahi mujhe...? Main toh tujhe jaanti hoon!
+SW_P9_NPC_SH_5_01,SW_P9_NPC_SH_5,1,0.15,10.02,KANCHANA: Bhaag le... jitna bhaagna hai. Dekhti hoon kahaan tak jaata hai!
+SFX_Greeting_Scream_01,SFX_Greeting_Scream,1,0.0,2.0,[A sudden scream]
+SFX_LanternMan_Stinger_01,SFX_LanternMan_Stinger,1,0.0,3.0,"[A deep, ominous drone]"
+SFX_Thunder9A_Close_01_01,SFX_Thunder9A_Close_01,1,0.0,3.0,[Thunder cracks overhead]
+SFX_Thunder9A_Close_02_01,SFX_Thunder9A_Close_02,1,0.0,3.0,[Thunder cracks overhead]
+SFX_Thunder9A_Strong_01_01,SFX_Thunder9A_Strong_01,1,0.3,3.3,[Thunder rumbling]
+SFX_Thunder9A_Strong_02_01,SFX_Thunder9A_Strong_02,1,0.3,3.3,[Thunder rumbling]
+SFX_Thunder9A_Strong_03_01,SFX_Thunder9A_Strong_03,1,0.3,3.3,[Thunder rumbling]
+SW_P9_TrainRunLoop_01,SW_P9_TrainRunLoop,1,1.5,5.0,[The local train rattles through the night]
+SFX_Train9A_Horn_Long_01,SFX_Train9A_Horn_Long,1,0.0,2.2,[Train horn]
+SFX_Train9A_Horn_Double_01,SFX_Train9A_Horn_Double,1,0.0,1.6,[Train horn]
+SFX_Train9A_Horn_Distant_01,SFX_Train9A_Horn_Distant,1,0.0,2.4,[Distant train horn]

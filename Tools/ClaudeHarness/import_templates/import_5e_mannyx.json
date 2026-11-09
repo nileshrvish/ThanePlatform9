@@ -1,0 +1,98 @@
+{
+ "ImportGroups": [
+  {
+   "GroupName": "MannyX_Mesh",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/MannyX/Export/SKM_MannyX.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/MannyX",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_SkeletalMesh",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": true,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": false,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": true,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore",
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": -90,
+      "Roll": 0
+     }
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false
+    }
+   }
+  },
+  {
+   "GroupName": "MannyX_Anims",
+   "FileNames": [
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/MannyX/Export/SKM_MannyX_Idle.fbx",
+    "C:/Users/niles/Documents/Blender Projects/P9_Assets/MannyX/Export/SKM_MannyX_Walk.fbx"
+   ],
+   "DestinationPath": "/Game/P9/Characters/MannyX/Anims",
+   "FactoryName": "FbxFactory",
+   "bReplaceExisting": false,
+   "bSkipReadOnly": true,
+   "ImportSettings": {
+    "MeshTypeToImport": "FBXIT_Animation",
+    "OriginalImportType": "FBXIT_SkeletalMesh",
+    "bImportMesh": false,
+    "bImportAsSkeletal": true,
+    "bImportAnimations": true,
+    "bImportMaterials": false,
+    "bImportTextures": false,
+    "bCreatePhysicsAsset": false,
+    "bAutomatedImportShouldDetectType": false,
+    "SkeletalMeshImportData": {
+     "bImportMorphTargets": false,
+     "bUseT0AsRefPose": false,
+     "bPreserveSmoothingGroups": true,
+     "bConvertScene": true,
+     "bForceFrontXAxis": false,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "NormalImportMethod": "FBXNIM_ImportNormalsAndTangents",
+     "VertexColorImportOption": "Ignore"
+    },
+    "AnimSequenceImportData": {
+     "AnimationLength": "FBXALIT_ExportedTime",
+     "bImportBoneTracks": true,
+     "bConvertScene": true,
+     "bConvertSceneUnit": true,
+     "ImportUniformScale": 1,
+     "bRemoveRedundantKeys": false,
+     "bDeleteExistingMorphTargetCurves": false,
+     "ImportRotation": {
+      "Pitch": 0,
+      "Yaw": -90,
+      "Roll": 0
+     }
+    },
+    "Skeleton": "/Game/P9/Characters/MannyX/SKM_MannyX_Skeleton.SKM_MannyX_Skeleton"
+   }
+  }
+ ]
+}

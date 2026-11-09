@@ -8,6 +8,7 @@
 #include "P9StationAnnouncer.h"
 #include "P9Train.h"
 #include "P9FriendNPC.h"
+#include "P9GreetingScare.h"
 #include "EngineUtils.h"
 #include "Camera/PlayerCameraManager.h"
 #include "Components/AudioComponent.h"
@@ -82,11 +83,17 @@ bool AP9CampaignDirector::IsPointAllowed(const AP9AnomalySpawnPoint* Point, FStr
 	const EP9AnomalyLocation T = Point->LocationType;
 	const bool bTrain = T == EP9AnomalyLocation::TrainDestination || T == EP9AnomalyLocation::TrainSeats || T == EP9AnomalyLocation::TrainLights || T == EP9AnomalyLocation::TrainWindow;
 	TArray<FVector> Checks = {Point->GetActorLocation()};
-	if (!bTrain)                                           // a train moves; its points stand at its Platform 9 stop
+	// Stage 6A: a track runs the length of the station (its origin says nothing about where the gap is - the point marks it);
+	// a closed stair head's extra actors are its collision block and the tarp down the stair, behind the panel the player sees
+	const bool bTrack = T == EP9AnomalyLocation::Track;
+	// Stage 8A: the endless footbridge's extras are the bridge's own north end (the deck B shell / floor actors have their origin at
+	// the world origin - their geometry is the footbridge); the point itself and its engage box stand on the bridge
+	const bool bClosedEntry = T == EP9AnomalyLocation::ClosedEntry || T == EP9AnomalyLocation::FOBLoop;
+	if (!bTrain && !bTrack)                                // a train moves; its points stand at its Platform 9 stop
 	{
 		if (Point->TargetActor) Checks.Add(Point->TargetActor->GetActorLocation());
 		if (Point->SecondaryActor) Checks.Add(Point->SecondaryActor->GetActorLocation());
-		for (const AActor* Extra : Point->ExtraActors) if (Extra) Checks.Add(Extra->GetActorLocation());
+		if (!bClosedEntry) for (const AActor* Extra : Point->ExtraActors) if (Extra) Checks.Add(Extra->GetActorLocation());
 	}
 	for (const FVector& P : Checks)
 	{
@@ -603,21 +610,34 @@ void AP9CampaignDirector::TickEpilogue(float DeltaSeconds)
 	{
 		const float InLen = FVector::Dist(ChaiwalaIn[0], ChaiwalaIn[1]);
 		const float WalkYaw = (ChaiwalaIn[1] - ChaiwalaIn[0]).Rotation().Yaw;
+		// Stage 5F: a steady normal walking pace (100 cm/s, 0.5 s to start and to stop) instead of a smoothstep that
+		// peaked at ~1.5x its average speed (he looked hurried)
+		auto WalkDist = [](float T, float Len, float Speed, float Ease) -> float
+		{
+			const float Dur = Len / Speed + Ease;
+			if (T <= 0.0f) return 0.0f;
+			if (T >= Dur) return Len;
+			if (T < Ease) return 0.5f * Speed * T * T / Ease;
+			if (T > Dur - Ease) { const float R = Dur - T; return Len - 0.5f * Speed * R * R / Ease; }
+			return Speed * (T - 0.5f * Ease);
+		};
+		constexpr float ChaiwalaPace = 100.0f, ChaiwalaEase = 0.5f;
+		const float InEnd = 0.2f + InLen / ChaiwalaPace + ChaiwalaEase;
 		if (StoryTime < 12.0f)
 		{
-			const float A = FMath::Clamp((StoryTime - 0.2f) / 2.8f, 0.0f, 1.0f);
-			const float Turn = FMath::Clamp((StoryTime - 3.0f) / 0.5f, 0.0f, 1.0f);
+			const float A = StoryTime >= InEnd ? 1.0f : 0.0f;
+			const float Turn = FMath::Clamp((StoryTime - InEnd) / 0.5f, 0.0f, 1.0f);
 			const float Yaw = FMath::Lerp(WalkYaw, WalkYaw + FRotator::NormalizeAxis(ChaiwalaFaceYaw - WalkYaw), FMath::SmoothStep(0.0f, 1.0f, Turn));
 			const float Lean = StoryTime > 3.4f && StoryTime < 5.2f ? -9.0f * FMath::Sin(PI * (StoryTime - 3.4f) / 1.8f) : 0.0f;
-			PlaceChaiwala(ChaiwalaIn, A < 1.0f ? FMath::SmoothStep(0.0f, 1.0f, A) * InLen : InLen, Yaw, Lean);
+			PlaceChaiwala(ChaiwalaIn, A < 1.0f ? WalkDist(StoryTime - 0.2f, InLen, ChaiwalaPace, ChaiwalaEase) : InLen, Yaw, Lean);
 		}
 		else if (ChaiwalaOut.Num() > 1)
 		{
 			float OutLen = 0.0f;
 			for (int32 i = 1; i < ChaiwalaOut.Num(); ++i) OutLen += FVector::Dist(ChaiwalaOut[i - 1], ChaiwalaOut[i]);
 			const float Turn = FMath::Clamp((StoryTime - 12.0f) / 0.6f, 0.0f, 1.0f);
-			const float A = FMath::Clamp((StoryTime - 12.5f) / (OutLen / 95.0f), 0.0f, 1.0f);
-			const float Dist = FMath::SmoothStep(0.0f, 1.0f, A) * OutLen;
+			const float Dist = WalkDist(StoryTime - 12.5f, OutLen, ChaiwalaPace, ChaiwalaEase);
+			const float A = StoryTime < 12.5f ? 0.0f : (Dist >= OutLen - 0.01f ? 1.0f : 0.5f);
 			// heading: along the path segment he is on (turning first towards the aisle)
 			float Left = Dist; FVector Dir = ChaiwalaOut[1] - ChaiwalaOut[0];
 			for (int32 i = 1; i < ChaiwalaOut.Num(); ++i)
@@ -643,8 +663,7 @@ void AP9CampaignDirector::TickEpilogue(float DeltaSeconds)
 		{
 			++StoryCue;
 			if (Chaiwala) PlaySoundAt(ChaiwalaWakeLine.LoadSynchronous(), Chaiwala->GetActorLocation() + FVector(0.0f, 0.0f, 160.0f), 1.0f, 1.0f, 2000.0f);
-			ShowTitle(FText::GetEmpty(), NSLOCTEXT("P9", "ChaiwalaLine",
-				"“Saheb, utha! Thane aala. Kuthe jaycha aahe tumhala?”\n(Sir, wake up! We've reached Thane. Where do you need to go?)"), 7.5f);
+			// Stage 9B: his words are captioned sentence by sentence with the audio (DT_P9_Captions) instead of a centre title
 		}
 		if (StoryCue == 1 && StoryTime >= 2.0f)
 		{
@@ -754,15 +773,36 @@ void AP9CampaignDirector::TickEpilogue(float DeltaSeconds)
 	{
 		++StoryCue;                                                 // lights snap back on - it is standing in the aisle
 		for (ULightComponent* L : EpilogueLights) if (L) L->SetIntensity(160.0f);
+		// Stage 8A: the Greeting stands there instead of the black figure (only this appearance); a short pause, then she lunges
+		// at the camera with her scream and the impact (AP9GreetingScare). Without her meshes the old figure is used.
+		UStaticMesh* GreetStand = GreetingStandMesh.LoadSynchronous();
 		if (ScareRoot && Player)
 		{
 			const FVector Spot = ScareRoot->GetComponentTransform().TransformPosition(ScareSpotLocal);
-			EpilogueScare = SpawnFigure(Spot, (Player->GetActorLocation() - Spot).GetSafeNormal2D().Rotation().Yaw);
-			if (EpilogueScare) EpilogueScare->AttachToComponent(Train->GetRootComponent(), FAttachmentTransformRules::KeepWorldTransform);
+			const float FaceYaw = (Player->GetActorLocation() - Spot).GetSafeNormal2D().Rotation().Yaw;
+			if (GreetStand)
+			{
+				const FTransform Xf(FRotator(0.0f, FaceYaw, 0.0f), Spot);
+				AP9GreetingScare* Greet = GetWorld()->SpawnActorDeferred<AP9GreetingScare>(AP9GreetingScare::StaticClass(), Xf, this);
+				if (Greet)
+				{
+					Greet->Tags.Add(TEXT("P9Anomaly"));
+					Greet->FinishSpawning(Xf);
+					RecordSpawned(Greet);
+					Greet->AttachToComponent(Train->GetRootComponent(), FAttachmentTransformRules::KeepWorldTransform);
+					Greet->Begin(GreetStand, GreetingLungeMesh.LoadSynchronous(), PlayerController());
+					EpilogueScare = Greet;
+				}
+			}
+			else
+			{
+				EpilogueScare = SpawnFigure(Spot, FaceYaw);
+				if (EpilogueScare) EpilogueScare->AttachToComponent(Train->GetRootComponent(), FAttachmentTransformRules::KeepWorldTransform);
+				PlaySound2D(ApparitionSting.LoadSynchronous(), 1.0f, 1.0f);
+			}
 		}
-		PlaySound2D(ApparitionSting.LoadSynchronous(), 1.0f, 1.0f);
 		FlashAlpha = 0.25f;                                         // a short dim pulse, not a white flash
-		ShakeTime = 0.3f;
+		ShakeTime = GreetStand ? 0.0f : 0.3f;                       // the Greeting shakes the view at her impact instead
 		SaveEpilogueStage(2);                                       // reached: a resume shows the final screen, never this again
 		UE_LOG(LogP9, Log, TEXT("Story: FINAL APPARITION in car %d aisle (car-local x %.0f)"), ScareCar, ScareSpotLocal.X);
 	}
@@ -770,6 +810,7 @@ void AP9CampaignDirector::TickEpilogue(float DeltaSeconds)
 	{
 		++StoryCue;                                                 // 1.2 s readable beat, then blackout
 		for (ULightComponent* L : EpilogueLights) if (L) L->SetIntensity(0.0f);
+		if (AP9GreetingScare* Greet = Cast<AP9GreetingScare>(EpilogueScare)) Greet->Finish();   // Stage 8A: view (FOV, shake) back
 		if (EpilogueScare) EpilogueScare->SetActorHiddenInGame(true);
 		FadeTarget = 1.0f;
 		FadeSpeed = 4.0f;

@@ -1,0 +1,15 @@
+# Stage 5F (PIE only, runtime copy): put an MQ mesh on one NPC, play one clip in place on open floor (POS freezes it).
+import unreal
+KEY = globals().get("KEY", "F1"); N = globals().get("N", "dhanraj"); CLIP = globals().get("CLIP", "Walk"); POS = globals().get("POS", None)
+LOC = globals().get("LOC", (-60, 2700, 690))
+world = unreal.UnrealEditorSubsystem().get_game_world()
+npc = next(a for a in unreal.GameplayStatics.get_all_actors_of_class(world, unreal.P9FriendNPC) if str(a.get_editor_property("friend_key")) == KEY)
+npc.set_actor_tick_enabled(False)
+npc.set_actor_location(unreal.Vector(*LOC), False, False); npc.set_actor_rotation(unreal.Rotator(0, 0, 0), False)
+b = npc.get_editor_property("body")
+b.set_skeletal_mesh_asset(unreal.load_asset("/Game/P9/Characters/Station3D/%s/MQ2/SK_P9_NPC3D_%s_MQ2" % (N, N)))
+b.set_editor_property("visibility_based_anim_tick_option", unreal.VisibilityBasedAnimTickOption.ALWAYS_TICK_POSE_AND_REFRESH_BONES)
+b.set_component_tick_enabled(True); b.set_animation_mode(unreal.AnimationMode.ANIMATION_SINGLE_NODE)
+b.play_animation(unreal.load_asset("/Game/P9/Characters/Station3D/%s/MQ2/SK_P9_NPC3D_%s_MQ2_%s" % (N, N, CLIP)), True)
+if POS is not None: b.set_position(POS, False); b.set_play_rate(0.0)
+unreal.log("P9PY: showing MQ %s %s on %s" % (N, CLIP, KEY))

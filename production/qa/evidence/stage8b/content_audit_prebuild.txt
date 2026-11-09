@@ -1,0 +1,85 @@
+Stage 8B content inclusion audit (pre-build) - hard dependency closure of /Game/P9/Maps/L_Station_Redesign: 701 /Game packages
+
+/Game/P9/Creatures8A: 14 assets, 13 reachable from the map, 1 NOT reachable
+   not reachable: /Game/P9/Creatures8A/Materials/M_P9_Creature8A
+/Game/P9/Anomalies8A: 10 assets, 10 reachable from the map, 0 NOT reachable
+/Game/P9/Audio/OriginalAudioPack: 64 assets, 64 reachable from the map, 0 NOT reachable
+
+director.lantern_man_mesh                               /Game/P9/Creatures8A/LanternMan/SM_P9_LanternMan                                 exists=True cooked-via-map=True
+director.greeting_stand_mesh                            /Game/P9/Creatures8A/Greeting/SM_P9_Greeting_rest                                exists=True cooked-via-map=True
+director.greeting_lunge_mesh                            /Game/P9/Creatures8A/Greeting/SM_P9_Greeting_lunge                               exists=True cooked-via-map=True
+director.bridge_south_mesh                              /Game/P9/Anomalies8A/Endless/SM_P9_FOBB_South8A                                  exists=True cooked-via-map=True
+director.bridge_end_mesh                                /Game/P9/Anomalies8A/Endless/SM_P9_FOBB_End8A                                    exists=True cooked-via-map=True
+director.bridge_bay_mesh                                /Game/P9/Anomalies8A/Endless/SM_P9_FOBB_Bay8A                                    exists=True cooked-via-map=True
+director.bridge_lead_in_mesh                            /Game/P9/Anomalies8A/Endless/SM_P9_FOBB_BayLeadIn8A                              exists=True cooked-via-map=True
+director.bridge_tube_mesh                               /Game/P9/Environment/StationLighting/SM_P9_TubeLight                             exists=True cooked-via-map=True
+director.escalator_upper_mesh                           /Game/P9/Anomalies8A/Endless/SM_P9_StairPF910_Upper8A                            exists=True cooked-via-map=True
+director.escalator_step_mesh                            /Game/P9/Anomalies8A/Endless/SM_P9_EscalatorStep8A                               exists=True cooked-via-map=True
+IndicatorWrong.Panvel.material                          /Game/P9/Anomalies6A/Materials/MI_P9_Anom6_Indicator_Panvel                      exists=True cooked-via-map=True
+IndicatorWrong.Dadar.material                           /Game/P9/Anomalies6A/Materials/MI_P9_Anom6_Indicator_Dadar                       exists=True cooked-via-map=True
+IndicatorWrong.Thane.material                           /Game/P9/Anomalies6A/Materials/MI_P9_Anom6_Indicator_Thane                       exists=True cooked-via-map=True
+IndicatorWrong.PanvelLater.material                     /Game/P9/Anomalies6A/Materials/MI_P9_Anom6_Indicator_Panvel                      exists=True cooked-via-map=True
+AnnouncementWrong.Platform13.sound                      /Game/P9/Announcements/SW_P9_PA_PF9_Anom_Platform13                              exists=True cooked-via-map=True
+AnnouncementWrong.Platform10.sound                      /Game/P9/Announcements/SW_P9_PA_PF9_Anom6_Platform10                             exists=True cooked-via-map=True
+AnnouncementWrong.Panvel.sound                          /Game/P9/Announcements/SW_P9_PA_PF9_Anom6_Panvel                                 exists=True cooked-via-map=True
+AnnouncementWrong.DoNotTurn.sound                       /Game/P9/Announcements/SW_P9_PA_PF9_Anom_DoNotTurn                               exists=True cooked-via-map=True
+AnnouncementWrong.Slowed.sound                          /Game/P9/Announcements/SW_P9_PA_PF9_VashiArrival                                 exists=True cooked-via-map=True
+SignboardWrong.PF23Arrows.material                      /Game/P9/Anomalies/Materials/MI_P9_Anom_FOBSignPF2_3_A                           exists=True cooked-via-map=True
+SignboardWrong.PF23Number.material                      /Game/P9/Anomalies/Materials/MI_P9_Anom_FOBSignPF2_3_B                           exists=True cooked-via-map=True
+SignboardWrong.PF45Arrows.material                      /Game/P9/Anomalies6A/Materials/MI_P9_Anom6_FOBSignPF4_5_Arrows                   exists=True cooked-via-map=True
+SignboardWrong.PF45Number.material                      /Game/P9/Anomalies6A/Materials/MI_P9_Anom6_FOBSignPF4_5_Number                   exists=True cooked-via-map=True
+SignboardWrong.PF67Arrows.material                      /Game/P9/Anomalies6A/Materials/MI_P9_Anom6_FOBSignPF6_7_Arrows                   exists=True cooked-via-map=True
+SignboardWrong.PF67Number.material                      /Game/P9/Anomalies6A/Materials/MI_P9_Anom6_FOBSignPF6_7_Number                   exists=True cooked-via-map=True
+SignboardWrong.PF8Arrows.material                       /Game/P9/Anomalies6A/Materials/MI_P9_Anom6_FOBSignPF8_Arrows                     exists=True cooked-via-map=True
+SignboardWrong.PF8Number.material                       /Game/P9/Anomalies6A/Materials/MI_P9_Anom6_FOBSignPF8_Number                     exists=True cooked-via-map=True
+SignboardWrong.PF910Arrows.material                     /Game/P9/Anomalies/Materials/MI_P9_Anom_FOBSignPF9_10_A                          exists=True cooked-via-map=True
+SignboardWrong.PF910Number.material                     /Game/P9/Anomalies/Materials/MI_P9_Anom_FOBSignPF9_10_B                          exists=True cooked-via-map=True
+SignboardWrong.Island13.material                        /Game/P9/Anomalies/Materials/MI_P9_Anom_SignPF9_10_A                             exists=True cooked-via-map=True
+SignboardWrong.IslandSwapped.material                   /Game/P9/Anomalies/Materials/MI_P9_Anom_SignPF9_10_B                             exists=True cooked-via-map=True
+PosterBoy.BoyWatching.material                          /Game/P9/Anomalies6A/Materials/MI_P9_Anom6_AdPoster_Boy                          exists=True cooked-via-map=True
+PosterBoy.BoyWatchingLater.material                     /Game/P9/Anomalies6A/Materials/MI_P9_Anom6_AdPoster_Boy                          exists=True cooked-via-map=True
+TrackMissing.RailsGone.mesh                             /Game/P9/Anomalies6A/SM_P9_TrackPanel_GapRails                                   exists=True cooked-via-map=True
+TrackMissing.TrackGone.mesh                             /Game/P9/Anomalies6A/SM_P9_TrackPanel_GapAll                                     exists=True cooked-via-map=True
+TicketCounterWrong.Bars231.material                     /Game/P9/Anomalies6A/Materials/MI_P9_Anom6_BookingCounter_231                    exists=True cooked-via-map=True
+TicketCounterWrong.Bars312.material                     /Game/P9/Anomalies6A/Materials/MI_P9_Anom6_BookingCounter_312                    exists=True cooked-via-map=True
+TicketCounterWrong.Bars174.material                     /Game/P9/Anomalies6A/Materials/MI_P9_Anom6_BookingCounter_174                    exists=True cooked-via-map=True
+TicketCounterWrong.BarsOnly.material                    /Game/P9/Anomalies6A/Materials/MI_P9_Anom6_BookingCounter_123                    exists=True cooked-via-map=True
+TrainSeatsRed.Red.material                              /Game/P9/Anomalies8A/Materials/MI_P9_Anom8_TrainSeat_Red                         exists=True cooked-via-map=True
+TrainSeatsRed.DarkRed.material                          /Game/P9/Anomalies8A/Materials/MI_P9_Anom8_TrainSeat_DarkRed                     exists=True cooked-via-map=True
+audio.main_ambience                                     /Game/P9/Audio/OriginalAudioPack/Music/BGM_Main_Station_Ambience                 exists=True cooked-via-map=True
+audio.platform9_horror                                  /Game/P9/Audio/OriginalAudioPack/Music/BGM_Platform9_Horror                      exists=True cooked-via-map=True
+audio.anomaly_ambience                                  /Game/P9/Audio/OriginalAudioPack/Music/BGM_Anomaly_Ambience                      exists=True cooked-via-map=True
+audio.epilogue_music                                    /Game/P9/Audio/OriginalAudioPack/Music/BGM_Final_Epilogue                        exists=True cooked-via-map=True
+audio.platform_wind                                     /Game/P9/Audio/OriginalAudioPack/Ambience/AMB_Platform_Wind_Loop                 exists=True cooked-via-map=True
+audio.footbridge_bed                                    /Game/P9/Audio/OriginalAudioPack/Ambience/AMB_Footbridge_Loop                    exists=True cooked-via-map=True
+audio.jump_sound                                        /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Jump                                    exists=True cooked-via-map=True
+audio.land_sound                                        /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Land                                    exists=True cooked-via-map=True
+audio.kanchana_breathing                                /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_Kanchana_Breathing_Loop           exists=True cooked-via-map=True
+audio.kanchana_presence                                 /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_Kanchana_Presence_Loop            exists=True cooked-via-map=True
+audio.steps_platform[0]                                 /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Footstep_Platform_01                    exists=True cooked-via-map=True
+audio.steps_platform[1]                                 /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Footstep_Platform_02                    exists=True cooked-via-map=True
+audio.steps_platform[2]                                 /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Footstep_Platform_03                    exists=True cooked-via-map=True
+audio.steps_platform[3]                                 /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Footstep_Platform_04                    exists=True cooked-via-map=True
+audio.steps_stairs[0]                                   /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Footstep_Stairs_01                      exists=True cooked-via-map=True
+audio.steps_stairs[1]                                   /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Footstep_Stairs_02                      exists=True cooked-via-map=True
+audio.steps_stairs[2]                                   /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Footstep_Stairs_03                      exists=True cooked-via-map=True
+audio.steps_stairs[3]                                   /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Footstep_Stairs_04                      exists=True cooked-via-map=True
+audio.steps_footbridge[0]                               /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Footstep_Footbridge_01                  exists=True cooked-via-map=True
+audio.steps_footbridge[1]                               /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Footstep_Footbridge_02                  exists=True cooked-via-map=True
+audio.steps_footbridge[2]                               /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Footstep_Footbridge_03                  exists=True cooked-via-map=True
+audio.steps_footbridge[3]                               /Game/P9/Audio/OriginalAudioPack/SFX/SFX_Footstep_Footbridge_04                  exists=True cooked-via-map=True
+audio.kanchana_steps_close[0]                           /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_Kanchana_Footstep_Close_01        exists=True cooked-via-map=True
+audio.kanchana_steps_close[1]                           /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_Kanchana_Footstep_Close_02        exists=True cooked-via-map=True
+audio.kanchana_steps_close[2]                           /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_Kanchana_Footstep_Close_03        exists=True cooked-via-map=True
+audio.kanchana_steps_distant[0]                         /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_Kanchana_Footstep_Distant_01      exists=True cooked-via-map=True
+audio.kanchana_steps_distant[1]                         /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_Kanchana_Footstep_Distant_02      exists=True cooked-via-map=True
+audio.kanchana_steps_distant[2]                         /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_Kanchana_Footstep_Distant_03      exists=True cooked-via-map=True
+code path SFX_LanternMan_Flame_Loop                     /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_LanternMan_Flame_Loop             exists=True cooked-via-map=True
+code path SFX_LanternMan_LowRumble_Loop                 /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_LanternMan_LowRumble_Loop         exists=True cooked-via-map=True
+code path SFX_LanternMan_ElectricalFlicker              /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_LanternMan_ElectricalFlicker      exists=True cooked-via-map=True
+code path SFX_LanternMan_Stinger                        /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_LanternMan_Stinger                exists=True cooked-via-map=True
+code path SFX_Greeting_Scream                           /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_Greeting_Scream                   exists=True cooked-via-map=True
+code path SFX_Greeting_DistortedLayer                   /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_Greeting_DistortedLayer           exists=True cooked-via-map=True
+code path SFX_Greeting_JumpscareImpact                  /Game/P9/Audio/OriginalAudioPack/Creatures/SFX_Greeting_JumpscareImpact          exists=True cooked-via-map=True
+
+RESULT: 1 Stage 8A assets not reachable from the map, 0 soft paths missing or not reachable

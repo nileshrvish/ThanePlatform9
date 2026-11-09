@@ -1,0 +1,28 @@
+== 1) format and levels
+PA_PF9_VashiArrival          44100 Hz 1 ch 16 bit  26.94 s | peak  -1.94 dBFS rms -17.48 dBFS | clipped 0 | lead 0.00s tail 1.04s
+PA_PF9_Anom6_Platform10      44100 Hz 1 ch 16 bit  26.95 s | peak  -1.94 dBFS rms -17.70 dBFS | clipped 0 | lead 0.00s tail 1.07s
+PA_PF9_Anom6_Panvel          44100 Hz 1 ch 16 bit  26.92 s | peak  -1.94 dBFS rms -17.55 dBFS | clipped 0 | lead 0.00s tail 1.04s
+== 2) PA chime (E5 C5 G5 in the first 2.25 s)
+PA_PF9_VashiArrival          dominant [660.0, 522.7, 784.0]  (expected ~[659.3, 523.3, 784.0])
+PA_PF9_Anom6_Platform10      dominant [658.7, 524.0, 784.0]  (expected ~[659.3, 523.3, 784.0])
+PA_PF9_Anom6_Panvel          dominant [660.0, 522.7, 784.0]  (expected ~[659.3, 523.3, 784.0])
+== 3) sentence-by-sentence raw TTS vs the normal announcement
+PA_PF9_Anom6_Platform10      s00 text same    dur  3.02s vs  3.02s corr 0.997 OK
+PA_PF9_Anom6_Platform10      s01 text CHANGED dur  7.22s vs  7.22s corr 0.010 OK
+PA_PF9_Anom6_Platform10      s02 text same    dur  4.44s vs  4.44s corr 0.999 OK
+PA_PF9_Anom6_Platform10      s03 text same    dur  9.14s vs  9.14s corr 0.999 OK
+PA_PF9_Anom6_Platform10      s04 text same    dur  1.87s vs  1.87s corr 1.000 OK
+PA_PF9_Anom6_Panvel          s00 text same    dur  3.02s vs  3.02s corr 0.998 OK
+PA_PF9_Anom6_Panvel          s01 text CHANGED dur  7.22s vs  7.20s corr 0.010 OK
+PA_PF9_Anom6_Panvel          s02 text same    dur  4.44s vs  4.44s corr 0.999 OK
+PA_PF9_Anom6_Panvel          s03 text same    dur  9.14s vs  9.14s corr 0.999 OK
+PA_PF9_Anom6_Panvel          s04 text same    dur  1.87s vs  1.87s corr 1.000 OK
+== 4) speech recognition (Whisper medium, language mr)
+PA_PF9_VashiArrival          raw sentence 2   : वाशी कडे जानारी लोकल गाडी काही क्षणाद प्लाट्फॉर्म क्रमांक नववर येणारा है।
+PA_PF9_VashiArrival          final (as heard) : प्रवाशान से लक्षा असूध्या, वाशिक्डे जानारी लोकल गाडी काही क्षणात प्लाट्फॉर्म क्रमांक नव वर येडारा है, या गाडी चा ऐरोली स्थानका वर थामबा आहे, प्रवाशान नी क्रूप्या प्रिट्फॉन्जा काथा पासून दूर उभे रहावे
+PA_PF9_Anom6_Platform10      raw sentence 2   : वाशी कडे जानारी लोकल गाडी, काही क्षणाद प्लाट्फॉर्म क्रमांक दहावर येनारा है।  -> keyword FOUND
+PA_PF9_Anom6_Platform10      final (as heard) : प्रवाशान्ते लक्षा सुध्या वाशिक्रे जानारी लोकल गाली काही क्षणात प्लाट्फॉर्म क्रमांक दहा वर येडारा हैं या गाली ता ऐरोली स्थानका वर थामबाआ हैं प्रवाशान्नी कुप्या प्रिट्फॉन्जा गाथा पासून दूर उभे रहावे आनि गाली पूर्ण पले थामल्या नंतर तर चड़ावे धप्यवान।  -> keyword FOUND
+                             expected sentence 2   : वाशीकडे जाणारी लोकल गाडी, काही क्षणात प्लॅटफॉर्म क्रमांक दहावर येणार आहे.
+PA_PF9_Anom6_Panvel          raw sentence 2   : पन्वेल कडे जानारी लोकल गाडी, काही क्षणाद प्लाट्फॉर्म क्रमांक नववर येनारा है।  -> keyword NOT found
+PA_PF9_Anom6_Panvel          final (as heard) : प्रवाशान से लक्षा सुध्या। पन्वेल कडे जानारी लोकल गाडी काही क्षणात प्लाट्फॉर्म क्रमांक नोवर ये लारा है। या गाडी चा ऐरोली स्थानका वर धामबा आहे। प्रवाशान लिक रुप्या प्रिट्फॉन्जा काथा पासून दूर उभे रहावे। आणि गाडी पूर्ण पडे धामल्या नंतर चढ़ावे। धाथ्यवाद।  -> keyword NOT found
+                             expected sentence 2   : पनवेलकडे जाणारी लोकल गाडी, काही क्षणात प्लॅटफॉर्म क्रमांक नऊवर येणार आहे.

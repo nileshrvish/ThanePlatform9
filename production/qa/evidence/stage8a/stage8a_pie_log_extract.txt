@@ -1,0 +1,138 @@
+MapCheck: Map check complete: 0 Error(s), 0 Warning(s), took 0.739ms to complete.
+p9.Anomaly.Audit: EndlessFootbridge  Recedes            diff 2 points 1 ok 
+p9.Anomaly.Audit: Kanchana           Follows            diff 3 points 2 ok 
+p9.Anomaly.Audit: EndlessStair       Escalator          diff 2 points 1 ok 
+p9.Anomaly.Audit: RedLightPF9        Crimson            diff 2 points 3 ok 
+p9.Anomaly.Audit: RedLightPF9        BloodRed           diff 3 points 3 ok 
+p9.Anomaly.Audit: RedLightPF9        DullRed            diff 1 points 3 ok 
+p9.Anomaly.Audit: TrainSeatsRed      Red                diff 2 points 1 ok 
+p9.Anomaly.Audit: TrainSeatsRed      DarkRed            diff 1 points 1 ok 
+p9.Anomaly.Audit: CoachLightOff      Dark               diff 3 points 2 ok 
+p9.Anomaly.Audit: CoachLightOff      Dim                diff 1 points 2 ok 
+p9.Anomaly.Audit: CoachLightOff      DiesOnApproach     diff 2 points 2 ok 
+p9.Anomaly.Audit: LanternMan         Standing           diff 2 points 1 ok 
+p9.Anomaly.Audit: 49 variants, 0 with problems
+Story check: 0 problems | facts: Dadar -> Thane Platform 1; connection Platform 9 to Vashi, getting off at Airoli
+Cmd: p9.Campaign.Sim 777 500
+p9.Campaign.Sim: 500 runs x 10 days = 5000 days | normal 1826 (36.5%) anomalous 3174 | violations 0 | non-deterministic 0 | scheduled-rule violations 0 | longest streak anomalous 10 normal 6 | same anomaly on consecutive days 18
+p9.Campaign.Sim: scheduled anomaly by day d3:176 d4:168 d5:156
+p9.Campaign.Sim: anomalies per day 0:1826 1:3174 2:0 3:0 | anomalous share by day d1:63% d2:58% d3:75% d4:72% d5:72% d6:59% d7:57% d8:59% d9:61% d10:58% | categories Environment:1254 Signage:532 Supernatural:687 Train:360 Other:180 Audio:161
+p9.Campaign.Sim: per anomaly ClockWrong:183 IndicatorWrong:177 EndlessFootbridge:167 Kanchana:500 AnnouncementWrong:161 SignboardWrong:186 ClosedEntryOpen:189 PosterBoy:169 EndlessStair:171 TrackMissing:193 TicketCounterWrong:180 AnalogClockReverse:158 RedLightPF9:193 TrainSeatsRed:174 CoachLightOff:186 LanternMan:187
+Cmd: p9.Campaign.Sim 4242 500
+p9.Campaign.Sim: 500 runs x 10 days = 5000 days | normal 1837 (36.7%) anomalous 3163 | violations 0 | non-deterministic 0 | scheduled-rule violations 0 | longest streak anomalous 10 normal 7 | same anomaly on consecutive days 15
+p9.Campaign.Sim: scheduled anomaly by day d3:151 d4:183 d5:166
+p9.Campaign.Sim: anomalies per day 0:1837 1:3163 2:0 3:0 | anomalous share by day d1:57% d2:58% d3:72% d4:76% d5:73% d6:61% d7:56% d8:61% d9:61% d10:58% | categories Supernatural:688 Environment:1226 Signage:526 Audio:174 Train:347 Other:202
+p9.Campaign.Sim: per anomaly ClockWrong:190 IndicatorWrong:154 EndlessFootbridge:202 Kanchana:500 AnnouncementWrong:174 SignboardWrong:180 ClosedEntryOpen:170 PosterBoy:192 EndlessStair:175 TrackMissing:172 TicketCounterWrong:202 AnalogClockReverse:151 RedLightPF9:166 TrainSeatsRed:175 CoachLightOff:172 LanternMan:188
+Campaign: RedLightPF9 noticed by the player (anomaly ambience may play)
+Campaign: baseline verify - 136 entries, 0 differences, 0 active anomalies
+Lantern Man: standing at V(X=2870.00, Y=7700.00, Z=95.00) facing -170, lamp lights 2, tube glow driven
+Lantern Man: seen by the player from 1402 cm
+Campaign: LanternMan noticed by the player (anomaly ambience may play)
+P9PY: lamps FE=31.5 FW1=30.0 FW2=30.0 LE=393.7 LW1=375.0 LW2=375.0
+P9PY: lamps FE=24.0 FW1=30.0 FW2=30.0 LE=300.0 LW1=375.0 LW2=375.0
+P9PY: lamps FE=24.0 FW1=30.0 FW2=30.0 LE=300.0 LW1=375.0 LW2=375.0
+P9PY: lamps FE=24.0 FW1=30.0 FW2=30.0 LE=300.0 LW1=375.0 LW2=375.0
+P9PY: lamps FE=24.0 FW1=30.0 FW2=30.0 LE=300.0 LW1=375.0 LW2=375.0
+P9PY: lamps FE=24.0 FW1=30.0 FW2=30.0 LE=300.0 LW1=375.0 LW2=375.0
+P9PY: lamps FE=24.0 FW1=30.0 FW2=30.0 LE=300.0 LW1=375.0 LW2=375.0
+P9PY: lamps FE=24.0 FW1=30.0 FW2=30.0 LE=300.0 LW1=375.0 LW2=375.0
+P9PY: lamps FE=24.0 FW1=30.0 FW2=30.0 LE=300.0 LW1=375.0 LW2=375.0
+P9PY: lamps FE=24.0 FW1=30.0 FW2=30.0 LE=300.0 LW1=375.0 LW2=375.0
+P9PY: lamps FE=0.0 FW1=30.0 FW2=30.0 LE=0.0 LW1=375.0 LW2=375.0
+P9PY: lamps FE=4.9 FW1=30.0 FW2=30.0 LE=60.9 LW1=375.0 LW2=375.0
+P9PY: lamps FE=24.0 FW1=30.0 FW2=30.0 LE=300.0 LW1=375.0 LW2=375.0
+P9PY: lamps FE=24.0 FW1=30.0 FW2=30.0 LE=300.0 LW1=375.0 LW2=375.0
+P9PY: lamps FE=24.0 FW1=30.0 FW2=30.0 LE=300.0 LW1=375.0 LW2=375.0
+P9PY: lamps FE=24.0 FW1=30.0 FW2=30.0 LE=300.0 LW1=375.0 LW2=375.0
+P9PY: lamps FE=24.0 FW1=30.0 FW2=30.0 LE=300.0 LW1=375.0 LW2=375.0
+P9PY: lamps FE=24.0 FW1=30.0 FW2=30.0 LE=300.0 LW1=375.0 LW2=375.0
+P9PY: lamps FE=24.0 FW1=30.0 FW2=30.0 LE=300.0 LW1=375.0 LW2=375.0
+P9PY: lamps FE=24.0 FW1=30.0 FW2=30.0 LE=300.0 LW1=375.0 LW2=375.0
+P9PY: lamps FE=24.0 FW1=30.0 FW2=30.0 LE=300.0 LW1=375.0 LW2=375.0
+P9PY: lamps FE=24.0 FW1=30.0 FW2=30.0 LE=300.0 LW1=375.0 LW2=375.0
+P9PY: lamps FE=24.0 FW1=30.0 FW2=30.0 LE=300.0 LW1=375.0 LW2=375.0
+P9PY: lamps FE=24.0 FW1=30.0 FW2=30.0 LE=300.0 LW1=375.0 LW2=375.0
+Campaign: baseline verify - 136 entries, 0 differences, 0 active anomalies
+Campaign: TrainSeatsRed - 2 train seat slots now MI_P9_Anom8_TrainSeat_Red
+Campaign: TrainSeatsRed noticed by the player (anomaly ambience may play)
+Campaign: baseline verify - 136 entries, 0 differences, 0 active anomalies
+Campaign: CoachLightOff noticed by the player (anomaly ambience may play)
+Campaign: baseline verify - 136 entries, 0 differences, 0 active anomalies
+Endless footbridge: armed - 7 real end actors, trigger IsValid=true, Min=(X=-195.000 Y=6300.000 Z=540.000), Max=(X=195.000 Y=6550.000 Z=760.000), bay 600 cm
+Endless footbridge: ENGAGED at y 6307 (the end stays 893 cm ahead), engagement 1
+Campaign: EndlessFootbridge noticed by the player (anomaly ambience may play)
+Endless footbridge: collapsed back to the real end (unseen) after 3026 cm of extension
+Endless footbridge: ENGAGED at y 6305 (the end stays 895 cm ahead), engagement 2
+Campaign: baseline verify - 136 entries, 0 differences, 0 active anomalies
+Endless footbridge: armed - 7 real end actors, trigger IsValid=true, Min=(X=-195.000 Y=6300.000 Z=540.000), Max=(X=195.000 Y=6550.000 Z=760.000), bay 600 cm
+Endless footbridge: ENGAGED at y 6307 (the end stays 893 cm ahead), engagement 1
+Campaign: EndlessFootbridge noticed by the player (anomaly ambience may play)
+Endless footbridge: armed - 10 real end actors, trigger IsValid=true, Min=(X=-195.000 Y=6300.000 Z=540.000), Max=(X=195.000 Y=6550.000 Z=760.000), bay 600 cm
+Endless footbridge: ENGAGED at y 6307 (the end stays 893 cm ahead), engagement 1
+Campaign: EndlessFootbridge noticed by the player (anomaly ambience may play)
+Campaign: baseline verify - 142 entries, 0 differences, 0 active anomalies
+Reverse escalator: armed on StaticMeshActor_651 - 19 moving steps, ramp 622 cm at 29.1 deg
+Reverse escalator: the player has met the moving stair
+Campaign: EndlessStair noticed by the player (anomaly ambience may play)
+Reverse escalator: player climbing - stopping
+Reverse escalator: player heading down again - running
+Campaign: baseline verify - 142 entries, 0 differences, 0 active anomalies
+Silhouette: campaign sighting - Kanchana waits at V(X=-1800.00, Y=7300.00)
+Silhouette: campaign sighting - Kanchana waits at V(X=2300.00, Y=7500.00)
+Silhouette: campaign sighting - Kanchana waits at V(X=-1800.00, Y=7300.00)
+Silhouette: campaign sighting - Kanchana waits at V(X=2300.00, Y=7500.00)
+P9PY: Kanchana at [2300, 7500, 0] yaw 180 hidden=False; overlapping nothing; clear distance by 45-degree ray (cm) [300, 300, 300, 300, 300, 300, 300, 124.0]; floor z -0.0
+Silhouette: campaign sighting - Kanchana waits at V(X=-1800.00, Y=7300.00)
+P9PY: Kanchana at [-1800, 7300, 0] yaw 0 hidden=False; overlapping nothing; clear distance by 45-degree ray (cm) [300, 300, 98.0, 300, 300, 300, 300, 300]; floor z -0.0
+Greeting: standing in the aisle at V(X=21750.51, Y=18848.79, Z=35.00) (stand SM_P9_Greeting_rest, lunge SM_P9_Greeting_lunge)
+Story: FINAL APPARITION in car 0 aisle (car-local x -227)
+Greeting: LUNGE (scream) at t=0.50
+Greeting: IMPACT at t=0.73, face 64 cm from the camera
+Story: epilogue finished - final screen
+Campaign: COMPLETED run 5 (seed 1606180050) - ending screen shown
+Campaign: COMPLETED run 5 (seed 1606180050) - ending screen shown
+Lantern Man: standing at V(X=2870.00, Y=7700.00, Z=95.00) facing -170, lamp lights 2, tube glow driven
+Lantern Man: seen by the player from 1403 cm
+Campaign: LanternMan noticed by the player (anomaly ambience may play)
+Greeting: standing in the aisle at V(X=21752.06, Y=18841.59, Z=35.00) (stand SM_P9_Greeting_rest, lunge SM_P9_Greeting_lunge)
+Story: FINAL APPARITION in car 0 aisle (car-local x -227)
+Greeting: LUNGE (scream) at t=0.50
+Greeting: IMPACT at t=0.73, face 64 cm from the camera
+Story: epilogue finished - final screen
+Campaign: COMPLETED run 5 (seed 1606180050) - ending screen shown
+Cmd: p9.Audio.Status
+p9.Audio.Status: main 0.30>0.30* p9 0.00>0.00 anomaly 0.00>0.00 epilogue 0.00>0.00 wind 0.00>0.00 bridge 0.30>0.30* presence 0.00>0.00 | steps 0 | noticed 0
+Cmd: p9.Audio.Status
+p9.Audio.Status: main 0.30>0.30* p9 0.00>0.00 anomaly 0.00>0.00 epilogue 0.00>0.00 wind 0.00>0.00 bridge 0.30>0.30* presence 0.00>0.00 | steps 22 | noticed 0
+Cmd: p9.Audio.Status
+p9.Audio.Status: main 0.17>0.17* p9 0.40>0.40* anomaly 0.00>0.00 epilogue 0.00>0.00 wind 0.00>0.00 bridge 0.30>0.30* presence 0.00>0.00 | steps 22 | noticed 0
+Cmd: p9.Audio.Status
+p9.Audio.Status: main 0.17>0.17* p9 0.40>0.40* anomaly 0.00>0.00 epilogue 0.00>0.00 wind 0.26>0.26* bridge 0.00>0.00 presence 0.00>0.00 | steps 22 | noticed 0
+Lantern Man: standing at V(X=2870.00, Y=7700.00, Z=95.00) facing -170, lamp lights 2, tube glow driven
+Lantern Man: seen by the player from 1427 cm
+Campaign: LanternMan noticed by the player (anomaly ambience may play)
+Cmd: p9.Audio.Status
+p9.Audio.Status: main 0.17>0.17* p9 0.40>0.40* anomaly 0.32>0.32* epilogue 0.00>0.00 wind 0.26>0.26* bridge 0.00>0.00 presence 0.00>0.00 | steps 22 | noticed 1
+Cmd: p9.Audio.Status
+p9.Audio.Status: main 0.30>0.30* p9 0.00>0.00 anomaly 0.00>0.00 epilogue 0.00>0.00 wind 0.00>0.00 bridge 0.30>0.30* presence 0.00>0.00 | steps 0 | noticed 0
+Cmd: p9.Audio.Status
+p9.Audio.Status: main 0.30>0.30* p9 0.00>0.00 anomaly 0.00>0.00 epilogue 0.00>0.00 wind 0.00>0.00 bridge 0.30>0.30* presence 0.00>0.00 | steps 11 | noticed 0
+Cmd: p9.Audio.Status
+p9.Audio.Status: main 0.00>0.00 p9 0.00>0.00 anomaly 0.00>0.00 epilogue 0.49>0.50* wind 0.06>0.06* bridge 0.00>0.00 presence 0.00>0.00 | steps 11 | noticed 0
+Campaign: baseline verify - 142 entries, 0 differences, 0 active anomalies
+MapCheck: Map check complete: 0 Error(s), 0 Warning(s), took 12.913ms to complete.
+p9.Anomaly.Audit: EndlessFootbridge  Recedes            diff 2 points 1 ok 
+p9.Anomaly.Audit: Kanchana           Follows            diff 3 points 2 ok 
+p9.Anomaly.Audit: EndlessStair       Escalator          diff 2 points 1 ok 
+p9.Anomaly.Audit: RedLightPF9        Crimson            diff 2 points 3 ok 
+p9.Anomaly.Audit: RedLightPF9        BloodRed           diff 3 points 3 ok 
+p9.Anomaly.Audit: RedLightPF9        DullRed            diff 1 points 3 ok 
+p9.Anomaly.Audit: TrainSeatsRed      Red                diff 2 points 1 ok 
+p9.Anomaly.Audit: TrainSeatsRed      DarkRed            diff 1 points 1 ok 
+p9.Anomaly.Audit: CoachLightOff      Dark               diff 3 points 2 ok 
+p9.Anomaly.Audit: CoachLightOff      Dim                diff 1 points 2 ok 
+p9.Anomaly.Audit: CoachLightOff      DiesOnApproach     diff 2 points 2 ok 
+p9.Anomaly.Audit: LanternMan         Standing           diff 2 points 1 ok 
+p9.Anomaly.Audit: 49 variants, 0 with problems
+Story check: 0 problems | facts: Dadar -> Thane Platform 1; connection Platform 9 to Vashi, getting off at Airoli
+Campaign: baseline verify - 142 entries, 1 differences, 1 active anomalies
